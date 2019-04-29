@@ -18,9 +18,9 @@ rm -vf main.synctex.gz
 set -eo pipefail
 
 # run pdflatex + biber + pdflatex
-pdflatex -interaction=nonstopmode -halt-on-error main.tex
+pdflatex -interaction=batchmode -halt-on-error main.tex
 biber main
-pdflatex -interaction=nonstopmode -halt-on-error main.tex
+pdflatex -interaction=batchmode -halt-on-error main.tex
 
 # return to parent directory
 cd ..
