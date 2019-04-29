@@ -19,12 +19,13 @@ before_install:
 install:
   # main install script for dependencies
   # - ./binder/install-conda.sh
+  - export MALARIAGEN_BINDER_HOME=~/opt
   - ./binder/install-texlive.sh
 
 cache:
   timeout: 1000
   directories:
-  - binder/deps
+  - ~/opt
 
 script:
   - source binder/env.sh
