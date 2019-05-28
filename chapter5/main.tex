@@ -384,7 +384,7 @@ However, the canonical study of the Vgsc gene in An. gambiae is @@CITE Davies@@,
 %
 A difficulty of the Davies data is that there are no complete transcript sequences, only separate sequences from the first and second halves of the transcript.
 %
-To allow for all possibilities, I constructed a set of alternative transcripts from all possible combinations of the first and second half sequences from Davies et al. @@FIG.
+To allow for all possibilities, I constructed a set of alternative transcripts from all possible combinations of the first and second half sequences from Davies et al. @@cite (Supplementary Figure \ref{fig:transcripts}).
 %
 I then reannotated all variants discovered within the Vgsc gene with each of these alternative transcripts, to determine whether any important non-synonymous variants had occurred within an exon segment not present in the canonical gene model (@@AGAP...-RA).
 %
@@ -448,10 +448,12 @@ The LD values are shown together with overall allele frequencies within the Ag10
 
 %%
 TODO describe patterns of LD on kdr alleles
+%%
 
 
 %%
 TODO describe other interesting LD patterns
+%%
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -514,6 +516,32 @@ TODO
   \caption{\textbf{Accessibility of the Vgsc gene}. @@TODO caption.}
 
   \label{fig:accessibility}
+
+\end{figure}
+%%
+
+\end{landscape}
+\restoregeometry
+} % end afterpage
+%% end Figure
+
+
+%% Figure - VGSC transcripts.
+%
+\afterpage{%
+\newgeometry{margin=2cm}
+\begin{landscape}
+\thispagestyle{empty}
+
+\begin{figure}[!t]
+
+  \centering
+
+  \includegraphics[width=\linewidth]{artwork/vgsc_transcripts.png}
+
+  \caption{\textbf{Vgsc transcripts}. @@TODO caption.}
+
+  \label{fig:transcripts}
 
 \end{figure}
 %%
