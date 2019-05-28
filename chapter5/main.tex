@@ -69,6 +69,10 @@ TODO abstract
 \section*{Introduction}
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Pyrethroids and their role in malaria control}
+
+
 %%
 \textit{<General introduction to pyrethroids and their role in malaria control.>}
 %
@@ -94,6 +98,10 @@ The widespread use of pyrethroid LLINs has had a major impact on malaria burden,
 %%
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Pyrethroid resistance in malaria vectors}
+
+
 %%
 \textit{<Brief history of pyrethroid resistance in malaria vectors.>}
 %
@@ -111,6 +119,10 @@ For example, @@example of areas where prevalence of resistance has increased.
 %
 Pyrethroids remain an essential component of all LLIN products currently approved for public health use, and thus resistance to pyrethroids is viewed as a serious challenge to the efficacy of future malaria control efforts @@cite.
 %%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{The pyrethroid mode of action}
 
 
 %%
@@ -132,6 +144,10 @@ The transmembrane segments together form a pore or channel, and @@describe the g
 %
 In the presence of a pyrethroid, VGSC proteins @@describe physiological effect@@, as shown via oocyte experiments @@cite, suggesting @@what the gating function is disrupted and resting potential cannot be restored@@.
 %%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Molecular biology of pyrethroid target-site resistance in An. gambiae}
 
 
 %%
@@ -157,6 +173,10 @@ A third substitution, N1570Y, was found in @@origin, apparently as a secondary m
 %
 In vitro studies subsequently showed that the combination of L1014+N1575Y had significantly higher pyrethroid resistance @@details @@cite, thus it appears that there is ongoing molecular evolution.
 %%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Molecular biology of pyrethroid target-site resistance in other insects}
 
 
 %%
@@ -192,6 +212,10 @@ Studies in \textit{An. gambiae} mosquitoes have to date mostly focused on partia
 %%
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Geographical origins of pyrethroid target-site resistance in An. gambiae}
+
+
 %%
 \textit{<Open questions regarding the geographical and etiological origins of VGSC pyrethroid resistance in An. gambiae.>}
 %
@@ -213,6 +237,10 @@ This kind of inference has previously been difficult for Vgsc resistance alleles
 %%
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Pyrethroid resistance as a model system for studying evolutionary dynamics}
+
+
 %%
 \textit{<Broaden out to other examples of ongoing selective sweeps.>}
 %
@@ -230,6 +258,10 @@ It also provides a unique window into population dynamic processes within mosqui
 %
 @@TODO compare with other examples of ongoing evolution. crop pests? parasites under drug pressure? adaptations to industrialisation/urbanisation?
 %%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Scope of this chapter}
 
 
 %% paragraph segue to scope of this paper
@@ -251,7 +283,7 @@ I describe a number of complementary analyses of the genetic relatedness between
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection*{Non-synonymous variation}
+\subsection*{Discovery of non-synonymous variation}
 
 
 %%
@@ -280,11 +312,11 @@ All non-synonymous variants discovered in the gene were therefore included in su
 %
 I then computed the frequency of each non-synonymous allele within each of nine populations defined by species and country of origin.
 %
-If an allele has a positive phenotypic effect and has been under positive selection, it will occur at some appreciable frequency within one or more populations.
+If an allele has a resistance phenotype and has been under positive selection, it will occur at some appreciable frequency within one or more populations.
 %
 I therefore filtered the variants to retain only those that occurred at a population frequency above 5\%.
 %
-This resulted in a set of @@N variant alleles (@@Table @@N).
+This resulted in a set of @@N variant alleles (Table \ref{table:variants_missense}).
 %
 Two variant alleles were found at position @@N, and two variant alleles were found at position @@M.
 %
@@ -298,6 +330,56 @@ Codon 1014 provides the canonical example, with the L1014F and L1014S polymorphi
 %
 @@Other examples of two SNPs in the same codon.
 %%
+
+
+%% Table - Non-synonymous SNPs.
+%
+\afterpage{%
+%\clearpage
+% N.B., for some reason using \newgeometry causes page number to get dropped from the subsequent page, so disable for now - not needed if using \footnotesize.
+\newgeometry{margin=2cm}
+\begin{landscape}
+\thispagestyle{empty}
+\begin{table}[h]
+  \scriptsize
+  \centering
+  \begin{threeparttable}
+
+  \caption{
+%
+\textbf{Non-synonymous nucleotide variation in the voltage-gated sodium channel gene}.
+%
+AO=Angola; BF=Burkina Faso; GN=Guinea; CM=Cameroon; GA=Gabon; UG=Uganda; KE=Kenya; GW=Guinea-Bissau; \textit{Ac}=\textit{An. coluzzii}; \textit{Ag}=\textit{An. gambiae}.
+%
+Species status of specimens from Kenya and Guinea-Bissau is uncertain @@cite.
+%
+All variants are at 5\% frequency or above in one or more of the 9 Ag1000G phase 1 populations, with the exception of \texttt{2,400,071 G>T} which is only found in the CM\emph{Ag} population at 0.4\% frequency but is included because another mutation (\texttt{2,400,071 G>A}) is found at the same position causing the same amino acid substitution (\texttt{M490I}); and \texttt{2,431,019 T>C} (\texttt{F1920S}) which is at 4\% frequency in GA\emph{Ag} but also found in CM\emph{Ag} and linked to \texttt{L995F}.
+}
+
+  \label{table:variants_missense}
+
+  \input{tables/variants_missense.tex}
+
+  \begin{tablenotes}
+    \footnotesize
+
+    \item[1] Position relative to the AgamP3 reference sequence, chromosome arm 2L. Variants marked with an asterisk (*) failed conservative variant filters applied genome-wide in the Ag1000G phase 1 AR3 callset, but appeared sound on manual inspection of read alignments.
+
+    \item[2] Codon numbering according to \emph{Anopheles gambiae} transcript AGAP004707-RA in geneset AgamP4.4.
+
+    \item[3] Codon numbering according to \emph{Musca domestica} EMBL accession X96668 @@cite.
+
+    \item[4] Location of the variant within the protein structure. Transmembrane segments are named according to domain number (in Roman numerals) followed by `S' then the number of the segment; e.g., `IIS6' means domain two, transmembrane segment six. Internal linkers between segments within the same domain are named according to domain (in Roman numerals) followed by `L' then the numbers of the linked segments; e.g., `IL45' means domain one, linker between transmembrane segments four and five. Internal linkers between domains are named `L' followed by the linked domains; e.g., `LI/II' means the linker between domains one and two. `COOH' means the internal carboxyl tail.
+
+  \end{tablenotes}
+
+  \end{threeparttable}
+
+\end{table}
+\end{landscape}
+\restoregeometry
+} % end afterpage
+%% end Table 1
 
 
 %%
@@ -329,6 +411,35 @@ I then reannotated all variants discovered within the Vgsc gene with each of the
 
 
 %%
+\textit{<Introduction to LD analysis, what types of association are we looking for, how do we measure it.>}
+%
+As mentioned earlier, a number of epistatic interactions between non-synomous mutations within the Vgsc gene have previously been reported, both in An. gambiae and in other insects.
+%
+Of most immediate relevance to An. gambiae is the N1575Y mutation, which has been found in subordinate association with the L1014F mutation @@CITE, and shown to increase the pyrethroid resistance phenotype by up to an order of magnitude @@CITE.
+%
+By ``subordinate association'' here I mean that N1575Y is only ever found on haplotypes also carrying L1014F.
+%
+This type of association can be measured as almost complete linkage disequilibrium between the two alleles (D' ~= 1), with the primary allele occurring at higher population frequency than the subordinate allele.
+%
+This pattern of association is consistent with the primary allele acting as a driver, providing a resistance phenotype and experiencing positive selection by itself, and the subordinate allele acting either to enhance the resistance phenotype or to compensate for some deleterious effect of the primary allele on the normal function of the protein.
+%
+Another type of association is illustrated by pairs of alleles which are only ever found together, which I refer to here as ``complete association''.
+%
+Examples of complete associations include @@TODO examples.
+%
+Complete association can be measured as almost complete linkage disequilibrium, with the two alleles at equal frequencies within each population in which they occur.
+%
+Complete association indicates a strong epistatic interaction between two alleles, where either alone is deleterious regardless of the presence or absence of insecticide selective pressure, but both alleles occurring together provide some resistance phenotype and are positively selected.
+%
+To investigate epistatic interactions within the present dataset, I calculated the D' linkage disequilibrium statistic (@@CITE) between all pairs of non-synonymous variant alleles (Methods).
+%
+The haplotype data from Ag1000G phase 1 only included biallelic SNPs passing all quality filters, and thus did not include N1575Y due to failing filters, and did not include SNPs at positions @@TODO because these were multiallelic.
+%
+To incorporate these alleles into the analysis, I phased these alleles onto the biallelic haplotype scaffold (Methods).
+%
+The LD values are shown together with overall allele frequencies within the Ag1000G phase 1 cohort in @@FIG.
+%
+
 @@TODO calculate LD etc.
 %%
 
