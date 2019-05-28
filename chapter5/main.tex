@@ -210,7 +210,7 @@ It would be valuable to know whether the occurrence of any given insecticide res
 This information would enable us to unravel the history of an insecticide resistance outbreak, and undertake a systematic analysis of the factors driving its spread.
 %
 This kind of inference has previously been difficult for Vgsc resistance alleles, however, due to the limited resolution of the available sequence data.
-%
+%%
 
 
 %%
@@ -251,11 +251,90 @@ I describe a number of complementary analyses of the genetic relatedness between
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection*{TODO}
+\subsection*{Non-synonymous variation}
 
 
 %%
-TODO
+\textit{<Discovery of non-synonymous variation in Vgsc from Ag1000G phase 1.>}
+%
+I extracted data on variation within the Vgsc from the Anopheles gambiae 1000 Genomes Project phase 1 AR3 data release, and annotated each variant according to its effect on the protein coding sequence (Methods).
+%
+Within the gene a total of @@N non-synonymous polymorphisms were found.
+%
+Of these, @@N passed all of the genome-wide quality filters previously applied, and @@N failed.
+%
+One of the SNPs failing quality filters included the @@N1575Y variant, previously found to be an important modifier of the pyrethroid resistance phenotype (@@cite).
+%
+Genome-wide SNP filters were generally conservative, erring on the side of reducing the false discovery rate at the expense of sensitivity.
+%
+Because any non-synonymous variant in the Vgsc gene could potentially cause an important phenotypic effect, I undertook a detailed manual examination of genome accessibility within all coding regions within the gene @@Supp Fig X@@.
+%
+In general, SNPs that failed quality filters were close to the thresholds set, and there was no substantial evidence for structural variation, alignment ambiguity or other alignment issues which could cause false discoveries.
+%
+All non-synonymous variants discovered in the gene were therefore included in subsequent analyses.
+%%
+
+
+%%
+\textit{<Calculation of population allele frequencies.>}
+%
+I then computed the frequency of each non-synonymous allele within each of nine populations defined by species and country of origin.
+%
+If an allele has a positive phenotypic effect and has been under positive selection, it will occur at some appreciable frequency within one or more populations.
+%
+I therefore filtered the variants to retain only those that occurred at a population frequency above 5\%.
+%
+This resulted in a set of @@N variant alleles (@@Table @@N).
+%
+Two variant alleles were found at position @@N, and two variant alleles were found at position @@M.
+%
+The @@WHICH allele did not occur at 5\% frequency in any population, however the other variant allele at the same site did, and both alleles were included in @@TABLE as the occurrence of two alleles at the same site could indicate an important site within the protein.
+%
+Another feature of important sites within the protein is the occurrence of multiple substitutions at the same amino acid site.
+%
+Codon 1014 provides the canonical example, with the L1014F and L1014S polymorphisms occurring at adjacent nucleotides but affecting the same codon.
+%
+@N other similar examples were found.
+%
+@@Other examples of two SNPs in the same codon.
+%%
+
+
+%%
+\textit{<Transcript variation.>}
+%
+The Vgsc gene is known to undergo splicing variation in multiple insect species, and this is believe to be an important factor enabling insects to achieve some phenotypic variation @@CITE.
+%
+For An. gambiae three separate transcripts were reported in the official gene annotations from vectorbase, which derived from RNA sequencing of @@PEST?
+%
+However, the canonical study of the Vgsc gene in An. gambiae is @@CITE Davies@@, where significantly greater splice variation was reported.
+%
+A difficulty of the Davies data is that there are no complete transcript sequences, only separate sequences from the first and second halves of the transcript.
+%
+To allow for all possibilities, I constructed a set of alternative transcripts from all possible combinations of the first and second half sequences from Davies et al. @@FIG.
+%
+I then reannotated all variants discovered within the Vgsc gene with each of these alternative transcripts, to determine whether any important non-synonymous variants had occurred within an exon segment not present in the canonical gene model (@@AGAP...-RA).
+%
+@@N non-synonymous variants were found in exon segments not found in AGAP...-RA, but none of these occurred at above @@X\% frequency in any population, and therefore were not considered in further analyses.
+%%
+
+
+%%
+@@TODO table of non-synonymous SNPs.
+%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Epistatic interactions}
+
+
+%%
+@@TODO calculate LD etc.
+%%
+
+
+%%
+@@TODO LD figure
 %%
 
 
