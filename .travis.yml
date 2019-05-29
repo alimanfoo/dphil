@@ -3,6 +3,7 @@ sudo: false
 branches:
   only:
   - master
+  - /v\d+\.\d+\.*/
 
 # handle git submodules ourselves
 git:
