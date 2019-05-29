@@ -36,6 +36,11 @@
   \renewcommand{\thefigure}{S\arabic{figure}}%
 }
 
+\usepackage{xspace}
+\newcommand{\agam}{\textit{An. gambiae}\xspace}
+\newcommand{\acol}{\textit{An. coluzzii}\xspace}
+\newcommand{\vgsc}{\textit{Vgsc}\xspace}
+
 
 \addbibresource{../refs.bib}
 
@@ -144,30 +149,30 @@ In the presence of a pyrethroid, VGSC proteins @@describe physiological effect@@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection*{Molecular biology of pyrethroid target-site resistance in An. gambiae}
+\subsection*{Molecular biology of pyrethroid target-site resistance in \agam}
 
 
 %% Brief review of molecular biology of VGSC pyrethroid resistance in An. gambiae.
 %
-In \textit{An. gambiae} the molecular biology of resistance has appeared to be relatively straightforward according to previous studies.
+In \agam the molecular biology of resistance has appeared to be relatively straightforward according to previous studies.
 %
-A L1014F @@ref codon numbering@@ substitution was first found @@history of L1014F@@.
+A \texttt{L995F} @@ref codon numbering@@ substitution was first found @@history of L995F@@.
 %
-@@resistance phenotype of L1014F@@
+@@resistance phenotype of L995F@@
 %
 A second substitution in the same codon, L995S, was subsequently found @@history of L995S@.
 %
 @@resistance phenotype of L995S@@
 %
-Initially L1014F was found only in populations from West African countries, and L995S only in East Africa.
+Initially \texttt{L995F} was found only in populations from West African countries, and \texttt{L995S} only in East Africa.
 %
-Because of the classical "knock-down resistance" phenotype, and their initial geographical distribution, the two substitutions L1014F and L995S are sometimes referred to as \textit{kdr-West} and \textit{kdr-East} respectively.
+Because of the classical ``knock-down resistance'' phenotype, and their initial geographical distribution, the two substitutions \texttt{L995F} and \texttt{L995S} are sometimes referred to as \textit{kdr-West} and \textit{kdr-East} respectively.
 %
 However, more recent studies have found a broader geographical distribution, e.g., @@studies with kdr-west in east and/or vice versa@@.
 %
-A third substitution, N1570Y, was found in @@origin, apparently as a secondary mutation occurring only on haplotypes carrying L1014F @@cite.
+A third substitution, N1570Y, was found in @@origin, apparently as a secondary mutation occurring only on haplotypes carrying \texttt{L995F} @@cite.
 %
-In vitro studies subsequently showed that the combination of L1014+N1570Y had significantly higher pyrethroid resistance @@details @@cite, thus it appears that there is ongoing molecular evolution.
+In vitro studies subsequently showed that the combination of L995+N1570Y had significantly higher pyrethroid resistance @@details @@cite, thus it appears that there is ongoing molecular evolution.
 %%
 
 
@@ -189,45 +194,45 @@ An interesting feature of these substitions are the protein locations in which t
 %
 In silico molecular modelling studies have predicted that there are two independent pyrethroid binding sites within the VGSC channel, referred to as @@names @@cite.
 %
-Several of the primary resistance substitutions are found within one of these two predicted binding sites, including codon 1014 where \textit{kdr} mutations are found in \textit{An. gambiae}, and @@other codons in other species@@.
+Several of the primary resistance substitutions are found within one of these two predicted binding sites, including codon \texttt{995} where \textit{kdr} mutations are found in \agam, and @@other codons in other species@@.
 %
 Resistance mutations within the pyrethroid binding sites make obvious sense, as they can reasonably be assumed to alter the conformation or shape of the binding site in some way, and thus disrupt the interaction with pyrethroid molecules @@cite.
 %
 However, many other mutations shown to have a resistance phenotype do not occur in either binding site or even within a transmembrane domain, with many occurring in internal or external linker domains.
 %
-For example, N1570Y occurs in the internal linker between @@segments @@cite.
+For example, \texttt{N1570Y} occurs in the internal linker between @@segments @@cite.
 %
-Modelling work on N1570Y has suggested that this might have an allosteric effect on the conformation of the pyrethroid binding site @@cite.
+Modelling work on \texttt{N1570Y} has suggested that this might have an allosteric effect on the conformation of the pyrethroid binding site @@cite.
 %
 However, it has also been suggested that linker segments play a role in the dynamics and modulation of gating kinetics, and so modifications in these segments may play a more subtle and indirect role in disrupting or compensating for the pyrethroid mode of action @@cite.
 %
 Several substitutions, such as N1570Y, only occur in association with another substitution, indicating important epistatic interactions between different sites in the protein sequence.
 %
-Studies in \textit{An. gambiae} mosquitoes have to date mostly focused on partial sequencing of a limited number of exons, and thus the full coding sequence has not been thoroughly surveyed across multiple populations.
+Studies in \agam mosquitoes have to date mostly focused on partial sequencing of a limited number of exons, and thus the full coding sequence has not been thoroughly surveyed across multiple populations.
 %%
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection*{Geographical origins of pyrethroid target-site resistance in An. gambiae}
+\subsection*{Geographical origins of pyrethroid target-site resistance in \agam}
 
 
 %% Open questions regarding the geographical and etiological origins of VGSC pyrethroid resistance in An. gambiae.
 %
-Although there is little doubt that the prevalence of pyrethroid resistance among An. gambiae populations has increased substantially in recent years, there remain a number of open questions regarding the underlying factors and processes driving this increase in prevalence.
+Although there is little doubt that the prevalence of pyrethroid resistance among \agam populations has increased substantially in recent years, there remain a number of open questions regarding the underlying factors and processes driving this increase in prevalence.
 %
-The L1014F allele is now found widely throughout West and Central Africa, but it is not known whether this apparent spread is due to gene flow alone, or whether the allele arose from multiple geographical origins.
+The \texttt{L995F} allele is now found widely throughout West and Central Africa, but it is not known whether this apparent spread is due to gene flow alone, or whether the allele arose from multiple geographical origins.
 %
 @@TODO what did the Pinto paper say about kdr origins? @@TODO any other data on kdr origins, e.g., Lynd paper?
 %
-@@TODO spread of L1014F between gambiae and coluzzii, Clarkson and other paper.
+@@TODO spread of \texttt{L995F} between gambiae and coluzzii, Clarkson and other paper.
 %
-Similarly, the L995S allele is now at high frequency throughout East and Central Africa, but its geographical origins and patterns of gene flow are unknown.
+Similarly, the \texttt{L995S} allele is now at high frequency throughout East and Central Africa, but its geographical origins and patterns of gene flow are unknown.
 %
 It would be valuable to know whether the occurrence of any given insecticide resistance allele in two geographically distinct mosquito populations can be traced back to a recent common ancestor, and therefore that the allele has arrived in both populations via contemporary gene flow from a common geographical origin.
 %
 This information would enable us to unravel the history of an insecticide resistance outbreak, and undertake a systematic analysis of the factors driving its spread.
 %
-This kind of inference has previously been difficult for Vgsc resistance alleles, however, due to the limited resolution of the available sequence data.
+This kind of inference has previously been difficult for \vgsc resistance alleles, however, due to the limited resolution of the available sequence data.
 %%
 
 
@@ -237,7 +242,7 @@ This kind of inference has previously been difficult for Vgsc resistance alleles
 
 %% Broaden out to other examples of ongoing selective sweeps.
 %
-As well as representing a pressing public health emergency, pyrethroid resistance in \textit{An. gambiae} represents a phenomenon of fundamental biological interest, because it provides an opportunity to study an ongoing evolutionary event in nature, occuring on an observable time scale.
+As well as representing a pressing public health emergency, pyrethroid resistance in \agam represents a phenomenon of fundamental biological interest, because it provides an opportunity to study an ongoing evolutionary event in nature, occuring on an observable time scale.
 %
 Furthermore, this evolutionary event is occurring in a complex of species with incomplete reproductive isolation, whose broad geographical range spans an entire continent and a variety of ecological settings.
 %
@@ -259,7 +264,7 @@ It also provides a unique window into population dynamic processes within mosqui
 
 %% paragraph segue to scope of this paper
 %
-In this chapter I analyse data from phase 1 of the Anopheles gambiae 1000 Genomes Project to investigate the molecular evolution and geographical spread of target-site resistance to pyrethroids.
+In this chapter I analyse data from phase 1 of the \textit{Anopheles gambiae} 1000 Genomes Project to investigate the molecular evolution and geographical spread of target-site resistance to pyrethroids.
 %
 I report on the discovery of a number of mutations at appreciable frequency that alter the protein-coding sequence of the gene, and which therefore may have some phenotypic effect.
 %
@@ -282,7 +287,7 @@ I describe a number of complementary analyses of the genetic relatedness between
 
 %% Discovery of non-synonymous variation in Vgsc from Ag1000G phase 1. Analysis of genome accessibility within Vgsc.
 %
-I extracted data on variation within the Vgsc from the Anopheles gambiae 1000 Genomes Project phase 1 AR3 data release, and annotated each variant according to its effect on the protein coding sequence (Methods).
+I extracted data on variation within the \vgsc gene from the \textit{Anopheles gambiae} 1000 Genomes Project phase 1 AR3 data release, and annotated each variant according to its effect on the protein coding sequence (Methods).
 %
 Within the gene a total of @@N non-synonymous polymorphisms were found.
 %
@@ -292,7 +297,7 @@ One of the SNPs failing quality filters included the @@N1570Y variant, previousl
 %
 Genome-wide SNP filters were generally conservative, erring on the side of reducing the false discovery rate at the expense of sensitivity.
 %
-Because any non-synonymous variant in the Vgsc gene could potentially cause an important phenotypic effect, I undertook a detailed manual examination of genome accessibility within all coding regions within the gene (Supplementary Figure \ref{fig:accessibility}).
+Because any non-synonymous variant in the \vgsc gene could potentially cause an important phenotypic effect, I undertook a detailed manual examination of genome accessibility within all coding regions within the gene (Supplementary Figure \ref{fig:accessibility}).
 %
 In general, SNPs that failed quality filters were close to the thresholds set, and there was no substantial evidence for structural variation, alignment ambiguity or other alignment issues which could cause false discoveries.
 %
@@ -316,7 +321,7 @@ The @@WHICH allele did not occur at 5\% frequency in any population, however the
 %
 Another feature of important sites within the protein is the occurrence of multiple substitutions at the same amino acid site.
 %
-Codon 1014 provides the canonical example, with the L1014F and L995S polymorphisms occurring at adjacent nucleotides but affecting the same codon.
+Codon \texttt{995} provides the canonical example, with the \texttt{L995F} and \texttt{L995S} polymorphisms occurring at adjacent nucleotides but affecting the same codon.
 %
 @N other similar examples were found.
 %
@@ -341,7 +346,7 @@ Codon 1014 provides the canonical example, with the L1014F and L995S polymorphis
 %
 \textbf{Non-synonymous nucleotide variation in the voltage-gated sodium channel gene}.
 %
-AO=Angola; BF=Burkina Faso; GN=Guinea; CM=Cameroon; GA=Gabon; UG=Uganda; KE=Kenya; GW=Guinea-Bissau; \textit{Ac}=\textit{An. coluzzii}; \textit{Ag}=\textit{An. gambiae}.
+AO=Angola; BF=Burkina Faso; GN=Guinea; CM=Cameroon; GA=Gabon; UG=Uganda; KE=Kenya; GW=Guinea-Bissau; \textit{Ac}=\acol; \textit{Ag}=\agam.
 %
 Species status of specimens from Kenya and Guinea-Bissau is uncertain @@cite.
 %
@@ -376,17 +381,17 @@ All variants are at 5\% frequency or above in one or more of the 9 Ag1000G phase
 
 %% Transcript variation.
 %
-The Vgsc gene is known to undergo splicing variation in multiple insect species, and this is believe to be an important factor enabling insects to achieve some phenotypic variation @@CITE.
+The \vgsc gene is known to undergo splicing variation in multiple insect species, and this is believe to be an important factor enabling insects to achieve some phenotypic variation @@CITE.
 %
-For An. gambiae three separate transcripts were reported in the official gene annotations from vectorbase, which derived from RNA sequencing of @@PEST?
+For \agam, three separate transcripts were reported in the official gene annotations from vectorbase, which derived from RNA sequencing of @@PEST?
 %
-However, the canonical study of the Vgsc gene in An. gambiae is @@CITE Davies@@, where significantly greater splice variation was reported.
+However, the canonical study of the \vgsc gene in \agam is @@CITE Davies@@, where significantly greater splice variation was reported.
 %
 A difficulty of the Davies data is that there are no complete transcript sequences, only separate sequences from the first and second halves of the transcript.
 %
 To allow for all possibilities, I constructed a set of alternative transcripts from all possible combinations of the first and second half sequences from Davies et al. @@cite (Supplementary Figure \ref{fig:transcripts}).
 %
-I then reannotated all variants discovered within the Vgsc gene with each of these alternative transcripts, to determine whether any important non-synonymous variants had occurred within an exon segment not present in the canonical gene model (@@AGAP...-RA).
+I then reannotated all variants discovered within the \vgsc gene with each of these alternative transcripts, to determine whether any important non-synonymous variants had occurred within an exon segment not present in the canonical gene model (@@AGAP...-RA).
 %
 @@N non-synonymous variants were found in exon segments not found in AGAP...-RA, but none of these occurred at above @@X\% frequency in any population, and therefore were not considered in further analyses.
 %%
@@ -398,13 +403,13 @@ I then reannotated all variants discovered within the Vgsc gene with each of the
 
 %% Introduction to LD analysis, what types of association are we looking for, how do we measure it.
 %
-As mentioned earlier, a number of epistatic interactions between non-synomous mutations within the Vgsc gene have previously been reported, both in \textit{An. gambiae} and in other insects.
+As mentioned earlier, a number of epistatic interactions between non-synomous mutations within the \vgsc gene have previously been reported, both in \agam and in other insects.
 %
-Of most immediate relevance to \textit{An. gambiae} is the \texttt{N1570Y} mutation, which has been found in subordinate association with the \texttt{L1014F} mutation @@CITE, and shown to increase the pyrethroid resistance phenotype by up to an order of magnitude @@CITE.
+Of most immediate relevance to \agam is the \texttt{N1570Y} mutation, which has been found in subordinate association with the \texttt{L995F} mutation @@CITE, and shown to increase the pyrethroid resistance phenotype by up to an order of magnitude @@CITE.
 %
-By ``subordinate association'' here I mean that \texttt{N1570Y} is only ever found on haplotypes also carrying \texttt{L1014F}.
+By ``subordinate association'' here I mean that \texttt{N1570Y} is only ever found on haplotypes also carrying \texttt{L995F}.
 %
-This type of association can be measured as almost complete linkage disequilibrium between the two alleles ($D' \simeq 1$), with the primary allele occurring at higher population frequency than the subordinate allele.
+This type of association can be measured as almost complete linkage disequilibrium between the two alleles ($D' \simeq 1$), with the primary allele always occurring at higher population frequency than the subordinate allele.
 %
 This pattern of association is consistent with the primary allele acting as a driver, providing a resistance phenotype and experiencing positive selection by itself, and the subordinate allele acting either to enhance the resistance phenotype or to compensate for some moderate deleterious effect of the primary allele on the normal function of the protein.
 %
@@ -466,7 +471,7 @@ In contrast, there were no non-synonymous variants found in any kind of associat
 
 
 %% describe other interesting LD patterns
-A novel \texttt{I1527T} substitution was observed at 14\% frequency in the Burkina Faso \textit{An. coluzzii} population.
+A novel \texttt{I1527T} substitution was observed at 14\% frequency in the Burkina Faso \acol population.
 %
 This substitution occurs in transmembrane domain \texttt{IIIS6} within a codon immediately adjacent to the PYR@@ predicted pyrethroid binding site @@cite.
 %
@@ -481,9 +486,11 @@ Substitutions in a nearby codon (@@TODO) have been observed in @@where.
 
 
 %% round off this subsection
-Clearly the extent of molecular evolution occurring within the \textit{Vgsc} gene in \textit{An. gambiae} has been severely underestimated.
+Clearly the extent of molecular evolution occurring within the \vgsc gene in \agam has been underestimated.
 %
-The data on allele frequencies and linkage disequilibrium do not prove a resistance phenotype, but the non-random associations between substitutions provides evidence that these substitutions are not neutral, and that there are a variety of epistatic interactions between sites in the protein that may offer evolutionary pathways towards increased fitness in the presence of insecticide pressure.
+The data on allele frequencies and linkage disequilibrium presented here do not prove a resistance phenotype, but the non-random associations between substitutions provides evidence that these substitutions are not neutral, and that there are a variety of epistatic interactions between sites in the protein that may offer evolutionary pathways towards increased fitness in the presence of insecticide pressure.
+%
+As multiple mutations accumulate within the protein, the consequence of insecticidal pressure may be to irreversibly alter the molecular evolution of a fundamental ingredient of animal life, which hitherto had remained remarkably well conserved throughout the millenia.
 %%
 
 
@@ -553,7 +560,7 @@ TODO
 
   \includegraphics[width=\linewidth]{artwork/vgsc_accessibility_overview.png}
 
-  \caption{\textbf{Accessibility of the Vgsc gene}. @@TODO caption.}
+  \caption{\textbf{Accessibility of the \vgsc gene}. @@TODO caption.}
 
   \label{fig:accessibility}
 
@@ -579,7 +586,7 @@ TODO
 
   \includegraphics[width=\linewidth]{artwork/vgsc_transcripts.png}
 
-  \caption{\textbf{Vgsc transcripts}. @@TODO caption.}
+  \caption{\textbf{\vgsc transcripts}. @@TODO caption.}
 
   \label{fig:transcripts}
 
