@@ -24,3 +24,7 @@ pdflatex -interaction=batchmode -halt-on-error main.tex
 
 # return to parent directory
 cd ..
+
+# copy to build directory
+mkdir -pv build
+cp -v ${1}/main.pdf build/${1}.pdf
