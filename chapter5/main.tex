@@ -499,7 +499,89 @@ As multiple mutations accumulate within the protein, the consequence of insectic
 
 
 %% introduce work on haplotype relatedness and genetic backgrounds
-TODO
+The two \textit{kdr} pyrethroid resistance alleles, \texttt{L995F} and \texttt{L995S}, were at high frequency in multiple populations.
+%
+\texttt{L995F} was at or near fixation in West African populations of both \agam and \acol, and was also at high frequency in Central African populations.
+%
+\texttt{L995S} was at or near fixation in East African populations, and co-occurred with \texttt{L995F} in the Central African samples from Cameroon and Gabon.
+%
+Taking these two alleles together, all populations were at a \textit{kdr} frequency of at least 68\%, except for Guinea-Bissau where \textit{kdr} alleles were entirely absent.
+%
+The broad geographical spread of these alleles must be due at least in part to contemporary gene flow between mosquito populations of different species and geographies.
+%
+By ``contemporary'' here I mean during the period since the introduction of insecticides into public health.
+%
+Previous studies have used data on the genetic backgrounds carrying \textit{kdr} alleles to show that, in West Africa, \texttt{L995F} has introgressed from \agam into \acol populations, and that this has occurred within the last @@N years @@cites.
+%
+However, although it is widely suspected, no previous study has had data of sufficient resolution to prove that \textit{kdr} alleles have spread between different countries via gene flow, or to characterise the patterns of gene flow between different locations.
+%%
+
+
+%%
+To investigate signatures of contemporary gene flow driving the spread of \textit{kdr} alleles, I analysed haplotype data from the \textit{Anopheles gambiae} 1000 Genomes phase 1 resource.
+%
+The haplotypes incorporate data on synonymous variation, both within \vgsc introns and the flanking intergenic regions, which provide high resolution to analyse patterns of relatedness and ancestry.
+%
+If a resistance allele has spread to two different countries from a common origin via contemporary gene flow, then the haplotypes on which that allele is carried should all share a recent common ancestor.
+%
+In a recombining organism, recent common ancestry between two haplotypes at a given locus is indicated by high genetic similarity across unusually long genomic regions spanning the locus.
+%
+Because of the probability of recombination events over a relatively short genomic interval such as the span of the \vgsc gene, it is not possible to apply standard phylogenetic methods such as those that would be applied to bacterial or viral sequences.
+%
+However, a range of other analyses can be applied, leveraging both genetic distance between haplotypes and the length of regions of near-homozygosity between haplotypes (also known as identity by descent or IBD).
+%%
+
+
+%% Figure - Haplotypes hierarchical clustering.
+%
+\begin{figure}[!t]
+
+  \centering
+
+  \includegraphics[width=\linewidth]{artwork/vgsc_haplotypes.pdf}
+  \includegraphics[width=0.5\linewidth]{artwork/pop_legend.png}
+
+  \caption{\textbf{Hierarchical clustering of \vgsc haplotypes}. @@TODO caption.}
+
+  \label{fig:vgsc_haplotypes}
+
+\end{figure}
+%%
+
+
+%% describe hierarchical clustering
+Figure \ref{fig:vgsc_haplotypes} shows a hierarchical clustering of the 1530 haplotype sequences derived from the 765 wild-caught mosquitoes.
+%
+This clustering was performed using variation data from within the full @@X kbp span of the \vgsc gene, which includes a total of @@N biallelic SNPs, of which @@M were synonymous and @@O were non-synonymous. 
+%
+The likely presence of recombination events within this genomic interval means that this clustering cannot be interpreted as a phylogeny, but rather as a descriptive analysis of genetic similarity.
+%
+However, it is clear from this analysis that there are several large clusters of near-identical haplotypes, each of which is strongly linked to one of the two \textit{kdr} alleles.
+%
+To provide a means of navigating these data, I cut the dendrogram at a maximum distance of @@N SNPs.
+%
+I then labelled the resulting clusters within which one of the two \textit{kdr} alleles was found (clusters F1-F5 carry the \texttt{L995F} allele, and clusters S1-S5 carry \texttt{L995S}).
+%
+These ten clusters accounted for @@X\% of haplotypes carrying a \textit{kdr} allele.
+%%
+
+
+%% make some argument as to why all haplotypes within these clusters must share a recent common ancestor
+%
+Within each cluster, at least @@X\% of haplotype pairs were identical, at least @@Y\% of haplotype pairs had at most a single SNP difference, and average divergence between haplotypes was @@X-@@Y\% (Supplementary Table @@TODO).
+%
+By comparison, within similar-sized windows, the genome-wide average level of genetic diversity within populations is in the range @@X-@@Y\%, and the average level of divergence between populations is @@X-@@Y\% (Supplementary Table @@TODO).
+%
+This comparison highlights the unusually low diversity within these clusters, especially for the clusters comprising haplotypes from multiple populations.
+%
+%%
+
+
+%% describe patterns of geography and species in relation to clusters, and what this means for gene flow
+%
+Figure \ref{fig:vgsc_haplotypes} also provides a colour band that shows the country of origin and species of each mosquito from which each haplotype was derived.
+%
+@@TODO
 %%
 
 
