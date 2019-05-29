@@ -112,5 +112,7 @@ venv.bak/
 *.bak
 *.synctex*
 *.out
+*.fdb_latexmk
+*.fls
 main.pdf
 temp.bib

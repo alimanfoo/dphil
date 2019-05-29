@@ -37,11 +37,18 @@ script:
   - ./build.sh chapter5
   - ./build.sh discussion
 
-#deploy:
-#  provider: releases
-#  api_key:
-#    secure: eufJEoEn00XCEeVD99kopAvzPPpiJY8Lrn+JacVnKhfEUgl+Mx/O3UifuPUF+mIf4f/WPFQfP9af1Qdh9XaiErHJua/m0i6vygav93Picc+tMGbxh2v3ilWZW9BTClnq9FF+6esz6skoCxdpHgrrsopM1dzsZ40+e6R9SzgqjQZqs/PYHDNjzZQJaf0atwtfsw09i8ycpgvhIs5cn4CEpPDHl5BUrWO3eMLy7b1lcMuch/kLnb6inD91KukJ+0h9Jpyx4Pp6n/z+/WRotbLsz3zKDfHm2Pqi4Hdmnwldyq4lN7ZwY/scOuXuw8gfVO24iPEx399hfJZ165rcReO6meNyhayYIIFU8XKrdLc0vAYS7rfdq0ak8WarIPHZKj0Q6DGgj/Jn9K5wrPMyIP5mwHPxRCDRThXVba0qVk4gGokpEFUVERXt4a28v/WpgbiiQ9mQVYSsfvDLtWO2li/HOfG607Rai982RdzczFfjN2McQBHbq9RAoJM3T9S5SZTY4sG0C+YOUPKtLvEhBmbNlDafMFtZIfpbtWVmgA7lRsmVMwttY4PD3NCPZCbjpOJmKnj/0VAtcFPoRLHPexABe62xyffTp96c+9FgHpww8l9R0jva5eqEw1KVJAR76gxHKqiXekI3Ddbv1ltXzr1JC8KKXKnSv1apsn6qTnw3qI4=
-#  file: build/main.pdf
-#  skip_cleanup: true
-#  on:
-#    tags: true
+deploy:
+  provider: releases
+  api_key:
+    secure: eufJEoEn00XCEeVD99kopAvzPPpiJY8Lrn+JacVnKhfEUgl+Mx/O3UifuPUF+mIf4f/WPFQfP9af1Qdh9XaiErHJua/m0i6vygav93Picc+tMGbxh2v3ilWZW9BTClnq9FF+6esz6skoCxdpHgrrsopM1dzsZ40+e6R9SzgqjQZqs/PYHDNjzZQJaf0atwtfsw09i8ycpgvhIs5cn4CEpPDHl5BUrWO3eMLy7b1lcMuch/kLnb6inD91KukJ+0h9Jpyx4Pp6n/z+/WRotbLsz3zKDfHm2Pqi4Hdmnwldyq4lN7ZwY/scOuXuw8gfVO24iPEx399hfJZ165rcReO6meNyhayYIIFU8XKrdLc0vAYS7rfdq0ak8WarIPHZKj0Q6DGgj/Jn9K5wrPMyIP5mwHPxRCDRThXVba0qVk4gGokpEFUVERXt4a28v/WpgbiiQ9mQVYSsfvDLtWO2li/HOfG607Rai982RdzczFfjN2McQBHbq9RAoJM3T9S5SZTY4sG0C+YOUPKtLvEhBmbNlDafMFtZIfpbtWVmgA7lRsmVMwttY4PD3NCPZCbjpOJmKnj/0VAtcFPoRLHPexABe62xyffTp96c+9FgHpww8l9R0jva5eqEw1KVJAR76gxHKqiXekI3Ddbv1ltXzr1JC8KKXKnSv1apsn6qTnw3qI4=
+  file: 
+    - build/introduction.pdf
+    - build/chapter1.pdf
+    - build/chapter2.pdf
+    - build/chapter3.pdf
+    - build/chapter4.pdf
+    - build/chapter5.pdf
+    - build/discussion.pdf
+  skip_cleanup: true
+  on:
+    tags: true
