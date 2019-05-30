@@ -28,6 +28,7 @@
 \usepackage{setspace}
 \usepackage{hyperref}
 \doublespacing
+\usepackage{subcaption}
 
 \newcommand{\beginsupplement}{%
   \setcounter{table}{0}
@@ -45,7 +46,7 @@
 \addbibresource{../refs.bib}
 
 
-\title{Chapter 5. The molecular evolution and geographical spread of target-site resistance to pyrethroid insecticides among \textit{Anopheles gambiae} populations}
+\title{Chapter 5. Target-site resistance to pyrethroid insecticides: molecular evolution and geographical spread among \textit{Anopheles gambiae} populations}
 
 
 \author[1,2]{\small Alistair Miles}
@@ -538,8 +539,20 @@ However, a range of other analyses can be applied, leveraging both genetic dista
 
   \centering
 
-  \includegraphics[width=\linewidth]{artwork/vgsc_haplotypes.pdf}
-  \includegraphics[width=0.5\linewidth]{artwork/pop_legend.png}
+  \begin{subfigure}{\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{artwork/vgsc_haplotypes.pdf}
+  \end{subfigure}%
+
+  \begin{subfigure}{0.5\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{artwork/pop_legend.png}
+  \end{subfigure}%
+  ~
+  \begin{subfigure}{0.5\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{artwork/minimap_vgsc.pdf}
+  \end{subfigure}%
 
   \caption{\textbf{Hierarchical clustering of \vgsc haplotypes}. @@TODO caption.}
 
