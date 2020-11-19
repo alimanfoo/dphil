@@ -116,3 +116,5 @@ venv.bak/
 *.fls
 main.pdf
 temp.bib
+
+data/*
