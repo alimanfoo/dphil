@@ -1,30 +1,33 @@
 #!/bin/bash
 
-# change into requested directory
-cd $1
-
-# clean
-rm -vf main.aux
-rm -vf main.bbl
-rm -vf main.bcf
-rm -vf main.blg
-rm -vf main.log
-rm -vf main.out
-rm -vf main.pdf
-rm -vf main.run.xml
-rm -vf main.synctex.gz
-
 # ensure bail out on error
 set -eo pipefail
 
-# run pdflatex + biber + pdflatex
-pdflatex -interaction=batchmode -halt-on-error main.tex
-biber main
-pdflatex -interaction=batchmode -halt-on-error main.tex
+# setup environment
+source binder/env.sh
 
-# return to parent directory
-cd ..
+function rebuild {
 
-# copy to build directory
-mkdir -pv build
-cp -v ${1}/main.pdf build/${1}.pdf
+    # clean
+    rm -vf ${1}.aux
+    rm -vf ${1}.bbl
+    rm -vf ${1}.bcf
+    rm -vf ${1}.blg
+    rm -vf ${1}.log
+    rm -vf ${1}.out
+    rm -vf ${1}.lof
+    rm -vf ${1}.lot
+    rm -vf ${1}.toc
+    rm -vf ${1}.pdf
+    rm -vf ${1}.run.xml
+    rm -vf ${1}.synctex.gz
+
+    # run pdflatex + biber + pdflatex
+    pdflatex -interaction=nonstopmode -halt-on-error ${1}.tex
+    biber ${1}
+    pdflatex -interaction=nonstopmode -halt-on-error ${1}.tex
+
+}
+
+rebuild(front)
+
