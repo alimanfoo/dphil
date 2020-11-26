@@ -29,5 +29,5 @@ function rebuild {
 
 }
 
-rebuild(front)
-
+rebuild front 
+rebuild chapter1
