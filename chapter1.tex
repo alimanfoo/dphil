@@ -37,6 +37,9 @@ This thesis describes work I contributed to phase 1 of the Ag1000G Project.
 \end{abstract}
 
 
+\tableofcontents
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Malaria vector control in sub-Saharan Africa}
@@ -215,17 +218,17 @@ Given that a number of new vector control products such as PBO LLINs are designe
 %
 \item \textbf{Providing early warning of novel insecticide resistance adaptations}.
 %
-There is limited ability to obtain early warning of novel insecticide resistance adaptations, such as those emerging in response to deployment of a new IRS or LLIN products, because resistance typically has to reach a relatively high frequency within a mosquito population before it becomes evident via conventional bioassays @@REF.
+There is limited ability to obtain early warning of novel insecticide resistance adaptations, such as those emerging in response to deployment of a new IRS or LLIN products, because resistance typically has to reach a relatively high frequency within a mosquito population before it becomes evident via conventional bioassays \citep{Roush1986,Sternberg2018}.
 %
 \item \textbf{Monitoring of insecticide resistance allele frequencies}.
 %
-IRM strategies such as IRS rotation depend on managing the frequency of insecticide resistance alleles within mosquito populations, switching products at the right time and using them for the right duration to ensure resistance does not reach fixation @@REF. 
+IRM strategies such as IRS rotation depend on managing the frequency of insecticide resistance alleles within mosquito populations, switching products at the right time and using them for the right duration to ensure resistance does not reach fixation \citep{South2018}. 
 %
 However, without any data on resistance allele frequencies, there is no way to know if IRM strategies are working as intended.
 %
 \item \textbf{Tracking the spread of insecticide resistance}. 
 %
-Mosquitoes move and have the capability to spread insecticide resistance over the course of multiple generations of movement and reproduction @@REF.
+Mosquitoes move and have the capability to spread insecticide resistance over the course of multiple generations of movement and reproduction \citep{Service1997,Huestis2019}.
 %
 Without genetic data, it is not possible to resolve whether resistance has originated locally or spread from elsewhere.
 %
@@ -233,13 +236,13 @@ Thus it is hard to determine which interventions or conditions are driving the e
 %
 \end{enumerate}
 %
-An awareness of these gaps, coupled with the rapid advancement of high throughput technologies for genome sequencing and other molecular diagnostics, and the development and maturation of genomic epidemiology as a field of research, has driven an interest in the development of molecular tools for malaria vector surveillance.
+An awareness of these gaps, coupled with the rapid advancement of high throughput technologies for genome sequencing and other molecular diagnostics, and the development and maturation of genomic epidemiology as a field of research, has driven an interest in the development of molecular methods and particularly genome sequencing for malaria vector surveillance.
 %%
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{New vector control tools}
+\section{New vector control tools are needed}
 
  
 %%
@@ -251,13 +254,13 @@ This includes further repurposing of agricultural insecticides, as well as the d
 %
 This also includes the development novel control tools that do not rely on insecticides, such as genetic control tools \citep{Davidson1974,Burt2003}.
 %
-In particular, CRISPR/Cas9 gene editing technology had enabled the development of highly effective gene drives, which are selfish genetic elements with the capability to spread through mosquito populations via super-Mendelian inheritance and cause population suppression or modification \citep{Kyrou2018}.
+In particular, CRISPR/Cas9 gene editing technology had enabled the development of highly effective gene drives, which are selfish genetic elements with the capability to spread through mosquito populations via super-Mendelian inheritance and cause population suppression or modification \citep{Burt2003,Kyrou2018}.
 %
-The development of these novel vector control tools has benefited greatly from and continues to rely upon high throughput molecular tools such as whole-genome sequencing, and the availability of high quality open access molecular data resources such as reference genome sequences for malaria vectors @@REF.
+The development of these novel vector control tools has benefited greatly from and continues to rely upon high throughput molecular tools such as whole-genome sequencing, and the availability of high quality open access molecular data resources such as reference genome sequences for malaria vectors \citep{Holt2002,Sharakhova2007,Lawniczak2010,Neafsey2015}.
 %
 Increasingly, the value of and need for data on natural genetic variation in targeted mosquito populations is also becoming evident.
 %
-For example, CRISPR/Cas9 gene drives need to target regions of low genetic diversity to minimise the evolution of resistance @@REF.
+For example, CRISPR/Cas9 gene drives need to target regions of low genetic diversity to minimise the evolution of resistance \citep{Kyrou2018}.
 %%
 
 
@@ -283,13 +286,15 @@ Applied to infectious diseases, NGS allows pathogen genomes from many individual
 %
 Comparing genome sequences also reveals patterns of relatedness between pathogens in different hosts, which can be used to analyse the origins and transmission paths of epidemic diseases such as Ebola @@REF and COVID-19 @@REF, or the transmission dynamics of endemic diseases such as malaria @@REF.
 %
-To promote the application of NGS to malaria research, the Malaria Genomic Epidemiology Network (MalariaGEN) was established in 200@, and provides a framework for collaboration and equitable data sharing between multiple research centres and public health laboratories. 
+To promote the application of NGS to malaria research, the Malaria Genomic Epidemiology Network (MalariaGEN) was established in 200@, and provides a framework for equitable collaboration and data sharing between multiple research centres and public health laboratories with access to different sampling and sequencing capabilities. 
 %
-The @@TODO something about first MalariaGEN P. falciparum paper, how many genomes, what it shows.
+The first large-scale study of genome variation in malaria parasites carried out by MalariaGEN sequenced 227 samples from three continents and discovered 86 thousand polymorphisms within gene coding regions @@REF.
 %
-@@TODO something about subsequent papers, highlighting origins and spread of artemisinin resistance in GMS.
+Subsequent studies expanded this dataset and applied it to identify multiple populations of drug resistant parasites in Cambodia @@Miotto2013 and discover genetic variants associated with antimalarial drug resistance @@Miotto2015.
 %
-Given these successes with use of NGS to study infectious disease pathogens, natural to ask whether could also be used for disease vectors, such as Anopheles mosquitoes that transmit malaria.
+The most recent data release includes high quality genotype calls on 3 million single nucleotide polymorphisms (SNPs) and short insertion/deletions (indels) in 7,000 worldwide samples of P. falciparum infection @@MalariaGEN2020.
+%
+Given these successes with use of NGS to study infectious disease pathogens, it is natural to ask whether could also be used for disease vectors, such as \textit{Anopheles} mosquitoes that transmit malaria.
 %
 
 
@@ -299,7 +304,65 @@ Given these successes with use of NGS to study infectious disease pathogens, nat
 
 
 %%
-@@TODO
+The genome sequence of the major Afrotropical malaria vector species, Anopheles gambiae, was sequenced in 2002 @@REF and updated in @@YEAR @@REF.
+%
+This reference sequence, scaffolded to complete chromosomes, spans a total of @@N nucleotides across the two autosomes and the X sex chromosome, with an additional @@M nucleotides in unplaced contigs.
+%
+The availability of a high quality reference sequence makes possible the analysis of natural genome variation via NGS, because short reads from individual mosquitoes can be aligned to the reference genome and variants identified by comparison with the reference sequence.
+%
+Many questions could be investigated using such data.
+%
+For example, although the general mechanisms of insecticide resistance in malaria vectors are reasonably well established, the specific genes and genetic variants underlying these resistance mechanisms is for the most part unknown.
+%
+Analogous to the discovery of drug resistance variants in malaria parasites or antimicrobial resistance variants in bacteria, NGS could be used to discover and build a more complete picture of the genetic basis of insecticide resistance in malaria vectors \citep{Donnelly2016}.
+%
+Analogous to the analysis of pathogen outbreaks, NGS could be used to analyse the geographical origins and movements of different insecticide resistance mutations between malaria vector populations.
+%
+The analysis of genetic variation can also be used to make demographic inferences about populations, including patterns of migration and changes in population size @@REF.
+%
+In malaria parasites, population genomic methods have been used to identify connections between parasite populations, investigate geographical differences in parasite population size @@REF and analyse demographic changes in response to different control interventions, and analogous questions are also relevant for malaria vectors.
+%
+Many of the gaps in vector surveillance data described above could in principle be filled by NGS of malaria vectors.
+%
+Open data resources of natural genetic variation could also accelerate many forms of research, including the research and development of new vector control tools.
+%%
+
+
+%%
+Thus there are many parallels between genomic epidemiology of pathogens and vectors, but there are also some fundamental differences, which present unique challenges, including:
+%
+\begin{enumerate}
+%
+\item \textbf{Genome size}.
+%
+Whereas viral genomes are typically less than 50 kb, bacterial genomes less than 5 Mb, and eukaryotic pathogen genomes such as \textit{Plasmodium} less than 30 Mb, the Anopheles gambiae genome is an order of magnitude larger at 300 Mb in size.
+%
+\item \textbf{Genome complexity}.
+%
+Viral genomes typically have 10-100 genes, bacteria 100-5,000 genes, Anopheles gambiae has @@N annotated protein-coding genes.
+%
+The Anopheles gambiae genome also has a diversity of repetitive elements including various classes of transposable element, not generally found in viruses or bacteria @@REF or Plasmodia.
+%
+\item \textbf{Sexual reproduction and frequent recombination}.
+%
+Viral and bacterial pathogens are not sexually reproducing, and although some do undergo a form of recombination under certain circumstances, it is much less frequent than that which occurs in sexually reproducing eukaryotes. The recombination rate of Anopheles gambiae is estimated at @@, approximately one recombination event per chromosome arm per generation.
+%
+\item \textbf{Haplodiploidy}. 
+%
+Anopheles gambiae has a haplodiploid sex determination system, where sperm and unfertilized eggs are haploid and individuals are diploid, in common with other dipteran insects, mammals and various other eukaryotic phyla.
+%
+This means that sequencing the genomic DNA from a single individual provides information about both of the genome sequences present within that diploid individual.
+%
+\item \textbf{Large effective population size and high levels of genetic diversity}.
+%
+Previous studies of diversity within Anopheles species based on targeted gene sequencing have estimated that nucleotide diversity is in the range @@-@@ \% @@REF.
+%
+This is indicative of very large effective population size and is at the extreme end of diversity found across the natural world.
+%
+\end{enumerate}
+%
+These factors require that analytical methods need to be established and validated that are appropriate to malaria vectors, in order to provide a solid foundation for epidemiological inferences to be made.
+%%
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -308,7 +371,43 @@ Given these successes with use of NGS to study infectious disease pathogens, nat
 
 
 %%
-@@TODO
+In 2013, the cost of Illumina whole-genome deep sequencing of individual Anopheles mosquitoes had reached the level at which sequencing upwards of 1000 individuals was a feasible goal.
+%
+MalariaGEN, supported by the Malaria Programme at the Wellcome Trust Sanger Institute, established a project to sequence the genomes of mosquitoes in the Anopheles gambiae species complex, collected from natural populations across sub-Saharan Africa.
+%
+To support this venture, a consortium was established, bringing together representatives from 20 different research institutions, including groups with expertise in field sampling, malaria vector biology and population genomics.
+%
+The project was named "The \textit{Anopheles gambiae} 1000 Genomes Project", abbreviated to "Ag1000G".
+%
+The primary goal of the Ag1000G Project was to generate a high quality open access data resource on natural genetic variation within Anopheles gambiae populations, and to make these data available to the research and public health communities.
+%
+The Ag1000G Project also aimed to use these data to investigate the demography and evolution of Anopheles gambiae populations, particularly in relation to malaria vector control interventions.
+%
+The overarching aim was to establish a foundation comprising both a high quality data resource and a collection of proven analytical methods, that could then be used as a platform to develop and scale up NGS as an operational tool for malaria vector surveillance.
+%%
+
+
+%%
+For practical purposes, the Ag1000G Project was divided into three phases.
+%
+My role was to coordinate the Ag1000G Project as a whole, and to lead the data production, curation and analysis performed within the first project phase.
+%
+This thesis describes the work I carried out as part of Ag1000G phase 1, which had the following specific aims:
+%
+\begin{enumerate}
+%
+\item Establish robust methogologies for the genome-wide discovery and genotyping of genetic variation within Anopheles gambiae mosquitoes.
+%
+\item Produce a high-quality open access data resource of genome variation in Anopheles gambiae mosquitoes sampled from multiple species and across a broad geographical range.
+%
+\item Identify genetically distinct mosquito populations, and quantify and compare genetic diversity within these populations.
+%
+\item Investigate evidence for recent evolution in response to insecticide-based malaria vector control interventions. 
+%
+\item Study the prevalence and geographical spread of genetic variants causing resistant to pyrethroid insecticides.
+%
+\end{enumerate}
+%%
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -317,10 +416,12 @@ Given these successes with use of NGS to study infectious disease pathogens, nat
 
 
 %%
-@@TODO
-
-
-
+In this chapter I have described the motivations for the development of genome sequencing as a tool for studying malaria vectors, and the establishment of the Ag1000G Project which provided the context for the work described in this thesis.
+%
+In the next chapter I introduce the Anopheles gambiae species complex, which is the biological subject of this thesis.
+%
+I describe how the species complex was discovered, which marked the introduction of genetic methods into malaria entomology, and provides a valuable historical perspective on present day malaria elimination efforts and the potential role for genomic epidemiology in future vector control programmes.
+%%
 
 
 \printbibliography
