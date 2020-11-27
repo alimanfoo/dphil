@@ -57,7 +57,7 @@ Two methods of malaria vector control are widely used in public health programme
 %
 At the turn of the millenium, a concerted international campaign and partnership was launched with the goal of dramatically increasing the scale and scope of malaria vector control programmes in sub-Saharan Africa \citep{Nabarro1998}.
 %
-Since then, more than 2 billion LLINs have been distributed in total, exceeding 100 million LLINs annually \citep{AMP2020} with more than 40\% of the population at risk sleeping under an LLIN from 2014 onwards \citep{Bhatt2015,WHO2019WMR}.
+Since then, more than 2 billion LLINs have been distributed in total, exceeding 100 million LLINs annually \citep{AMP2020} (Fig. \ref{fig:llins}) with more than 40\% of the population at risk sleeping under an LLIN from 2014 onwards \citep{Bhatt2015,WHO2019WMR}.
 %
 IRS programmes are more targeted and reserved for focal areas of higher malaria transmission, but are nevertheless substantial, protecting more than 10\% of the population at risk in 2010, although declining to lower levels since \citep{Bhatt2015,WHO2019WMR,Tangena2020}. 
 %
@@ -306,23 +306,23 @@ Given these successes with use of NGS to study infectious disease pathogens, it 
 
 
 %%
-The genome sequence of the major Afrotropical malaria vector species, Anopheles gambiae, was sequenced in 2002 @@REF and updated in @@YEAR @@REF.
+The genome sequence of the major Afrotropical malaria vector species, \textit{Anopheles gambiae}, was sequenced in 2002 and updated in 2007 \citep{Holt2002,Sharakhova2007}.
 %
-This reference sequence, scaffolded to complete chromosomes, spans a total of @@N nucleotides across the two autosomes and the X sex chromosome, with an additional @@M nucleotides in unplaced contigs.
+This reference sequence, scaffolded to complete chromosomes, spans a total of 230 Mb across the two autosomes and the X sex chromosome, with an additional 42.6 Mb in unplaced contigs.
 %
 The availability of a high quality reference sequence makes possible the analysis of natural genome variation via NGS, because short reads from individual mosquitoes can be aligned to the reference genome and variants identified by comparison with the reference sequence.
 %
 Many questions could be investigated using such data.
 %
-For example, although the general mechanisms of insecticide resistance in malaria vectors are reasonably well established, the specific genes and genetic variants underlying these resistance mechanisms is for the most part unknown.
+For example, although the general mechanisms of insecticide resistance in malaria vectors are reasonably well established, the specific genes and genetic variants underlying these resistance mechanisms are for the most part unknown.
 %
 Analogous to the discovery of drug resistance variants in malaria parasites or antimicrobial resistance variants in bacteria, NGS could be used to discover and build a more complete picture of the genetic basis of insecticide resistance in malaria vectors \citep{Donnelly2016}.
 %
 Analogous to the analysis of pathogen outbreaks, NGS could be used to analyse the geographical origins and movements of different insecticide resistance mutations between malaria vector populations.
 %
-The analysis of genetic variation can also be used to make demographic inferences about populations, including patterns of migration and changes in population size @@REF.
+The analysis of genetic variation can also be used to make demographic inferences about populations, including patterns of migration and changes in population size.
 %
-In malaria parasites, population genomic methods have been used to identify connections between parasite populations, investigate geographical differences in parasite population size @@REF and analyse demographic changes in response to different control interventions, and analogous questions are also relevant for malaria vectors.
+Of particular relevance to malaria vectors would be investigating demographic changes in response to vector control interventions.
 %
 Many of the gaps in vector surveillance data described above could in principle be filled by NGS of malaria vectors.
 %
@@ -331,35 +331,35 @@ Open data resources of natural genetic variation could also accelerate many form
 
 
 %%
-Thus there are many parallels between genomic epidemiology of pathogens and vectors, but there are also some fundamental differences, which present unique challenges, including:
+Although there are parallels between genomic epidemiology of pathogens and vectors, there are also fundamental differences which present unique challenges, including:
 %
 \begin{enumerate}
 %
 \item \textbf{Genome size}.
 %
-Whereas viral genomes are typically less than 50 kb, bacterial genomes less than 5 Mb, and eukaryotic pathogen genomes such as \textit{Plasmodium} less than 30 Mb, the Anopheles gambiae genome is an order of magnitude larger at 300 Mb in size.
+Whereas viral genomes are typically less than 50 kb, bacterial genomes less than 5 Mb, and eukaryotic pathogen genomes such as \textit{Plasmodium} less than 30 Mb, \textit{Anopheles} genomes are an order of magnitude larger at \textasciitilde 300 Mb in size \citep{Neafsey2015}.
 %
 \item \textbf{Genome complexity}.
 %
-Viral genomes typically have 10-100 genes, bacteria 100-5,000 genes, Anopheles gambiae has @@N annotated protein-coding genes.
+Viral genomes typically have 10-100 genes, bacteria 100-5,000 genes, \textit{Anopheles gambiae} has 13,057 annotated protein-coding genes \citep{AgamP4.12,GiraldoCalderon2015}.
 %
-The Anopheles gambiae genome also has a diversity of repetitive elements including various classes of transposable element, not generally found in viruses or bacteria @@REF or Plasmodia.
+The \textit{Anopheles gambiae} genome also has a diversity of repetitive elements including various classes of transposable element, not generally found in viruses or bacteria or \textit{Plasmodia} \citep{Tu2004,FernandezMedina2011}.
 %
 \item \textbf{Sexual reproduction and frequent recombination}.
 %
-Viral and bacterial pathogens are not sexually reproducing, and although some do undergo a form of recombination under certain circumstances, it is much less frequent than that which occurs in sexually reproducing eukaryotes. The recombination rate of Anopheles gambiae is estimated at @@, approximately one recombination event per chromosome arm per generation.
+Viral and bacterial pathogens are not sexually reproducing, and although some do undergo a form of recombination under certain circumstances, it is much less frequent than that which occurs in sexually reproducing eukaryotes. The recombination rate of \textit{Anopheles gambiae} is estimated at ~1 cM/Mb, approximately one recombination event per chromosome per generation \citep{Pombi2006}.
 %
 \item \textbf{Haplodiploidy}. 
 %
-Anopheles gambiae has a haplodiploid sex determination system, where sperm and unfertilized eggs are haploid and individuals are diploid, in common with other dipteran insects, mammals and various other eukaryotic phyla.
+\textit{Anopheles gambiae} has a haplodiploid sex determination system, where sperm and unfertilized eggs are haploid and individuals are diploid, in common with other dipteran insects, mammals and various other eukaryotic phyla.
 %
 This means that sequencing the genomic DNA from a single individual provides information about both of the genome sequences present within that diploid individual.
 %
 \item \textbf{Large effective population size and high levels of genetic diversity}.
 %
-Previous studies of diversity within Anopheles species based on targeted gene sequencing have estimated that nucleotide diversity is in the range @@-@@ \% @@REF.
+Previous studies of diversity within \textit{Anopheles} species based on sequencing of individual genes have found nucleotide diversity at synonymous coding sites in the range 0.4-2.9 \% depending on species, with \textit{Anopheles gambiae} being the highest among these \citep{Leffler2012}.
 %
-This is indicative of very large effective population size and is at the extreme end of diversity found across the natural world.
+This is indicative of very large effective population size and is at the extreme end of diversity found across the tree of life.
 %
 \end{enumerate}
 %
