@@ -373,57 +373,100 @@ These factors require that analytical methods need to be established and validat
 
 
 %%
-In 2013, the cost of Illumina whole-genome deep sequencing of individual Anopheles mosquitoes had reached the level at which sequencing upwards of 1000 individuals was a feasible goal.
+In 2013, the cost of Illumina whole-genome deep sequencing of individual \textit{Anopheles} mosquitoes had reached the level at which sequencing upwards of 1000 individuals was a feasible goal.
 %
-MalariaGEN, supported by the Malaria Programme at the Wellcome Trust Sanger Institute, established a project to sequence the genomes of mosquitoes in the Anopheles gambiae species complex, collected from natural populations across sub-Saharan Africa.
+MalariaGEN, supported by the Malaria Programme at the Wellcome Trust Sanger Institute, established a project to sequence the genomes of mosquitoes in the \textit{Anopheles gambiae} species complex, collected from natural populations across sub-Saharan Africa.
 %
 To support this venture, a consortium was established, bringing together representatives from 20 different research institutions, including groups with expertise in field sampling, malaria vector biology and population genomics.
 %
-The project was named "The \textit{Anopheles gambiae} 1000 Genomes Project", abbreviated to "Ag1000G".
+The project was named ``The \textit{Anopheles gambiae} 1000 Genomes Project'', abbreviated to ``Ag1000G''.
 %
-The primary goal of the Ag1000G Project was to generate a high quality open access data resource on natural genetic variation within Anopheles gambiae populations, and to make these data available to the research and public health communities.
+The primary goal of the Ag1000G Project was to generate a high quality open access data resource on natural genetic variation within \textit{Anopheles gambiae} populations, and to make these data available to the research and public health communities.
 %
-The Ag1000G Project also aimed to use these data to investigate the demography and evolution of Anopheles gambiae populations, particularly in relation to malaria vector control interventions.
+The Ag1000G Project also aimed to use these data to investigate the demography and evolution of \textit{Anopheles gambiae} populations, particularly in relation to malaria vector control interventions.
 %
-The overarching aim was to establish a foundation comprising both a high quality data resource and a collection of proven analytical methods, that could then be used as a platform to develop and scale up NGS as an operational tool for malaria vector surveillance.
+The ultimate aim was to establish a foundation comprising both a high quality data resource and a collection of proven analytical methods, that could then be used as a platform to develop and scale up NGS as an operational tool for malaria vector surveillance.
+%
+
+%%
+For practical purposes, the Ag1000G Project was divided into three phases:
+%
+\begin{itemize}
+%
+\item \textbf{Ag1000G phase 1} sequenced 765 individual mosquitoes sample from natural populations in 8 African countries, with representation of two major malaria vector species within the \textit{Anopheles gambiae complex}, \textit{Anopheles gambiae} and \textit{Anopheles coluzzii}. Primary analyses of those data were published in \citet{Ag1000G2017}.
+%
+\item \textbf{Ag1000G phase 2} expanded the resource to include 1,142 wild-caught mosquitoes from 13 countries, with increased representation of \textit{Anopheles coluzzii}. Primary analyses were published recently in \citet{Ag1000G2020}.
+%
+\item \textbf{Ag1000G phase 3} is expanding the resource to include 2,784 wild-caught mosquitoes from 19 countries, with representation of a third vector species, \textit{Anopheles arabiensis}. Analyses of those data are ongoing, with data scheduled for release in early 2021.
+%
+\end{itemize}
+
+
+
+%%
+My role within the Ag1000G Consortium is to coordinate the project as a whole, and to lead data production, curation and analysis.
+%
+Although this work has been carried out in collaboration with other members of the Ag1000G Consortium, there are specific areas where I made individual contributions, and those are the focus of this thesis.
+%
+In particular, this thesis documents the contributions I made during first project phase.
+%%
+
+
+\section{Structure of this thesis}
+
+
+%%
+In the next chapter I take a brief historical detour, in order to introduce the \textit{Anopheles gambiae} species complex, which is the biological subject of this thesis.
+%
+Whilst working on the Ag1000G project I was fortunate to come into possession of a collection of previously unpublished letters between entomologists George Davidson and Hugh Paterson, documenting their collaboration during the 1960s which led to the discovery of the \textit{Anopheles gambiae} complex.
+%
+Their discovery marked the introduction of genetic methods into malaria entomology, and their correspondence provides a unique historical perspective on present malaria elimination efforts, as well as the potential role for genomic epidemiology in future vector control programmes.
+%%
+
+%%
+In the third chapter I describe the production of the Ag1000G phase 1 genome variation data resource, which comprises high quality data on 52 million single nucleotide polymorphisms (SNPs).
+%
+The aim of the chapter is to describe robust methodologies for genome-wide discovery and genotyping of SNPs from Illumina high throughput deep sequencing of individual \textit{Anopheles} mosquitoes, and to evaluate the accuracy and sensitivity of the data produced in Ag1000G phase 1 using those methods.
+%
+The chapter concludes by describing the overall levels of genetic diversity within the Ag1000G phase 1 cohort as a whole, and provides confirmation that \textit{Anopheles gambiae} mosquitoes are indeed among the most genetically diverse organisms in the natural world.
 %%
 
 
 %%
-For practical purposes, the Ag1000G Project was divided into three phases.
+In the fourth chapter I analyse the Ag1000G phase 1 data resource to investigate genetic population structure among wild-caught mosquitoes.
 %
-My role was to coordinate the Ag1000G Project as a whole, and to lead the data production, curation and analysis performed within the first project phase.
+I also compare genetic diversity within these populations and quantify genetic differentiation between them.
 %
-This thesis describes the work I carried out as part of Ag1000G phase 1, which had the following specific aims:
+Ag1000G phase 1 sampled mosquito populations from a broad geographical range, crossing the entire span of continental Africa from coast to coast, and there are many contrasts between the ecosystems inhabited by \textit{Anopheles gambiae} mosquitoes across this range, including coastal to inland locations, deep forest to savannah, and urban to rural settings.
 %
-\begin{enumerate}
-%
-\item Establish robust methogologies for the genome-wide discovery and genotyping of genetic variation within Anopheles gambiae mosquitoes.
-%
-\item Produce a high-quality open access data resource of genome variation in Anopheles gambiae mosquitoes sampled from multiple species and across a broad geographical range.
-%
-\item Identify genetically distinct mosquito populations, and quantify and compare genetic diversity within these populations.
-%
-\item Investigate evidence for recent evolution in response to insecticide-based malaria vector control interventions. 
-%
-\item Study the prevalence and geographical spread of genetic variants causing resistant to pyrethroid insecticides.
-%
-\end{enumerate}
+The aim of the chapter is to uncover heterogeneities among the mosquito populations sampled across these diverse settings, and to begin to form an understanding of how major geographical and ecological features have influenced the shape, size and connectivity of contemporary populations.
 %%
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Conclusions}
+%%
+In the fifth chapter I continue the analysis of the Ag1000G phase 1 resource, performing genome-wide scans for signals of recent positive selection.
+%
+The aim of the chapter is to identify genes experiencing the most extreme selection pressures, and thus which are likely to be involved in the adaptive response to the scale-up of vector control interventions within the last two decades.
+%
+I discover strong signals of selection at six functionally-validated insecticide resistance genes, providing confirmation that these genes are the central drivers of insecticide resistance in these mosquito populations.
+%
+I also describe the design and implementation of a web resource to allow exploration and fine-mapping of novel selection signals, and illustrate its use to investigate a novel selection signal at a diacylglycerol kinase gene, a novel candidate with potential links to insecticide resistance.
+%%
 
 
 %%
-In this chapter I have described the motivations for the development of genome sequencing as a tool for studying malaria vectors, and the establishment of the Ag1000G Project which provided the context for the work described in this thesis.
+In the sixth chapter I focus on a single gene encoding the voltage-gated sodium channel protein, which is the physiological binding target of pyrethroid insecticides, and where amino acid substitutions have been shown to cause target-site insensitivity to pyrethroids.
 %
-In the next chapter I introduce the Anopheles gambiae species complex, which is the biological subject of this thesis.
+I describe the discovery of novel non-synonymous substitutions within the \textit{Vgsc} gene, and present population-genetic evidence that these substitutions are unlikely to be neutral and should be studied further for evidence of an insecticide resistance phenotype.
 %
-I describe how the species complex was discovered, which marked the introduction of genetic methods into malaria entomology, and provides a valuable historical perspective on present day malaria elimination efforts and the potential role for genomic epidemiology in future vector control programmes.
+I also use haplotype data from Ag1000G phase 1 to analyse the genetic backgrounds on which known resistance alleles are found, and make inferences about the spread of resistance alleles between different countries and mosquito species.
 %%
+
+
+%%
+In the final chapter I look forward to future applications of genome sequencing within operational vector surveillance programmes, exploring the potential pathway to translation. 
+%%
+
 
 
 \printbibliography

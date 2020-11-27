@@ -29,5 +29,5 @@ function rebuild {
 
 }
 
-rebuild abstract
+#rebuild abstract
 rebuild chapter1
