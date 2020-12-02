@@ -3,6 +3,8 @@
 # ensure bail out on error
 set -eo pipefail
 
+source binder/env.sh
+
 function rebuild {
 
     # clean
