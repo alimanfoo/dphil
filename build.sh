@@ -3,9 +3,6 @@
 # ensure bail out on error
 set -eo pipefail
 
-# setup environment
-source binder/env.sh
-
 function rebuild {
 
     # clean
@@ -29,5 +26,4 @@ function rebuild {
 
 }
 
-#rebuild abstract
-rebuild chapter1
+rebuild $1
