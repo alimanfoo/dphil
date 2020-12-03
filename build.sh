@@ -28,4 +28,11 @@ function rebuild {
 
 }
 
-rebuild $1
+if [ -f ${1}.tex ]; then
+    rebuild $1
+else
+    rebuild abstract
+    rebuild chapter1
+    rebuild chapter2
+    rebuild chapter2-supplementary
+fi
