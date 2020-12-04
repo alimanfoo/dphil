@@ -3,7 +3,6 @@
 # ensure bail out on error
 set -eo pipefail
 
-# setup environment
 source binder/env.sh
 
 function rebuild {
@@ -29,5 +28,11 @@ function rebuild {
 
 }
 
-#rebuild abstract
-rebuild chapter1
+if [ -f ${1}.tex ]; then
+    rebuild $1
+else
+    rebuild abstract
+    rebuild chapter1
+    rebuild chapter2
+    rebuild chapter2-supplementary
+fi
