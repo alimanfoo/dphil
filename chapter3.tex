@@ -1,5 +1,6 @@
 \documentclass[a4paper,11pt,abstracton,hidelinks]{scrartcl}
 \usepackage{dphil}
+\usepackage{wasysym}
 \addbibresource{refs.bib}
 % hide section numbers
 \setcounter{secnumdepth}{0}
@@ -52,11 +53,11 @@ For logistical reasons the project was divided into three phases, and a total of
 %
 A further @ mosquito specimens comprising parents and progeny of @ lab crosses were also sequenced within this project phase.
 %
-This chapter is mostly methodological, describing the processes and analyses developed and used to identify and genotype single nucleotide polymorphisms (SNPs) among these specimens.
+This chapter is primarily methodological, describing the processes and analyses developed and used to identify and genotype single nucleotide polymorphisms (SNPs) among these specimens.
 %
 For completeness, I have included some brief methodological information regarding population sampling, sample preparation and whole-genome sequencing which were performed by members of the Ag1000G Consortium.
 %
-However, the main focus of this chapter is the work I contributed to production of a high quality genome-wide resource of SNP data from sequencing of these specimens.
+However, the main focus of this chapter is the work I contributed to production and validation of a high quality genome-wide resource of SNP data from sequencing of these specimens.
 %
 Where work was carried out by or in collaboration with other members of the Ag1000G Consortium I have indicated that within the relevant subsection.
 
@@ -74,22 +75,28 @@ Where work was carried out by or in collaboration with other members of the Ag10
 \textit{Population sampling was performed by members of the Ag1000G Consortium. Below is a brief description of the cohort of mosquito specimens obtained for sequencing. A more detailed description is available in \citet{Ag1000G2017}.}
 
 
+%%
 A total of 888 mosquito specimens collected from natural populations were included in the Ag1000G phase 1 cohort. 
 %
 This included mosquitoes representing two major malaria vector species  \textit{An. gambiae} and \textit{An. coluzzii}.
 %
-Mosquitoes were sampled from 8 countries in sub-Saharan Africa representing a broad geographical range spanning the continent: Guinea-Bissau, Guinea, Burkina Faso, Cameroon, Gabon, Angola, Uganda and Kenya.
+Mosquitoes were sampled from 8 countries in sub-Saharan Africa representing a broad geographical range spanning the continent: Guinea-Bissau, Guinea, Burkina Faso, Cameroon, Gabon, Angola, Uganda and Kenya (Fig. \ref{fig:map}).
 %
 Mosquitoes had been collected prior to the initiation of the Ag1000G Project as part of previous field studies, and were collected at different times, with the earliest collections being in 2000 (Gabon) and the most recent in 2012 (Burkina Faso).
 %
 Because these mosquitoes were collected in the context of different studies, a number of different collection methods were used, including light traps, pyrethrum spray catch and larval collection.
 %
-In addition to the wild-caught specimens, a further @@N mosquitoes were obtained from four lab crosses, each cross comprising two parents and up to @@N progeny, where parents were drawn from established reference colonies.
+In addition to the wild-caught specimens, a further @@N mosquitoes were obtained from four lab crosses, each cross comprising two parents and up to @@N progeny, where parents were drawn from established reference colonies (Fig. \ref{fig:map} inset).
 %
 The main rationale for including lab crosses was to provide a mechanism for calibrating and measuring the accuracy of variant calling methods, because lab crosses allow for the analysis of genetic inheritance and Mendelian inconsistencies between parents and offspring, which can be a useful proxy of variant calling errors @REF.
 
 
-@TODO figure of sampling locations
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{artwork/chapter3/map.jpeg}
+\caption{Map of sampling locations and sample sizes. Numbers of specimens are shown by gender. Parental colonies and numbers of offspring for lab crosses are shown inset. Numbers of samples are shown after all quality control steps described in this chapter were applied. @TODO explain colours. This figure was produced in collaboration with Chris Clarkson.}
+\label{fig:map}
+\end{figure}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
