@@ -199,6 +199,75 @@ The colony crosses samples were then genotyped at the same set of SNPs using GAT
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Sample quality control}
+
+
+%
+A number of issues can arise in the process of sample and library preparation and high-throughput sequencing which result in data of insufficient quality to perform robust variant discovery and genotyping.
+%
+These issues include:
+%
+\begin{itemize}
+%
+\item \textbf{Low yield.} The number of sequence reads generated for and individual sample is not sufficient to achieve the desired depth of coverage.
+%
+\item \textbf{Low library complexity.} If the input DNA quantity is insufficient, the DNA amplification process can generate sufficient material for sequencing, but there may be significant bias, in the sense that some genome regions are overrepresented and others are underrepresented or not covered at all \citep{Head2018}.
+%
+\item \textbf{Cross-contamination.} During specimen handling, sample preparation and library preparation, material and thus DNA from one sample may contaminate another. In this case the sequencing data generated will include a mixture of reads from the original sample and the contaminating sample.
+%
+\item \textbf{Metadata errors.} Errors may arise during the recording and transfer of metadata about specimens and samples between information systems. This can lead to situations where the identity of one sample becomes swapped with that of another sample.
+%
+\item \textbf{Unexpected taxa.} In Ag1000G phase 1 only \textit{An. gambiae} and \textit{An. coluzzii} mosquitoes were to be included. However, not all specimens had the conventional diagnostic species assays performed prior to selection, and thus were only identified morphologically.
+\end{itemize}
+%
+In this subsection I describe analyses performed to identify and exclude samples affected by one or more of these issues.
+
+
+\subsubsection{Sequencing data quality}
+
+
+\begin{figure}[t!]
+\centering
+\includegraphics[width=\textwidth]{artwork/chapter3/coverage.pdf}
+\caption{Sequencing data quality diagnostics.
+%
+Each marker represents an individual sample.
+%
+Mean coverage is computed as total number of sequenced bases divided by genome size.
+%
+Percent genome covered is percent of nucleotides in reference genome with at least one read aligned.
+%
+Highlighted groups A, B and C indicate different quality issues, described in the text.
+}
+%
+\label{fig:coverage}
+\end{figure}
+
+
+%%
+I analysed summary statistics generated from the sequence read alignments to identify samples with sequencing data quality issues such as low yield or low library complexity .
+%
+These statistics included the number of sequence reads, mean coverage, percentage of reads mapped tro the reference genome, percentage of reads marked as duplicates, and percentage of aligned bases mismatching the reference genome.
+%
+I plotted various combinations of these statistics to investigate their distributions and identify outliers.
+%
+A particularly informative plot was to compare the mean coverage and the percentage of genome covered by at least one read (Fig. \ref{fig:coverage}).
+%
+Most samples obtained greater than 80\% of the genome covered, but a set of 13 samples had both mean coverage below $7\times$ and less than 80\% of the genome covered, indicating insufficient coverage due to low sequencing yield (Fig. \ref{fig:coverage} group A).
+%
+There were also four samples with high mean coverage but less than 80\% genome covered.
+%
+Two of these samples had a high rate of duplicate reads, and thus poor genome coverage was likely due to low library complexity (Fig. \ref{fig:coverage} group B).
+%
+The remaining two samples had a higher mismatch rate, thus poor genome coverage was likely due to an unexpected taxon with higher divergence from the reference genome (Fig. \ref{fig:coverage} group C).
+%
+On the basis of these analyses, the percentage of genome covered appeared to be a useful metric capturing multiple quality issues, and I excluded 17 samples with less than 80\% genome covered.
+%
+These samples were excluded prior to SNP discovery and genotyping.
+% 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Results}
 
