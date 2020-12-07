@@ -53,7 +53,7 @@ For logistical reasons the project was divided into three phases, and a total of
 %
 A further 80 mosquito specimens comprising parents and progeny of four colony crosses were also sequenced within this project phase.
 %
-This chapter is primarily methodological, describing the processes and analyses developed and used to identify and genotype single nucleotide polymorphisms (SNPs) among these specimens.
+This chapter is primarily methodological, describing the processes and analyses developed and used to identify, genotype and validate single nucleotide polymorphisms (SNPs) among these specimens.
 %
 For completeness, I have included some brief methodological information regarding population sampling and whole-genome sequencing which were performed by members of the Ag1000G Consortium.
 %
@@ -75,17 +75,15 @@ Where work was carried out by or in collaboration with other members of the Ag10
 \begin{figure}[t!]
 \centering
 \includegraphics[width=\textwidth]{artwork/chapter3/map.jpeg}
-\caption{Map of sampling locations and sample sizes.
+\caption{Map of sampling locations.
 %
 Numbers of specimens are shown by gender.
 %
 Parental colonies and numbers of offspring for colony crosses are shown inset.
 %
-Numbers of samples are shown after all quality control steps described in this chapter were applied. 
+Numbers of samples are shown after removing samples that failed any of the quality control steps described in this chapter. 
 %
-@TODO explain colours. 
-%
-In the table below, the sequencing depth column shows the median (interquartile range) for the depth of coverage obtained for all samples, grouped by species and country of collection.
+Colours in the map denote ecosystem classes, see \citet{Sayre2013} Fig. 9 for a complete colour legend. 
 %
 This figure was produced in collaboration with Chris Clarkson.}
 \label{fig:map}
@@ -117,7 +115,7 @@ DNA extraction was performed on individual mosquitoes and genomic DNA samples we
 \subsection{Whole-genome sequencing}
 
 
-\textit{Whole-genome sequencing was performed by staff at the Wellcome Sanger Institute sample logistics, sequencing and informatics facilities. Below is a brief description of sequencing methods. A more detailed description is available in \citet{Ag1000G2017}.}
+\textit{Whole-genome sequencing was performed by staff at the MalariaGEN Resource Center and the Wellcome Sanger Institute sample logistics, sequencing and informatics facilities. Below is a brief description of sequencing methods. A more detailed description is available in \citet{Ag1000G2017}.}
 
 
 %%
@@ -133,9 +131,46 @@ Cluster generation and sequencing were undertaken per the manufacturer's protoco
 %
 Target coverage was $30\times$ per individual.
 %
-The median depth of coverage obtained per individual was between $29\times$ and $33\times$ depending on country (Fig. \ref{fig:map}).
+The median depth of coverage obtained per individual was at least $29\times$ for all of the sample sets contributed (Table \ref{table:coverage}).
 %
 
+\begin{table}[t]
+
+\begin{center}
+
+\begin{threeparttable}
+
+\caption{Depth of coverage.
+Coverage column shows median (interquartile range) depth coverage for all samples by country and species.
+%
+Numbers of samples and coverage values are shown after removing samples that failed any of the quality control steps described in this chapter. 
+%
+Species status is uncertain for samples from Guinea-Bissau and Kenya, see Chapter 4 for further explanation.
+}
+
+\label{table:coverage}
+
+\begin{tabular}{llll}
+ \hline
+ \textbf{Country} & \textbf{Species} & \textbf{No. samples} (\female, \male) & \textbf{Coverage} \\
+ \hline
+ Angola & \textit{An. coluzzii} & 60, 0 & 30 (22-38) \\
+ Burkina Faso & \textit{An. coluzzii} & 66, 3 & 33 (26-44) \\
+ Burkina Faso & \textit{An. gambiae} & 61, 20 & 31 (22-68) \\
+ Cameroon & \textit{An gambiae} & 232, 43 & 29 (19-53) \\
+ Gabon & \textit{An. gambiae} & 56, 0 & 31 (21-37) \\
+ Guinea & \textit{An. gambiae} & 31, 0 & 29 (19-39) \\
+ Uganda & \textit{An. gambiae} & 103, 0 & 31 (27-39) \\
+ Guinea Bissau & uncertain & 46, 0 & 30 (24-41) \\
+ Kenya & uncertain & 44, 0 & 31 (18-57) \\
+ \hline
+\end{tabular}
+
+\end{threeparttable}
+
+\end{center}
+
+\end{table}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
