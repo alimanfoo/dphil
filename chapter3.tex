@@ -174,6 +174,31 @@ Species status is uncertain for samples from Guinea-Bissau and Kenya, see Chapte
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{SNP discovery and genotyping}
+
+
+\textit{SNP discovery and genotyping was performed in collaboration with the MalariaGEN Resource Center data production team. Below is a brief description of SNP calling methods. A more detailed description is available in \citet{Ag1000G2017}.}
+
+
+%%
+SNP discovery and genotyping was formed following best practices defined for the Genome Analysis Toolkit (GATK) version 2 \citep{McKenna2010,Depristo2011,VanderAuwera2013}.
+%
+Sequence reads from each sample were aligned to the AgamP3 reference genome \citep{Holt2002,Sharakhova2007} using BWA version 0.6.2 \citep{Li2009} using the \textit{aln} and \textit{sampe} commands.
+%
+A BAM file for each individual was constructed by merging alignments from multiple lanes, and duplicate reads were marked using Picard version 1.96.
+%
+Reads were then re-aligned around putative indels found within the alignments using GATK.
+%
+SNP discovery and genotyping was performed using GATK \textit{UnifiedGenotyper}.
+%
+\textit{UnifiedGenotyper} was run within non-overlapping 10 kb chunks and the results combined into a single variant call format (VCF) file for each chromosome arm using the \textit{vcf-concat} command from vcftools version 0.1.10.
+%
+SNP discovery was performed using the 888 wild-caught samples.
+%
+The colony crosses samples were then genotyped at the same set of SNPs using GATK \textit{UnifiedGenotyper}.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Results}
 
