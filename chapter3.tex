@@ -329,7 +329,7 @@ To be conservative, I excluded all samples with verifyBamID contamination $>2\%$
 %
 Each marker represents a sample.
 %
-The left panel shows samples from mosquitoes reported in metadata as female, the right panel shows samples reported as male.
+The left panel (labelled F) shows samples from mosquitoes reported in metadata as female, the right panel (labelled M) shows samples reported as male.
 %
 $n\_het\_x$ = No. of heterozygous genotype calls on the $X$ chromosome.
 %
@@ -372,14 +372,77 @@ Cross-checking against the contamination analysis showed these apparently androg
 \subsubsection{Population outliers}
 
 
-@@TODO
+\begin{figure}[t!]
+\centering
+\includegraphics[width=\textwidth]{artwork/chapter3/popout.pdf}
+\caption{Example of population outlier analysis for Guinea \textit{An. gambiae}.
+%
+Six samples are evident as outliers, having elevated genetic distance and appearing as outliers in PCA.
+%
+\textbf{a}, Pairwise genetic distance between samples, visualised as a heatmap.
+%
+\textbf{b}, PCA showing first and second principal components.
+%
+}
+%
+\label{fig:popout}
+\end{figure}
+
+
+%%
+Mosquitoes in the phase 1 cohort represented 8 countries and two species. 
+%
+In Burkina Faso, both \textit{An. gambiae} and \textit{An. coluzzii} were represented, whereas in all other countries only a single species was represented (either \textit{An. gambiae} or \textit{An. coluzzii}), with the exception of Guinea-Bissau and Kenya where the species status was uncertain (Chapter 4).
+%
+In some countries, specimens had been collected from multiple sites, but in all cases the sites were within a relatively small geographical distance (Fig. \ref{fig:map}).
+%
+Thus in general we would expect to see little or no genetic structure among the specimens of any given species sampled from within a single country.
+%
+To confirm that the country of origin reported for each specimen in the sample metadata provided by Ag1000G consortium partners was consistent with the patterns of genetic population structure present in the data, I performed an outlier analysis using both pairwise genetic distance and principal components analysis (PCA; \cite{Patterson2006}).
+%
+In this analysis I used SNPs from Chromosome 3, then grouped samples by reported country and species, then performed both a PCA analysis and a pairwise distance analysis on each group in turn (e.g., Fig. \ref{fig:popout}).
+%
+If any samples were present in a group because of incorrect geographical or species metadata, they would be expected to appear as an outlying group of samples, with elevated genetic distance from other samples, and appearing as outliers in PCA.
+%
+In total I identified and excluded 55 samples as population outliers.
+%%
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Minimum depth of coverage}
 
 
-@@TODO
+\begin{figure}[t!]
+\centering
+\includegraphics[width=\textwidth]{artwork/chapter3/coverage_hetz.pdf}
+\caption{Coverage and heterozygosity.
+%
+Each marker represents a sample, coloured by country of collection.
+%
+No. het. genotypes = number of heterozygous genotype calls on autosomal chromosomes.
+%
+}
+%
+\label{fig:coverage_hetz}
+\end{figure}
+
+
+%%
+In the analysis of sequence data quality described above I excluded samples with less than 80\% of the reference genome covered by at least one read, which is a conservative way to remove samples that are highly likely to have excessive levels of missingness in their genotype calls.
+%
+However, for accurate genotyping calling, particularly of heterozygous genotype calls, it is necessary to have sufficient depth of coverage.
+%
+Previous studies of SNP calling from whole genome sequencing data have found that coverage of $12\times$ is sufficient for calling heterozygous genotypes accurately \citep{Meynert2014}.
+%
+I examined the total number of heterozygous genotype calls on autosomal chromosomes among the Ag1000G phase 1 samples, plotted against the genome-wide average depth of coverage, for the remaining samples not previously excluded in other sample QC analyses (Fig. \ref{fig:coverage_hetz}).
+%
+Although there are clear differences in the degree of heterozygosity in samples from different countries, which likely reflects differences in genetic diversity of the sampled populations, below $14\times$ there is a clear trend towards lower heterozygous genotype calls.
+%
+This could indicate an effect such as a bias in the underlying genotype calling, whereby heterozygous genotypes are undercalled at lower coverage.
+%
+To mitigate this I excluded samples with coverage $<14\times$ from the final dataset.
+%%
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
