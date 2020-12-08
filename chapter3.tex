@@ -634,7 +634,59 @@ This inversion is known to be segregating in many populations and the inverted k
 \subsubsection{Variant filters}
 
 
-@@TODO
+%%
+The raw variant callset produced by GATK \textit{UnifiedGenotyper} comprised a total of 95,335,499 SNPs distributed across the whole genome.
+%
+I designed a set of filters to annotate those SNPs likely to be false discoveries, and thus provide a means of excluding them from downstream analyses.
+%
+I first filtered SNPs using the genome accessibility criteria defined above.
+%
+I.e., a SNP was filtered if any of the accessibility criteria for the corresponding genome position were not met.
+%
+I then examined a set of variant metrics produced by \textit{UnifiedGenotyper} for each SNP, including the following metrics:
+%
+\begin{itemize}
+%
+\item \textbf{QD.} "Quality by depth", calculated as the evidence for an alternate allele at the site (QUAL, pred-scaled probability of no variant) divided by the total depth of coverage in samples where the alternate allele was observed. 
+%
+\item \textbf{FS.} Fisher's exact test for strand-bias; phred-scaled probability of observing the given numbers of reads aligned to the forward and reverse strand if these were equally likely.
+%
+\item \textbf{ReadPosRankSum.} Rank sum test for relative positioning of reference and alternate alleles within reads. Some sequencing errors tend to occur towards the ends of reads, and this metric quantifies the extent of any bias in read positioning between reference and alternate alleles.
+%
+\item \textbf{HRun.} The length of any adjacent homopolymer run. Homopolymer runs are enriched for sequencing errors in Illumina sequencing data. 
+%
+\end{itemize}
+
+
+\begin{figure}[t!]
+\centering
+\includegraphics[width=1.1\textwidth,center]{artwork/chapter3/variant_filtering.pdf}
+\caption{Examples of variant filter calibration analyses using Mendelian error and transition/transversion (Ti/Tv) ratio.
+%
+\textbf{a}, Analysis of QD and Mendelian error in a colony cross. Histogram shows the numbers of variants segregating in the cross on chromosome arm 3R, line shows percentage of those variants with at least one Mendelian error.
+%
+\textbf{b}, Analysis of QD and Ti/Tv. Histogram shows the number of variants segregating in the wild-caught samples, line shows the Ti/Tv ratio.
+%
+\textbf{c}, Joint analysis of QD, MQ and Mendelian error in a colony cross. Colour denotes the percentage of SNPs with at least one Mendelian error.
+%
+\textbf{d}, Joint analysis of QD, MQ and Ti/Tv. Colour denotes the Ti/Tv ratio for SNPs within each bin.
+}
+%
+\label{fig:variant_filters}
+\end{figure}
+
+
+%%
+Taking a similar approach to the genome accessibility analysis, I used Mendelian error in the crosses and Ti/Tv ratios to investigate which variant metrics appeared to be informative with respect to variant calling errors, and where filter thresholds should be set (e.g., Fig. \ref{fig:variant_filters}).
+%
+Based on these analyses I filtered SNPs that failed any of the following criteria: QD $< 5$; FS $> 60$; ReadPosRankSum $< -8$; HRun $> 4$.
+%
+Of 95,335,499 SNPs reported in the raw callset, 52,525,957 passed all filters.
+%
+Prior to filtering, the rate of Mendelian error in genotype calls expected to be heterozygous (0/1) in the progeny of the crosses (where parental genotypes were 0/0 x 1/1 or vice versa) was between 13.0-21.7\% depending on the cross.
+%
+After filtering, the Mendelian error rate was 0.3-0.9\%.
+%%
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -642,7 +694,7 @@ This inversion is known to be segregating in many populations and the inverted k
 \subsection{Production of an analysis-ready genome variation dataset}
 
 
-@@TODO
+@TODO
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -650,7 +702,7 @@ This inversion is known to be segregating in many populations and the inverted k
 \subsection{Validation with Sanger sequencing}
 
 
-@@TODO
+@TODO
 
 
 
