@@ -2,7 +2,6 @@
 *.aux
 *.bcf
 *.out
-*.pdf
 *.run.xml
 *.synctex.gz
 *.bbl
@@ -11,6 +10,11 @@
 *.lot
 *.toc
 *.log
+abstract.pdf
+chapter1.pdf
+chapter2.pdf
+chapter2-supplementary.pdf
+chapter3.pdf
 
 # Emacs
 *~
