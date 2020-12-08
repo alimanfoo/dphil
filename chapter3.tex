@@ -110,7 +110,7 @@ Because these mosquitoes were collected in the context of different studies, a n
 %
 In addition to the wild-caught specimens, a further 80 mosquitoes were obtained from four colony crosses, each cross comprising two parents and up to 20 progeny, where parents were drawn from established reference colonies (Fig. \ref{fig:map} inset).
 %
-The main rationale for including colony crosses was to provide a mechanism for calibrating and measuring the accuracy of variant calling methods, because colony crosses allow for the analysis of genetic inheritance and Mendelian inconsistencies between parents and offspring, which can be a useful proxy of variant calling errors \citep{Saunders2007,Pilipenko2014}.
+The main rationale for including colony crosses was to provide a mechanism for calibrating and measuring the accuracy of variant calling methods, because colony crosses allow for the analysis of genetic inheritance and Mendelian inconsistencies between parents and offspring, which can be a useful proxy of variant calling errors \citep{Saunders2007,Laurie2010,Pilipenko2014}.
 %
 DNA extraction was performed on individual mosquitoes and genomic DNA samples were shipped to the Wellcome Sanger Institute for sequencing.
 
@@ -455,7 +455,7 @@ Variant calling algorithms such as GATK \textit{UnifiedGenotyper} are typically 
 Errors in variant calling can occur due to a variety of causes:
 \begin{itemize}
 %
-\item \textbf{Sequencing errors.} With high depth of coverage, given the low error rate of Illumina sequencing, it is unlikely that sequencing errors will generate false SNP calls, because sequencing errors are generally random and unlikely to co-occur at the same genomic location in read alignments. However, in some cases sequencing errors can be systematic, such as in the vicinity of mononucleotide repeats @@REF.
+\item \textbf{Sequencing errors.} With high depth of coverage, given the low error rate of Illumina sequencing, it is unlikely that sequencing errors will generate false SNP calls, because sequencing errors are generally random and unlikely to co-occur at the same genomic location in read alignments. However, in some cases sequencing errors can be systematic, such as in the vicinity of mononucleotide repeats.
 %
 \item \textbf{Alignment errors.} Errors can occur in the alignment process, where reads originating from one genomic location are improperly aligned to a different genomic location. Any differences between the sequences at the two genomic locations then appear as variants in the misaligned reads. Alignment errors are particularly likely to occur in repetitive genome regions, where sequences at different locations are identical or share a high degree of homology. Several different types of repetitive DNA are common throughout eukaryotic genomes:
 %
@@ -465,7 +465,7 @@ Errors in variant calling can occur due to a variety of causes:
 %
 \item \textbf{Tandem repeats}, where some short sequence of nucleotides is repeated adjacently many times.
 %
-\item \textbf{Interspersed repeats}, where similar sequences are located at dispersed regions throughout the genome, commonly due to mobile genetic elements such as retrotransposons @REF.
+\item \textbf{Interspersed repeats}, where similar sequences are located at dispersed regions throughout the genome, commonly due to mobile genetic elements such as retrotransposons \citep{Tu2004,FernandezMedina2011}.
 %
 \end{itemize}
 %
@@ -536,7 +536,21 @@ These provided three additional genome accessibility metrics:
 %%
 
 
-@TODO ME fig
+\begin{figure}[t!]
+\centering
+\includegraphics[width=\textwidth]{artwork/chapter3/me_nodp.pdf}
+\caption{Example of using Mendelian error to calibrate thresholds for genome accessibility metrics.
+%
+Plot shows the Mendelian error (ME) rate for the No Coverage metric which measures the number of samples with no coverage at a given variant site.
+%
+Bars and left axis show the numbers of variants found for each value of the metric (black = variants with at least one ME; white = variants with no ME).
+%
+Line and right axis show the percentage of variants found with ME for each value of the metric.
+%
+}
+%
+\label{fig:me_nodp}
+\end{figure}
 
 
 %%
@@ -546,17 +560,17 @@ The availability of colony crosses in the Ag1000G project afforded the opportuni
 %
 The rationale here is that true variants will segregate within a cross according to Mendelian inheritance, whereas as false positive variants due to any of the above mentioned error modes would not in general be expected to segregate according to Mendelian inheritance, and thus be enriched for Mendelian errors.
 %
-While a small number of Mendelian errors are expected due to de novo mutation, the vast majority will be due to spurious variant calling, and hence Mendelian errors are a good indicator of poor quality variant calls @\citep{Laurie2010}.
+While a small number of Mendelian errors are expected due to de novo mutation, the vast majority will be due to spurious variant calling, and hence Mendelian errors are a good indicator of poor quality variant calls \citep{Saunders2007,Laurie2010,Pilipenko2014}.
 %
 As a secondary means of empirically investigating genome accessibility, I also studied the ratio of transition to transversion substitutions (Ti/Tv).
 %
-Most organisms have mutation bias leading to an excess of transitions over transversions relative to that which would be expected if substitution mutations occurred randomly @\citep{Guo2014}. 
+Most organisms have mutation bias leading to an excess of transitions over transversions relative to that which would be expected if substitution mutations occurred randomly \citep{Guo2013}. 
 %
 A low Ti/Tv ratio (approaching 0.5 expected if variants were called randomly) is an indicator of poor variant quality.
 %
 For each of the genome accessibility metrics listed above, I divided the range of possible values into bins, and then for each bin computed (1) the rate of Mendelian error as the fraction of variants found in one or more crosses with genotypes not consistent with Mendelian segregation (ME); and (2) the Ti/Tv rate for biallelic SNPs.
 %
-I then plotted these results to identify bins within which ME was elevated and/or Ti/Tv was depressed (e.g., Fig. \ref{fig:me}).
+I then plotted these results to identify bins within which ME was elevated and/or Ti/Tv was depressed (e.g., Fig. \ref{fig:me_nodp}).
 %%
 
 
@@ -565,7 +579,7 @@ All of the genome accessibility metrics displayed some structured association wi
 %
 This was strongest for the No Coverage and Ambiguous Alignment metrics.
 %
-E.g., at positions where zero samples had No Coverage, the ME rate was ~20\%, whereas at sites where three or more samples had No Coverage, the ME rate was 60\% or greater (Fig. \ref{fig:me}). 
+E.g., at positions where zero samples had No Coverage, the ME rate was 20\%, whereas at sites where three or more samples had No Coverage, the ME rate was 60\% or greater (Fig. \ref{fig:me_nodp}). 
 %
 Because some of these accessibility metrics would be expected to be correlated with each other to some extent, such as Ambiguous Alignment and Low Mapping Quality, I repeated the above analyses for each accessibility metric, but conditional on thresholds applied to all other metrics, to look for any marginal and thus unique contribution of a single metric.
 %
@@ -584,7 +598,21 @@ I then decided the following criteria for genome positions to be classified as a
 %%
 
 
-@TODO accessibility fig
+\begin{figure}[t!]
+\centering
+\includegraphics[width=\textwidth]{artwork/chapter3/accessibility.jpeg}
+\caption{Results of genome accessibility analysis.
+%
+Upper plot (blue) shows the percentage of bases classified as accessible.
+%
+Lower plot (green) shows the percentage of bases within gene exons classified as accessible.
+%
+Schematic of chromosomes at the bottom shows predicted chromatin state from \citep{Sharakhova2010}.
+%
+}
+%
+\label{fig:accessibility}
+\end{figure}
 
 
 %%
@@ -592,11 +620,11 @@ After applying these criteria, 141 Mbp (61\% of the reference genome) was classi
 %
 There were some clear associations between broad-scale patterns of accessibility and major features of genome architecture.
 %
-In particular, the centromeric regions of all three chromosomes, within regions predicted to be in a heterochromatic state (@@REF), all displayed substantially lower accessibility.
+In particular, the centromeric regions of all three chromosomes, within regions predicted to be in a heterochromatic state \citep{Sharakhova2010}, all displayed substantially lower accessibility.
 %
 This is likely due to a higher content of repetitive DNA sequence.
 %
-The region on chromosome arm 2L within the known polymorphic chromosomal inversion 2La @@REF also displayed lower accessibility.
+The region on chromosome arm 2L within the known polymorphic chromosomal inversion 2La \citep{Coluzzi2002}, which spans from 2L:20.5--42.2 Mb, also displayed lower accessibility.
 %
 This inversion is known to be segregating in many populations and the inverted karyotype displays higher levels of divergence with respect to the standard karyotype represented in the reference genome sequence, thus this is likely an effect of divergence.
 %%
