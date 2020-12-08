@@ -322,7 +322,50 @@ To be conservative, I excluded all samples with verifyBamID contamination $>2\%$
 \subsubsection{Sex metadata concordance}
 
 
-@@TODO
+\begin{figure}[t!]
+\centering
+\includegraphics[width=\textwidth]{artwork/chapter3/sex.pdf}
+\caption{Sex metadata concordance checks.
+%
+Each marker represents a sample.
+%
+The left panel shows samples from mosquitoes reported in metadata as female, the right panel shows samples reported as male.
+%
+$n\_het\_x$ = No. of heterozygous genotype calls on the $X$ chromosome.
+%
+$n\_missing\_y$ = No. of missing genotype calls on the $Y\_unplaced$ chromosome.
+%
+Groups labelled A and B are described in the text.
+%
+}
+%
+\label{fig:sex}
+\end{figure}
+
+
+%%
+Both male and female mosquito specimens were contributed to Ag1000G phase 1 (Table \ref{table:coverage}) and the morphologically-identified gender was included in the sample metadata contributed by the Ag1000G consortium partners who collected the specimens.
+%
+To confirm metadata records were correct, I compared the reported specimen gender with a gender call made directly from the sequencing data.
+%
+To call gender for each sample I computed the counts of homozygous, heterozygous and missing genotype calls separately for the X and Y chromosomes. 
+%
+Sex determination is similar in mosquitoes to humans in that females are homogametic XX and males are heterogametic XY.
+%
+Thus in females we expect to observe heterozygous genotype calls on the X chromosome and missing genotype calls on the Y chromosome.
+%
+Conversely in males we expect only homozygous genotype calls on the X chromosome and non-missing genotype calls on the Y chromosome.
+%
+Plotting these data it was evident that some samples had genotype counts not consistent with their reported sex (Fig. \ref{fig:sex}).
+%
+This included six samples reported as female but with male genotype counts (Fig. \ref{fig:sex} group A) and four samples reported as male but with female genotype counts (Fig. \ref{fig:sex} group B).
+%
+I excluded these ten samples from further analyses.
+%
+There were also a further six samples with apparently androgenous genotype counts on sex chromosomes.
+%
+Cross-checking against the contamination analysis showed these apparently androgenous samples to have predicted contamination $>2\%$, explaining the unusual sex chromosome genotype counts.
+%%
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
