@@ -490,7 +490,7 @@ As a first step towards designing variant filters, I performed an analysis of ge
 %
 In this analysis I first computed detailed alignment statistics from read pileups for each sample at each position in the reference sequence, including the total depth of coverage, the fraction of reads aligned in a proper pair, the fraction of reads aligned ambiguously (mapping quality zero), and the root mean square mapping quality.
 %
-In order to accelerate this computation I developed the command line software package pysamstats\footnote{https://github.com/alimanfoo/pysamstats}.
+In order to accelerate this computation I developed the command line software package pysamstats\footnote{\url{https://github.com/alimanfoo/pysamstats}}.
 %
 I then aggregated these data across all samples at each genome position, to obtain the following genome accessibility metrics:
 %
@@ -694,7 +694,32 @@ After filtering, the Mendelian error rate was 0.3-0.9\%.
 \subsection{Production of an analysis-ready genome variation dataset}
 
 
-@TODO
+%%
+I produced an analysis-ready dataset in variant call format (VCF) for each chromosome arm by applying the sample and variant QC results described above as follows.
+%
+From all stages of sample QC a total of 123 samples were excluded, leaving 765 samples from wild-caught specimens passing all sample QC checks.
+%
+Taking the raw variant calls as input, I first removed all non-SNP variants, then removed genotype calls for individuals failing sample QC, then removed any SNPs that were no longer variant after excluding samples, using GATK \textit{SelectVariants}.
+%
+I then added INFO annotations with genome accessibility metrics, and added FILTER annotations recording the variant QC decisions, using bcftools \textit{annotate}.
+%
+Finally, I added INFO annotations with information about functional consequences of SNPs using SNPEFF version 4.1b \citep{Cingolani2012}.
+%
+After building VCF files, I also performed a conversion of these data to the HDF5 format, which is a general-purpose binary file format for scientific data that provides a significantly more performant way to load the variation data for downstream analysis.
+%
+I developed the software package vcfnp\footnote{\url{https://github.com/alimanfoo/vcfnp}} for performing this VCF to HDF5 format conversion.
+%%
+
+
+%%
+All of the analysis-ready data files were uploaded to the Wellcome Sanger Institute public FTP site and are available at \url{ftp://ngs.sanger.ac.uk/production/ag1000g/phase1/}.
+%
+Sequence read alignments and analysis-ready variant calls were submitted to the European Nucleotide Archive (ENA; \url{http://www.ebi.ac.uk/ena}) under ENA study PRJEB18691.
+%
+I also collaborated with members of the MalariaGEN Web Application development team to design a web application to allow interactive exploration and browsing of these data, available at \url{http://www.malariagen.net/apps/ag1000g}.
+%
+Briefly, this web application provides the following features: queryable tables of variants and samples; interactive plotting of variants and samples; genome browser allowing visual exploration of tracks against their physical position within a chromosome arm, including genome accessibility metrics, variant quality metrics, various population genetic metrics, and visualisation of genotype calls within individual samples.
+%%
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -702,8 +727,54 @@ After filtering, the Mendelian error rate was 0.3-0.9\%.
 \subsection{Validation with Sanger sequencing}
 
 
-@TODO
+%%
+To provide an independent estimate for the SNP false discovery rate (FDR) and sensitivity, Sanger sequencing was performed of five loci in 58 individual mosquitoes that were also analysed using whole genome sequencing.
+%
+The primers were provided by the Liverpool School of Tropical Medicine, and the Sanger sequencing was performed by the MalariaGEN Resource Center team at the Wellcome Centre for Human Genetics.
+%
+The individuals used in the validation analysis included representatives of all sampling locations except Kenya.
+%
+Loci were sequenced using the following sets of forward and reverse primer pairs: 
+%
+\begin{itemize}
+\item 3R:6,906,804-6,908,373 \\ ACTGATCGAGGTAGGGCATC/CGCATCGAGTCCAATCTTTT
+\item 3L:22,022,788-22,024,835 \\ ACCCTCGTCTTTCACCACAC/CATCCACCGGAGTACTTGCT
+\item 3L:39,820,960-39,822,628 \\ GGTAGCAGTCGCCAGTTTTT/CTTGAGCGCCACCTTAAGTC
+\item 2L:46,845,944-46,847,857 \\ GGAGTTTTACGTGGCCGTTA/CTTCAAAGTGCGGATCCATT 
+\item 2R:28,491,415-28,493,141 \\ TTCAAGTAGTTGCCCGCTTT/AATCGAGCTATTGCGGAGAA
+\end{itemize}
+%%
 
+
+%%
+For each primer set, I aligned forward and reverse traces and called SNPs and genotypes using NovoSNP version 3.0.1 \citep{Weckx2005}.
+%
+I analysed only individuals which had high quality traces for both forward and reverse reads spanning at least 90\% of the distance between primers.
+%
+I also excluded individuals where there was evidence for heterozygous indel variation.
+%
+I defined true positives, false positives and false negatives by comparing variant calls derived from the Illumina and Sanger data for the individuals sequenced with both technologies.
+%
+I defined a false positive as a SNP called from Illumina sequence data for which there was no evidence on either forward or reverse Sanger traces in any individuals.
+%
+I defined a false negative as a SNP for which there was evidence in at least one individual on both forward and reverse Sanger traces but which was not called from Illumina sequence data.
+%
+A SNP present in the Illumina calls for these individuals and in the Sanger calls was defined as a true positive.
+%
+FDR was computed as the number of true positives divided by the number of true positives plus false positives.
+%
+In total, there were 261 true positives and 1 false positive, an FDR of 1/262 = 0.4\%.
+%
+The false positive SNP was observed in only a single individual, as a heterozygous genotype.
+%
+Sensitivity was computed as the number of true positives divided by the number of true positives plus false negatives.
+%
+There were 15 false negatives at genome positions classified as accessible, a sensitivity of 261/276 = 94.6\%.
+%
+Sensitivity across the five loci ranged from 88.5\%-100\%.
+%
+I also compared genotype calls, finding that 984/1000 (98.4\%) of heterozygous genotype calls and 6881/6884 (99.96\%) of homozygous genotype calls were concordant between Sanger and Illumina data.
+%%
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
