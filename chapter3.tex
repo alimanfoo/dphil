@@ -449,15 +449,157 @@ To mitigate this I excluded samples with coverage $<14\times$ from the final dat
 \subsection{Variant quality control}
 
 
-@@TODO
-
+%%
+Variant calling algorithms such as GATK \textit{UnifiedGenotyper} are typically configured by default for high sensitivity, which means that the raw variant calls they emit contain a high rate of false positive variants.
+%
+Errors in variant calling can occur due to a variety of causes:
+\begin{itemize}
+%
+\item \textbf{Sequencing errors.} With high depth of coverage, given the low error rate of Illumina sequencing, it is unlikely that sequencing errors will generate false SNP calls, because sequencing errors are generally random and unlikely to co-occur at the same genomic location in read alignments. However, in some cases sequencing errors can be systematic, such as in the vicinity of mononucleotide repeats @@REF.
+%
+\item \textbf{Alignment errors.} Errors can occur in the alignment process, where reads originating from one genomic location are improperly aligned to a different genomic location. Any differences between the sequences at the two genomic locations then appear as variants in the misaligned reads. Alignment errors are particularly likely to occur in repetitive genome regions, where sequences at different locations are identical or share a high degree of homology. Several different types of repetitive DNA are common throughout eukaryotic genomes:
+%
+\begin{itemize}
+%
+\item \textbf{Low complexity regions}, e.g., sequences with a very high (A+T) content.
+%
+\item \textbf{Tandem repeats}, where some short sequence of nucleotides is repeated adjacently many times.
+%
+\item \textbf{Interspersed repeats}, where similar sequences are located at dispersed regions throughout the genome, commonly due to mobile genetic elements such as retrotransposons @REF.
+%
+\end{itemize}
+%
+\item \textbf{Large structural variation.} Large copy number amplifications or deletions can cause errors when attempting to call smaller variants such as SNPs within the same genomic region or in close vicinity. In particular, if a sample has a copy number amplification relative to the reference genome, sequence reads from both copies of the amplified region will be aligned to the same location in the reference genome. If there is any sequence divergence between the different copies of the amplified region, this can appear as heterozygous SNPs within the sample.
+%
+\item \textbf{Sequence divergence.} If individuals contain sequence within their genomes with a higher degree of divergence from the reference genome, some or all reads may fail to be aligned at all at that location. This results in a failure to observe some alleles, and a bias towards calling true heterozygous genotypes as homozygous, also known as allelic dropout.
+%
+\item \textbf{Reference genome assembly errors.} In any region where the reference genome has been incorrectly assembled, attempting to align sequences reads to that region may lead to spurious variant calls.
+%
+\end{itemize}
+%
+In this subsection I describe analyses performed to reduce the false discovery rate within a raw variant callset by designing and applying variant filters.
+%%
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Genome accessibility}
 
 
-@@TODO
+%%
+As a first step towards designing variant filters, I performed an analysis of genome accessibility, which determines which positions throughout the genome support unambiguous read alignments, and where there is minimal evidence for structural variation between samples. 
+%
+In this analysis I first computed detailed alignment statistics from read pileups for each sample at each position in the reference sequence, including the total depth of coverage, the fraction of reads aligned in a proper pair, the fraction of reads aligned ambiguously (mapping quality zero), and the root mean square mapping quality.
+%
+In order to accelerate this computation I developed the command line software package pysamstats\footnote{https://github.com/alimanfoo/pysamstats}.
+%
+I then aggregated these data across all samples at each genome position, to obtain the following genome accessibility metrics:
+%
+\begin{itemize}
+%
+\item \textbf{No Coverage.} The number of samples in which there were no reads aligned at the site (0-100\%).
+%
+\item \textbf{Low Coverage.} The percentage of samples in which depth of coverage was less than half the modal coverage for the whole genome (0-100\%).
+%
+\item \textbf{High Coverage.} The percentage of samples in which the depth of coverage was more than twice the modal coverage for the whole genome (0-100\%).
+%
+\item \textbf{Ambiguous Alignment.} The percentage of samples in which more than 10\% of aligned reads are aligned with mapping quality zero, indicating they could equally well have been aligned at another genomic location (0-100\%).
+%
+\item \textbf{Low Mapping Quality.} The percentage of samples in which the root mean square mapping quality was less than 30 (0-100\%).
+%  
+\item \textbf{Low Read Pairing.} The percentage of samples in which less than 90\% of reads were flagged as being aligned in a proper pair, meaning that the read and its mate pair were aligned in the correct orientation within a reasonable distance of each other (0-100\%).
+\end{itemize}
+%%
+
+
+%%
+I also obtained repeat annotations for the AgamP3 reference genome for VectorBase.
+%
+These comprise annotations from three algorithms: RepeatMasker, Tandem Repeat Finder (TRF) and DUST.
+%
+The DUST algorithm was originally a module within BLAST \citep{Altschul1990} and is designed to mask low complexity sequences only.
+%
+The RepeatMasker software \citep{Smit2013} is primarily designed for masking interspersed repeats matching a library of known repeat sequences (transposable elements etc.).
+%
+TRF \citep{Benson1999} specializes in locating tandem repeats.
+%
+These provided three additional genome accessibility metrics:
+%
+\begin{itemize}
+%
+\item \textbf{TRF.} The genome position is within a region annotated as a tandem repeat by the tandem repeat finder software (True/False).
+%
+\item \textbf{RepeatMasker.} The genome position is within a region annotated as a repeat by the RepeatMasker software (True/False).
+%
+\item \textbf{DUST.} The genome position is within a region marked as low complexity by the DUST software (True/False).
+%
+\end{itemize}
+%%
+
+
+@TODO ME fig
+
+
+%%
+In previous population sequencing projects such \citet{1000G2015} the criteria used to determine which positions of the reference genome are considered accessible have been decided theoretically, without any empirical validation.
+%
+The availability of colony crosses in the Ag1000G project afforded the opportunity to select and calibrate appropriate genome accessibility criteria using Mendelian error in the crosses as an indicator of poor accessibility.
+%
+The rationale here is that true variants will segregate within a cross according to Mendelian inheritance, whereas as false positive variants due to any of the above mentioned error modes would not in general be expected to segregate according to Mendelian inheritance, and thus be enriched for Mendelian errors.
+%
+While a small number of Mendelian errors are expected due to de novo mutation, the vast majority will be due to spurious variant calling, and hence Mendelian errors are a good indicator of poor quality variant calls @\citep{Laurie2010}.
+%
+As a secondary means of empirically investigating genome accessibility, I also studied the ratio of transition to transversion substitutions (Ti/Tv).
+%
+Most organisms have mutation bias leading to an excess of transitions over transversions relative to that which would be expected if substitution mutations occurred randomly @\citep{Guo2014}. 
+%
+A low Ti/Tv ratio (approaching 0.5 expected if variants were called randomly) is an indicator of poor variant quality.
+%
+For each of the genome accessibility metrics listed above, I divided the range of possible values into bins, and then for each bin computed (1) the rate of Mendelian error as the fraction of variants found in one or more crosses with genotypes not consistent with Mendelian segregation (ME); and (2) the Ti/Tv rate for biallelic SNPs.
+%
+I then plotted these results to identify bins within which ME was elevated and/or Ti/Tv was depressed (e.g., Fig. \ref{fig:me}).
+%%
+
+
+%%
+All of the genome accessibility metrics displayed some structured association with Mendelian error and Ti/Tv, with higher metric values being associated with higher ME rates and lower Ti/Tv.
+%
+This was strongest for the No Coverage and Ambiguous Alignment metrics.
+%
+E.g., at positions where zero samples had No Coverage, the ME rate was ~20\%, whereas at sites where three or more samples had No Coverage, the ME rate was 60\% or greater (Fig. \ref{fig:me}). 
+%
+Because some of these accessibility metrics would be expected to be correlated with each other to some extent, such as Ambiguous Alignment and Low Mapping Quality, I repeated the above analyses for each accessibility metric, but conditional on thresholds applied to all other metrics, to look for any marginal and thus unique contribution of a single metric.
+%
+In this analysis, all metrics remained informative, with the exception of the Low Read Pairing metric.
+%
+I then decided the following criteria for genome positions to be classified as accessible:
+%
+\begin{itemize}
+\item No Coverage <= 0.2\% (at most one sample with no coverage)
+\item Ambiguous Alignment <= 0.2\% (at most one sample with 10\% MQ0 alignments)
+\item High Coverage <= 2\% (at most 15 samples with high coverage)
+\item Low Coverage <= 10\% (at most 76 samples with low coverage)
+\item Low Mapping Quality <= 10\% (at most 76 samples with RMS MQ < 30)
+\item DUST = False (position not annotated as a repeat by DUST)
+\end{itemize}
+%%
+
+
+@TODO accessibility fig
+
+
+%%
+After applying these criteria, 141 Mbp (61\% of the reference genome) was classified as accessible, including 91\% (18Mbp) of the exome and 60\% (123Mbp) of non-coding positions (Fig. \ref{fig:accessibility}).
+%
+There were some clear associations between broad-scale patterns of accessibility and major features of genome architecture.
+%
+In particular, the centromeric regions of all three chromosomes, within regions predicted to be in a heterochromatic state (@@REF), all displayed substantially lower accessibility.
+%
+This is likely due to a higher content of repetitive DNA sequence.
+%
+The region on chromosome arm 2L within the known polymorphic chromosomal inversion 2La @@REF also displayed lower accessibility.
+%
+This inversion is known to be segregating in many populations and the inverted karyotype displays higher levels of divergence with respect to the standard karyotype represented in the reference genome sequence, thus this is likely an effect of divergence.
+%%
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -469,7 +611,7 @@ To mitigate this I excluded samples with coverage $<14\times$ from the final dat
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Production of the analysis-ready genome variation dataset}
+\subsection{Production of an analysis-ready genome variation dataset}
 
 
 @@TODO
