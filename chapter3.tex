@@ -263,8 +263,50 @@ The remaining two samples had a higher mismatch rate, thus poor genome coverage 
 %
 On the basis of these analyses, the percentage of genome covered appeared to be a useful metric capturing multiple quality issues, and I excluded 17 samples with less than 80\% genome covered.
 %
-These samples were excluded prior to SNP discovery and genotyping.
-% 
+
+
+\subsubsection{Cross-contamination}
+
+
+\begin{figure}[t!]
+\centering
+\includegraphics[width=\textwidth]{artwork/chapter3/contamination.pdf}
+\caption{Cross-contamination diagnostics.
+%
+Each plot shows an allele balance diagnostic plot for a single sample.
+%
+Each marker within a plot is a genotype call (blue = homozygous reference; green = heterozygous; red = homozygous alternate).
+%
+\textbf{a}, Example of sample with predicted contamination $<2\%$.
+%
+\textbf{b}, Example of sample with predicted contamination $>4\%$.
+}
+%
+\label{fig:contamination}
+\end{figure}
+
+
+%%
+Cross-contamination between samples of the same species can be detected by analysing the fractions of reads supporting genotypes in each sample.
+%
+Several tools have been developed to detect cross-contamination in sequencing data, such as verifyBamID \citep{Jun2012}.
+%
+Previous human sequencing projects have used verifyBamID and excluded samples with an estimated contamination fraction above 2\% \citep{1000G2015}.
+%
+To analyse evidence for cross-contamination in the Ag1000G phase 1 samples, verifyBamID was run on all samples by the MalariaGEN data production team.
+%
+Because this tool had been developed for and previously only applied in human sequencing studies, I performed additional analyses to confirm that the contamination predictions were reliable in \textit{Anopheles}.
+%
+I generated a set of diagnostic allele balance plots for each of the 888 mosquito samples in phase 1 which plotted data from genotypes across all autosomes, showing the genotype called and the numbers of reads supporting the reference and alternate alleles (e.g., Fig. \ref{fig:contamination}). 
+%
+I then visually inspected these plots and cross-referenced them against the contamination fraction predicted by verifyBamID.
+%
+In uncontaminated samples there was clear separation between the different possible genotype calls (e.g., Fig. \ref{fig:contamination}a) and cases of contamination were evident as a lack of a clear separation between genotype calls (e.g., Fig. \ref{fig:contamination}b).
+%
+In all cases where verifyBamID predicted contamination $>4\%$ I confirmed a signal of contamination via allele balance plots, and conversely I found no cases of allele balance plots indicating contamination but verifyBamID predicted contamination $<4\%$, providing confidence that verifyBamID predictions were reliable. 
+%
+To be conservative, I excluded all samples with verifyBamID contamination $>2\%$ from the final dataset.
+%
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
