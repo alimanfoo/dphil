@@ -140,9 +140,7 @@ The median depth of coverage obtained per individual was at least $29\times$ for
 %
 
 \begin{table}[t]
-
 \begin{center}
-
 \begin{threeparttable}
 
 \caption{Depth of coverage.
@@ -172,9 +170,7 @@ Species status is uncertain for samples from Guinea-Bissau and Kenya, see Chapte
 \end{tabular}
 
 \end{threeparttable}
-
 \end{center}
-
 \end{table}
 
 
@@ -814,9 +810,8 @@ Of these, 41,476,870 (79\%) were biallelic and 11,049,087 (21\%) were multiallel
 
 
 %%
-On average one variant allele was discovered every 2.2 bases of the accessible genome.
-%
-Variant alleles were not evenly distributed throughout the genome (Fig. \ref{fig:variant_density}).
+On average one variant allele was discovered every 2.2 bases of the accessible genome,
+but variant alleles were not evenly distributed throughout the genome (Fig. \ref{fig:variant_density}).
 %
 Variant allele density was lower towards the centromeres on all chromosome arms, and especially low within regions of centromeric heterochromatin.
 %
@@ -834,12 +829,90 @@ There was no systematic difference between the two species, \textit{An. gambiae}
 However, there was a clear difference in the level of variation between the two species within the centromeric region of the X chromosome, where \textit{An. gambiae} populations had higher levels of variation than An. coluzzii, and thus the reference genome within that region is more representative of \textit{An. coluzzii} (Fig. \ref{fig:sample_variant_density}).
 %
 The 2La inversion also created a notable difference between individuals both within and between populations, consistent with polymorphism and substantial sequence divergence between the two karyotypes.
-%
-The AgamP3 reference genome was assembled from mosquitoes from the PEST colony which had a standard karyotype.
 %%
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Gene architecture and genetic diversity}
 
+
+%
+Gene architecture is expected to exert a strong influence on the genomic landscape of nucleotide variation, because different components of protein-coding sequences are under different types and degrees of selective pressure.
+%
+For example, in general, exons of protein-coding genes will be under purifying selection, because the protein is under some functional constraint and the majority of amino acid changes are deleterious @cite.
+%
+Thus genetic diversity within exons is expected to be lower than within introns or intergenic sequence.
+%
+However, the level of constraint will depend on whether nucleotides occur in the first, second or third codon position, because third codon positions have some degeneracy and nucleotide substitutions are less likely to cause an amino acid substitution than at the first or second codon position.
+%
+Although these phenomena are common to all eukaryotic genomes, there will be differences between species due to differences in their biology, genome size, mutation rate, recombination rate and effective population size.
+%
+
+
+\begin{figure}[t!]
+\centering
+\includegraphics[width=1.1\textwidth,center]{artwork/chapter3/feature_pi.jpeg}
+\caption{@@TODO
+}
+%
+\label{fig:feature_pi}
+\end{figure}
+
+
+
+%
+Of the 52,525,957 SNPs discovered, 4,404,390 (8.4\%) occurred within a gene coding region (Table \ref{table:snpeff}).
+%
+Of the SNPs within gene coding regions, 1,809,532 (41.1\%) were non-synonymous (missense) SNPs that altered the amino acid sequence of the gene, and the remaining 2,594,858 (58.9\%) were synonymous.
+%
+To further investigate the impact of gene architecture on levels of nucleotide variation, I computed nucleotide diversity ($\pi$) in the phase 1 cohort within different types of coding and non-coding sites (Fig. \ref{fig:feature_pi}).
+%
+I computed diversity separately within the X chromosome and the autosomal Chromosome 3, because the X chromosome is hemizygous in males and thus has a lower effective population size as well as experiencing less frequent recombination than the autosomes, both of which may affect genetic diversity.
+%
+The lowest diversity was found within intronic splice sites, consistent with a high degree of purifying selection, because any change in gene splicing is likely to have major functional consequences.
+%
+The reduction of diversity at splice sites was strongest within the first 2 bp of the intronic sequence, but also extended up to 9 bp into the intron at the 5' end, although not at the 3' end (Fig. \ref{fig:splicing_pi}). 
+%
+Diversity was also low within exons at non-degenerate first and second codon positions, where any nucleotide substitution will cause an amino acid substitution, also consistent with strong purifying selection.
+%
+In contrast, diversity was much higher at fourfold degenerate coding sites, reaching 3.2\% on Chromosome 3, consistent with a lack of purifying selection.
+%
+The only sequence class where diversity was higher was within short ($<$100 bp) introns, where $\pi$ on Chromosome 3 was approaching 3.5\%.
+%%
+
+
+%%
+Two other results of this analysis are interesting.
+%
+Firstly, on Chromosome 3 diversity was more than twice as high in short (<100 bp) introns than long (>200 bp) introns.
+%
+This suggests that longer introns are in general subject to greater functional constraint, for example, due to the presence of regulatory sequences.
+%
+Shorter introns might be too small to contain regulatory sequences, or might be younger and thus have had less time to evolve a regulatory function.
+%
+Secondly, diversity in intergenic regions $>$10 kb distant from a gene was 1.5\%, similar to that in longer introns, and much lower than short introns or degenerate coding positions.
+%
+Diversity in intergenic regions was similar regardless of distance to a gene, suggesting that this effect is not due to genetic linkage and linked purifying selection, but reflects some substantial selective constraint on intergenic sequence.
+%%
+
+
+%%
+There was also notable differences between the autosomal Chromosome 3 and the X chromosome in these patterns of diversity in relation to gene architecture.
+%
+Diversity was generally lower on the X chromosome across all site classes, as expected due to the fact that males carry only a single X chromosome and thus the effective population size is lower for the X chromosome than for the autosomes.
+%
+However, the ratio of diversity between sex chromosomes and autosomes (X/A ratio) differed between site classes (Fig. \ref{fig:feature_pi_ratios}).
+%
+The X/A ratio was highest within intergenic regions $>$10 kb from a gene, approaching the value of 0.75 expected due to reduced effective population size.
+%
+In contrast, the X/A ratio was lowest at degenerate coding positions, falling below 0.4.
+%
+This suggests that genetic linkage and purifying selection at linked sites is a much stronger force reducing diversity on the X chromosome than the autosomes, because the X/A ratio is highest at sites furthest from genes.
+%
+This is consistent with the fact that meiotic recombination occurs only in females and is less frequent on the X chromosome than autosomes where recombination occurs in both sexes.
+%
+@@TODO reference literature on X/A ratios in humans.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -860,6 +933,10 @@ The AgamP3 reference genome was assembled from mosquitoes from the PEST colony w
 @TODO
 
 
+\printbibliography
+
+
+\clearpage
 \beginsupplement
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -867,10 +944,9 @@ The AgamP3 reference genome was assembled from mosquitoes from the PEST colony w
 \section{Supplemental figures}
 
 
-\clearpage
-\begin{figure}[t!]
+\begin{figure}[h]
 \centering
-\includegraphics[width=1.1\textwidth,center]{artwork/chapter3/sample_variant_count.pdf}
+\includegraphics[width=1\textwidth,center]{artwork/chapter3/sample_variant_count.pdf}
 \caption{Number of variant alleles by sample.
 %
 Each marker represents an individual sample, coloured by country and species.
@@ -883,7 +959,7 @@ Number of variant alleles is computed over the whole genome.
 
 
 \clearpage
-\begin{figure}[t!]
+\begin{figure}[h]
 \centering
 \includegraphics[width=1.1\textwidth,center]{artwork/chapter3/sample_variant_density.pdf}
 \caption{Variant allele density by sample.
@@ -898,7 +974,71 @@ Individuals are grouped by country and species to facilitate comparison within a
 
 
 \clearpage
-\printbibliography
+\begin{figure}[h]
+\centering
+\includegraphics[width=1.1\textwidth,center]{artwork/chapter3/splicing_pi.png}
+\caption{@@TODO
+}
+%
+\label{fig:splicing_pi}
+\end{figure}
+
+
+\clearpage
+\begin{figure}[h]
+\centering
+\includegraphics[width=1.1\textwidth,center]{artwork/chapter3/feature_pi_ratios.pdf}
+\caption{@@TODO
+}
+%
+\label{fig:feature_pi_ratios}
+\end{figure}
+
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Supplemental tables}
+
+
+\begin{table}[h]
+\begin{center}
+\begin{threeparttable}
+
+\caption{Number of SNPs discovered, grouped by sequence ontology annotation class as determined by SNPEFF \citep{Cingolani2012}.}
+
+\label{table:snpeff}
+
+\begin{tabular}{lr}
+ \hline
+ \textbf{Annotation} & \textbf{No. SNPs} \\
+ \hline
+intergenic\_region & 21,932,312 \\
+intron\_variant & 11,040,938 \\
+upstream\_gene\_variant & 8,960,291 \\
+downstream\_gene\_variant & 5,012,563 \\
+synonymous\_variant & 2,594,858 \\
+missense\_variant & 1,809,532 \\
+3\_prime\_UTR\_variant & 480,546 \\
+5\_prime\_UTR\_variant & 325,007 \\
+intragenic\_variant & 280,084 \\
+splice\_region\_variant & 186,102 \\
+5\_prime\_UTR\_premature\_start\_codon\_gain\_variant & 60,784 \\
+stop\_gained & 15,744 \\
+splice\_donor\_variant & 3,946 \\
+splice\_acceptor\_variant & 3,117 \\
+stop\_retained\_variant & 2,472 \\
+stop\_lost & 1,546 \\
+start\_lost & 1,444 \\
+initiator\_codon\_variant & 257 \\
+non\_canonical\_start\_codon & 10 \\
+ \hline
+\end{tabular}
+
+\end{threeparttable}
+\end{center}
+\end{table}
 
 
 
