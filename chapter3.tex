@@ -783,7 +783,83 @@ I also compared genotype calls, finding that 984/1000 (98.4\%) of heterozygous g
 \section{Results}
 
 
-@TODO
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Nucleotide variation}
+
+
+\begin{figure}[t!]
+\centering
+\includegraphics[width=1.1\textwidth,center]{artwork/chapter3/variant_density.png}
+\caption{Density of variant alleles discovered across the genome.
+%
+Main plot shows the density of variant alleles within the accessible genome, computed in 200 kb moving windows.
+%
+Chromosome schematic below shows chromatin state predictions from \citet{Sharakhova2010}.
+%
+\textit{Cyp6p3}, \textit{Vgsc}, \textit{Gaba} and \textit{Gste2} are genes known to be involved in insecticide resistance.
+}
+%
+\label{fig:variant_density}
+\end{figure}
+
+
+%%
+52,525,957 SNPs were discovered in the Ag1000G phase 1 dataset passing all quality filters.
+%
+Of these, 41,476,870 (79\%) were biallelic and 11,049,087 (21\%) were multiallelic (more than one variant allele), giving a total of 64,481,991 variant alleles.
+%
+21,783,339 variant alleles were singletons (only observed as a heterozygous genotype in a single individual), 31,228,996 were observed only in a single country and species (private to a population), 17,144,828 were found in multiple countries but observed only in \textit{An. gambiae}, 1,252,245 were found in multiple countries but only in \textit{An. coluzzii}, and 14,688,252 were shared between the two species.
+%
+
+
+%%
+On average one variant allele was discovered every 2.2 bases of the accessible genome.
+%
+Variant alleles were not evenly distributed throughout the genome (Fig. \ref{fig:variant_density}).
+%
+Variant allele density was lower towards the centromeres on all chromosome arms, and especially low within regions of centromeric heterochromatin.
+%
+Chromatin state was not always associated with lower variant density, however, as the region of intercalary heterochromatin on chromosome arm 3R had noticeably elevated variant density.
+%
+Drops in variant allele density, and particularly the density of singleton alleles, were visible at genome regions containing the insecticide resistance genes \textit{Cyp6p3} and \textit{Gste2}, suggesting the presence of selective sweeps in those genome regions, investigated further in Chapter 5.
+%%
+
+
+%%
+Individual samples carried between 1.6 and 2.7 million variant alleles (Fig. \ref{fig:sample_variant_count}).
+%
+There was no systematic difference between the two species, \textit{An. gambiae} and \textit{An. coluzzii}, in terms of the number of variant alleles discovered in each sample, indicating that the AgamP3 reference genome is not biased towards one species or the other.
+%
+However, there was a clear difference in the level of variation between the two species within the centromeric region of the X chromosome, where \textit{An. gambiae} populations had higher levels of variation than An. coluzzii, and thus the reference genome within that region is more representative of \textit{An. coluzzii} (Fig. \ref{fig:sample_variant_density}).
+%
+The 2La inversion also created a striking difference between individuals both within and between populations, consistent with polymorphism and substantial sequence divergence between the two karyotypes.
+%
+The AgamP3 reference genome was assembled from mosquitoes from the PEST colony which had a standard karyotype.
+%%
+
+
+\begin{figure}[t!]
+\centering
+\includegraphics[width=1\textwidth,center]{artwork/chapter3/sample_variant_count.pdf}
+\caption{@@TODO
+}
+%
+\label{fig:sample_variant_count}
+\end{figure}
+
+
+\begin{figure}[t!]
+\centering
+\includegraphics[width=1\textwidth,center]{artwork/chapter3/sample_variant_density.pdf}
+\caption{@@TODO
+}
+%
+\label{fig:sample_variant_density}
+\end{figure}
+
+
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
