@@ -214,7 +214,7 @@ These issues include:
 %
 \item \textbf{Low yield.} The number of sequence reads generated for and individual sample is not sufficient to achieve the desired depth of coverage.
 %
-\item \textbf{Low library complexity.} If the input DNA quantity is insufficient, the DNA amplification process can generate sufficient material for sequencing, but there may be significant bias, in the sense that some genome regions are overrepresented and others are underrepresented or not covered at all \citep{Head2018}.
+\item \textbf{Low library complexity.} If the input DNA quantity is insufficient, the DNA amplification process can generate sufficient material for sequencing, but there may be significant bias, in the sense that some genome regions are overrepresented and others are underrepresented or not covered at all \citep{Head2014}.
 %
 \item \textbf{Cross-contamination.} During specimen handling, sample preparation and library preparation, material and thus DNA from one sample may contaminate another. In this case the sequencing data generated will include a mixture of reads from the original sample and the contaminating sample.
 %
@@ -813,7 +813,10 @@ Of these, 41,476,870 (79\%) were biallelic and 11,049,087 (21\%) were multiallel
 On average one variant allele was discovered every 2.2 bases of the accessible genome,
 but variant alleles were not evenly distributed throughout the genome (Fig. \ref{fig:variant_density}).
 %
-Variant allele density was lower towards the centromeres on all chromosome arms, and especially low within regions of centromeric heterochromatin.
+Variant allele density was lower towards the centromeres on all chromosome arms, and especially low within regions of pericentromeric heterochromatin where recombination is reduced \citep{Pombi2006,Zheng1997}.
+%
+Diversity is also lower near centromeres in \textit{D. melanogaster} \citep{Langley2012} and correlated with recombination rate across a variety of species due to selection at linked sites \citep{Charlesworth2012a,Elyashiv2016,
+CorbettDetig2015,Burri2015,Chan2012,Spencer2006}.
 %
 Chromatin state was not always associated with lower variant density, however, as the region of intercalary heterochromatin on chromosome arm 3R had noticeably elevated variant density.
 %
@@ -840,7 +843,7 @@ The 2La inversion also created a notable difference between individuals both wit
 %
 Gene architecture is expected to exert a strong influence on the genomic landscape of nucleotide variation, because different components of protein-coding sequences are under different types and degrees of selective pressure.
 %
-For example, in general, exons of protein-coding genes will be under purifying selection, because the protein is under some functional constraint and the majority of amino acid changes are deleterious @cite.
+For example, in general, exons of protein-coding genes will be under purifying selection, because the protein is under some functional constraint \citep{Ohta1996}.
 %
 Thus genetic diversity within exons is expected to be lower than within introns or intergenic sequence.
 %
@@ -848,12 +851,13 @@ However, the level of constraint will depend on whether nucleotides occur in the
 %
 Although these phenomena are common to all eukaryotic genomes, there will be differences between species due to differences in their biology, genome size, mutation rate, recombination rate and effective population size.
 %
+Thus the Ag1000G data resource provides an opportunity to investigate some of these features of genome biology in the context of a eukaryotic species with large effective population sizes.
 
 
 \begin{figure}[t!]
 \centering
 \includegraphics[width=1.1\textwidth,center]{artwork/chapter3/feature_pi.jpeg}
-\caption{@@TODO
+\caption{Nucleotide diversity ($\pi$) in relation to gene architecture.
 }
 %
 \label{fig:feature_pi}
@@ -891,9 +895,12 @@ This suggests that longer introns are in general subject to greater functional c
 %
 Shorter introns might be too small to contain regulatory sequences, or might be younger and thus have had less time to evolve a regulatory function.
 %
+A similar pattern is seen in other insects and arthropods \citep{Singh2013,Martin2016,Lynch2016}, and is consistent with evidence in
+\textit{Drosophila} that longer non-coding sequences are more likely to contain functional elements \citep{Casillas2007}.
+%
 Secondly, diversity in intergenic regions $>$10 kb distant from a gene was 1.5\%, similar to that in longer introns, and much lower than short introns or degenerate coding positions.
 %
-Diversity in intergenic regions was similar regardless of distance to a gene, suggesting that this effect is not due to genetic linkage and linked purifying selection, but reflects some substantial selective constraint on intergenic sequence.
+Diversity in intergenic regions was similar regardless of distance to a gene, suggesting that lower diversity is not due to genetic linkage and linked purifying selection, but reflects some substantial selective constraint on intergenic sequence.
 %%
 
 
@@ -904,15 +911,17 @@ Diversity was generally lower on the X chromosome across all site classes, as ex
 %
 However, the ratio of diversity between sex chromosomes and autosomes (X/A ratio) differed between site classes (Fig. \ref{fig:feature_pi_ratios}).
 %
-The X/A ratio was highest within intergenic regions $>$10 kb from a gene, approaching the value of 0.75 expected due to reduced effective population size.
+The X/A ratio was highest within intergenic regions $>$10 kb from a gene, with values between 0.63-0.76, close to the theoretical expectation of 0.75 due to reduced effective population size.
 %
-In contrast, the X/A ratio was lowest at degenerate coding positions, falling below 0.4.
+In contrast, the X/A ratio was lowest (0.27-0.32) at degenerate coding positions.
 %
-This suggests that genetic linkage and purifying selection at linked sites is a much stronger force reducing diversity on the X chromosome than the autosomes, because the X/A ratio is highest at sites furthest from genes.
+This suggests that genetic linkage and purifying selection at linked sites is a substantially stronger force reducing diversity on the X chromosome than the autosomes, because the X/A ratio is highest at sites furthest from genes.
 %
 This is consistent with the fact that meiotic recombination occurs only in females and is less frequent on the X chromosome than autosomes where recombination occurs in both sexes.
 %
-@@TODO reference literature on X/A ratios in humans.
+The X/A ratio can also be influenced by demographic factors, including population size fluctuations and sex biases in reproductive success and migration \citep{CorbettDetig2015,Webster2016,Pool2007,Charlesworth2012b}, and these may also be playing a role, although the X/A ratios were relatively stable across the different species and populations sampled in Ag1000G phase 1.
+%
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -921,7 +930,16 @@ This is consistent with the fact that meiotic recombination occurs only in femal
 \section{Conclusion}
 
 
-@TODO
+In this chapter I have described the discovery and genotyping of more than 50 million single nucleotide polymorphisms from deep whole genome sequencing of individual mosquitoes from natural populations of \textit{An. gambiae} and \textit{An. coluzzii}.
+%
+This is a unique data resource, providing opportunities to study both fundamental genome biology and the evolution and demography of natural malaria vector populations.
+%
+I have shown that this is a highly robust data resource, with low rates of false discovery and highly accurate genotype calls.
+%
+I have also used this resource to show that nucleotide diversity is extremely high within these mosquito species, confirming that they are among the most genetically diverse organisms studied to date \citep{Leffler2012}.
+%
+In the next chapter I will use these data to investigate genetic structure among the populations sampled, and to quantify, characterise and compare genetic diversity within these populations in more detail.
+%%
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -930,7 +948,7 @@ This is consistent with the fact that meiotic recombination occurs only in femal
 \section{Acknowledgments}
 
 
-@TODO
+I would like to thank the members of the \textit{Anopheles gambiae} 1000 Genomes Consortium, the MalariaGEN Resource Centre, and the staff at the Wellcome Sanger Institute sample logistics, sequencing and informatics facilities, for their contributions towards the production of the Ag1000G phase 1 data resource.
 
 
 \printbibliography
@@ -977,7 +995,9 @@ Individuals are grouped by country and species to facilitate comparison within a
 \begin{figure}[h]
 \centering
 \includegraphics[width=1.1\textwidth,center]{artwork/chapter3/splicing_pi.png}
-\caption{@@TODO
+\caption{Nucleotide diversity ($\pi$) in relation to intron/exon boundaries.
+%
+Plots show diversity averaged across all genes on chromosome arm 3R, error bars show results from bootstrapping over sites.
 }
 %
 \label{fig:splicing_pi}
@@ -988,7 +1008,11 @@ Individuals are grouped by country and species to facilitate comparison within a
 \begin{figure}[h]
 \centering
 \includegraphics[width=1.1\textwidth,center]{artwork/chapter3/feature_pi_ratios.pdf}
-\caption{@@TODO
+\caption{Ratios of nucleotide diversity between the sex chromosome (X) and the autosomes (represented by Chromosome 3).
+%
+Error bars computed by bootstrapping over sites.
+%
+The theoretical expectation for a diploid species with one sex hemizygous for the X chromosome is 0.75 (shown as dashed line) due to differences in effective population sizes.
 }
 %
 \label{fig:feature_pi_ratios}
