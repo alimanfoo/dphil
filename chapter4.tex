@@ -49,9 +49,9 @@ The availability of genomic data from multiple species and geographical location
 %
 In this chapter I describe analyses of the Ag1000G phase 1 data investigating genetic population structure among the mosquito populations sampled, and characterising levels of genetic diversity within and differentiation between populations.
 %
-These analyses are interesting because they allow us to begin to build a picture of the underlying demography of these populations, including variations in population size over time and space, and in the degree of connectivity between populations.
+These analyses are interesting because they allow us to begin to build a picture of the underlying demography of these populations, including variations in population size over time and space, and in the degree of connectivity and hence gene flow between populations.
 %
-Exploring these heterogeneities is particularly relevant because \textit{An. gambiae} and \textit{An. coluzzii} both have an extremely broad geographical and ecological range~\citep{Wiebe2017}.
+Exploring these heterogeneities is particularly relevant because \textit{An. gambiae} and \textit{An. coluzzii} both have an extremely broad geographical and ecological range~\parencite{Wiebe2017}.
 %
 \textit{An. coluzzii} is found from the West Coast throughout West and Central Africa.
 %
@@ -79,15 +79,15 @@ While we do not have the sampling resolution to attempt to correlate any of thes
 \subsection{The influence of genome architecture on population structure}\label{subsec:treescan}
 
 
-My goal in this chapter is to investigate genetic population structure, which means studying the extent to which individual mosquitoes are genetically related to each other, and identifying groups of individuals which are more or less related.
+Investigating genetic population structure means studying the extent to which individual mosquitoes are genetically related to each other, and identifying groups of individuals which are more or less related.
 %
 The Ag1000G phase 1 resource comprises data on more than 52 million single nucleotide polymorphisms (SNPs) distributed throughout the genome, and thus provides an extremely rich and high-resolution source of information with which to investigate population structure.
 %
-However, a complication arises because previous genomic studies of \textit{An. gambiae} and \textit{An. coluzzii} have shown that different regions of the genome can convey both quantitatively and qualitatively  different information about how individuals are related to each other.
+However, a complication arises because previous genomic studies of \textit{An. gambiae} and \textit{An. coluzzii} have shown that different regions of the genome can convey different information about how individuals are related to each other.
 %
 In particular, several studies have found that differentiation between the two species \textit{An. gambiae} and \textit{An. coluzzii} is particularly high within certain genome regions but lower or almost absent elsewhere @@cite.
 %
-There are also a number of large chromosomal inversions that are polymorphic within one or both of these species @@cite.
+There are also a number of large chromosomal inversions that are polymorphic within both of these species~\parencite{dellaTorre2001}.
 %
 Chromosomal inversions cause a greatly reduced rate of recombination between different karyotypes @@cite, which in turn will affect patterns of relatedness between individuals.
 %
@@ -101,6 +101,8 @@ Any analysis of population structure that fails to take these heterogeneities in
 \caption{Variation across the genome in patterns of relatedness between individual mosquitoes.
 %
 Panels \textbf{a-d} each show a neighbour-joining tree computed from pairwise genetic distances within a specific 200 kb genomic window, illustrating the four most common patterns of relatedness found throughout the genome.
+%
+Each node in the tree represents a single individual, coloured by population.
 %
 \textbf{a}, Example of tree within the 2Rb inversion.
 %
@@ -119,7 +121,7 @@ Each 200 kb window is painted with a colour to indicate which of the four major 
 \end{figure}
 
 
-To explore the relationship between genetic population structure and genome architecture, I divided the genome into @@ non-overlapping @@ kb windows, and then computed pairwise genetic distance between individuals within each window separately.
+To explore the relationship between genetic population structure and genome architecture, I divided the genome into non-overlapping 200 kb windows, and then computed pairwise genetic distance between individuals within each window separately.
 %
 For each window I computed a neighbour-joining tree and visualised each of the resulting trees as an unrooted dendrogram.
 %
@@ -133,7 +135,7 @@ Trees within the 2Rb and 2La inversions also had unique topologies, consistent w
 %
 
 
-To explore these variations in tree topology systematically, I computed the Pearson correlation coefficient between distance matrices from all pairs of genomic windows.
+To explore these variations in tree topology systematically, I computed the Pearson correlation coefficient between genetic distance matrices from all pairs of genomic windows.
 %
 I then performed dimensionality reduction on the resulting correlation matrix via multidimensional scaling, to identify common patterns of relatedness found in multiple genome windows.
 %
@@ -145,13 +147,199 @@ The first PC identified the common pattern of relatedness found throughout the 2
 %
 The third PC identified the pattern of relatedness found within the 2Rb inversion.
 %
-The second PC identified the contrast between the highly species-driven patterns of relatedness found generally in pericentromeric regions particularly of the X chromosome, and the more geographically-driven patterns found in euchromatic regions of X chromosome and Chromosome 3.
+The second PC identified the contrast between the highly species-driven patterns of relatedness found generally in pericentromeric regions, particularly of the X chromosome, and the more geographically-driven patterns found in euchromatic regions of X chromosome and Chromosome 3.
 %
-There were also a minority of genome windows which did not display a strong correlation any of these major patterns of relatedness, shown in Fig~\ref{fig:treescan}e as paler colours.
+There were also a minority of genome windows which did not display a strong correlation any of the four major patterns of relatedness, shown in Fig~\ref{fig:treescan}e as paler colours.
 %
 These included the windows spanning the insecticide resistance gene \textit{Vgsc} which is found near to the centromere of chromosome arm 2L, and which is known to have experienced adaptive introgression between \textit{An. gambiae} and \textit{An. coluzzii} @@cite.
 %
-This provides a clue that windows affected by strong positive selection may display unusual patterns of gene flow between countries and/or species, explored further in Chapter 6.
+This provides a clue that windows affected by strong positive selection may display unusual patterns of relatedness due to adaptive gene flow between countries and/or species, explored further in Chapter 6.
+
+
+It is still not clear why we observe such a stark contrast between the pericentromeric and euchromatic regions of the X chromosome, and to a lesser extent Chromosome 3.
+%
+One factor that undoubtedly plays some part is the reduction in the rate of recombination towards the centromeres @@cite.
+%
+Reduced recombination means that selection at linked sites will play a stronger role.
+%
+This includes purifying selection, which acts to reduce genetic diversity and could accelerate the fixation of different alleles between the two species.
+%
+In the previous chapter we saw clearly that the level of nucleotide variation was much reduced towards pericentromeric genome regions.
+%
+This could also include positive selection for speciation genes.
+%
+The genes involved in maintaining differentiation between \textit{An. gambiae} and \textit{An. coluzzii} still remain a mystery, but if one or more key genes were located towards the pericentromeric region of the X chromosome, then they would be expected to have a substantial effect on the surrounding genome region.
+%
+\textit{An. gambiae} and \textit{An. coluzzii} hybrids are fully fertile, and the two species are known to undergo a low level of hybridisation in natural populations, the degree of which may vary over both space and time @@cite.
+%
+However, genome regions linked to speciation genes would display very little if any evidence for gene flow between the species due to selection against hybrids, whereas unlinked regions would be much less constrained and alleles could move more freely.
+%
+In any case, resolving the causes of these contrasting patterns of relatedness is beyond the scope of this thesis, and remains an area of active research and debate.
+%
+For the present purposes, I continued my investigation of population structure, diversity and differentiation using only the euchromatic regions of Chromosome 3, because this is unaffected by large polymorphic inversions or regions of reduced recombination.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Population structure}\label{subsec:pop-structure}
+
+
+To further explore patterns of genetic population structure I used SNPs from euchromatic regions of Chromosome 3 to perform a principal components analysis (PCA)~\parencite{Patterson2006} (Fig.~\ref{fig:pca}).
+%
+This analysis is a form of dimensionality reduction, and condenses the information present in the hundreds of thousands of SNPs into few principal components (PCs) that explain the maximum amount of variance within the data.
+%
+In population-genetic terms, each principal component identifies one or more groupings of individuals, such that genetic relatedness is much higher within groupings than between them.
+%
+PCA in fact has a direct genealogical interpretation, and under certain conditions each principal component will capture a historical split between populations which are separated either geographically or by some other barrier such as assortative mating between species @@cite.
+%
+In practice a PCA cannot always be interpreted so directly, because other factors such as variations in population size and/or sample size can affect the shape of the result @@cite.
+%
+Nevertheless, it still allows us to clearly identify genetically distinct populations, by examining how samples group together within the highest PCs.
+
+
+\begin{figure}[t!]
+\centering
+\includegraphics[width=\textwidth]{artwork/chapter4/pca.png}
+\caption{@@TODO
+%
+}
+\label{fig:pca}
+\end{figure}
+
+
+The first four PCs were clearly elevated above lower PCs in the amount of variance explained, and between them revealed six distinct groupings of individuals.
+%
+These six groups revealed both geographical and species divisions.
+%
+Within \textit{An. gambiae}, individuals from Gabon formed a distinct group, and the remaining individuals from Guinea, Burkina Faso, Cameroon and Uganda grouped together.
+%
+Within \textit{An. coluzzii}, individuals from Burkina Faso and Angola each formed a distinct group.
+%
+The two remaining groups comprised individuals from Guinea-Bissau and Kenya respectively.
+%
+The species status of these two groups was uncertain because individuals from Guinea-Bissau displayed a mixture of species genotypes according to conventional molecular assays, and those assays were not performed on the Kenyan samples.
+%
+I return to the question of species assignment for these groups below.
+%
+PC5 revealed a further split within \textit{An. gambiae} between Uganda and the remaining individuals.
+%
+PC6 emphasized the distinction between Burkina Faso \textit{An. coluzzii} and Guinea-Bissau, which were visibly distinct also in higher components but to a lesser degree.
+%
+PCs 7--10 all displayed some structuring among the Cameroon \textit{An. gambiae}, with individuals from the southern-most collection site spreading out away from the main group of individuals collected from the other more northerly sites.
+%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Population differentiation}\label{subsec:pop-diff}
+
+
+To investigate the degree of genetic differentiation between these populations, I computed the pairwise average $F_{ST}$ between all pairs of populations defined by species and country (Fig.~\ref{fig:popdiff}a) (@@cite fst).
+%
+The $F_{ST}$ statistic summarises the extent to which allele frequencies differ between two groups of individuals, and can be interpreted as an estimate for the degree of genetic drift between the two sampled populations (@@REF).
+%
+I also computed the rate of doubleton ($f_{2}$) variant sharing between the same pairs of populations (Fig.~\ref{fig:popdiff}b).
+%
+Doubleton variants are those where the alternate allele is only observed twice, i.e., are rare within the cohort of individuals sampled.
+%
+In general, doubleton variants are likely to be enriched for recent mutations, because it takes longer time for alleles to reach higher frequencies.
+%
+Thus patterns of sharing of doubleton variants between individuals are more indicative of recent patterns of relatedness, e.g., can be more sensitive to recent population splits.
+%
+
+
+\begin{figure}[t!]
+\centering
+\includegraphics[width=1\textwidth]{artwork/chapter4/popdiff.pdf}
+\caption{@@TODO
+%
+}
+\label{fig:popdiff}
+\end{figure}
+
+
+These analyses confirmed a strong degree of differentiation between Gabon and other \textit{An. gambiae} populations, with $F_{ST} > 0.051$.
+%
+In contrast, $F_{ST}$ values between the other four \textit{An. gambiae} populations were at most 0.007.
+%
+This degree of differentiation was greater than that found between the two species within Burkina Faso, where both species were sampled at the same location ($F_{ST} = 0.031$).
+%
+The higher $F_{ST}$ values involving Gabon cannot simply be a reflection of greater geographical distance, because the distance between Uganda and \textit{An. gambiae} populations to the west is greater, yet $F_{ST}$ values are much lower.
+%
+These results indicate that the Gabon individuals are separated by other \textit{An. gambiae} populations to the north by some barrier to gene flow.
+%
+The obvious candidate for such a barrier is the equatorial rainforest, which represents a major ecological discontinuity.
+%
+Similarly, \textit{An. coluzzii} from Angola were highly differentiated from \textit{An. coluzzii} from Burkina Faso ($F_{ST} = 0.102$).
+%
+Again, the level of differentiation was greater than that between the two species within Burkina Faso.
+%
+Angola is the southern-most sampling location in the Ag1000G phase 1 cohort, and provides further support for a north/south ecogeographical barrier between mosquito populations affecting both species.
+%
+Of course, further sampling of populations on both sides of the equatorial rainforest, as well as within, will be needed to confirm this hypothesis.
+
+
+A suprising result was the near-total lack of differentiation between the \textit{An. gambiae} populations from Guinea, Burkina Faso and Cameroon, with $F_{ST}$ reaching at most 0.001 and barely achieving statistical significance (Fig.~\ref{fig:popdiff}a).
+%
+This lack of differentiation suggests high rates of gene flow between these locations.
+%
+However, the physical distances are still considerable, with @@ km separating Cameroon from Burkina Faso, and @@ km separating Burkina Faso from Guinea.
+%
+Previous wisdom is that mosquitoes travel at most 5 km during their lifetime, and therefore expect stronger isolation by distance.
+%
+Being challenged recently by observation of Anopheles mosquitoes engaging in wind-borne migration, suggesting potential for long-distance migration @@ref.
+%
+Unfortunately phase 1 doesn't have multiple sites for \textit{An. coluzzii} in West and Central Africa to ask if similarly low levels of structure.
+%
+Follow up in phase 2 and 3.
+%
+@@todo edit above para for readability
+
+
+%
+The Kenyan population displayed an extremely high level of differentiation ($F_{ST} > 0.207$) with all other populations, with similar $F_{ST}$ values against populations of both species.
+%
+This result was somewhat surprising.
+%
+The Kenyan samples were expected to be genetically isolated to a certain degree, being sampled on the coast at the most easterly location among the collection sites, and being the only samples collected to the east of the Rift Valley, which presents a natural geographical barrier to gene flow.
+%
+However, only \textit{An. gambiae} and not \textit{An. coluzzii} have been observed previously in this region, thus the Kenyan samples were expected to be \textit{An. gambiae}, which is the reason why conventional molecular diagnostics to differentiation \textit{An. gambiae} from \textit{An. coluzzii} had not been performed.
+
+
+The analysis of doubleton variants supported all the above observations, with Angola \textit{An. coluzzii} and Gabon \textit{An. gambiae} having very low rates of doubleton sharing with other conspecific populations, consistent with strong isolation.
+%
+Also provided support for differentiation of Uganda from other \textit{An. gambiae} to the West: despite low $F_{ST}$, Uganda more than twice as likely to share doubleton variants with itself than with any other \textit{An. gambiae}.
+%
+@@todo any other comments on f2. Kenya, Guinea-Bissau.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Genetic diversity within populations}\label{subsec:diversity}
+
+
+@@TODO
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Discussion}\label{sec:discussion}
+
+
+@@TODO para about low differentiation between gambiae in west/central Africa. suggests high rates of gene flow. Followed up in collaboration with members of the consortium, used joint site frequency spectra to model and fit migration rate. Although still crude, was at upper bound, indicating apparently panmictic.
+
+
+@@TODO Another interesting feature of these populations is highest diversity with excess of rare variants. Followed up with consortium to fit population size history using SFS via dadi and stairway plot. All strongly supported large population growth on historical timescale. Hard to estimate but timing in the range @@. Open question regarding which variants to use, used intergenic but in hindsight perhaps better to use syn sites, twice diversity would double pop size estimates, also selection might alter shape of SFS thus timing of inferred expansions.
+
+
+@@TODO para about high differentiation across equatorial rainforest, replicated within both gambiae and coluzzii. Ref back to pinto and lehmann studies. Suggests what.
+
+
+@@TODO para about Kenya very unusual. Low diversity and runs of homozygosity suggest recent bottleneck. Followed up with consortium, used IBD to estimate recent population history. Provided strong support for bottleneck, however timing hard to resolve, appeared to predate the bednet scaleup but clearly some limitations to method. Other unusual feature of this population is uncertain species status. Needs replication but outside range of coluzzii and so cannot be recent hybrid. Further analyses and sampling needed to resolve if cryptic taxa or some other kind of hybrid.
+
+
+@@TODO para about guinea-bissau, species status, is it recent breakdown of reproductive isolation or not? pull together evidence from PCA, f3, f4, suggest more complex than that. Clearly a coherent population. Remaining hypotheses, more ancient admixture, or possibly some other kind of split. Important for malaria control because acts like a distinct taxon. Futher sampling needed to understand contemporary patterns of gene flow and isolation.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
