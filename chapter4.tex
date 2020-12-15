@@ -51,21 +51,25 @@ In this chapter I describe analyses of the Ag1000G phase 1 data investigating ge
 %
 These analyses are interesting because they allow us to begin to build a picture of the underlying demography of these populations, including variations in population size over time and space, and in the degree of connectivity and hence gene flow between populations.
 %
-Exploring these heterogeneities is particularly relevant because \textit{An. gambiae} and \textit{An. coluzzii} both have an extremely broad geographical and ecological range~\parencite{Wiebe2017}.
+Exploring these heterogeneities is particularly relevant because \textit{An. gambiae} and \textit{An. coluzzii} both have an extremely broad geographical and ecological range ~\parencite{dellaTorre2001,TeneFossog2015,Wiebe2017}.
 %
 \textit{An. coluzzii} is found from the West Coast throughout West and Central Africa.
 %
 The range of \textit{An. gambiae} overlaps that of \textit{An. coluzzii} and extends across the Great Rift to the East coast, stretching down to South Africa.
 %
-Both species' ranges span the equator and encompass a remarkably diverse range of environments, including coastal, savanna, sahel and rainforest @@cite.
+Both species' ranges span the equator and encompass a remarkably diverse range of environments, including coastal, savanna, sahel and rainforest.
 %
-Human population density and land use, and the history and current coverage of malaria vector control interventions, also vary substantially throughout this range @cite.
+Human population density and land use, and the history and current coverage of malaria vector control interventions, also vary substantially throughout this range \parencite{WHO2019WMR}.
 %
 While we do not have the sampling resolution to attempt to correlate any of these individual variables with genetic features of mosquito populations, we can begin to highlight major variations between populations and generate hypotheses for further investigation.
 %
 
 
-@@todo something about collaboration with others
+Analyses of population structure and diversity were carried out as part of a broader investigation of population history and demography performed by the Ag1000G Consortium Analysis Working Group.
+%
+In this chapter I focus on the analyses that I led and performed individually.
+%
+However, to provide some additional context I also mention some analyses in which I worked together with other Consortium members, and indicate the contributions of others in the relevant sections.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -85,11 +89,11 @@ The Ag1000G phase 1 resource comprises data on more than 52 million single nucle
 %
 However, a complication arises because previous genomic studies of \textit{An. gambiae} and \textit{An. coluzzii} have shown that different regions of the genome can convey different information about how individuals are related to each other.
 %
-In particular, several studies have found that differentiation between the two species \textit{An. gambiae} and \textit{An. coluzzii} is particularly high within certain genome regions but lower or almost absent elsewhere @@cite.
+In particular, several studies have found that differentiation between the two species \textit{An. gambiae} and \textit{An. coluzzii} is particularly high within certain genome regions but lower or almost absent elsewhere \parencite{Turner2005,White2010,Weetman2012,Cruickshank2014}.
 %
-There are also a number of large chromosomal inversions that are polymorphic within both of these species~\parencite{dellaTorre2001}.
+There are also a number of large chromosomal inversions that are polymorphic within both of these species~\parencite{dellaTorre2001,Coluzzi2002}.
 %
-Chromosomal inversions cause a greatly reduced rate of recombination between different karyotypes @@cite, which in turn will affect patterns of relatedness between individuals.
+Chromosomal inversions cause a greatly reduced rate of recombination between different karyotypes \parencite{Stump2007}, which in turn will affect patterns of relatedness between individuals.
 %
 Any analysis of population structure that fails to take these heterogeneities into account will struggle to present a clear picture.
 %
@@ -135,7 +139,7 @@ Trees within the 2Rb and 2La inversions also had unique topologies, consistent w
 %
 
 
-To explore these variations in tree topology systematically, I computed the Pearson correlation coefficient between genetic distance matrices from all pairs of genomic windows.
+To analyse these variations in tree topology systematically, I computed the Pearson correlation coefficient between genetic distance matrices from all pairs of genomic windows.
 %
 I then performed dimensionality reduction on the resulting correlation matrix via multidimensional scaling, to identify common patterns of relatedness found in multiple genome windows.
 %
@@ -151,14 +155,14 @@ The second PC identified the contrast between the highly species-driven patterns
 %
 There were also a minority of genome windows which did not display a strong correlation any of the four major patterns of relatedness, shown in Fig~\ref{fig:treescan}e as paler colours.
 %
-These included the windows spanning the insecticide resistance gene \textit{Vgsc} which is found near to the centromere of chromosome arm 2L, and which is known to have experienced adaptive introgression between \textit{An. gambiae} and \textit{An. coluzzii} @@cite.
+These included the windows spanning the insecticide resistance gene \textit{Vgsc} which is found near to the centromere of chromosome arm 2L, and which is known to have experienced adaptive introgression between \textit{An. gambiae} and \textit{An. coluzzii} \parencite{Clarkson2014,Norris2015}.
 %
 This provides a clue that windows affected by strong positive selection may display unusual patterns of relatedness due to adaptive gene flow between countries and/or species, explored further in Chapter 6.
 
 
 It is still not clear why we observe such a stark contrast between the pericentromeric and euchromatic regions of the X chromosome, and to a lesser extent Chromosome 3.
 %
-One factor that undoubtedly plays some part is the reduction in the rate of recombination towards the centromeres @@cite.
+One factor that undoubtedly plays some part is the reduction in the rate of recombination towards the centromeres \parencite{Cruickshank2014}.
 %
 Reduced recombination means that selection at linked sites will play a stronger role.
 %
@@ -170,7 +174,7 @@ This could also include positive selection for speciation genes.
 %
 The genes involved in maintaining differentiation between \textit{An. gambiae} and \textit{An. coluzzii} still remain a mystery, but if one or more key genes were located towards the pericentromeric region of the X chromosome, then they would be expected to have a substantial effect on the surrounding genome region.
 %
-\textit{An. gambiae} and \textit{An. coluzzii} hybrids are fully fertile, and the two species are known to undergo a low level of hybridisation in natural populations, the degree of which may vary over both space and time @@cite.
+\textit{An. gambiae} and \textit{An. coluzzii} hybrids are fully fertile, and the two species are known to undergo some hybridisation in natural populations, the degree of which may vary over both space and time \parencite{Weetman2012,Lee2013}.
 %
 However, genome regions linked to speciation genes would display very little if any evidence for gene flow between the species due to selection against hybrids, whereas unlinked regions would be much less constrained and alleles could move more freely.
 %
@@ -318,7 +322,151 @@ Also provided support for differentiation of Uganda from other \textit{An. gambi
 \subsection{Genetic diversity within populations}\label{subsec:diversity}
 
 
-@@TODO
+\begin{figure}[t!]
+\centering
+\includegraphics[width=1\textwidth]{artwork/chapter4/pop_params.pdf}
+\caption{@@TODO
+%
+}
+\label{fig:diversity}
+\end{figure}
+
+
+In the previous chapter I performed an initial analysis of genetic diversity, computing nucleotide diversity ($\pi$) within the Ag1000G phase 1 cohort as a whole.
+%
+This analysis of course ignored the fact that different populations within a species may exhibit different levels of genetic diversity, due to differences in their demographic history such as contractions or expansions in population size.
+%
+To investigate population differences in genetic diversity I performed four further analyses within each of nine populations defined by country and species (Fig. \ref{fig:diversity}).
+%
+The first of these analyses computed $\pi$, which summarises the fraction of nucleotide differences between pairs of chromosomes within a population (Fig. \ref{fig:diversity}a).
+%
+The second analyses computed Tajima's $D$, which summarises the distribution of allele frequencies within a population (Fig. \ref{fig:diversity}b).
+%
+The third analysis computed the full site frequency spectrum (SFS) for each population, which provides information about how many SNPs are observed at different allele frequencies (Fig. \ref{fig:diversity}c).
+%
+The final analysis examined the decay of linkage disequilibrium, which summarised the degree to which genotypes are correlated at pairs of SNPs at different physical distances from each other (Fig. \ref{fig:diversity}d).
+%
+
+
+These analyses revealed strong contrasts between populations in both the magnitude and architecture of genetic diversity.
+%
+All the populations to the north of the equatorial rainforest, from Guinea-Bissau in the West to Uganda in the East, including both species, displayed very similar results, with the highest genome-wide average $\pi = 1.5\%$, Tajima's $D < -1.5$, SFS with a strong excess of SNPs at low minor allele frequency and LD decaying to background levels within 2 kb.
+%
+These characteristics indicate large effective population size and are also consistent with a major population expansion at some point within their history.
+%
+In both Gabon \textit{An. gambiae} and Angola \textit{An. coluzzii}, $\pi$ was lower, Tajima's $D$ was approaching zero, SFS were more balanced and LD decay was $> 10$ kb.
+%
+These characteristics are consistent with an effective population size that is both smaller and has been more stable over time.
+%
+The Kenyan population displayed the most extreme patterns of diversity, with the lowest $\pi$, Tajima's $D > 2$, SFS with a deficit of SNPs at lower minor allele frequencies, and LD not decaying to background until $> 10$ Mb.
+%
+These characteristics indicate a strong and recent reduction in effective population size.
+%
+Further examination of levels of heterozygosity within individuals revealed that Kenyan mosquitoes displayed long runs of homozygosity, in some cases affecting almost entire chromosome arms, a pattern not observed in mosquitoes from any other population (Fig. \ref{fig:keroh}).
+%
+Such patterns of homozygosity are usually only observed after multiple generations of inbreeding, similar to patterns found in domesticated animals for example @@cite.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Genetic diversity within Cas9 gene drive targets}\label{subsec:gene-drive}
+
+
+The high level of nucleotide diversity within many of the mosquito populations sampled in Ag1000G phase 1 is interesting in its own right, but also has practical consequences for the development of new vector control tools based on gene drives.
+%
+Gene drives are a promising future technology for mosquito control, whereby an engineered genetic element is integrated into the mosquito genome that has the capability to be transmitted to progeny with super-Mendelian inheritance @@cite.
+%
+Because of this biased inheritance, a gene drive will propagate itself within a mosquito population, even if it is in some way deleterious to its carrier.
+%
+For example, gene drives have been engineered and proven effective under lab conditions which cause population suppression by biasing the sex ratio among offspring to be amlost all male @@cite.
+%
+Current gene drives make use of CRISPR/Cas9 homing endonucleases, which can be engineered to target almost any gene, because they include a guide RNA which matches a 21 bp sequence in the target genome.
+%
+The guide RNA can be designed to match any sequence of 18 nucleotides, then must terminate with the protospacer adjacent motif (PAM) \texttt{-NGG}.
+%
+However, any natural genetic variation in the target sequence within the mosquito population can reduce efficacy of a gene drive, because it will affect binding of the Cas9 guide RNA.
+%
+
+
+\begin{figure}[t!]
+\centering
+\includegraphics[width=1.1\textwidth,center]{artwork/chapter4/cas9_targets.pdf}
+\caption{@@TODO
+%
+}
+\label{fig:cas9}
+\end{figure}
+
+
+I explored the impact of nucleotide variation on the availability of highly conserved Cas9 target sequences, in collaboration with Ag1000G Consortium members Mara Lawniczak and Krzysztof Kozak.
+%
+I was particularly interested to explore the impact of sample size and of population differences in levels of genetic diversity on the ascertainment of viable Cas9 gene drive target sites.
+%
+I performed an analysis whereby I identified all 21 bp sequences in the reference genome terminating in a PAM motif, within which no nucleotide variation was found within a given Ag1000G phase 1 population.
+%
+I repeated this multiple times with successively greater down-sampling of individuals from each population.
+%
+I then plotted for each population the number of variant sites (Fig. \ref{fig:cas9}a), the number of viable Cas9 targets (Fig. \ref{fig:cas9}b) and the number of genes containing at least one viable Cas9 target (Fig. \ref{fig:cas9}c), and how these metrics varied with increasing sample size.
+%
+These analyses showed that the higher levels of nucleotide diversity among the populations sampled to the north of the equatorial rainforest had a dramatically greater impact on the reduction of available Cas9 targets and targetable genes, compared with the more southerly populations from Gabon and Angola, and the Kenyan population.
+%
+At a sample size of 50, more than 1.5 million Cas9 targets remained viable in Kenya, and more than 1 million were viable in Angola and Gabon, whereas less than 0.5 million were viable in any of the remaining populations.
+%
+Within the whole cohort, less than 3\% of Cas9 targets were fully conserved at the nucleotide level.
+%
+Clearly some \textit{An. gambiae} and \textit{An. coluzzii} populations will be more naturally resistant to gene drives than others due to higher diversity, and will require more intensive sampling in order to survey existing variation and design gene drives to accommodate this.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Populations with uncertain species status}\label{subsec:species}
+
+
+As mentioned above, the species assignment for individuals from Guinea-Bissau and Kenya was uncertain.
+%
+The results of conventional molecular assays for differentiating \textit{An. gambiae} and \textit{An. coluzzii} @@cite showed a mixture of genotypes in Guinea-Bissau, with some individuals homozygous for the \textit{An. gambiae} marker allele, some homozygous for the \textit{An. coluzzii} marker allele, and some heterozygous.
+%
+Several previous studies have observed similar results from sampling mosquitoes in coastal areas of the far West of Africa, and have interpreted these results as evidence for a localised breakdown in reproductive isolation between \textit{An. gambiae} and \textit{An. coluzzii} \parencite{Oliveira2008,Marsden2011,Weetman2012,Gordicho2014,Vicente2017}.
+%
+The conventional molecular diagnostic assays only a single locus on the X chromosome, and Ag1000G Consortium member Giordano Botta used a previous study of \textit{An. gambiae} and \textit{An. coluzzii} in Mali to ascertain a set of @@N SNPs distributed across all chromosomes that were highly differentiated between the two species and could be used as ancestry-informative markers (AIMs) to explore species ancestry across the genome in the Ag1000G phase 1 cohort.
+%
+Genotypes at these AIMs confirmed that Guinea-Bissau individuals carried an apparent mixture of \textit{An. gambiae} and \textit{An. coluzzii} alleles on all chromosome arms @@cite.
+%
+However, this apparent mixture of species ancestry was somewhat puzzling given the results of population structure analyses shown above.
+%
+For example, in PCA the Guinea-Bissau individuals form a single grouping (\ref{fig:pca}).
+%
+If these individuals were sampled from a population resulting from ongoing hybridisation between \textit{An. gambiae} and \textit{An. coluzzii} then we would expect to see some structure within these individuals.
+%
+In particular, we would expect the Guinea-Bissau individuals to appear spread out on the PCA between the West African \textit{An. gambiae} and \textit{An. coluzzii} populations, reflecting varying degrees of admixture.
+
+%
+To explore evidence for admixture within Guinea-Bissau I performed allele frequency tests for admixture using the $f_{3}$ and $f_{4}$ statistics defined by @@cite.
+%
+The $f_{3}$ statistic tests whether allele frequencies in a putatively admixed population are on average intermediate between to populations that are representative of the donor populations.
+%
+@@TODO f3 results.
+%
+The $f_{4}$ statistic tests for admixture by examining whether there is any bias in allele sharing between @@what.
+%
+@@TODO f4 results.
+%
+@@TODO Conclude what do these tests show. Other possible hypotheses.
+
+
+A surprising finding from the AIM analysis was that individuals from Kenya also carried an apparent mixture of \textit{An. gambiae} and \textit{An. coluzzii} alleles on all chromosome arms @@cite.
+%
+This is unexpected because no mosquitoes typing as \textit{An. coluzzii} via conventional molecular diagnostics have ever been found in East Africa, and hence these assays were not even performed on the Kenyan mosquitoes.
+%
+Given the absence of \textit{An. coluzzii} from this geographical region, we can rule out any recent admixture between species as the cause.
+%
+This leaves ancient admixture and ancestral population as possible explanations.
+%
+@@TODO f3 results
+%
+@@TODO f4 results.
+%
+@@TODO what do they say about Kenya.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -378,6 +526,17 @@ Also provided support for differentiation of Uganda from other \textit{An. gambi
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Supplemental figures}\label{sec:supplemental-figures}
+
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=1\textwidth]{artwork/chapter4/keroh.pdf}
+\caption{@@TODO
+%
+}
+\label{fig:keroh}
+\end{figure}
+
 
 
 @@
