@@ -27,7 +27,15 @@ Chapter 4. Population structure and genetic diversity
 \begin{abstract}
 
 
-@@
+In this chapter I investigate genetic population structure and diversity among the 765 wild-caught mosquitoes sequenced in Ag1000G phase 1, using the genome-wide data resource on nucleotide variation described in the previous chapter.
+%
+I explore evidence for genetic differentiation between populations from different species and geographical locations, and investigate heterogeneity in rates of gene flow between these populations.
+%
+I quantify and characterise genetic diversity within these populations, and provide evidence for contrasting population size histories.
+%
+I also explore the impact of nucleotide variation within these populations on the availability of potential gene drive targets.
+%
+These analyses provide new insights into the complex demography of \textit{An. gambiae} and \textit{An. coluzzii} populations, and a firm foundation from which to explore the evolution of insecticide resistance in subsequent chapters.
 
 
 \end{abstract}
@@ -63,7 +71,7 @@ Human population density and land use, and the history and current coverage of m
 While we do not have the sampling resolution to attempt to correlate any of these individual variables with genetic features of mosquito populations, we can begin to highlight major variations between populations and generate hypotheses for further investigation.
 
 
-Analyses of population structure and diversity were carried out as part of a broader investigation of population history and demography performed by the Ag1000G Consortium Analysis Working Group.
+These analyses of population structure and diversity were carried out as part of a broader investigation of population history and demography performed by the Ag1000G Consortium Analysis Working Group.
 %
 In this chapter I focus on the analyses that I led and performed individually.
 %
@@ -98,7 +106,7 @@ Any analysis of population structure that fails to take these heterogeneities in
 
 \begin{figure}[t!]
 \centering
-\includegraphics[width=\textwidth]{artwork/chapter4/treescan.pdf}
+\includegraphics[width=1.1\textwidth,center]{artwork/chapter4/treescan.pdf}
 \caption{Variation across the genome in patterns of relatedness between individual mosquitoes.
 %
 Panels \textbf{a-d} each show a neighbour-joining tree computed from pairwise genetic distances within a specific 200 kb genomic window, illustrating the four most common patterns of relatedness found throughout the genome.
@@ -254,7 +262,7 @@ Thus patterns of sharing of doubleton variants between individuals are more indi
 
 \begin{figure}[t!]
 \centering
-\includegraphics[width=1\textwidth]{artwork/chapter4/popdiff.pdf}
+\includegraphics[width=1.1\textwidth,center]{artwork/chapter4/popdiff.pdf}
 \caption{Measures of genetic differentiation between pairs of populations defined by species and country of collection, using SNPs from euchromatic regions of Chromosome 3.
 %
 \textbf{a}, Pairwise average $F_{ST}$.
@@ -380,7 +388,7 @@ Such patterns of homozygosity are usually only observed after multiple generatio
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Genetic diversity within Cas9 gene drive targets}\label{subsec:gene-drive}
+\subsection{Genetic variation within Cas9 gene drive targets}\label{subsec:gene-drive}
 
 
 The high level of nucleotide diversity within many of the mosquito populations sampled in Ag1000G phase 1 is interesting in its own right, but also has practical consequences for the development of new vector control tools based on gene drives.
@@ -439,10 +447,42 @@ Clearly some \textit{An. gambiae} and \textit{An. coluzzii} populations will be 
 \subsection{Gene flow between species}\label{subsec:species}
 
 
-Interesting to investigate gene flow between species. Use data from AGC, provides outgroups and other gambiae complex members. Know from studies of Vgsc get adaptive introgression between gambiae and coluzzii. But see if we can detect genome-wide evidence for gene flow between species. Giordano did AIMs as preliminary analysis, showed apparent mixed ancestry in Guinea-Bissau and Kenya, otherwise good species. AIMs limited, and can have multiple explanations. Followed this up using analyses of allele frequencies, f3 and f4. Also examined evidence for gene flow with arabiensis.
+% https://github.com/malariagen/ag1000g/blob/master/notebooks/aliman/20150526%20Admixture%2C%20f3%2C%20D.ipynb
+
+% https://github.com/malariagen/ag1000g/blob/master/notebooks/aliman/20150529%20Admixture%2C%20introgression.ipynb
+
+% https://github.com/malariagen/ag1000g/blob/master/notebooks/aliman/20150726%20Kenya%20ancestral%20or%20admixed%3F.ipynb
 
 
-% Guinea-Bissau, AIMs, f3, f4
+A long-standing question in the field is the extent to which gene flow occurs via hybridisation between species within the \textit{An. gambiae} complex.
+%
+I investigated genome-wide evidence for gene flow between species using data from Ag1000G phase 1, combined with data from \textit{An. arabiensis} and outgroup species from \textcite{Neafsey2015}.
+%
+I used the $f_3$ and $f_4$ statistics which test for evidence of admixture, as defined by \textcite{Patterson2012}.
+%
+The $f_3$ statistic tests if allele frequencies in a population with suspected admixture are on average intermediate between two donor populations.
+%
+The $f_4$ statistic, also known as the ABBA-BABA test or Patterson's $D$, tests for unbalanced allele sharing in a four population tree.
+
+
+Hybrids between \textit{An. gambiae} and \textit{An. coluzzii} are fully fertile and several studies have found evidence that hybridisation occurs at a rate that varies over both time and space~\parencite{Lee2013,Weetman2012}.
+%
+In Ag1000G phase 1, the samples from Guinea-Bissau displayed a mixture of species genotypes according to conventional molecular diagnostics, including individuals with an apparent hybrid genotype.
+%
+Similar results have been obtained from previous studies in the Far West region, and have been interpreted as evidence for a localised breakdown in reproductive isolation between \textit{An. gambiae} and \textit{An. coluzzii}~\parencite{Oliveira2008,Marsden2011,Weetman2012,Gordicho2014,Vicente2017}.
+%
+Ag1000G Consortium member Giordano Botta investigated this further using data from Ag1000G phase 1, showing that Guinea-Bissau individuals had a mixture of species genotypes across ancestry-informative markers on all chromosome arms~\parencite{Ag1000G2017}.
+%
+There are several possible explanations for these data, however, including contemporary or historical admixture between species, and retention of ancestral variation.
+%
+The results from PCA suggest that the Guinea-Bissau individuals are not the result of ongoing hybridisation between species, because all individuals form a single group distinct from groups of each species from nearby countries (Fig.~\ref{fig:pca}), rather than being spread out between them as would be expected under admixture.
+%
+Consistent with this, results of $f_3$ tests with Guinea-Bissau as putatively admixed and Burkina Faso \textit{An. gambiae} and \textit{An. coluzzii} as donor populations were significantly positive, indicating allele frequencies in Guinea-Bissau were not intermediate and arguing against a simple admixture scenario.
+%
+@@TODO f4 results for GW.
+%
+Taken together, these results show that the origins of the Guinea-Bissau population and its relationships with \textit{An. gambiae} and \textit{An. coluzzii} populations are more complex than previously appreciated, and caution against over-interpretation of data from conventional species diagnostics.
+
 
 % Kenya, AIMs, f4
 
@@ -464,6 +504,22 @@ Interesting to investigate gene flow between species. Use data from AGC, provide
 % Xeu - D(BFgam, BFcol; KE, chri); Z=8.7
 % Xph - D(BFgam, BFcol; KE, chri); Z=2.7
 
+
+A surprising result from the AIM analysis was that the Kenyan individuals also had a mixture of \textit{An. gambiae}, \textit{An. coluzzii} and heterozygous genotypes, similar to Guinea-Bissau~\parencite{Ag1000G2017}.
+%
+The range of \textit{An. coluzzii} is not known to extend to the east of the Rift Valley, and so the Kenyan population cannot be the result of any recent admixture between species.
+%
+$f_3$ tests with Kenya as putatively admixed and all other pairs of populations as putative donors did not support evidence for admixture.
+%
+I also computed $f_4$ statistics for the Kenyan population, using \textit{An. gambiae} and \textit{An. coluzzii} from Burkina Faso as potential sibling populations and \textit{An. christyi} as the outgroup.
+%
+These analyses gave conflicting results depending on which chromosome arm was analysed, with 3R indicating that Kenya was sister with \textit{An. coluzzii} ($D(KE, BFcol; BFgam, chri); Z=0.1$), 3L indicating Kenya was a cryptic taxon ancestral to both species ($D(BFgam, BFcol; KE, chri); Z=-0.7$) and the X chromosome not providing clear support for any one hypothesis.
+%
+Thus, the origins and species status of the Kenyan population are also uncertain.
+%
+These results reinforce the fact that reliance on a single diagnostic marker to identify species is very limiting and may be missing important signals of introgression or cryptic taxa.
+
+
 % gambiae <-> coluzzii, compare north and south
 % D(AOcol, BFcol; Xgam, chri)
 % Significant for all X, greatest with Gabon...
@@ -475,6 +531,18 @@ Interesting to investigate gene flow between species. Use data from AGC, provide
 % 3L	D(GAS, GNS; AOM, chri)	0.028	0.0036	7.7
 % Does not rule out some gene flow between gambiae and coluzzii in northerly populations, indeed know it occurs because of adaptive introgression. But does show that it is stronger in southerly populations, and that it is bidirectional.
 
+
+Among the remaining populations, the AIMs supported a clear assignment of \textit{An. gambiae} or \textit{An. coluzzii} species status, in agreement with conventional molecular diagnostics~\parencite{Ag1000G2017}.
+%
+However, this does not rule out low level gene flow between species, and among these populations there was clear evidence for a greater degree of gene flow in some populations relative to others.
+%
+All $f_4$ tests with \textit{An. coluzzii} from Angola and Burkina Faso as sister populations provided significant evidence for admixture between Angola and \textit{An. gambiae}, with the strongest signal obtained for Gabon (e.g., $D(AOcol, BFcol; GAgam, chri); Z=14.0$).
+%
+Conversely, all tests with two \textit{An. gambiae} populations as sisters provided evidence for admixture between Gabon \textit{An. gambiae} and \textit{An. coluzzii}, with the strongest signal obtained for Angola (e.g., $D(GAgam, GNgam; AOcol, chri); Z=11.1$).
+%
+These results show that gene flow between the two species has been stronger in southerly populations than northerly populations, and that it has been bidirectional.
+
+
 % arabiensis
 % D(pop1, pop2; arab, chri)
 % Significant in many cases, e.g.,
@@ -483,80 +551,41 @@ Interesting to investigate gene flow between species. Use data from AGC, provide
 % Partial ordering: GWA < (AOM, BFM) < (GNS, BFS, CMS, GAS) < UGS < KES
 % Gene flow with arabiensis does occur, greater for gambiae than coluzzii, heterogeneous across geographical range with more introgression in the East.
 
-% https://github.com/malariagen/ag1000g/blob/master/notebooks/aliman/20150526%20Admixture%2C%20f3%2C%20D.ipynb
 
-% https://github.com/malariagen/ag1000g/blob/master/notebooks/aliman/20150529%20Admixture%2C%20introgression.ipynb
-
-% https://github.com/malariagen/ag1000g/blob/master/notebooks/aliman/20150726%20Kenya%20ancestral%20or%20admixed%3F.ipynb
-
-
-
-As mentioned above, the species assignment for individuals from Guinea-Bissau and Kenya was uncertain.
+Hybridisation between \textit{An. gambiae} and \textit{An. arabiensis} is also known to occur in nature but thought to be less common~\parencite{White1971,Coluzzi1979,dellaTorre1997}.
 %
-The results of conventional molecular assays for differentiating \textit{An. gambiae} and \textit{An. coluzzii} @@cite showed a mixture of genotypes in Guinea-Bissau, with some individuals homozygous for the \textit{An. gambiae} marker allele, some homozygous for the \textit{An. coluzzii} marker allele, and some heterozygous.
+I used $f_4$ tests of the form $D(A, B; arab, chri)$ where $A$ and $B$ were all pairs of Ag1000G phase 1 populations to investigate whether gene flow with arabiensis is greater for some populations relative to others.
 %
-Several previous studies have observed similar results from sampling mosquitoes in coastal areas of the far West of Africa, and have interpreted these results as evidence for a localised breakdown in reproductive isolation between \textit{An. gambiae} and \textit{An. coluzzii} \parencite{Oliveira2008,Marsden2011,Weetman2012,Gordicho2014,Vicente2017}.
+These tests were significant in some cases (e.g., $D(BFgam, BFcol; arab, chri); Z=8.0$; $D(UGgam, BFgam; arab, chri); Z=6.9$) but not others, allowing for a partial ordering of populations by relative degree of introgression .
 %
-The conventional molecular diagnostic assays only a single locus on the X chromosome, and Ag1000G Consortium member Giordano Botta used a previous study of \textit{An. gambiae} and \textit{An. coluzzii} in Mali to ascertain a set of @@N SNPs distributed across all chromosomes that were highly differentiated between the two species and could be used as ancestry-informative markers (AIMs) to explore species ancestry across the genome in the Ag1000G phase 1 cohort.
-%
-Genotypes at these AIMs confirmed that Guinea-Bissau individuals carried an apparent mixture of \textit{An. gambiae} and \textit{An. coluzzii} alleles on all chromosome arms @@cite.
-%
-However, this apparent mixture of species ancestry was somewhat puzzling given the results of population structure analyses shown above.
-%
-For example, in PCA the Guinea-Bissau individuals form a single grouping (Fig. \ref{fig:pca}).
-%
-If these individuals were sampled from a population resulting from ongoing hybridisation between \textit{An. gambiae} and \textit{An. coluzzii} then we would expect to see some structure within these individuals.
-%
-In particular, we would expect the Guinea-Bissau individuals to appear spread out on the PCA between the West African \textit{An. gambiae} and \textit{An. coluzzii} populations, reflecting varying degrees of admixture.
-
-%
-To explore evidence for admixture within Guinea-Bissau I performed allele frequency tests for admixture using the $f_{3}$ and $f_{4}$ statistics defined by @@cite.
-%
-The $f_{3}$ statistic tests whether allele frequencies in a putatively admixed population are on average intermediate between to populations that are representative of the donor populations.
-%
-@@TODO f3 results.
-%
-The $f_{4}$ statistic tests for admixture by examining whether there is any bias in allele sharing between @@what.
-%
-@@TODO f4 results.
-%
-@@TODO Conclude what do these tests show. Other possible hypotheses.
-
-
-A surprising finding from the AIM analysis was that individuals from Kenya also carried an apparent mixture of \textit{An. gambiae} and \textit{An. coluzzii} alleles on all chromosome arms @@cite.
-%
-This is unexpected because no mosquitoes typing as \textit{An. coluzzii} via conventional molecular diagnostics have ever been found in East Africa, and hence these assays were not even performed on the Kenyan mosquitoes.
-%
-Given the absence of \textit{An. coluzzii} from this geographical region, we can rule out any recent admixture between species as the cause.
-%
-This leaves ancient admixture and ancestral population as possible explanations.
-%
-@@TODO f3 results
-%
-@@TODO f4 results.
-%
-@@TODO what do they say about Kenya.
+This partial ordering was $GW < \{AOcol, BFcol\} < \{GNgam, BFgam, CMgam, GAgam\} < UGgam < KE$, indicating that introgression with \textit{An. arabiensis} is higher in \textit{An. gambiae} relative to \textit{An. coluzzii}, and higher in easterly populations relative to westerly populations.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Discussion}\label{sec:discussion}
+\section{Conclusions}\label{sec:conclusions}
 
 
-@@TODO para about low differentiation between gambiae in west/central Africa. suggests high rates of gene flow. Followed up in collaboration with members of the consortium, used joint site frequency spectra to model and fit migration rate. Although still crude, was at upper bound, indicating apparently panmictic.
-
-
-@@TODO Another interesting feature of these populations is highest diversity with excess of rare variants. Followed up with consortium to fit population size history using SFS via dadi and stairway plot. All strongly supported large population growth on historical timescale. Hard to estimate but timing in the range @@. Open question regarding which variants to use, used intergenic but in hindsight perhaps better to use syn sites, twice diversity would double pop size estimates, also selection might alter shape of SFS thus timing of inferred expansions.
-
-
-@@TODO para about high differentiation across equatorial rainforest, replicated within both gambiae and coluzzii. Ref back to pinto and lehmann studies. Suggests what.
-
-
-@@TODO para about Kenya very unusual. Low diversity and runs of homozygosity suggest recent bottleneck. Followed up with consortium, used IBD to estimate recent population history. Provided strong support for bottleneck, however timing hard to resolve, appeared to predate the bednet scaleup but clearly some limitations to method. Other unusual feature of this population is uncertain species status. Needs replication but outside range of coluzzii and so cannot be recent hybrid. Further analyses and sampling needed to resolve if cryptic taxa or some other kind of hybrid.
-
-
-@@TODO para about guinea-bissau, species status, is it recent breakdown of reproductive isolation or not? pull together evidence from PCA, f3, f4, suggest more complex than that. Clearly a coherent population. Remaining hypotheses, more ancient admixture, or possibly some other kind of split. Important for malaria control because acts like a distinct taxon. Futher sampling needed to understand contemporary patterns of gene flow and isolation.
+In this chapter I have showed that there are clear patterns of genetic structure among the populations sampled in the Ag1000G phase 1 cohort.
+%
+These patterns of population structure are also associated with differences in the magnitude and architecture of genetic diversity within populations.
+%
+Taken together, these results point to complex and varied demographic histories, and multiple biological and geographical factors affecting population size and rates of gene flow between populations and species.
+%
+Within both species there is a strong north/south divide, with high differentiation between populations on either side of the equatorial rainforest, higher genetic diversity and evidence for a major population expansion in northerly but not southerly populations.
+%
+Within \textit{An. gambiae} there appears to be an extremely high rate of gene flow between the northerly populations, despite substantial physical distance, raising important questions about the rate and range of migration within this species.
+%
+There are also unusual populations in both the far West and far East, where individuals carry an apparent mixture of species ancestry, but this cannot be explained by a simple model of recent admixture between species.
+%
+We also see an extreme contrast between populations on either side of the East African Rift, with evidence for a recent and substantial population bottleneck in the Kenyan population.
+%
+Clearly there are limits to the extent to which these findings can be generalised, because geographical sampling is limited particularly within \textit{An. coluzzii}, and much remains to be learned about both of these species throughout their complete geographical ranges.
+%
+However, these results show that there are important heterogeneities within these species, which are of basic biological interest, but also relevant to malaria vector population surveillance, because they will affect factors such as the efficacy of gene drives for population suppression, or the speed, direction and extent to which insecticide resistance mutations spread.
+%
+In the next chapter I investigate each of these populations in more detail, focusing on their evolutionary history and searching for genome regions evolving rapidly due to positive selection for insecticide resistance.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -565,16 +594,7 @@ This leaves ancient admixture and ancestral population as possible explanations.
 \section{Methods}\label{sec:methods}
 
 
-@@
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Conclusion}\label{sec:conclusion}
-
-
-@@
+% @@TODO methods
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
