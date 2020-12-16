@@ -318,7 +318,7 @@ However, the magnitude of this difference was surprising, being more than twice 
 %
 This could indicate extremely low rates of gene flow, but could also be an effect of strong genetic drift within the Kenyan population, which would be consistent with analyses of genetic diversity presented below.
 %
-The fact that the Kenyan population was equally differentiated from both \textit{An. gambiae} and \textit{An. coluzzii} was also surprising, given that the Kenyan samples were believed to be \textit{An. gambiae}, explored further below in the sub-section on populations with uncertain species status.
+The fact that the Kenyan population was equally differentiated from both \textit{An. gambiae} and \textit{An. coluzzii} was also surprising, given that the Kenyan samples were believed to be \textit{An. gambiae}, explored further below in the sub-section on gene flow between species.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -436,7 +436,59 @@ Clearly some \textit{An. gambiae} and \textit{An. coluzzii} populations will be 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Populations with uncertain species status}\label{subsec:species}
+\subsection{Gene flow between species}\label{subsec:species}
+
+
+Interesting to investigate gene flow between species. Use data from AGC, provides outgroups and other gambiae complex members. Know from studies of Vgsc get adaptive introgression between gambiae and coluzzii. But see if we can detect genome-wide evidence for gene flow between species. Giordano did AIMs as preliminary analysis, showed apparent mixed ancestry in Guinea-Bissau and Kenya, otherwise good species. AIMs limited, and can have multiple explanations. Followed this up using analyses of allele frequencies, f3 and f4. Also examined evidence for gene flow with arabiensis.
+
+
+% Guinea-Bissau, AIMs, f3, f4
+
+% Kenya, AIMs, f4
+
+% KE with coluzzii?
+% 3R - D(KE, BFcol; BFgam, chri); Z=0.1
+% 3L - D(KE, BFcol; BFgam, chri); Z=3.7
+% Xeu - D(KE, BFcol; BFgam, chri); Z=1.9
+% Xph - D(KE, BFcol; BFgam, chri); Z=5.9
+
+% KE with gambiae?
+% 3R - D(KE, BFgam; BFcol, chri); Z=4.5
+% 3L - D(KE, BFgam; BFcol, chri); Z=4.6
+% Xeu - D(KE, BFgam; BFcol, chri); Z=-1.3
+% Xph - D(KE, BFgam; BFcol, chri); Z=4.1
+
+% KE as ancestral?
+% 3R - D(BFgam, BFcol; KE, chri); Z=-6.1
+% 3L - D(BFgam, BFcol; KE, chri); Z=-0.7
+% Xeu - D(BFgam, BFcol; KE, chri); Z=8.7
+% Xph - D(BFgam, BFcol; KE, chri); Z=2.7
+
+% gambiae <-> coluzzii, compare north and south
+% D(AOcol, BFcol; Xgam, chri)
+% Significant for all X, greatest with Gabon...
+% 3R	D(AOM, BFM; GAS, chri)	0.040	0.0028	14.0
+% 3L	D(AOM, BFM; GAS, chri)	0.041	0.0031	13.5
+% D(Xgam, Ygam; Zcol, chri)
+% Only significant for X=GA, greatest with Z=Angola
+% 3R	D(GNS, GAS; AOM, chri)	-0.026	0.0023	-11.1
+% 3L	D(GAS, GNS; AOM, chri)	0.028	0.0036	7.7
+% Does not rule out some gene flow between gambiae and coluzzii in northerly populations, indeed know it occurs because of adaptive introgression. But does show that it is stronger in southerly populations, and that it is bidirectional.
+
+% arabiensis
+% D(pop1, pop2; arab, chri)
+% Significant in many cases, e.g.,
+% 3R	D(BFS, BFM; arab, chri)	0.021	0.0026	8.0
+% 3R	D(UGS, BFS; arab, chri)	0.006	0.0008	6.9
+% Partial ordering: GWA < (AOM, BFM) < (GNS, BFS, CMS, GAS) < UGS < KES
+% Gene flow with arabiensis does occur, greater for gambiae than coluzzii, heterogeneous across geographical range with more introgression in the East.
+
+% https://github.com/malariagen/ag1000g/blob/master/notebooks/aliman/20150526%20Admixture%2C%20f3%2C%20D.ipynb
+
+% https://github.com/malariagen/ag1000g/blob/master/notebooks/aliman/20150529%20Admixture%2C%20introgression.ipynb
+
+% https://github.com/malariagen/ag1000g/blob/master/notebooks/aliman/20150726%20Kenya%20ancestral%20or%20admixed%3F.ipynb
+
 
 
 As mentioned above, the species assignment for individuals from Guinea-Bissau and Kenya was uncertain.
@@ -451,7 +503,7 @@ Genotypes at these AIMs confirmed that Guinea-Bissau individuals carried an appa
 %
 However, this apparent mixture of species ancestry was somewhat puzzling given the results of population structure analyses shown above.
 %
-For example, in PCA the Guinea-Bissau individuals form a single grouping (\ref{fig:pca}).
+For example, in PCA the Guinea-Bissau individuals form a single grouping (Fig. \ref{fig:pca}).
 %
 If these individuals were sampled from a population resulting from ongoing hybridisation between \textit{An. gambiae} and \textit{An. coluzzii} then we would expect to see some structure within these individuals.
 %
