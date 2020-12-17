@@ -66,7 +66,7 @@ The range of \textit{An. gambiae} overlaps that of \textit{An. coluzzii} and ext
 %
 Both species' ranges span the equator and encompass a remarkably diverse range of environments, including coastal, savanna, sahel and rainforest.
 %
-Human population density and land use, and the history and current coverage of malaria vector control interventions, also vary substantially throughout this range~\parencite{WHO2019WMR}.
+Human population density and land use, and the history and current coverage of malaria vector control interventions, also vary substantially throughout this range~\parencite{BinswangerMkhize2017,WHO2019WMR}.
 %
 While we do not have the sampling resolution to attempt to correlate any of these individual variables with genetic features of mosquito populations, we can begin to highlight major variations between populations and generate hypotheses for further investigation.
 
@@ -93,7 +93,7 @@ Investigating genetic population structure means studying the extent to which in
 %
 The Ag1000G phase 1 resource comprises data on more than 52 million single nucleotide polymorphisms (SNPs) distributed throughout the genome, and thus provides an extremely rich and high-resolution source of information with which to investigate population structure.
 %
-However, a complication arises because previous genomic studies of \textit{An. gambiae} and \textit{An. coluzzii} have shown that different regions of the genome can convey different information about how individuals are related to each other.
+However, a complication arises because previous genomic studies of \textit{An. gambiae} and \textit{An. coluzzii} have shown that different regions of the genome can convey different information about how individuals are related to each other~\parencite{Fontaine2014}.
 %
 In particular, several studies have found that differentiation between the two species \textit{An. gambiae} and \textit{An. coluzzii} is particularly high within certain genome regions but lower or almost absent elsewhere~\parencite{Turner2005,White2010,Weetman2012,Cruickshank2014}.
 %
@@ -207,12 +207,12 @@ Nevertheless, PCA allows us to identify genetically distinct populations, by exa
 
 \begin{figure}[t!]
 \centering
-\includegraphics[width=1.1\textwidth,center]{artwork/chapter4/pca.png}
+\includegraphics[width=1.1\textwidth,center]{artwork/chapter4/pca.pdf}
 \caption{Principal components analysis of SNP genotypes in the 765 wild-caught mosquitoes in the Ag1000G phase 1 cohort.
 %
-The five scatter plots show principal components (PCs) 1--10, each marker is an individual mosquito.
+\textbf{a--e}, Scatter plots show principal components (PCs) 1--10, each marker is an individual mosquito.
 %
-The bar plot shows the variance explained by the first 15 PCs.
+\textbf{f}, Bar plot shows the variance explained by the first 15 PCs.
 %
 }
 \label{fig:pca}
@@ -463,6 +463,8 @@ I used the $f_3$ and $f_4$ statistics which test for evidence of admixture, as d
 The $f_3$ statistic tests if allele frequencies in a population with suspected admixture are on average intermediate between two donor populations.
 %
 The $f_4$ statistic, also known as the ABBA-BABA test or Patterson's $D$, tests for unbalanced allele sharing in a four population tree.
+%
+In this subsection to be concise when describing different $f_4$ tests I use population abbreviations of the form \{country code\}-\{species\}, e.g., ``BF-gam'' is Burkina Faso \textit{An. gambiae}, ``AO-col'' is Angola \textit{An. coluzzii}, ``GW'' is Guinea-Bissau, etc., and ``O'' denotes the outgroup species \textit{An. christyi}.
 
 
 Hybrids between \textit{An. gambiae} and \textit{An. coluzzii} are fully fertile and several studies have found evidence that hybridisation occurs at a rate that varies over both time and space~\parencite{Lee2013,Weetman2012}.
@@ -475,34 +477,15 @@ Ag1000G Consortium member Giordano Botta investigated this further using data fr
 %
 There are several possible explanations for these data, however, including contemporary or historical admixture between species, and retention of ancestral variation.
 %
-The results from PCA suggest that the Guinea-Bissau individuals are not the result of ongoing hybridisation between species, because all individuals form a single group distinct from groups of each species from nearby countries (Fig.~\ref{fig:pca}), rather than being spread out between them as would be expected under admixture.
+The results from PCA suggest that the Guinea-Bissau individuals are not the result of ongoing hybridisation between species, because all individuals form a single group distinct from groups of each species from nearby countries (Fig.~\ref{fig:pca}), rather than being spread out between them as would be expected under recent admixture.
 %
 Consistent with this, results of $f_3$ tests with Guinea-Bissau as putatively admixed and Burkina Faso \textit{An. gambiae} and \textit{An. coluzzii} as donor populations were significantly positive, indicating allele frequencies in Guinea-Bissau were not intermediate and arguing against a simple admixture scenario.
 %
-@@TODO f4 results for GW.
+The Guinea-Bissau population was most closely related to the Burkina Faso \textit{An. coluzzii} population in PCA, $F_{ST}$ and doubleton sharing analyses (Figs.~\ref{fig:pca},~\ref{fig:popdiff}).
+%
+$f_4$ tests of the form D(GW, BF-col; GN-gam; O) were balanced and did not provide any significant evidence for admixture between Guinea-Bissau and Guinea \textit{An. gambiae} on any chromosome, except for the pericentromeric region of the X chromosome (Table~\ref{table:gwf4}; Fig.~\ref{fig:gwf4}).
 %
 Taken together, these results show that the origins of the Guinea-Bissau population and its relationships with \textit{An. gambiae} and \textit{An. coluzzii} populations are more complex than previously appreciated, and caution against over-interpretation of data from conventional species diagnostics.
-
-
-% Kenya, AIMs, f4
-
-% KE with coluzzii?
-% 3R - D(KE, BFcol; BFgam, chri); Z=0.1
-% 3L - D(KE, BFcol; BFgam, chri); Z=3.7
-% Xeu - D(KE, BFcol; BFgam, chri); Z=1.9
-% Xph - D(KE, BFcol; BFgam, chri); Z=5.9
-
-% KE with gambiae?
-% 3R - D(KE, BFgam; BFcol, chri); Z=4.5
-% 3L - D(KE, BFgam; BFcol, chri); Z=4.6
-% Xeu - D(KE, BFgam; BFcol, chri); Z=-1.3
-% Xph - D(KE, BFgam; BFcol, chri); Z=4.1
-
-% KE as ancestral?
-% 3R - D(BFgam, BFcol; KE, chri); Z=-6.1
-% 3L - D(BFgam, BFcol; KE, chri); Z=-0.7
-% Xeu - D(BFgam, BFcol; KE, chri); Z=8.7
-% Xph - D(BFgam, BFcol; KE, chri); Z=2.7
 
 
 A surprising result from the AIM analysis was that the Kenyan individuals also had a mixture of \textit{An. gambiae}, \textit{An. coluzzii} and heterozygous genotypes, similar to Guinea-Bissau~\parencite{Ag1000G2017}.
@@ -511,54 +494,33 @@ The range of \textit{An. coluzzii} is not known to extend to the east of the Rif
 %
 $f_3$ tests with Kenya as putatively admixed and all other pairs of populations as putative donors did not support evidence for admixture.
 %
-I also computed $f_4$ statistics for the Kenyan population, using \textit{An. gambiae} and \textit{An. coluzzii} from Burkina Faso as potential sibling populations and \textit{An. christyi} as the outgroup.
+I also computed $f_4$ statistics for the Kenyan population, using \textit{An. gambiae} and \textit{An. coluzzii} from Burkina Faso as potential sibling populations and \textit{An. Christyi} as the outgroup.
 %
-These analyses gave conflicting results depending on which chromosome arm was analysed, with 3R indicating that Kenya was sister with \textit{An. coluzzii} ($D(KE, BFcol; BFgam, chri); Z=0.1$), 3L indicating Kenya was a cryptic taxon ancestral to both species ($D(BFgam, BFcol; KE, chri); Z=-0.7$) and the X chromosome not providing clear support for any one hypothesis.
+These analyses gave conflicting results depending on which chromosome arm was analysed, with 3R indicating that Kenya was sister with \textit{An. coluzzii} (\textit{D(KE, BF-col; BF-gam, O)}; $Z=0.1$), 3L indicating Kenya was a cryptic taxon ancestral to both species (D(BF-gam, BF-col; KE, O); Z=-0.7) and the X chromosome not providing clear support for any one hypothesis.
 %
 Thus, the origins and species status of the Kenyan population are also uncertain.
 %
 These results reinforce the fact that reliance on a single diagnostic marker to identify species is very limiting and may be missing important signals of introgression or cryptic taxa.
 
 
-% gambiae <-> coluzzii, compare north and south
-% D(AOcol, BFcol; Xgam, chri)
-% Significant for all X, greatest with Gabon...
-% 3R	D(AOM, BFM; GAS, chri)	0.040	0.0028	14.0
-% 3L	D(AOM, BFM; GAS, chri)	0.041	0.0031	13.5
-% D(Xgam, Ygam; Zcol, chri)
-% Only significant for X=GA, greatest with Z=Angola
-% 3R	D(GNS, GAS; AOM, chri)	-0.026	0.0023	-11.1
-% 3L	D(GAS, GNS; AOM, chri)	0.028	0.0036	7.7
-% Does not rule out some gene flow between gambiae and coluzzii in northerly populations, indeed know it occurs because of adaptive introgression. But does show that it is stronger in southerly populations, and that it is bidirectional.
-
-
 Among the remaining populations, the AIMs supported a clear assignment of \textit{An. gambiae} or \textit{An. coluzzii} species status, in agreement with conventional molecular diagnostics~\parencite{Ag1000G2017}.
 %
 However, this does not rule out low level gene flow between species, and among these populations there was clear evidence for a greater degree of gene flow in some populations relative to others.
 %
-All $f_4$ tests with \textit{An. coluzzii} from Angola and Burkina Faso as sister populations provided significant evidence for admixture between Angola and \textit{An. gambiae}, with the strongest signal obtained for Gabon (e.g., $D(AOcol, BFcol; GAgam, chri); Z=14.0$).
+All $f_4$ tests with \textit{An. coluzzii} from Angola and Burkina Faso as sister populations provided significant evidence for admixture between Angola and \textit{An. gambiae}, with the strongest signal obtained for Gabon (e.g., D(AO-col, BF-col; GA-gam, O); $Z=14.0$).
 %
-Conversely, all tests with two \textit{An. gambiae} populations as sisters provided evidence for admixture between Gabon \textit{An. gambiae} and \textit{An. coluzzii}, with the strongest signal obtained for Angola (e.g., $D(GAgam, GNgam; AOcol, chri); Z=11.1$).
+Conversely, all tests with two \textit{An. gambiae} populations as sisters provided evidence for admixture between Gabon \textit{An. gambiae} and \textit{An. coluzzii}, with the strongest signal obtained for Angola (e.g., D(GA-gam, GN-gam; AO-col, O); $Z=11.1$).
 %
 These results show that gene flow between the two species has been stronger in southerly populations than northerly populations, and that it has been bidirectional.
 
 
-% arabiensis
-% D(pop1, pop2; arab, chri)
-% Significant in many cases, e.g.,
-% 3R	D(BFS, BFM; arab, chri)	0.021	0.0026	8.0
-% 3R	D(UGS, BFS; arab, chri)	0.006	0.0008	6.9
-% Partial ordering: GWA < (AOM, BFM) < (GNS, BFS, CMS, GAS) < UGS < KES
-% Gene flow with arabiensis does occur, greater for gambiae than coluzzii, heterogeneous across geographical range with more introgression in the East.
-
-
 Hybridisation between \textit{An. gambiae} and \textit{An. arabiensis} is also known to occur in nature but thought to be less common~\parencite{White1971,Coluzzi1979,dellaTorre1997}.
 %
-I used $f_4$ tests of the form $D(A, B; arab, chri)$ where $A$ and $B$ were all pairs of Ag1000G phase 1 populations to investigate whether gene flow with arabiensis is greater for some populations relative to others.
+I used $f_4$ tests of the form D(X, Y; A, O), where X and Y were all pairs of Ag1000G phase 1 populations, and A was \textit{An. arabiensis} from \textcite{Neafsey2015}, to investigate whether gene flow with \textit{An. arabiensis} is greater for some populations relative to others.
 %
-These tests were significant in some cases (e.g., $D(BFgam, BFcol; arab, chri); Z=8.0$; $D(UGgam, BFgam; arab, chri); Z=6.9$) but not others, allowing for a partial ordering of populations by relative degree of introgression .
+These tests were significant in some cases (e.g., D(BF-gam, BF-col; A, O); $Z=8.0$; D(UG-gam, BF-gam; A, O); $Z=6.9$) but not others, allowing for a partial ordering of populations by relative degree of introgression .
 %
-This partial ordering was $GW < \{AOcol, BFcol\} < \{GNgam, BFgam, CMgam, GAgam\} < UGgam < KE$, indicating that introgression with \textit{An. arabiensis} is higher in \textit{An. gambiae} relative to \textit{An. coluzzii}, and higher in easterly populations relative to westerly populations.
+This partial ordering was GW < \{AO-col, BF-col\} < \{GN-gam, BF-gam, CM-gam, GA-gam\} < UG-gam < KE, indicating that introgression with \textit{An. arabiensis} is higher in \textit{An. gambiae} relative to \textit{An. coluzzii}, and higher in easterly populations relative to westerly populations.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -594,7 +556,131 @@ In the next chapter I investigate each of these populations in more detail, focu
 \section{Methods}\label{sec:methods}
 
 
-% @@TODO methods
+In order to facilitate the population genetic analyses described in this chapter on the relatively large Ag1000G SNP variation data, I developed a new software package named scikit-allel\footnote{https://github.com/cggh/scikit-allel} for the Python programming language.
+%
+scikit-allel aims to support a range of standard data manipulations and statistical functions that are useful for exploratory analysis of large-scale genome variation data, with implementations that are sufficiently performant and scalable such that those analyses can be run interactively, allowing rapid iteration and hypothesis generation.
+%
+To achieve this, scikit-allel builds on several high-performance general-purpose scientific computing libraries, including NumPy~\parencite{Harris2020}, SciPy~\parencite{Virtanen2020}, Cython~\parencite{Behnel2011}, Pandas~\parencite{McKinney2010} and Matplotlib~\parencite{Hunter2007}.
+%
+The sub-sections below provide further details of specific analyses.
+%
+Unless otherwise stated, analyses were performed using scikit-allel and custom Python notebooks.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Genetic distance analyses}\label{subsec:methods-genetic-distance}
+
+To investigate variations in patterns of relatedness between individuals across the genome, I divided the genome into 1,418 contiguous non-overlapping windows, where each window contained 100 kb of accessible positions (equally-accessible windows).
+%
+Within each window I computed the city-block distance between all pairs of individuals, producing a $765 \times 765$ distance matrix.
+%
+I used these distance matrices to compute and plot a neighbour-joining tree for each window via the ape package version 3.5 for R~\parencite{Popescu2012}.
+%
+To compare these distance matrices systematically, I computed the Pearson correlation coefficient between all pairs of distance matrices, producing a $1418 \times 1418$ correlation matrix.
+%
+I converted this to a distance matrix by computing $\sqrt{(1-r^{2})}$ where $r$ is the correlation coefficient, and performed a singular value decomposition (SVD) on this matrix.
+%
+I then plotted the first ten components from this transformation against position in the genome.
+%
+To provide a visual representation of this transformation in Fig.~\ref{fig:treescan}b I painted the genome as follows.
+%
+Within the 2La inversion I painted with one colour, using the value from the first SVD component
+rescaled between 0 and 1 as the alpha value.
+%
+Within the 2Rb inversion I painted with a second colour, using the value from the third SVD component rescaled between 0 and 1 as the alpha value.
+%
+Within the remainder of the genome I painted with either a third or a fourth colour, depending on whether the value of the second SVD component was positive or negative.
+%
+Positive and negative values were separately rescaled between 0 and 1 to provide alpha values.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Principal components analysis}\label{subsec:methods-pca}
+
+
+SNPs for inclusion in principal components analysis were chosen by selecting biallelic variants from within the regions 3R:1-37 Mbp and 3L:15-41 Mbp.
+%
+Only variants with minor allele frequency $>=1\%$ were retained and each chromosome arm was randomly down-sampled to 100,000 variants.
+%
+I then pruned to remove SNPs in linkage disequilibrium, excluding SNPs above an $r^2$ threshold of 0.01 in moving windows of 500 SNPs with a step size of 250 SNPs.
+%
+SNPs from both chromosome arms were then concatenated, and PCA was run following methods described in \textcite{Patterson2006}.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Population differentiation analyses}\label{subsec:methods-popdiff}
+
+
+Average $F_{ST}$ was computed between all pairs of 9 populations defined by country of origin and species, except for Guinea-Bissau and Kenya which were each treated as a single population with uncertain species status.
+%
+Hudson's $F_{ST}$ estimator was used, and the ratio of averages computed following \textcite{Bhatia2013}.
+%
+Only SNPs within the regions 3R:1-37 Mbp and 3L:15-41 Mbp and which were segregating in both populations were used.
+%
+Standard error for each average was computed using a block-jackknife with block size 10,000 SNPs.
+
+
+The 765 individuals from natural populations were grouped into 9 populations as described above for $F_{ST}$ analysis.
+%
+Each population was then randomly down-sampled to the size of the smallest population (Guinea \textit{An. gambiae}, N=31).
+%
+After down-sampling, I ascertained SNPs from Chromosome 3 with an alternate allele count of 2 (doubletons).
+%
+For each population, I identified the set of doubletons with at least one allele originating from an individual in that population.
+%
+I then computed the fraction of those doubletons shared with each other population including itself.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Genetic diversity analyses}\label{subsec:methods-diversity}
+
+
+To compute a genome-wide average value for nucleotide diversity ($\pi$) I divided the genome into non-overlapping contiguous windows where each window contained 20 kb accessible positions.
+%
+For each SNP (including multiallelic SNPs) I used allele counts to compute the mean number of allelic differences between all pairs of individuals within each population.
+%
+A value of $\pi$ was computed for each window for each population by summing the mean pair-wise differences over all SNPs in the window and dividing by the number of accessible positions.
+
+
+From SNP validation experiments I estimated an FDR of 0.4\% and a sensitivity of 94.6\% (Chapter 3).
+%
+To explore the impact of error rates on estimates of diversity, I computed conservative lower bounds
+on $\pi$ and Watterson's $\theta$ for each population under an assumption of 1\% FDR and 100\% sensitivity by randomly sampling 99\% of SNPs in the dataset without replacement.
+%
+I computed conservative upper bounds under an assumption of 0\% FDR and 94\% sensitivity by randomly sampling 106\% of SNPs from the dataset with replacement.
+%
+Values for chromosome arm 3R excluding pericentromeric regions are given in Table~\ref{table:pirange}.
+%
+I report unadjusted values in the results section above.
+
+
+For each population, a site frequency spectrum (SFS) was computed using allele counts in SNPs from Chromosome 3 excluding pericentromeric regions.
+%
+Folded SFS were multiplied by the scaling factor $k (n - k) / n$ where $k$ is the minor allele count and $n$ is the number of chromosomes, to facilitate
+comparison with theoretical SFS for a population with constant size (expected to have constant scaled frequency for all values of $k$).
+
+
+SNPs from Chromosome 3 excluding pericentromeric regions were used for LD decay analyses.
+%
+For each population, the genotype correlation coefficient $r^2$~\parencite{Rogers2009} was computed for randomly sampled pairs of SNPs at a range of physical distances.
+%
+Only biallelic SNPs with a minor allele frequency greater than 10\% within the population were used.
+%
+Values were corrected for sample size by subtracting $1/n$ where $n$ is the number of sampled chromosomes.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Admixture tests}\label{subsec:methods-admixture}
+
+
+The $f_3$ and $f_4$ tests were performed using a block size of 100,000 SNPs to estimate standard error via a block jackknife procedure~\parencite{Patterson2012}.
+%
+$Z$ scores reported in the results are computed by dividing the test statistic by the estimated standard error, and thus indicate the number of standard deviations from zero.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -603,7 +689,7 @@ In the next chapter I investigate each of these populations in more detail, focu
 \section{Acknowledgments}\label{sec:acknowledgments}
 
 
-@@
+I would like to thank Nick Harding, Giordano Botta, Chris Clarkson, Tiago Antao, Krzsyztof Kozak, Daniel Schrider, Andrew Kern, Seth Redmond, Igor Sharakhov, Michael Fontaine, Martin Donnelly and Mara Lawniczak for many enlightening conversations while collaborating on population genetic analyses of the Ag1000G phase 1 data.
 
 
 \printbibliography
@@ -619,16 +705,27 @@ In the next chapter I investigate each of these populations in more detail, focu
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=1\textwidth]{artwork/chapter4/keroh.pdf}
-\caption{@@TODO
+\includegraphics[width=1.1\textwidth,center]{artwork/chapter4/keroh.pdf}
+\caption{Screenshot from the Panoptes Web application showing runs of homozygosity on chromosome arm 3R in a selection of seven individuals from Kenya.
 %
 }
 \label{fig:keroh}
 \end{figure}
 
 
-
-@@
+\clearpage
+\begin{figure}[h!]
+\centering
+\includegraphics[width=1.1\textwidth,center]{artwork/chapter4/gwf4.pdf}
+\caption{Results of the $f_4$ test D(GW, BF-col; GN-gam, O) for admixture between Guinea-Bissau (GW) and Guinea \textit{An. gambiae} (GN-gam).
+%
+Values for each block of 100,000 SNPs are plotted over the genome, to assess whether any particular genome regions provide evidence for admixture.
+%
+The only region providing strong support for admixture is the pericentromeric region of the X chromosome.
+%
+}
+\label{fig:gwf4}
+\end{figure}
 
 
 \clearpage
@@ -638,7 +735,61 @@ In the next chapter I investigate each of these populations in more detail, focu
 \section{Supplemental tables}\label{sec:supplemental-tables}
 
 
-@@
+\begin{table}[h]
+\begin{center}
+\begin{threeparttable}
 
+\caption{Genome-wide average values for $\pi$ and $\theta_{W}$ with upper and lower bounds computed as described in Methods.
+}
+
+\label{table:pirange}
+
+\begin{tabular}{lll}
+ \hline
+ \textbf{Population} & $\pi$ $(\%)$ & $\theta_{W}$  $(\%)$ \\
+ \hline
+AO coluzzii & 1.16 (1.14-1.23) & 1.24 (1.23-1.32) \\
+BF coluzzii & 1.45 (1.44-1.54) & 3.11 (3.08-3.31) \\
+GW & 1.49 (1.48-1.59) & 2.80 (2.78-2.98) \\
+GN gambiae & 1.50 (1.49-1.60) & 2.82 (2.79-3.00) \\
+BF gambiae & 1.50 (1.48-1.59) & 3.58 (3.54-3.80) \\
+CM gambiae & 1.50 (1.49-1.59) & 4.60 (4.56-4.90) \\
+GA gambiae & 1.35 (1.34-1.44) & 1.61 (1.60-1.71) \\
+UG gambiae & 1.50 (1.48-1.59) & 3.51 (3.48-3.74) \\
+KE & 0.87 (0.86-0.93) & 0.55 (0.55-0.59) \\
+ \hline
+\end{tabular}
+
+\end{threeparttable}
+\end{center}
+\end{table}
+
+
+\clearpage
+
+\begin{table}[h]
+\begin{center}
+\begin{threeparttable}
+
+\caption{Results of the $f_4$ test D(GW, BF-col; GN-gam, O) for admixture between Guinea-Bissau (GW) and Guinea \textit{An. gambiae} (GN-gam).
+}
+
+\label{table:gwf4}
+
+\begin{tabular}{llrrr}
+ \hline
+ \textbf{Chromosome} & $D$ & $SE$ & $Z$ \\
+ \hline
+2R & 0.007 & 0.0048 & 1.4 \\
+2L & 0.021 & 0.0093 & 2.3 \\
+3R & -0.011 & 0.0039 & -2.7 \\
+3L & -0.029 & 0.0067 & -4.4 \\
+X & 0.078 & 0.0361 & 2.2 \\
+ \hline
+\end{tabular}
+
+\end{threeparttable}
+\end{center}
+\end{table}
 
 \end{document}
