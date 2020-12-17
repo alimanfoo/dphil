@@ -18,6 +18,8 @@ before_install:
 install:
 - export MALARIAGEN_BINDER_HOME=~/opt
 - "./binder/install-texlive.sh"
+- "tlmgr install --no-persistent-downloads --no-verify-downloads --no-require-verification wasy"
+- "tlmgr install --no-persistent-downloads --no-verify-downloads --no-require-verification wasysym"
 
 cache:
   timeout: 1000
