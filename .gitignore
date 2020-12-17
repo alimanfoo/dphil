@@ -11,10 +11,7 @@
 *.toc
 *.log
 abstract.pdf
-chapter1.pdf
-chapter2.pdf
-chapter2-supplementary.pdf
-chapter3.pdf
+chapter*.pdf
 
 # Emacs
 *~

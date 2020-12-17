@@ -36,4 +36,5 @@ else
     rebuild chapter2
     rebuild chapter2-supplementary
     rebuild chapter3
+    rebuild chapter4
 fi
