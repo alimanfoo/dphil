@@ -8,6 +8,13 @@
 \usepackage{lmodern}
 \usepackage[textsize=tiny]{todonotes}
 \usepackage[labelsep=period,font=small,labelfont=bf,format=plain]{caption}
+\usepackage{subcaption}
+\captionsetup[subfigure]{
+  labelformat=simple,
+  labelsep=period,
+  belowskip=0pt,
+  aboveskip=0pt,
+}
 \captionsetup[table]{
   position=above,
   belowskip=10pt,
@@ -27,9 +34,8 @@
 \crefformat{footnote}{#2\footnotemark[#1]#3}
 \crefrangelabelformat{footnote}{#3#1#4--#5\footnotemark{#1}{#2}#6}
 \usepackage{grbib}
-
-%\newcommand{\agam}{\textit{An. gambiae}}
-%\newcommand{\acol}{\textit{An. coluzzii}
+\usepackage{wasysym}
+\usepackage{microtype}
 
 %\linenumbers
 \linespread{1.25}
@@ -44,5 +50,4 @@
 }
 
 \newcommand{\agam}{\textit{An. gambiae}}
-
 \newcommand{\acol}{\textit{An. coluzzii}}
