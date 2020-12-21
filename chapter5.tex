@@ -206,7 +206,7 @@ There were a number of clear peaks within these scans that were replicated acros
 %%
 \item \textbf{2L:2.4 Mb} - This locus contains the voltage-gated sodium channel gene (\textit{Vgsc}; \texttt{AGAP004707}) which encodes a nervous system protein that is the binding target of DDT and pyrethroid insecticides~\parencite{Dong2014}.
 %
-Amino acid substitutions in this gene confer resistance to DDT and pyrethroids in \agam~\parencite{MartinezTorres1998,Ranson2000a,Jones2012,Wang2015}.
+Amino acid substitutions in this gene confer resistance to DDT and pyrethroids in \agam~\parencite{MartinezTorres1998,Ranson2000a,Davies2007,Lynd2010,Jones2012,Wang2015}.
 %%
 \item \textbf{3R:28.6 Mb} - This locus contains a cluster of eight glutathione S-transferase genes, which encode enzymes involved in detoxification of xenobiotic substances.
 %
@@ -333,47 +333,121 @@ A common feature of selection signals at these loci was a clear peak architectur
 %
 In the H12 selection scans in particular, values on either side of the target gene appeared to decay asymptotically, and it occurred to me to model this decay by fitting exponential functions to each flank of a selection signal via least-squares regression.
 %
-This exponential peak model provided a good fit to the selection signals at most of the known insecticide resistance loci (e.g., Fig.~\ref{fig:peak_fits}a-g).
+This exponential peak model provided a good fit to the selection signals at many of the known insecticide resistance loci (e.g., Fig.~\ref{fig:peak_fits}a-g).
 %
 I also tested several other peak models, and found that a Gaussian peak model provided a better fit in a minority of cases (e.g., Fig.~\ref{fig:peak_fits}h-l).
 %
-At the \textit{Vgsc} locus the peaks were highly skewed when plotted against physical genome coordinates, but this locus lies on the border of pericentromeric heterochromatin, and this skew could be almost entirely corrected by assuming the heterochromatin recombination rate is @@ lower than euchromatin.
+At the \textit{Vgsc} locus the peaks were highly skewed when plotted against physical genome coordinates, but this locus lies on the border of pericentromeric heterochromatin, and this skew could be almost entirely corrected by assuming the heterochromatin recombination rate is four times lower than euchromatin.
 %
 I devised a way to quantify the support for these peak models by also fitting a null constant model at the same locus and computing the difference in Akaike Information Criterion ($\Delta_i$) between the peak and null models.
 %
-In general, when comparing two models, $\Delta_i > 10$ is considered sufficient evidence to reject the model with higher AIC \parencite{Burnham2002}, and at many of the known insecticide resistance loci I observed $\Delta_i > 1000$ indicating strong support for the exponential peak model.
+In general, when comparing two models, $\Delta_i > 10$ is considered sufficient evidence to reject the model with higher AIC~\parencite{Burnham2002}, and at many of the known insecticide resistance loci I observed $\Delta_i > 1000$, indicating strong support for the exponential peak model.
 %
 
 
-A benefit of this approach to modelling and quantifying support for a selection signal, over simply measuring the peak value, is that it integrates evidence not just at the locus under selection but from the flanking regions as well.
+Previous studies performing genome-wide selection scans, such as \textcite{Garud2015}, have identified peaks by first choosing a fixed significance threshold, and then defining peaks to be contiguous genome regions where selection scan values exceed this threshold.
+%
+Such an approach, however, can have several shortcomings, illustrated in the Ag1000G data in Fig.~\ref{fig:peak_problems}.
+%
+Firstly, determining an appropriate significance threshold is not straightforward, and requires knowledge of the demographic history of the population being studied, which may be unknown or difficult to infer with any certainty.
+%
+Secondly, different types of noise within the data can lead to incorrect inferences, such as mistakenly inferring a peak from an isolated high statistic value, or mistakenly splitting a peak into two due to an isolated low statistic value.
+%
+Thirdly, from inspecting another known insecticide resistance gene, \textit{Ace1} (\texttt{AGAP001356}), it was also clear that signals might be small in magnitude, and so fall below a fixed significance threshold.
+%
+Examining the Ag1000G selection scans at known insecticide resistance loci illustrates how these shortcomings could be overcome by leveraging the information provided by the shape of peaks at true selection signals.
 %
 At a locus under recent positive selection, genetic hitchhiking of neutral variants on either flank of the locus is expected due to linkage disequilibrium, and the probability of linkage is an exponential function of the genetic distance between them~\parencite{MaynardSmith1974}.
 %
 \textcite{Wiener2011} showed that this theory could be used as a tool for mapping selection signals, by fitting exponential functions to heterozygosity data on either flank of a locus under positive selection via least squares regression.
 %
-This previous work, and my observations at known insecticide resistance loci, suggested that least squares regression could be used as a general approach to systematic identification and mapping of signals within the selection scans in the Ag1000G populations.
+The primary benefit of this type of approach to modelling support for a selection signal is that it integrates evidence not just at the locus under selection, but from the flanking regions as well.
 %
-In general, previous studies performing genome-wide selection scans such as @@REF have taken a simple approach to peak identification, by setting a constant threshold and then identifying all contiguous genome regions where selection scan values exceed the threshold, taking the position with the maximum value within each such region as the most likely focus of selection.
-%
-Examining the Ag1000G data, however, it was clear that such an approach would have a number of shortcomings, illustrated in Fig. @@.
-%
-The essence of these shortcomings is that they do not leverage the information provided by the shape of peaks at true selection signals, both to reduce false positives due to isolated high noise values, and to reduce artificial breaks in peaks caused by low noise values.
 
 
-Developing this idea further, I devised an algorithm to systematically identify selection signals within each scan, quantify their support, map the most likely focus of selection, and provide some indication of the relative uncertainty surrounding the mapped focus.
+\begin{figure}[t!]
+\centering
+\includegraphics[width=1.1\textwidth,center]{artwork/chapter5/peak_problems.pdf}
+\caption{Illustration of potential problems with peak identification using consecutive windows exceeding a fixed threshold, as applied by \textcite{Garud2015}.
 %
-Briefly, the algorithm uses least squares regression to fit peak and null models to the selection scan values at regular @@ kb intervals throughout the genome.
+Blue markers show H12 values from selection scan in Burkina Faso \agam.
 %
-To deal with nearby selection signals where peaks may be partially overlapping, it then proceeds to iteratively identify the peak value with the strongest statistical support, subtract the fitted peak values from the data, and refit peaks in neighbouring regions.
+Red line shows an arbitrary significance threshold, chosen to illustrate potential problems in these data (these problems are associated with the use of a fixed threshold and can arise regardless of the actual threshold value chosen).
 %
-I applied this algorithm to the H12, IHS and XPEHH scans in each of the 8 populations.
+\textbf{a}, This locus contains the known insecticide resistance gene \textit{Ace1}, and a small peak is visible in the selection scan, but the magnitude of the peak falls below the threshold and so would not be discovered.
 %
-This generated a catalog of @@how many selection signals, which I then ranked by $\Delta_i$.
+\textbf{b}, Isolated high values of the selection statistic are probably false positives due to noise, such signals are never observed at known insecticide resistance genes.
+%
+\textbf{c}, Some genome regions can be inherently noisier than others, i.e., background levels of the selection statistic are higher.
+%
+\textbf{d}, Isolated low values of the selection statistic could falsely lead us to break up a single peak into two peaks, such as at this selection signal at the \textit{Vgsc} insecticide resistance gene.
+}
+\label{fig:peak_problems}
+\end{figure}
+
+
+Developing this idea further, I devised an algorithm to systematically identify selection signals within each of the Ag1000G selection scans, quantify their support, map the most likely focus of selection, and provide some indication of the relative uncertainty surrounding the mapped focus.
+%
+The algorithm uses non-linear least squares regression to fit peak and null models to the selection scan values at regular 20 kb intervals throughout the genome.
+%
+After performing a complete scan through the genome, the peak model with the highest $\Delta_i$ is called as a signal, and all overlapping peak models are discarded.
+%
+To deal with cases where true selection signals occur in close proximity and peaks may be partially overlapping, the algorithm then subtracts the fitted peak values from the data, and refits peaks in adjacent regions.
+%
+This process is then applied iteratively, until no more peak models with $\Delta_i$ above a given level are found.
+%
+After applying this algorithm to all Ag1000G selection scans, I found all peaks overlapping known insecticide resistance genes had $\Delta_i > 90$, and so only called signals above this level.
+%
+This generated a catalog of 289 selection signals (Figs.~\ref{fig:signals_2R},~\ref{fig:signals_2L},~\ref{fig:signals_3R},~\ref{fig:signals_3L},~\ref{fig:signals_X}), which I then ranked by $\Delta_i$.
+%
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Validation of signal discovery}\label{subsec:validation}
+\subsection{Signal discovery and mapping performance}\label{subsec:performance}
+
+
+To provide some assessment of the performance of the signal discovery algorithm, I took an empirical approach, making use of the five known insecticide resistance genes described above, in addition to the \textit{Ace1} gene where variants are known to confer resistance to carbamate and organophosphate insecticides @@REFs.
+
+
+To estimate sensitivity I analysed the \textit{Vgsc}, \textit{Gaba}, \textit{Ace1} and \textit{Gste2} genes, where SNPs conferring insecticide resistance are known from previous studies.
+%
+For each of these genes I ascertained the populations in which a known resistance variant was at 5\% allele frequency or greater, and used these as a truth set.
+%
+I then determined a true positive to be a population in which a selection signal was found overlapping the gene, and a false negative to be a population in which no overlapping selection signal was found.
+%
+Across all four loci and three selection scan methods, the overall sensitivity was 100\% (Table~\ref{table:sens}).
+%
+Sensitivity was highest in the H12 and XPEHH scans (both 79\%) and lowest in the IHS scans (37\%).
+%
+
+
+To estimate signal mapping accuracy I used all six known insecticide resistance genes.
+%
+For each selection signal overlapping one of these genes, I computed the mapping error (ME) as the distance from the fitted peak centre to the gene center, then summarised these values across multiple scans and loci by computing the median and $25-75^{th}$ percentiles (Table~\ref{table:acc}).
+%
+Across all six loci, median mapping error was lowest in the H12 scans (78 kb) and highest in the IHS scans (258 kb).
+%
+To estimate a confidence interval for the focus of selection within each peak I computed the region within which peak models obtained $\Delta_i$ within 95\% of the best peak model.
+%
+This confidence interval was correlated with the mapping error in the H12 and XPEHH signals but not IHS (Fig.~\ref{fig:accuracy}).
+%
+This confidence included the target gene in 33--63 \% of cases depending on scanning method, and increased to 56--68 \% if extended by 50 kb.
+%
+Clearly there is room for improvement here in estimating a confidence interval for the focus of the selection signal, but at least for the H12 and XPEHH scans there is an indication that some uncertainty is being captured.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{A Web application for exploring selection signals}\label{subsec:webapp}
+
+
+@@TODO
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Discovery of a novel candidate insecticide resistance gene}\label{subsec:novel}
 
 
 @@TODO
@@ -417,7 +491,78 @@ This generated a catalog of @@how many selection signals, which I then ranked by
 \section{Supplemental figures}\label{sec:supplemental-figures}
 
 
-@@todo
+\begin{figure}[h!]
+\centering
+\includegraphics[width=1.1\textwidth,center]{artwork/chapter5/signals_2R.png}
+\caption{Selection signals discovered on chromosome arm 2R.
+%
+Each horizontal bar represents a selection signal.
+%
+The full width of the bar shows the span of the peak, where the fitted peak model is above 20\% of the peak amplitude.
+%
+The red region within each bar shows the peak focus, representing the peak center plus a region of uncertainty.
+%
+}
+\label{fig:signals_2R}
+\end{figure}
+
+
+\clearpage
+\begin{figure}[h!]
+\centering
+\includegraphics[width=1.1\textwidth,center]{artwork/chapter5/signals_2L.png}
+\caption{Selection signals discovered on chromosome arm 2L.
+%
+See Fig.~\ref{fig:signals_2R} further details.
+}
+\label{fig:signals_2L}
+\end{figure}
+
+
+\clearpage
+\begin{figure}[h!]
+\centering
+\includegraphics[width=1.1\textwidth,center]{artwork/chapter5/signals_3R.png}
+\caption{Selection signals discovered on chromosome arm 3R.
+%
+See Fig.~\ref{fig:signals_2R} further details.
+}
+\label{fig:signals_3R}
+\end{figure}
+
+
+\clearpage
+\begin{figure}[h!]
+\centering
+\includegraphics[width=1.1\textwidth,center]{artwork/chapter5/signals_3L.png}
+\caption{Selection signals discovered on chromosome arm 3L.
+%
+See Fig.~\ref{fig:signals_2R} further details.
+}
+\label{fig:signals_3L}
+\end{figure}
+
+
+\clearpage
+\begin{figure}[h!]
+\centering
+\includegraphics[width=1.1\textwidth,center]{artwork/chapter5/signals_X.png}
+\caption{Selection signals discovered on the X chromosome.
+%
+See Fig.~\ref{fig:signals_2R} further details.
+}
+\label{fig:signals_X}
+\end{figure}
+
+
+\clearpage
+\begin{figure}[h!]
+\centering
+\includegraphics[width=1.1\textwidth,center]{artwork/chapter5/accuracy.pdf}
+\caption{@@TODO
+}
+\label{fig:accuracy}
+\end{figure}
 
 
 \clearpage
@@ -427,7 +572,38 @@ This generated a catalog of @@how many selection signals, which I then ranked by
 \section{Supplemental tables}\label{sec:supplemental-tables}
 
 
-@@todo
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[h]
+\begin{center}
+\begin{threeparttable}
+%
+\caption{Analysis of sensitivity of selection signal discovery using genes with known insecticide resistance variants.}
+%
+\label{table:sens}
+%
+\input{notebooks/tbl_sens}
+%
+\end{threeparttable}
+\end{center}
+\end{table}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\begin{table}[h]
+\begin{center}
+\begin{threeparttable}
+
+\caption{@@TODO.}
+
+\label{table:acc}
+
+\input{notebooks/tbl_acc}
+
+\end{threeparttable}
+\end{center}
+\end{table}
+
 
 
 \end{document}
