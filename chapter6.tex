@@ -192,10 +192,55 @@ If an allele has a resistance phenotype and has been under positive selection, t
 %
 I therefore filtered the SNPs to remove any rare variants, retaining only those SNPs with a variant allele occurring at a frequency above 4\% in at least one population.
 %
-This resulted in a set of 21 SNPs, including two multiallelic SNPs (Table 1).
+This resulted in a set of 21 SNPs, including two multiallelic SNPs (Table~\ref{table:snps}).
 
 
-% @@TODO table of SNPs
+%% Table 1 - Functional SNPs.
+%
+\afterpage{%
+%\clearpage
+% N.B., for some reason using \newgeometry causes page number to get dropped from the subsequent page, so disable for now - not needed if using \footnotesize.
+%\newgeometry{margin=2cm}
+\begin{landscape}
+\thispagestyle{empty}
+\begin{table}[h]
+  \scriptsize
+  \centering
+  \begin{threeparttable}
+
+  \caption{
+%
+\textbf{Non-synonymous SNPs in the \textit{Vgsc} gene}.
+%
+AO=Angola; BF=Burkina Faso; GN=Guinea; CM=Cameroon; GA=Gabon; UG=Uganda; KE=Kenya; GW=Guinea-Bissau; \textit{Ac}=\textit{An. coluzzii}; \textit{Ag}=\textit{An. gambiae}.
+%
+Species status of specimens from Kenya and Guinea-Bissau is uncertain.
+%
+All variants are at 4\% frequency or above in one or more of the 9 Ag1000G phase 1 populations, with the exception of \texttt{2,400,071 G>T} which is only found in the CM\emph{Ag} population at 0.4\% frequency but is included because another mutation (\texttt{2,400,071 G>A}) is found at the same position causing the same amino acid substitution (\texttt{M490I}).
+}
+
+  \label{table:snps}
+
+  \input{artwork/chapter6/variants_missense.tex}
+
+  \begin{tablenotes}
+    \footnotesize
+
+    \item[1] Position relative to the AgamP3 reference sequence, chromosome arm 2L.
+
+    \item[2] Codon numbering according to \emph{Anopheles gambiae} transcript AGAP004707-RA in geneset AgamP4.4.
+
+    \item[3] Codon numbering according to \emph{Musca domestica} EMBL accession X96668.
+
+  \end{tablenotes}
+
+  \end{threeparttable}
+
+\end{table}
+\end{landscape}
+\restoregeometry
+} % end afterpage
+%% end Table 1
 
 
 The two known pyrethroid resistance variants in codon 995 were at the highest overall frequency in the cohort.
@@ -221,7 +266,7 @@ Among these, the following SNPs are of particular interest, based on observation
     %
     \texttt{P1874L} was also present in sequencing data reported by \textcite{Jones2012} in samples of both \agam\ and \acol\ from Burkina Faso.
     %
-    \texttt{P1874S} has not been reported elsewhere in mosquitoes, but was found in pyrethroid-resistant field strains of the diamond-back moth~\parencite{Sonoda2010}.
+    \texttt{P1874S} has not been reported elsewhere in mosquitoes, but was found in pyrethroid-resistant field strains of the diamond-back moth \textit{Plutella xylostella}~\parencite{Sonoda2010}.
     %
     \item \texttt{I1527T} - Previously reported by \textcite{Jones2012} at low frequency in \acol\ from Burkina Faso, this allele was at 14\% frequency in the Ag1000G \acol\ from Burkina Faso.
     %
@@ -229,17 +274,128 @@ Among these, the following SNPs are of particular interest, based on observation
     %
     \texttt{I1527T} has also been recently found in \textit{Aedes albopictus}~\parencite{Auteri2018}.
     %
-    \item \texttt{V410L} - The SNP at \texttt{2L:2,391,228} had two variant alleles which both conferred \texttt{V410L}, and which were each at 7\% frequency in Burkina Faso \acol\ but not found elsewhere.
+    \item \texttt{V402L} - The SNP at \texttt{2L:2,391,228} had two variant alleles which both conferred \texttt{V402L}, and which were each at 7\% frequency in Burkina Faso \acol, but not found elsewhere.
     %
     Mutations in codon 410 have been shown to cause pyrethroid resistance in multiple insect species, and the pyrethroid resistance phenotype has also been confirmed and characterized in vitro~\parencite{Dong2014}.
     %
-    Recently, \texttt{V410L} has been found in \textit{Aedes aegypti} where it confers high levels of resistance both type I and type II pyrethroids~\parencite{Haddi2017,VillanuevaSegura2020}.
+    Recently, \texttt{V402L} has been found in \textit{Aedes aegypti} where it confers high levels of resistance both type I and type II pyrethroids~\parencite{Haddi2017,VillanuevaSegura2020}.
     %
 \end{itemize}
 %
 
 
-% @@TODO citations
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Associations between non-synonymous variants}\label{subsec:results-ld}
+
+
+In several insect species, two or more non-synonymous variants in the \textit{Vgsc} gene have been observed occurring together on the same haplotype.
+%
+For example, \texttt{N1570Y} is only found in \agam\ in combination with \texttt{L995F}~\parencite{Jones2012}.
+%
+Similarly, in the German cockroach \textit{Blatella germanica}, the combinations \texttt{L1014F+E435K} and \texttt{L1014F+C785R} have both been found~\parencite{Tan2002}.
+%
+In the diamond back moth, the alleles \texttt{A1101T+P1879S} are only found in combination~\parencite{Sonoda2010}.
+%
+In \textit{Aedes aegypti}, the combination \texttt{V410L+F1534C} has been observed~\parencite{Haddi2017}, as well as each allele separately.
+%
+The occurrence of alleles in combination is interesting because these alleles may act synergistically to enhance a pyrethroid resistance phenotype.
+%
+For example, the \texttt{L995F+N1570Y} combination is approximately ten times more resistant to permethrin than \texttt{L995F} alone~\parencite{Wang2015}.
+
+
+To investigate associations between non-synonymous variants within the Ag1000G phase 1 dataset, I used the haplotypes to calculate the $D'$ linkage disequilibrium (LD) statistic between all pairs of variant alleles~\parencite{Lewontin1964}.
+%
+I then combined these data with allele frequencies, to identify three possible types of association:
+%
+\begin{itemize}
+    %
+    \item \textbf{Complete association} - Two alleles are only ever found in combination ($D' \approx 1$, equal allele frequencies).
+    %
+    \item \textbf{Subordinate association} - A primary allele, sometimes found alone, and a secondary allele, only ever found in combination with the primary allele ($D' \approx 1$, with one allele at higher frequency than the other).
+    %
+    \item \textbf{Partial association} - Two alleles, each observed alone and in combination ($-1 < D' < 1$).
+    %
+\end{itemize}
+
+
+The computed LD values are shown together with overall allele frequencies within the Ag1000G phase 1 cohort in Fig.~\ref{fig:ld}.
+%
+Fourteen variant alleles were in subordinate association with \texttt{L995F} ($D' > 0.91$) including \texttt{N1570Y}, \texttt{P1874S} and \texttt{P1874L}.
+%
+There were also two triple-mutant combinations, \texttt{L995F+D466H+I1940T} and \texttt{L995F+T791M+A1746S}.
+%
+In stark contrast, there were no non-synonymous variant alleles in any kind of association with \texttt{L995S}.
+%
+Thus, substantial molecular evolution appears to be occurring on haplotype backgrounds carrying \texttt{L995F}.
+%
+Each of the two \texttt{V402L} alleles was in subordinate association with \texttt{I1527T}, but at the amino acid level, \texttt{V402L} and \texttt{I1527T} were in near-complete association, indicating a strong mutual dependence between them.
+
+
+\begin{figure}[t!]
+\centering
+\includegraphics[width=0.9\linewidth,center]{artwork/chapter6/ld.png}
+\caption{@@
+}
+\label{fig:ld}
+\end{figure}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Geographical spread of pyrethroid resistance alleles}\label{subsec:results-spread}
+
+
+To investigate evidence for geographical spread of pyrethroid resistance alleles, I analysed patterns of genetic similarity between the 1530 haplotypes in the Ag1000G phase 1 dataset.
+%
+The Ag1000G haplotypes were phased across the whole genome, and incorporate data on non-synonymous SNPs, both within the \textit{Vgsc} introns and in the flanking intergenic regions, which provide high resolution to identify different degrees of similarity between haplotypes.
+%
+I firstly analysed the region spanning the \textit{Vgsc} gene itself, which spans 73.5 kb and contains a total of 1,710 biallelic SNPs (1,607 intronic, 103 exonic) phased in the Ag1000G dataset.
+%
+I performed a hierarchical clustering of these haplotypes, based on the number of SNP differences between them, and constructed a dendrogram, shown in Fig.~\ref{fig:hapclust}.
+%
+The likely presence of recombination events within the genomic interval bounded by the \textit{Vgsc} gene, and the use of a simple distance metric and clustering method, means that this dendrogram cannot be interpreted as a complete phylogeny.
+%
+However, there were some clear patterns within these data.
+%
+In particular, there were several large clusters of near-identical haplotypes, each of which was strongly associated with either \texttt{L995F} or \texttt{L995S}.
+%
+To provide a means of navigating these data, I cut the dendrogram at a maximum distance of 12 SNPs.
+%
+I then labelled the five largest clusters containing the \texttt{L995F} allele as F1-F5, and the five largest clusters containing the \texttt{L995S} allele as S1-S5.
+%
+The clusters F1-F5 together accounted for 96\% of haplotypes carrying the \texttt{L995F} allele, and the clusters S1-S5 together accounted for 99\% of haplotypes carrying the \texttt{L995S} allele.
+
+
+\begin{figure}[t!]
+\centering
+\begin{subfigure}[t]{1\textwidth}
+\includegraphics[width=1\linewidth,center]{artwork/chapter6/hapclust.pdf}
+\end{subfigure}
+\begin{subfigure}[t]{1\textwidth}
+\includegraphics[width=.5\linewidth,center]{artwork/chapter6/pop_legend.png}
+\end{subfigure}
+\caption{@@
+}
+\label{fig:hapclust}
+\end{figure}
+
+
+Five of these haplotype clusters carrying resistance alleles contained haplotypes from different countries and/or species.
+%
+Cluster F1 contained haplotypes from Burkina Faso, Guinea, Cameroon and Angola, and from both \agam\ and \acol.
+%
+Clusters F4, F5 and S2 each contained haplotypes from both Cameroon and Gabon \agam.
+%
+Cluster S3 contained haplotypes from both Uganda \agam\ and Kenya.
+%
+To confirm that this degree of haplotype similarity between different populations is unusual, and likely represents the result of contemporary gene flow driven by selection for resistance alleles in the \textit{Vgsc} gene, I analysed patterns of haplotype sharing between populations across the whole of chromosome arm 2L (Supplementary Figure 4).
+%
+For all pairs of populations which were both found within the same \textit{Vgsc} haplotype cluster, I also observed a clear signal of between-population haplotype homozygosity at the \textit{Vgsc} gene, which was not present elsewhere on the chromosome arm.
+%
+Conversely, for pairs of populations never found in the same \textit{Vgsc} haplotype cluster, levels of between-population haplotype homozygosity were similarly low across the whole chromosome arm.
+%
+Taken together, these results provide strong support for adaptive gene flow of pyrethroid resistance alleles between countries and species, in some cases separated by large geographical distances.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -306,6 +462,7 @@ Three additional non-synonymous variants were found in these other transcripts, 
 
 
 @@
+The haplotype data from Ag1000G only include biallelic SNPs passing all quality filters, and thus did not include N1575Y due to failing genome-wide filters, nor the multiallelic SNPs at positions 2L:2,391,228 and 2L:2,400,071. To incorporate these additional SNPs into the analysis, I phased these SNPs onto the Ag1000G haplotype scaffold.
 
 
 \printbibliography
