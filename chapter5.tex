@@ -649,20 +649,29 @@ The Gaussian peak model had the same parameters, except for a sigma (width) para
 %
 The constant (null) model had a single baseline parameter.
 %
-The peak-finding algorithm first stepped through the genome in increments of 20 kb, fitting both peak models and the null model, centered at each step.
-
-
-
-@@todo
+The peak-finding algorithm first stepped through the genome in increments of 20 kb, fitting both peak models and the null model, centered at each step, storing the resulting model fits.
+%
+For each peak model, $\Delta_i$ was computed as the difference between the peak and null model AIC values.
+%
+After the first complete pass through a chromosome, the peak model with the highest $\Delta_i$ was located and called as a selection signal.
+%
+The fitted peak model was then subtracted from the selection scan values, and peak models refitted within the surrounding region, to improve fitting of nearby peaks where flanks overlap.
+%
+All source code files are available from \url{https://github.com/malariagen/agam-selection-atlas}.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Acknowledgments}\label{sec:acknowledgments}
+\subsection{Web application development}\label{subsec:methods-webapp}
 
 
-@@TODO
+The Web application was developed using the Sphinx package version 1.6.5.
+%
+Python scripts were written which generated a Sphinx documentation site in markdown format from the input data on selection scans and fitted selection signals.
+%
+Sphinx was then used to generate a static HTML site, and this was deployed to GitHub pages.
+%
+The dynamic plotting components (interactive genome plots) were implemented using Bokeh version 0.12.13 and exported as JavaScript to be embedded in the HTML.
 
 
 \printbibliography
