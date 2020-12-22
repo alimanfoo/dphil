@@ -53,7 +53,124 @@ These analyses show that the molecular basis of pyrethroid target-site resistanc
 \section{Introduction}\label{sec:introduction}
 
 
-@@TODO
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Pyrethroids in malaria vector control}\label{subsec:intro-pyrethroid-llins}
+
+
+Pyrethroids are a class of synthetic insecticides, based on a natural compound pyrethrin found in the flowers of pyrethrum (Chrysanthemum) plants~\parencite{Elliott1989}.
+%
+Pyrethroids suitable for commercial use in agriculture and public health were discovered in the 1970s, and fall into two major groups based on chemical structure, either type I (e.g., permethrin~\parencite{Elliott1973}) or type II (e.g., deltamethrin~\parencite{Elliott1974}).
+%
+These compounds have a high toxicity to insects but relatively low toxicity to mammals, and are photostable but do not accumulate to contaminate the environment unlike insecticides used previously such as DDT or dieldrin.
+%
+Pyrethroids were approved for use in public health by the WHO pesticide evaluation scheme (WHOPES) in 1978~\parencite{Quelennec1988}.
+%
+Landmark studies during the 1980s and 1990s showed that the use of pyrethroid-treated bed-nets caused a significant reduction in malaria prevalence~\parencite{Carnevale2019}.
+%
+Advances in net manufacturing during that period allowed the development of long-lasting insecticidal nets (LLINs), which retain insecticidal activity for up to 3 years without re-treatment.
+%
+Pyrethroid LLINs have become the cornerstone of efforts to control malaria in Africa, with more than 100 million nets distributed in Africa each year since 2013~\parencite{Bhatt2015,AMP2020}.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Pyrethroid resistance in the \textit{Anopheles gambiae} complex}\label{subsec:intro-pyrethroid-resistance}
+
+
+The first reports of pyrethroid resistance in \agam\ originated from  C\^ote d'Ivoire~\parencite{Elissa1993} and Kenya~\parencite{Vulule1994}.
+%
+Subsequently, a study of six countries found pyrethroid resistance in Burkina Faso, C\^ote d'Ivoire and Benin~\parencite{Chandre1999}.
+%
+In parallel with the major scale-up of LLIN distributions from 2000 onwards, malaria control programmes have routinely performed bioassays to monitor pyrethroid resistance~\parencite{WHO2018TPIRM,WHO2017FNPMMIR}.
+%
+As those data have accumulated, it has become clear that both the prevalence and intensity of pyrethroid resistance have increased~\parencite{Ranson2011,Hemingway2016,WHO2012GPIRM,WHO2018GRIR,IIRC2018}.
+%
+Geostatistical modelling of bioassay data has supported this, showing a dramatic increase in the prevalence of resistance across sub-Saharan Africa over the period 2005--2017, although the picture remains complex, with considerable spatial heterogeneity~\parencite{Hancock2020}.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{The pyrethroid mode of action}\label{subsec:intro-moa}
+
+
+Pyrethroid molecules interact with the voltage-gated sodium channel (VGSC), an essential membrane protein which propagates nerve impulses via action potentials~\parencite{Dong2014}.
+%
+In all insects, the VGSC protein comprises four homologous domains (I-IV), each of which has six transmembrane segments (S1-S6), which together form a gated pore that is sensitive to changes in membrane potential.
+%
+Under normal function, the channel opens during the rising phase of an action potential, allowing sodium ions to flow into the cell, then closes shortly afterwards, to allow re-polarisation of the membrane.
+%
+The structure of the protein creates some rotational symmetry, and it is believed that pyrethroids can bind to either of two analogous sites within the pore, referred to as PyR1 and PyR2~\parencite{Du2013}.
+%
+Pyrethroid binding alters gating behaviour, enhancing activation and inhibiting inactivation, causing the channel to remain open, which at the cellular level causes continuous firing of nerve impulses~\parencite{Dong2014}.
+%
+The VGSC protein of \agam\ comprises 2139 amino acids and has a high degree of homology with other insects, sharing the same overall topology~\parencite{Davies2007}.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{The molecular basis of pyrethroid target-site resistance in \agam}\label{subsec:intro-mol}
+
+
+Any variations within the VGSC protein which alter the action of pyrethroids are known collectively as pyrethroid target-site resistance.
+%
+Prior to the present study, the molecular basis of pyrethroid target-site resistance in \agam\ appeared relatively straightforward.
+%
+An \texttt{L995F} substitution, initially found in West Africa~\parencite{MartinezTorres1998}, and an \texttt{L995S} substitution, initially found in East Africa~\parencite{Ranson2000a}, have both been shown to confer resistance to pyrethroids and DDT\footnotemark.
+%
+\footnotetext{Codon numbering is given relative to \agam\ transcript \texttt{AGAP004707-RA} in gene annotation set AgamP4.4. A mapping to \textit{D. melanogaster} codon numbers is given in \ref{table:snps}.}
+%
+A third substitution, \texttt{N1570Y}, was subsequently found in West and Central Africa, occurring exclusively in combination with \texttt{L995F}~\parencite{Jones2012}.
+%
+\textit{In vitro}, VGSC double mutants carrying either \texttt{L995F} or \texttt{L995S} together with \texttt{N1570Y} are substantially more resistant to pyrethroids than \texttt{L995F} or \texttt{L995S} alone~\parencite{Wang2015}.
+%
+In other insects, the molecular basis of pyrethroid target-site resistance is more varied.
+%
+For example, in the invasive mosquito species \textit{Aedes aegypti}, 11 amino acid substitutions have been found in natural populations and associated with pyrethroid resistance~\parencite{Du2016,Haddi2017}.
+%
+Across all arthropods, more than 50 sodium channel SNPs or combinations of SNPs have been associated with pyrethroid resistance~\parencite{Dong2014}.
+%
+Since discovery of the \texttt{L995F} and \texttt{L995S} substitutions, studies in \agam\ have mostly focused on typing those polymorphisms, or sequencing a small region of the gene, and thus the full coding sequence has not been fully surveyed for variation in natural populations.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{The spread of pyrethroid target-site resistance in \agam\ and \acol}\label{subsec:intro-spread}
+
+
+The \texttt{L995F} and \texttt{L995S} alleles have now been observed in multiple countries in both West and East Africa, with \texttt{L995F} being widespread particularly in West Africa~\parencite{WHO2018GRIR}.
+%
+These alleles have also been found in both \agam\ and \acol~\parencite{Clarkson2014,Norris2015,Djouaka2018}.
+%
+In West Africa, \texttt{L995F} has spread from \agam\ to \acol~\parencite{Clarkson2014,Norris2015}.
+%
+However, for each of these alleles, it is not clear whether it is spreading between countries via contemporary gene flow, or whether there are multiple geographical origins of resistance.
+%
+\textcite{Pinto2007} genotyped Vgsc codon 1014 and performed partial sequencing of the upstream intron in \agam\ from 15 African countries, finding two common haplotypes carrying \texttt{L995F}, and a further two haplotypes associated with \texttt{L995S}.
+%
+Some of these haplotypes where shared between countries, but there were only four informative SNPs within the 438 bp region sequenced, and so resolution was not sufficient to infer gene flow with confidence.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Scope of this chapter}\label{subsec:intro-scope}
+
+
+In this chapter I analyse data from phase 1 of the Ag1000G project to investigate the molecular evolution and geographical spread of target-site resistance to pyrethroids.
+%
+I report non-synonymous SNPs within the \textit{Vgsc} gene that occur at appreciable frequency within one or more populations.
+%
+I also investigate the linkage between these SNPs, to determine whether some alleles occur in combination with others, and thus may have a synergistic effect.
+%
+I then use data on non-coding SNPs both within the gene introns and in the flanking intergenic sequences to investigate the haplotypes on which resistance alleles occur.
+%
+I use analyses of genetic relatedness between haplotypes to make inferences about gene flow events between populations from different geographical locations and species.
+%
+The work described in this chapter was performed as part of a broader collaboration within the Ag1000G Consortium analysing insecticide resistance genes, particularly with MalariaGEN Resource Center team colleague Chris Clarkson.
+%
+My contributions, described in this chapter, were to investigate the population-genetic aspects of resistance.
+%
+Any work carried out jointly is noted in the relevant section.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
