@@ -146,7 +146,7 @@ In West Africa, \texttt{L995F} has spread from \agam\ to \acol~\parencite{Clarks
 %
 However, for each of these alleles, it is not clear whether it is spreading between countries via contemporary gene flow, or whether there are multiple geographical origins of resistance.
 %
-\textcite{Pinto2007} genotyped Vgsc codon 1014 and performed partial sequencing of the upstream intron in \agam\ from 15 African countries, finding two common haplotypes carrying \texttt{L995F}, and a further two haplotypes associated with \texttt{L995S}.
+\textcite{Pinto2007} genotyped Vgsc codon 995 and performed partial sequencing of the upstream intron in \agam\ from 15 African countries, finding two common haplotypes carrying \texttt{L995F}, and a further two haplotypes associated with \texttt{L995S}.
 %
 Some of these haplotypes where shared between countries, but there were only four informative SNPs within the 438 bp region sequenced, and so resolution was not sufficient to infer gene flow with confidence.
 
@@ -181,6 +181,69 @@ Any work carried out jointly is noted in the relevant section.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Non-synonymous SNPs within the \textit{Vgsc} gene}\label{subsec:results-snps}
+
+
+There were 63 non-synonymous SNPs within the \textit{Vgsc} gene that were polymorphic within the Ag1000G phase 1 dataset.
+%
+For these SNPs, I computed the frequency of each non-synonymous variant allele within each of nine populations defined by species and country of origin.
+%
+If an allele has a resistance phenotype and has been under positive selection, then it will occur at some appreciable frequency in one or more populations.
+%
+I therefore filtered the SNPs to remove any rare variants, retaining only those SNPs with a variant allele occurring at a frequency above 4\% in at least one population.
+%
+This resulted in a set of 21 SNPs, including two multiallelic SNPs (Table 1).
+
+
+% @@TODO table of SNPs
+
+
+The two known pyrethroid resistance variants in codon 995 were at the highest overall frequency in the cohort.
+%
+\texttt{L995F} was at high frequency in both \acol\ populations, at fixation in both West African \agam\ populations, and also present in the two central African \agam\ populations.
+%
+\texttt{L995S} was at high frequency in the Kenyan population, fixed in the Uganda \agam\ population, and also present in both central African \agam\ populations.
+%
+The combined frequency of \texttt{L995F} and \texttt{L995S} mutations in countries where both variants co-occurred was 68\% in Cameroon and 100\% in Gabon.
+%
+The other SNP with a known resistance phenotype in \agam, \texttt{N1570Y}, was present in \agam\ samples from Guinea and Cameroon and both species from Burkina Faso.
+
+
+None of the remaining SNPs have a known phenotype in \agam\ or \acol.
+%
+Among these, the following SNPs are of particular interest, based on observations in other studies:
+%
+\begin{itemize}
+    %
+    \item \texttt{P1874L/S} - \texttt{P1874L} was the most common allele after the known resistance alleles, being found at 45\% and 26\% frequency in \agam\ from Burkina Faso and Cameroon respectively.
+    %
+    Both \texttt{P1874L} and \texttt{P1874S} were present in \acol\ from Burkina Faso, and the combined allele frequency of codon 1874 variants was 28\%.
+    %
+    \texttt{P1874L} was also present in sequencing data reported by \textcite{Jones2012} in samples of both \agam\ and \acol\ from Burkina Faso.
+    %
+    \texttt{P1874S} has not been reported elsewhere in mosquitoes, but was found in pyrethroid-resistant field strains of the diamond-back moth~\parencite{Sonoda2010}.
+    %
+    \item \texttt{I1527T} - Previously reported by \textcite{Jones2012} at low frequency in \acol\ from Burkina Faso, this allele was at 14\% frequency in the Ag1000G \acol\ from Burkina Faso.
+    %
+    Recently, \textcite{Collins2019} reported \texttt{I1527T} in \agam\ from Guinea and found it was associated with resistance to permethrin.
+    %
+    \texttt{I1527T} has also been recently found in \textit{Aedes albopictus}~\parencite{Auteri2018}.
+    %
+    \item \texttt{V410L} - The SNP at \texttt{2L:2,391,228} had two variant alleles which both conferred \texttt{V410L}, and which were each at 7\% frequency in Burkina Faso \acol\ but not found elsewhere.
+    %
+    Mutations in codon 410 have been shown to cause pyrethroid resistance in multiple insect species, and the pyrethroid resistance phenotype has also been confirmed and characterized in vitro~\parencite{Dong2014}.
+    %
+    Recently, \texttt{V410L} has been found in \textit{Aedes aegypti} where it confers high levels of resistance both type I and type II pyrethroids~\parencite{Haddi2017,VillanuevaSegura2020}.
+    %
+\end{itemize}
+%
+
+
+% @@TODO citations
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{@@}\label{subsec:results-@@}
 
 
@@ -204,6 +267,41 @@ Any work carried out jointly is noted in the relevant section.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Ascertainment of non-synonymous SNPs within the \textit{Vgsc gene}}\label{subsec:methods-asc}
+
+
+I extracted all single nucleotide polymorphisms (SNPs) within the \textit{Vgsc} gene from the Ag1000G phase 1 data resource, and annotated each SNP according to its effect on the protein coding sequence.
+%
+Within the gene, a total of 63 non-synonymous SNPs were found, of which 51 passed and 12 failed genome-wide quality filters (Chapter 3).
+%
+One of the SNPs that failed quality filters was the known \texttt{N1570Y} resistance variant, but genome-wide SNP filters were generally conservative, erring on the side of minimising the false discovery rate at the expense of some sensitivity.
+%
+Because any non-synonymous SNP in the \textit{Vgsc} gene could potentially cause an important phenotypic effect, I performed a manual examination of genome accessibility metrics within all coding regions of the gene (Fig.~\ref{fig:accessibility}).
+%
+All the non-synonymous SNPs within the gene that failed quality filters were close to the thresholds set, and there was no evidence of structural variation, alignment ambiguity or other accessibility issues in any of the gene exons.
+%
+I therefore included all 63 non-synonymous SNPs in subsequent analyses.
+
+
+The Vgsc gene is also known to undergo splicing variation in multiple insect species including \agam, and this is believed to be an important factor enabling insects to achieve phenotypic variation in different tissues~\parencite{Dong2014,Davies2007}.
+%
+For \agam, at the time this analysis was performed, three transcripts were present in the AgamP4.4 gene annotations provided by VectorBase, which derived primarily from automated gene predictions~\parencite{Curwen2004}.
+%
+However, the canonical study of the \textit{Vgsc} gene in \agam\ is \textcite{Davies2007}, where substantially greater splice variation was reported.
+%
+A difficulty of the data from \textcite{Davies2007} is that there are no complete transcript sequences, only separate cDNA sequences from the first and second halves of the transcript.
+%
+To allow for all possibilities, I constructed a set of transcripts from all possible combinations of the first and second half cDNA sequences (Fig.~\ref{fig:transcripts}).
+%
+Some of these transcripts included optional exons or exon regions not represented in the VectorBase transcripts.
+%
+I then reran SNP effect predictions for all SNPs discovered within the Vgsc gene with each of these alternative transcripts, to determine whether any non-synonymous SNPs had occurred within an exon or exon segment not present in the canonical AgamP4.4 \texttt{AGAP004707-RA} transcript.
+%
+Three additional non-synonymous variants were found in these other transcripts, one in each of exons 2j, 3 and 20d, but none of these occurred at above 3\% allele frequency in any population, and so were not analysed further.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{@@}\label{subsec:methods-@@}
 
 
@@ -221,7 +319,42 @@ Any work carried out jointly is noted in the relevant section.
 \section{Supplemental figures}\label{sec:supplemental-figures}
 
 
-@@
+\afterpage{%
+%\clearpage
+% N.B., for some reason using \newgeometry causes page number to get dropped from the subsequent page, so disable for now - not needed if using \footnotesize.
+\newgeometry{margin=2cm}
+\begin{landscape}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\linewidth,center]{artwork/chapter6/accessibility.png}
+\caption{@@
+}
+\label{fig:accessibility}
+\end{figure}
+
+\end{landscape}
+\restoregeometry
+} % end afterpage
+
+
+\afterpage{%
+%\clearpage
+% N.B., for some reason using \newgeometry causes page number to get dropped from the subsequent page, so disable for now - not needed if using \footnotesize.
+\newgeometry{margin=2cm}
+\begin{landscape}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.8\linewidth,center]{artwork/chapter6/transcripts.png}
+\caption{@@
+}
+\label{fig:transcripts}
+\end{figure}
+
+\end{landscape}
+\restoregeometry
+} % end afterpage
 
 
 \clearpage
