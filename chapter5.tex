@@ -34,7 +34,7 @@ The evolution of insecticide resistance is a major threat to the control of mala
 %
 I apply three selection scan methods to each of the mosquito populations in the Ag1000G phase 1 cohort, and develop a systematic approach to identifying and mapping selection signals within these scans.
 %
-I use this approach to build a catalog of @@N putative selection signals, and validate this by analysing signals overlapping genes that have a functionally-validated role in insecticide resistance.
+I use this approach to build a catalog of 289 putative selection signals, and validate this by analysing signals overlapping genes that have a functionally-validated role in insecticide resistance.
 %
 Finally, I describe a web application that provides a means for exploring these selection signals, and illustrate its use by discovering selection signals at a diacylglycerol kinase gene with a potentially novel role in resistance to organophosphate insecticides.
 
@@ -73,7 +73,7 @@ Unsurprisingly, pyrethroid resistance has become widespread in these species and
 
 Several molecular mechanisms of pyrethroid resistance are known in malaria vectors~\parencite{Hemingway2016}.
 %
-Yet there remain substantial and surprising gaps in our knowledge of the genetic changes that have occurred in natural \agam\ and \acol\ populations in response to pyrethroid selection pressure.
+Yet there remain substantial gaps in our knowledge of the genetic changes that have occurred in natural \agam\ and \acol\ populations in response to pyrethroid selection pressure.
 %
 For example, adaptations affecting cytochrome P450 (CYP) enzymes are known to have occurred in some mosquito populations, inducing pyrethroid resistance by increasing the metabolism of insecticide molecules within the mosquito~\parencite{Ranson2016,Hemingway2016}.
 %
@@ -107,13 +107,13 @@ Given the variety and heterogeneity of these new selection pressures, evolution 
 %
 The availability of data from the Ag1000G project on genetic variation in natural malaria vectors provides a unique opportunity to study the full genomic landscape of recent selection, to discover new adaptations to insecticide resistance, and to compare the genomic profile of adaptation between different species and populations.
 %
-A number of statistical methods have been developed for performing genome-wide selection scans using high quality whole genome variation data from individuals sampled from natural populations~\parencite{Oleksyk2010,Haasl2015,Vatsiou2016,Pavlidis2017,Booker2017}.
+A number of statistical methods have been developed for performing genome-wide selection scans using high quality whole genome variation data from individuals sampled from natural populations~\parencite{Oleksyk2010,Haasl2016,Vatsiou2016,Pavlidis2017,Booker2017}.
 %
 These methods work in different ways, but all leverage the fact that recent positive selection leaves a characteristic signature at affected loci, which can be detected against a genomic background where the majority of genes have not experienced recent positive selection.
 %
-For example, H12~\parencite{Garud2015} detects a localised decrease in haplotype diversity,IHS~\parencite{Voight2006} and XPEHH~\parencite{Sabeti2007} detect a localised increase in haplotype sharing, either within or between populations respectively, and PBS~\parencite{Yi2010,Crawford2017} detects a localised increase in genetic differentiation between populations.
+For example, H12~\parencite{Garud2015} detects a localised decrease in haplotype diversity, IHS~\parencite{Voight2006} and XPEHH~\parencite{Sabeti2007} detect a localised increase in haplotype sharing, either within or between populations respectively, and PBS~\parencite{Yi2010,Crawford2017} detects a localised increase in genetic differentiation between populations.
 %
-These methods are not perfect, having varying power to detect different types of selection under different population demographic scenarios~\parencite{Haasl2015,Vatsiou2016,Pavlidis2017,Booker2017}.
+These methods are not perfect, having varying power to detect different types of selection under different population demographic scenarios~\parencite{Haasl2016,Vatsiou2016,Pavlidis2017,Booker2017}.
 %
 They may also correctly detect a signal of selection but fail to provide enough precision to narrow down the target of selection to a single gene.
 %
@@ -353,9 +353,9 @@ Firstly, determining an appropriate significance threshold is not straightforwar
 %
 Secondly, different types of noise within the data can lead to incorrect inferences, such as mistakenly inferring a peak from an isolated high statistic value, or mistakenly splitting a peak into two due to an isolated low statistic value.
 %
-Thirdly, from inspecting another known insecticide resistance gene, \textit{Ace1} (\texttt{AGAP001356}), it was also clear that signals might be small in magnitude, and so fall below a fixed significance threshold.
+Thirdly, from inspecting another known insecticide resistance gene, \textit{Ace1} (\texttt{AGAP001356}), it was also clear that signals might be small in magnitude despite having a clear peak architecture, and so fall below a fixed significance threshold.
 %
-Examining the Ag1000G selection scans at known insecticide resistance loci illustrates how these shortcomings could be overcome by leveraging the information provided by the shape of peaks at true selection signals.
+Examining the Ag1000G selection scans at known insecticide resistance loci suggests how these issues could be overcome by leveraging the information provided by the shape of peaks at true selection signals.
 %
 At a locus under recent positive selection, genetic hitchhiking of neutral variants on either flank of the locus is expected due to linkage disequilibrium, and the probability of linkage is an exponential function of the genetic distance between them~\parencite{MaynardSmith1974}.
 %
@@ -390,7 +390,7 @@ Developing this idea further, I devised an algorithm to systematically identify 
 %
 The algorithm uses non-linear least squares regression to fit peak and null models to the selection scan values at regular 20 kb intervals throughout the genome.
 %
-After performing a complete scan through the genome, the peak model with the highest $\Delta_i$ is called as a signal, and all overlapping peak models are discarded.
+After performing a complete scan through the genome, the peak model with the highest $\Delta_i$ is called as a signal.
 %
 To deal with cases where true selection signals occur in close proximity and peaks may be partially overlapping, the algorithm then subtracts the fitted peak values from the data, and refits peaks in adjacent regions.
 %
@@ -407,7 +407,7 @@ This generated a catalog of 289 selection signals (Figs.~\ref{fig:signals_2R},~\
 \subsection{Signal discovery and mapping performance}\label{subsec:performance}
 
 
-To provide some assessment of the performance of the signal discovery algorithm, I took an empirical approach, making use of the five known insecticide resistance genes described above, in addition to the \textit{Ace1} gene where variants are known to confer resistance to carbamate and organophosphate insecticides @@REFs.
+To provide some assessment of the performance of the signal discovery algorithm, I took an empirical approach, making use of the five known insecticide resistance genes described above, in addition to the \textit{Ace1} gene where variants are known to confer resistance to carbamate and organophosphate insecticides~\parencite{Weill2003,Weill2004,Djogbenou2008}.
 
 
 To estimate sensitivity I analysed the \textit{Vgsc}, \textit{Gaba}, \textit{Ace1} and \textit{Gste2} genes, where SNPs conferring insecticide resistance are known from previous studies.
@@ -526,7 +526,7 @@ The gene shown in blue in all subplots is \texttt{AGAP000519}, a diacylglycerol 
 
 To illustrate the potential of these selection scans to identify novel candidate insecticide resistance genes, I provide an example of selection signals at a novel locus on the X chromosome (Fig.~\ref{fig:dgk}).
 %
-Selection signals were found at this locus in both species from Burkina Faso, and were replicated across all three selection scan methods.
+Selection signals were found at this locus in both species from Burkina Faso, and were replicated in both populations across all three selection scan methods.
 %
 Selection peaks were also relatively narrow, and only a single gene overlapped the peak focus in all H12 and XPEHH scans.
 %
@@ -534,12 +534,12 @@ This gene was \texttt{AGAP000519}, a diacylglycerol kinase.
 %
 This gene is intriguing because its function does not obviously fit any of the established categories of insecticide resistance gene.
 %
-I performed a reasonable extensive literature search and could not find any previous studies associating diacylglycerol kinase enzymes with insecticide resistance in any insect species.
+I performed a literature search and could not find any previous studies associating diacylglycerol kinase enzymes with insecticide resistance in any insect species.
 %
 I did, however, find two lines of evidence suggesting a potential role in adaptation to malaria vector control interventions.
 
 
-In \textit{C. elegans}, the diacylglycerol kinase DGK-1 is involved in regulating release of the neurotransmitter acetylcholine at synaptic junctions \parencite{Miller1999}.
+In \textit{C. elegans}, the diacylglycerol kinase DGK-1 is involved in regulating release of the neurotransmitter acetylcholine at synaptic junctions~\parencite{Miller1999}.
 %
 This discovery was made by using genetic screens for mutants with resistance to aldicarb, a carbamate insecticide.
 %
@@ -553,34 +553,38 @@ They also found that DGK-1 is a component of this regulatory machinery, and norm
 %
 A loss of function in DGK-1 results in hypersensitivity to aldicarb, in addition to hyperactive locomotion.
 %
-If synaptic transmission is regulated via a similar pathway in \textit{Anopheles} mosquitoes, this suggests a hypothesis that a gain of function mutation in a diacylglycerol kinase gene could confer some degree of resistance to carbamate and organophosphate insecticides, which share the same mode of action.
+If synaptic transmission is regulated via a similar pathway in \textit{Anopheles} mosquitoes, then this suggests a hypothesis that a gain of function mutation in a diacylglycerol kinase gene could confer some degree of resistance to carbamate and organophosphate insecticides, which share the same mode of action.
 %
 Carbamates have been used for indoor residual spraying (IRS) fairly extensively, and organophosphates are increasingly being used, thus any novel mechanism of resistance to these insecticides in malaria vectors would be of high importance.
 
 
-There is also a second hypothesis, concerning a role in behavioural adaptation.
+There is also a second hypothesis, concerning a possible role in behavioural adaptation.
 %
 \texttt{AGAP000519} is a one-to-one homolog of the \textit{D. melanogaster} gene \textit{rdgA}.
 %
-In \textit{D. melanogaster}, \textit{rdgA} is an eye-specific diacylglycerol kinase involved in vision via the phototransduction signalling cascade @@REF.
+In \textit{D. melanogaster}, \textit{rdgA} is an eye-specific diacylglycerol kinase involved in vision via the phototransduction signalling cascade~\parencite{Masai1993}.
 %
-\textit{rdgA} loss-of-function mutants have constitutive activation of light-sensitive ion channels, causing retinal degeneration during development.
+\textit{rdgA} loss-of-function mutants have constitutive activation of light-sensitive ion channels, causing retinal degeneration during development~\parencite{Raghu2000}.
 %
-These observations have demonstrated that \textit{rdgA} is required for light signalling response termination via the phosphoinositide cycle (reviewed in \textcite{Katz2009}).
+These observations have demonstrated that \textit{rdgA} is required for light signalling response termination via the phosphoinositide cycle~\parencite{Katz2009}.
 %
 Thus, any modulation of the activity of \textit{rdgA} has the potential to affect sensitivity to light.
 %
-In \agam, genes in this visual signalling pathway, including \texttt{AGAP000519}, are expressed rhythmically under circadian clock control \parencite{Rund2011}.
+In \agam, genes in this visual signalling pathway, including \texttt{AGAP000519}, are expressed rhythmically under circadian clock control~\parencite{Rund2011}.
 %
-Expression peaks just before dusk, suggesting a role in tuning the \agam visual system ahead of nocturnal activities such as flight and biting.
+Expression peaks just before dusk, suggesting a role in tuning the \agam\ visual system ahead of nocturnal activities such as flight and biting.
 %
 The increase in coverage of insecticide-treated bednets has long been hypothesised to create a selective pressure for individuals that initiate host-seeking behaviour earlier in the night, but no genetic changes have so far been found affecting this behaviour.
 %
 
 
-Diacylglycerol is a general purpose signalling molecule used in a variety of other roles, and there may be other causes for selection at this locus in \agam\ and \acol.
+Diacylglycerol is a signalling molecule used in a variety of other roles, and there may be other causes for selection at this locus in \agam\ and \acol.
 %
 Nevertheless, the presence of clear selection signals at this locus in both species, the high degree of confidence regarding the target gene, and the presence of compelling and plausible links to adaptation to vector control interventions, strongly advise for the further study of this gene.
+%
+Furthermore, although the two hypotheses presented above are different, the underlying molecular pathways are the same on both cases, with diacylglycerol kinase enzymes serving to modulate the excitability of neurons.
+%
+This in turn argues for a deeper study of this pathway in malaria vectors.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -617,18 +621,16 @@ Selection scans using the H12 statistic were performed following methods describ
 %
 H12 was computed in non-overlapping windows over the genome, where each window contained a fixed number of SNPs.
 %
-The extent of linkage disequilibrium was different in different populations (Chapter 3) and so I calibrated the window size independently in each population.
+The extent of linkage disequilibrium was different in different populations (Chapter 4) and so I calibrated the window size independently in each population.
 %
 To calibrate the window sizes I ran the H12 scans with a range of different window sizes, and chose the smallest window size for which the mean value of H1 over all windows was below 0.01.
-
-
+%
 XPEHH scans were computed following methods described in \textcite{Sabeti2007} as implemented in scikit-allel version 0.21.1.
 %
 For each population comparison, SNPs with a minor allele frequency greater than 5\% in the union of both populations were used.
 %
 XPEHH scores were normalised within each chromosome (2, 3, X).
-
-
+%
 IHS scans were computed following methods described in \textcite{Voight2006} as implemented in scikit-allel version 0.21.1.
 %
 For each population, SNPs with minor allele frequency above 5\% were used.
@@ -643,11 +645,11 @@ IHS scores were normalised within each chromosome (2, 3, X).
 
 Signal discovery was performed for each genome-wide selection scan by fitting peak models using non-linear least squares regression, via the lmfit package version 0.9.7.
 %
-The exponential peak model had the following parameters: centre (genomic position where the peak is centred), amplitude (maximum value of the peak), decay (exponential rate at which values decay on each flank), skew (variation in rate of decay between left and right flanks), baseline (constant noise term).
+The exponential peak model had the following parameters: \textit{centre} (genomic position where the peak is centred), \textit{amplitude} (maximum value of the peak), \textit{decay} (exponential rate at which values decay on each flank), \textit{skew} (variation in rate of decay between left and right flanks), \textit{baseline} (constant noise term).
 %
-The Gaussian peak model had the same parameters, except for a sigma (width) parameter instead of a decay parameter.
+The Gaussian peak model had the same parameters, except for a \textit{sigma} (width) parameter instead of a \textit{decay} parameter.
 %
-The constant (null) model had a single baseline parameter.
+The constant (null) model had a single \textit{baseline} parameter.
 %
 The peak-finding algorithm first stepped through the genome in increments of 20 kb, fitting both peak models and the null model, centered at each step, storing the resulting model fits.
 %
@@ -707,7 +709,7 @@ The red region within each bar shows the peak focus, representing the peak cente
 \includegraphics[width=1.1\textwidth,center]{artwork/chapter5/signals_2L.png}
 \caption{Selection signals discovered on chromosome arm 2L.
 %
-See Fig.~\ref{fig:signals_2R} further details.
+See Fig.~\ref{fig:signals_2R} for figure legend.
 }
 \label{fig:signals_2L}
 \end{figure}
@@ -719,7 +721,7 @@ See Fig.~\ref{fig:signals_2R} further details.
 \includegraphics[width=1.1\textwidth,center]{artwork/chapter5/signals_3R.png}
 \caption{Selection signals discovered on chromosome arm 3R.
 %
-See Fig.~\ref{fig:signals_2R} further details.
+See Fig.~\ref{fig:signals_2R} for figure legend.
 }
 \label{fig:signals_3R}
 \end{figure}
@@ -731,7 +733,7 @@ See Fig.~\ref{fig:signals_2R} further details.
 \includegraphics[width=1.1\textwidth,center]{artwork/chapter5/signals_3L.png}
 \caption{Selection signals discovered on chromosome arm 3L.
 %
-See Fig.~\ref{fig:signals_2R} further details.
+See Fig.~\ref{fig:signals_2R} for figure legend.
 }
 \label{fig:signals_3L}
 \end{figure}
@@ -743,7 +745,7 @@ See Fig.~\ref{fig:signals_2R} further details.
 \includegraphics[width=1.1\textwidth,center]{artwork/chapter5/signals_X.png}
 \caption{Selection signals discovered on the X chromosome.
 %
-See Fig.~\ref{fig:signals_2R} further details.
+See Fig.~\ref{fig:signals_2R} for figure legend.
 }
 \label{fig:signals_X}
 \end{figure}
@@ -753,7 +755,13 @@ See Fig.~\ref{fig:signals_2R} further details.
 \begin{figure}[h!]
 \centering
 \includegraphics[width=1.1\textwidth,center]{artwork/chapter5/accuracy.pdf}
-\caption{@@TODO
+\caption{Analysis of mapping error and estimated signal focus confidence intervals at known insecticide resistance genes.
+%
+Each marker represents a selection signal.
+%
+Each plot compares the confidence interval for the focus of each selection interval, estimated by comparing peak model fits within the vicinity of a signal, and the mapping error, computed as the distance from the fitted peak focus to the known resistance gene.
+%
+\textit{r} is the Pearson correlation coefficient.
 }
 \label{fig:accuracy}
 \end{figure}
@@ -788,7 +796,14 @@ See Fig.~\ref{fig:signals_2R} further details.
 \begin{center}
 \begin{threeparttable}
 
-\caption{@@TODO.}
+\caption{Analysis of mapping error using selection signals at known insecticide resistance genes.
+%
+$N$ = no. of selection signals found overlapping the gene.
+%
+$ME_n$ = $n^{th}$ percentile of mapping error (distance from signal center to gene) in all selection signals spanning the gene.
+%
+Within CI = percentage of signals where the gene was within the estimated focus confidence interval.
+}
 
 \label{table:acc}
 
