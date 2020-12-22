@@ -442,7 +442,62 @@ Clearly there is room for improvement here in estimating a confidence interval f
 \subsection{A Web application for exploring selection signals}\label{subsec:webapp}
 
 
-@@TODO
+Of the 289 selection signals identified, 229 did not overlap any of the known insecticide resistance loci described above.
+%
+To facilitate an exploration of these potentially novel selection signals, and an investigation of the genes that might be driving them, I developed a prototype Web application, available at \url{https://malariagen.github.io/agam-selection-atlas/}.
+%
+Each selection signal can span multiple genes, and thus it can be time-consuming to explore signals and generate hypotheses about the most likely candidate genes under selection.
+%
+The purpose of the Web application is to accelerate this investigation process, by providing a visual interface to the data, with tools for comparing selection signals across populations and selection scans, and for zooming into individual signals and inspecting genes.
+%
+The Web application provides several entry points to the data, including:
+%
+\begin{itemize}
+    %
+    \item \textbf{All selection signals}.
+    %
+    A table of selection signals, ranked by the degree of supporting evidence ($\Delta_i$).
+    %
+    For each signal, the table provides the selection statistic, the population in which the signal was found, the focal region, and whether the signal overlaps any known loci.
+    %
+    \item \textbf{Signals by population}.
+    %
+    One page for each population, with an interactive genome plot for each chromosome arm providing a means to view and browse the selection signals, and an associated table of selection signals.
+    %
+    \item \textbf{Signals by chromosome arm}.
+    %
+    One page for each chromosome arm, with an interactive genome plot showing signals from all populations, and an associated table of signals (Figs.~\ref{fig:signals_2R},~\ref{fig:signals_2L},~\ref{fig:signals_3R},~\ref{fig:signals_3L} and~\ref{fig:signals_X} are screenshots from these pages).
+    %
+    \item \textbf{Signals by scanning statistic}.
+    %
+    One page for each scanning method used (H12, XPEHH, IHS), with a table of associated selection signals from all populations and chromosome arms.
+    %
+    \item \textbf{Known loci}.
+    %
+    A set of pages for functionally-validated insecticide resistance loci where there is a strong expectation for observing selection signals in at least some populations.
+    %
+    \item \textbf{Insecticide resistance candidate genes}.
+    %
+    Pages providing catalogues of \textit{a priori} candidate insecticide resistance genes based on gene function, organised into four lists: metabolic, target-site, behavioural and cuticular.
+\end{itemize}
+
+
+From these entry points, a user can access a dedicated \textbf{signal page} for each individual selection signal.
+%
+Each signal page includes an interactive genome plot for the region containing and surrounding the peak, showing the selection statistic values, and the fitted peak model (Fig.~\ref{fig:dgk} panels a-d are screenshots of this feature from four signal pages).
+%
+This plot can be zoomed and panned to allow inspection of the genes nearest to the peak centre.
+%
+The set of genes overlapping the inferred focal region are also listed below the plot.
+%
+There is also a table of overlapping selection signals, which can be useful to assess the degree of replication across both populations and selection methods.
+%
+Finally, there are a collection of diagnostic plots, and a model fit report, providing detailed information to allow assessment of how well the peak model fitted the data.
+%
+If a user wants to investigate a particular gene of interested, then can click through to a dedicated \textbf{gene page}.
+%
+Each gene page as summary information about the gene, with links through to VectorBase, and a table of all overlapping and adjacent selection signals.
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -450,7 +505,82 @@ Clearly there is room for improvement here in estimating a confidence interval f
 \subsection{Discovery of a novel candidate insecticide resistance gene}\label{subsec:novel}
 
 
-@@TODO
+\begin{figure}[t!]
+\centering
+\includegraphics[width=1\textwidth,center]{artwork/chapter5/dgk.pdf}
+\caption{Selection signals at a novel locus on the X chromosome.
+%
+The gene shown in blue in all subplots is \texttt{AGAP000519}, a diacylglycerol kinase.
+%
+\textbf{a}, Burkina Faso \acol, H12.
+%
+\textbf{b}, Burkina Faso \agam, H12.
+%
+\textbf{c}, Burkina Faso \acol, XPEHH versus Guinea-Bissau.
+%
+\textbf{d}, Burkina Faso \agam, XPEHH versus Guinea-Bissau.
+}
+\label{fig:dgk}
+\end{figure}
+
+
+To illustrate the potential of these selection scans to identify novel candidate insecticide resistance genes, I provide an example of selection signals at a novel locus on the X chromosome (Fig.~\ref{fig:dgk}).
+%
+Selection signals were found at this locus in both species from Burkina Faso, and were replicated across all three selection scan methods.
+%
+Selection peaks were also relatively narrow, and only a single gene overlapped the peak focus in all H12 and XPEHH scans.
+%
+This gene was \texttt{AGAP000519}, a diacylglycerol kinase.
+%
+This gene is intriguing because its function does not obviously fit any of the established categories of insecticide resistance gene.
+%
+I performed a reasonable extensive literature search and could not find any previous studies associating diacylglycerol kinase enzymes with insecticide resistance in any insect species.
+%
+I did, however, find two lines of evidence suggesting a potential role in adaptation to malaria vector control interventions.
+
+
+In \textit{C. elegans}, the diacylglycerol kinase DGK-1 is involved in regulating release of the neurotransmitter acetylcholine at synaptic junctions \parencite{Miller1999}.
+%
+This discovery was made by using genetic screens for mutants with resistance to aldicarb, a carbamate insecticide.
+%
+Carbamates bind to acetylcholinesterase and prevent its normal function in recycling acetylcholine, causing a toxic accumulation of acetylcholine at synapses.
+%
+Mutations in the upstream regulatory pathway that reduce the normal amount of acetylcholine present in synapses can thus alter sensitivity to carbamates.
+%
+\textcite{Miller1999} found mutations in several genes that confer aldicarb resistance by this means.
+%
+They also found that DGK-1 is a component of this regulatory machinery, and normally acts to negatively regulate synaptic transmission.
+%
+A loss of function in DGK-1 results in hypersensitivity to aldicarb, in addition to hyperactive locomotion.
+%
+If synaptic transmission is regulated via a similar pathway in \textit{Anopheles} mosquitoes, this suggests a hypothesis that a gain of function mutation in a diacylglycerol kinase gene could confer some degree of resistance to carbamate and organophosphate insecticides, which share the same mode of action.
+%
+Carbamates have been used for indoor residual spraying (IRS) fairly extensively, and organophosphates are increasingly being used, thus any novel mechanism of resistance to these insecticides in malaria vectors would be of high importance.
+
+
+There is also a second hypothesis, concerning a role in behavioural adaptation.
+%
+\texttt{AGAP000519} is a one-to-one homolog of the \textit{D. melanogaster} gene \textit{rdgA}.
+%
+In \textit{D. melanogaster}, \textit{rdgA} is an eye-specific diacylglycerol kinase involved in vision via the phototransduction signalling cascade @@REF.
+%
+\textit{rdgA} loss-of-function mutants have constitutive activation of light-sensitive ion channels, causing retinal degeneration during development.
+%
+These observations have demonstrated that \textit{rdgA} is required for light signalling response termination via the phosphoinositide cycle (reviewed in \textcite{Katz2009}).
+%
+Thus, any modulation of the activity of \textit{rdgA} has the potential to affect sensitivity to light.
+%
+In \agam, genes in this visual signalling pathway, including \texttt{AGAP000519}, are expressed rhythmically under circadian clock control \parencite{Rund2011}.
+%
+Expression peaks just before dusk, suggesting a role in tuning the \agam visual system ahead of nocturnal activities such as flight and biting.
+%
+The increase in coverage of insecticide-treated bednets has long been hypothesised to create a selective pressure for individuals that initiate host-seeking behaviour earlier in the night, but no genetic changes have so far been found affecting this behaviour.
+%
+
+
+Diacylglycerol is a general purpose signalling molecule used in a variety of other roles, and there may be other causes for selection at this locus in \agam\ and \acol.
+%
+Nevertheless, the presence of clear selection signals at this locus in both species, the high degree of confidence regarding the target gene, and the presence of compelling and plausible links to adaptation to vector control interventions, strongly advise for the further study of this gene.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -459,13 +589,68 @@ Clearly there is room for improvement here in estimating a confidence interval f
 \section{Conclusions}\label{sec:conclusions}
 
 
-@@todo
+In this chapter I have explored the genomic landscape of recent selection within the mosquito populations sampled in the first phase of the Ag1000G project.
+%
+There are strong signals of selection at multiple loci with clear links to insecticide resistance, demonstrating that malaria vector control interventions have driven a strong adaptive response.
+%
+It is also clear that this adaptive response is both polygenic and heterogeneous over both species and geography, with different genes under selection in different combinations of populations.
+%
+Furthermore, a substantial number of selection signals are present at genes not previously known to be involved in insecticide resistance, where signals are of comparable shape and statistical support to those found at validated insecticide resistance genes.
+%
+This strongly suggests that the molecular landscape of insecticide resistance in \agam\ and \acol\ is not fully understood and there are major gaps in our current knowledge.
+%
+The Ag1000G data provide a unique opportunity to fill some of these gaps, generating new candidate genes under selection for further investigation and validation through lab and field work.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Methods}\label{sec:methods}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Genome-wide selection scans}\label{subsec:methods-gwss}
+
+
+Selection scans using the H12 statistic were performed following methods described in \textcite{Garud2015} as implemented in scikit-allel version 0.21.1.
+%
+H12 was computed in non-overlapping windows over the genome, where each window contained a fixed number of SNPs.
+%
+The extent of linkage disequilibrium was different in different populations (Chapter 3) and so I calibrated the window size independently in each population.
+%
+To calibrate the window sizes I ran the H12 scans with a range of different window sizes, and chose the smallest window size for which the mean value of H1 over all windows was below 0.01.
+
+
+XPEHH scans were computed following methods described in \textcite{Sabeti2007} as implemented in scikit-allel version 0.21.1.
+%
+For each population comparison, SNPs with a minor allele frequency greater than 5\% in the union of both populations were used.
+%
+XPEHH scores were normalised within each chromosome (2, 3, X).
+
+
+IHS scans were computed following methods described in \textcite{Voight2006} as implemented in scikit-allel version 0.21.1.
+%
+For each population, SNPs with minor allele frequency above 5\% were used.
+%
+IHS scores were normalised within each chromosome (2, 3, X).
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Signal discovery and mapping}\label{subsec:methods-discovery}
+
+
+Signal discovery was performed for each genome-wide selection scan by fitting peak models using non-linear least squares regression, via the lmfit package version 0.9.7.
+%
+The exponential peak model had the following parameters: centre (genomic position where the peak is centred), amplitude (maximum value of the peak), decay (exponential rate at which values decay on each flank), skew (variation in rate of decay between left and right flanks), baseline (constant noise term).
+%
+The Gaussian peak model had the same parameters, except for a sigma (width) parameter instead of a decay parameter.
+%
+The constant (null) model had a single baseline parameter.
+%
+The peak-finding algorithm first stepped through the genome in increments of 20 kb, fitting both peak models and the null model, centered at each step.
+
 
 
 @@todo
