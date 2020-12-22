@@ -28,7 +28,7 @@ Chapter 3. The \textit{Anopheles gambiae} 1000 Genomes Project phase 1 nucleotid
 \begin{abstract}
 
 
-In this chapter I describe the production and curation of a data resource of nucleotide variation obtained from whole-genome sequencing of 888 individual mosquitoes wild-caught from natural populations and a further 80 individuals from colony crosses.
+In this chapter I describe the production and curation of a data resource of nucleotide variation obtained from whole-genome sequencing of 888 individual mosquitoes wild-caught from natural populations, and a further 80 individuals from colony crosses.
 %
 Production of this data resource was a collaborative effort involving members of multiple research teams within the Ag1000G Consortium.
 %
@@ -46,10 +46,10 @@ I also report analyses of these data to quantify the levels of nucleotide variat
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Introduction}
+\section{Introduction}\label{sec:introduction}
 
 
-As described in chapter 1, the Ag1000G Project aims to use whole-genome deep Illumina sequencing to explore natural genetic variation among populations of malaria vectors within the \textit{An. gambiae} complex.
+As described in chapter 1, the Ag1000G Project aims to use whole-genome deep Illumina sequencing to explore natural genetic variation among populations of malaria vectors within the \agam\ complex.
 %
 For logistical reasons the project was divided into three phases, and a total of 888 mosquito specimens sampled from natural populations were included in the first project phase.
 %
@@ -68,12 +68,12 @@ Where work was carried out by or in collaboration with other members of the Ag10
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Methods}
+\section{Methods}\label{sec:methods}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Population sampling}
+\subsection{Population sampling}\label{subsec:population-sampling}
 
 
 \begin{figure}[t!]
@@ -87,40 +87,40 @@ Parental colonies and numbers of offspring for colony crosses are shown inset.
 %
 Numbers of samples are shown after removing samples that failed any of the quality control steps described in this chapter. 
 %
-Colours in the map denote ecosystem classes, see \citet{Sayre2013} Fig. 9 for a complete colour legend. 
+Colours in the map denote ecosystem classes, see \textcite{Sayre2013} Fig. 9 for a complete colour legend. 
 %
 This figure was produced in collaboration with Chris Clarkson.}
 \label{fig:map}
 \end{figure}
 
 
-\textit{Population sampling was performed by members of the Ag1000G Consortium. Below is a brief description of the cohort of mosquito specimens obtained for sequencing. A more detailed description is available in \citet{Ag1000G2017}.}
+\textit{Population sampling was performed by members of the Ag1000G Consortium. Below is a brief description of the cohort of mosquito specimens obtained for sequencing. A more detailed description is available in \textcite{Ag1000G2017}.}
 
 
 %%
 A total of 888 mosquito specimens collected from natural populations were included in the Ag1000G phase 1 cohort.
 %
-This included mosquitoes representing two major malaria vector species  \textit{An. gambiae} and \textit{An. coluzzii}.
+This included mosquitoes representing two major malaria vector species \agam\ and \textit{An. coluzzii}.
 %
-Mosquitoes were sampled from 8 countries in sub-Saharan Africa representing a broad geographical range spanning the continent: Guinea-Bissau, Guinea, Burkina Faso, Cameroon, Gabon, Angola, Uganda and Kenya (Fig. \ref{fig:map}).
+Mosquitoes were sampled from 8 countries in sub-Saharan Africa representing a broad geographical range spanning the continent: Guinea-Bissau, Guinea, Burkina Faso, Cameroon, Gabon, Angola, Uganda and Kenya (Fig.~\ref{fig:map}).
 %
 Mosquitoes had been collected prior to the initiation of the Ag1000G Project as part of previous field studies, and were collected at different times, with the earliest collections being in 2000 (Gabon) and the most recent in 2012 (Burkina Faso).
 %
 Because these mosquitoes were collected in the context of different studies, a number of different collection methods were used, including light traps, pyrethrum spray catch and larval collection.
 %
-In addition to the wild-caught specimens, a further 80 mosquitoes were obtained from four colony crosses, each cross comprising two parents and up to 20 progeny, where parents were drawn from established reference colonies (Fig. \ref{fig:map} inset).
+In addition to the wild-caught specimens, a further 80 mosquitoes were obtained from four colony crosses, each cross comprising two parents and up to 20 progeny, where parents were drawn from established reference colonies (Fig.~\ref{fig:map} inset).
 %
-The main rationale for including colony crosses was to provide a mechanism for calibrating and measuring the accuracy of variant calling methods, because colony crosses allow for the analysis of genetic inheritance and Mendelian inconsistencies between parents and offspring, which can be a useful proxy of variant calling errors \citep{Saunders2007,Laurie2010,Pilipenko2014}.
+The main rationale for including colony crosses was to provide a mechanism for calibrating and measuring the accuracy of variant calling methods, because colony crosses allow for the analysis of genetic inheritance and Mendelian inconsistencies between parents and offspring, which can be a useful proxy of variant calling errors~\parencite{Saunders2007,Laurie2010,Pilipenko2014}.
 %
 DNA extraction was performed on individual mosquitoes and genomic DNA samples were shipped to the Wellcome Sanger Institute for sequencing.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Whole-genome sequencing}
+\subsection{Whole-genome sequencing}\label{subsec:whole-genome-sequencing}
 
 
-\textit{Whole-genome sequencing was performed by staff at the MalariaGEN Resource Center and the Wellcome Sanger Institute sample logistics, sequencing and informatics facilities. Below is a brief description of sequencing methods. A more detailed description is available in \citet{Ag1000G2017}.}
+\textit{Whole-genome sequencing was performed by staff at the MalariaGEN Resource Center and the Wellcome Sanger Institute sample logistics, sequencing and informatics facilities. Below is a brief description of sequencing methods. A more detailed description is available in \textcite{Ag1000G2017}.}
 
 
 %%
@@ -130,13 +130,13 @@ Paired-end multiplex libraries were prepared using the manufacturer's protocol, 
 %
 Multiplexes comprised 12 tagged individual mosquitoes and three lanes of sequencing were generated for each multiplex to even out variations in yield between sequencing runs.
 %
-Thus after sequencing data were demultiplexed, data for each individual sample were available from three separate sequencing runs.
+Thus, after sequencing data were demultiplexed, data for each individual sample were available from three separate sequencing runs.
 %
-Cluster generation and sequencing were undertaken per the manufacturer's protocol for paired-end 100 bp sequence reads with insert size in the range 100-200 bp.
+Cluster generation and sequencing were undertaken per the manufacturer's protocol for paired-end 100 bp sequence reads with insert size in the range 100--200 bp.
 %
 Target coverage was $30\times$ per individual.
 %
-The median depth of coverage obtained per individual was at least $29\times$ for all of the sample sets contributed (Table \ref{table:coverage}).
+The median depth of coverage obtained per individual was at least $29\times$ for all the sample sets contributed (Table~\ref{table:coverage}).
 %
 
 \begin{table}[t]
@@ -157,13 +157,13 @@ Species status is uncertain for samples from Guinea-Bissau and Kenya, see Chapte
  \hline
  \textbf{Country} & \textbf{Species} & \textbf{No. samples} (\female, \male) & \textbf{Coverage} \\
  \hline
- Angola & \textit{An. coluzzii} & 60, 0 & 30 (22-38) \\
- Burkina Faso & \textit{An. coluzzii} & 66, 3 & 33 (26-44) \\
- Burkina Faso & \textit{An. gambiae} & 61, 20 & 31 (22-68) \\
+ Angola & \acol\ & 60, 0 & 30 (22-38) \\
+ Burkina Faso & \acol\ & 66, 3 & 33 (26-44) \\
+ Burkina Faso & \agam\ & 61, 20 & 31 (22-68) \\
  Cameroon & \textit{An gambiae} & 232, 43 & 29 (19-53) \\
- Gabon & \textit{An. gambiae} & 56, 0 & 31 (21-37) \\
- Guinea & \textit{An. gambiae} & 31, 0 & 29 (19-39) \\
- Uganda & \textit{An. gambiae} & 103, 0 & 31 (27-39) \\
+ Gabon & \agam\ & 56, 0 & 31 (21-37) \\
+ Guinea & \agam\ & 31, 0 & 29 (19-39) \\
+ Uganda & \agam\ & 103, 0 & 31 (27-39) \\
  Guinea Bissau & uncertain & 46, 0 & 30 (24-41) \\
  Kenya & uncertain & 44, 0 & 31 (18-57) \\
  \hline
@@ -176,16 +176,16 @@ Species status is uncertain for samples from Guinea-Bissau and Kenya, see Chapte
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{SNP discovery and genotyping}
+\subsection{SNP discovery and genotyping}\label{subsec:snp-discovery-and-genotyping}
 
 
-\textit{SNP discovery and genotyping was performed in collaboration with the MalariaGEN Resource Center data production team. Below is a brief description of SNP calling methods. A more detailed description is available in \citet{Ag1000G2017}.}
+\textit{SNP discovery and genotyping was performed in collaboration with the MalariaGEN Resource Center data production team. Below is a brief description of SNP calling methods. A more detailed description is available in \textcite{Ag1000G2017}.}
 
 
 %%
-SNP discovery and genotyping was formed following best practices defined for the Genome Analysis Toolkit (GATK) version 2 \citep{McKenna2010,Depristo2011,VanderAuwera2013}.
+SNP discovery and genotyping was formed following best practices defined for the Genome Analysis Toolkit (GATK) version 2~\parencite{McKenna2010,Depristo2011,VanderAuwera2013}.
 %
-Sequence reads from each sample were aligned to the AgamP3 reference genome \citep{Holt2002,Sharakhova2007} using BWA version 0.6.2 \citep{Li2009} using the \textit{aln} and \textit{sampe} commands.
+Sequence reads from each sample were aligned to the AgamP3 reference genome~\parencite{Holt2002,Sharakhova2007} using BWA version 0.6.2~\parencite{Li2009} using the \textit{aln} and \textit{sampe} commands.
 %
 A BAM file for each individual was constructed by merging alignments from multiple lanes, and duplicate reads were marked using Picard version 1.96.
 %
@@ -193,7 +193,7 @@ Reads were then re-aligned around putative indels found within the alignments us
 %
 SNP discovery and genotyping was performed using GATK \textit{UnifiedGenotyper}.
 %
-\textit{UnifiedGenotyper} was run within non-overlapping 10 kb chunks and the results combined into a single variant call format (VCF) file for each chromosome arm using the \textit{vcf-concat} command from vcftools version 0.1.10.
+\textit{UnifiedGenotyper} was run within non-overlapping 10 kb chunks, and the results were combined into a single variant call format (VCF) file for each chromosome arm using the \textit{vcf-concat} command from vcftools version 0.1.10.
 %
 SNP discovery was performed using the 888 wild-caught samples.
 %
@@ -202,7 +202,7 @@ The colony crosses samples were then genotyped at the same set of SNPs using GAT
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Sample quality control}
+\subsection{Sample quality control}\label{subsec:sample-quality-control}
 
 
 %
@@ -214,13 +214,19 @@ These issues include:
 %
 \item \textbf{Low yield.} The number of sequence reads generated for and individual sample is not sufficient to achieve the desired depth of coverage.
 %
-\item \textbf{Low library complexity.} If the input DNA quantity is insufficient, the DNA amplification process can generate sufficient material for sequencing, but there may be significant bias, in the sense that some genome regions are overrepresented and others are underrepresented or not covered at all \citep{Head2014}.
+\item \textbf{Low library complexity.} If the input DNA quantity is insufficient, the DNA amplification process can generate sufficient material for sequencing, but there may be significant bias, in the sense that some genome regions are overrepresented and others are underrepresented or not covered at all~\parencite{Head2014}.
 %
-\item \textbf{Cross-contamination.} During specimen handling, sample preparation and library preparation, material and thus DNA from one sample may contaminate another. In this case the sequencing data generated will include a mixture of reads from the original sample and the contaminating sample.
+\item \textbf{Cross-contamination.} During specimen handling, sample preparation and library preparation, material and thus DNA from one sample may contaminate another.
 %
-\item \textbf{Metadata errors.} Errors may arise during the recording and transfer of metadata about specimens and samples between information systems. This can lead to situations where the identity of one sample becomes swapped with that of another sample.
+In this case the sequencing data generated will include a mixture of reads from the original sample and the contaminating sample.
 %
-\item \textbf{Unexpected taxa.} In Ag1000G phase 1 only \textit{An. gambiae} and \textit{An. coluzzii} mosquitoes were to be included. However, not all specimens had the conventional diagnostic species assays performed prior to selection, and thus were only identified morphologically.
+\item \textbf{Metadata errors.} Errors may arise during the recording and transfer of metadata about specimens and samples between information systems.
+%
+This can lead to situations where the identity of one sample becomes swapped with that of another sample.
+%
+\item \textbf{Unexpected taxa.} In Ag1000G phase 1 only \agam\ and \acol\ mosquitoes were to be included.
+%
+However, not all specimens had the conventional diagnostic species assays performed prior to selection, and thus were only identified morphologically.
 \end{itemize}
 %
 In this subsection I describe analyses performed to identify and exclude samples affected by one or more of these issues.
@@ -255,15 +261,15 @@ These statistics included the number of sequence reads, mean coverage, percentag
 %
 I plotted various combinations of these statistics to investigate their distributions and identify outliers.
 %
-A particularly informative plot was to compare the mean coverage and the percentage of genome covered by at least one read (Fig. \ref{fig:coverage}).
+A particularly informative plot was to compare the mean coverage with the percentage of genome covered by at least one read (Fig.~\ref{fig:coverage}).
 %
-Most samples obtained greater than 80\% of the genome covered, but a set of 13 samples had both mean coverage below $7\times$ and less than 80\% of the genome covered, indicating insufficient coverage due to low sequencing yield (Fig. \ref{fig:coverage} group A).
+Most samples obtained greater than 80\% of the genome covered, but a set of 13 samples had both mean coverage below $7\times$ and less than 80\% of the genome covered, indicating insufficient coverage due to low sequencing yield (Fig.~\ref{fig:coverage} group A).
 %
 There were also four samples with high mean coverage but less than 80\% genome covered.
 %
-Two of these samples had a high rate of duplicate reads, and thus poor genome coverage was likely due to low library complexity (Fig. \ref{fig:coverage} group B).
+Two of these samples had a high rate of duplicate reads, and thus poor genome coverage was likely due to low library complexity (Fig.~\ref{fig:coverage} group B).
 %
-The remaining two samples had a higher mismatch rate, thus poor genome coverage was likely due to an unexpected taxon with higher divergence from the reference genome (Fig. \ref{fig:coverage} group C).
+The remaining two samples had a higher mismatch rate, thus poor genome coverage was likely due to an unexpected taxon with higher divergence from the reference genome (Fig.~\ref{fig:coverage} group C).
 %
 On the basis of these analyses, the percentage of genome covered appeared to be a useful metric capturing multiple quality issues, and I excluded 17 samples with less than 80\% genome covered.
 %
@@ -294,19 +300,19 @@ Each marker within a plot is a genotype call (blue = homozygous reference; green
 %%
 Cross-contamination between samples of the same species can be detected by analysing the fractions of reads supporting genotypes in each sample.
 %
-Several tools have been developed to detect cross-contamination in sequencing data, such as verifyBamID \citep{Jun2012}.
+Several tools have been developed to detect cross-contamination in sequencing data, such as verifyBamID~\parencite{Jun2012}.
 %
-Previous human sequencing projects have used verifyBamID and excluded samples with an estimated contamination fraction above 2\% \citep{1000G2015}.
+Previous human sequencing projects have used verifyBamID and excluded samples with an estimated contamination fraction above 2\%~\parencite{1000G2015}.
 %
 To analyse evidence for cross-contamination in the Ag1000G phase 1 samples, verifyBamID was run on all samples by the MalariaGEN data production team.
 %
 Because this tool had been developed for and previously only applied in human sequencing studies, I performed additional analyses to confirm that the contamination predictions were reliable in \textit{Anopheles}.
 %
-I generated a set of diagnostic allele balance plots for each of the 888 mosquito samples in phase 1 which plotted data from genotypes across all autosomes, showing the genotype called and the numbers of reads supporting the reference and alternate alleles (e.g., Fig. \ref{fig:contamination}). 
+I generated a set of diagnostic allele balance plots for each of the 888 mosquito samples in phase 1 which plotted data from genotypes across all autosomes, showing the genotype called, and the numbers of reads supporting the reference and alternate alleles (e.g., Fig.~\ref{fig:contamination}).
 %
 I then visually inspected these plots and cross-referenced them against the contamination fraction predicted by verifyBamID.
 %
-In uncontaminated samples there was clear separation between the different possible genotype calls (e.g., Fig. \ref{fig:contamination}a) and cases of contamination were evident as a lack of a clear separation between genotype calls (e.g., Fig. \ref{fig:contamination}b).
+In uncontaminated samples there was clear separation between the different possible genotype calls (e.g., Fig.~\ref{fig:contamination}a) and cases of contamination were evident as a lack of a clear separation between genotype calls (e.g., Fig.~\ref{fig:contamination}b).
 %
 In all cases where verifyBamID predicted contamination $>4\%$ I confirmed a signal of contamination via allele balance plots, and conversely I found no cases of allele balance plots indicating contamination but verifyBamID predicted contamination $<4\%$, providing confidence that verifyBamID predictions were reliable. 
 %
@@ -340,7 +346,7 @@ Groups labelled A and B are described in the text.
 
 
 %%
-Both male and female mosquito specimens were contributed to Ag1000G phase 1 (Table \ref{table:coverage}) and the morphologically-identified gender was included in the sample metadata contributed by the Ag1000G consortium partners who collected the specimens.
+Both male and female mosquito specimens were contributed to Ag1000G phase 1 (Table~\ref{table:coverage}) and the morphologically-identified gender was included in the sample metadata contributed by the Ag1000G consortium partners who collected the specimens.
 %
 To confirm metadata records were correct, I compared the reported specimen gender with a gender call made directly from the sequencing data.
 %
@@ -348,19 +354,19 @@ To call gender for each sample I computed the counts of homozygous, heterozygous
 %
 Sex determination is similar in mosquitoes to humans in that females are homogametic XX and males are heterogametic XY.
 %
-Thus in females we expect to observe heterozygous genotype calls on the X chromosome and missing genotype calls on the Y chromosome.
+Thus, in females we expect to observe heterozygous genotype calls on the X chromosome and missing genotype calls on the Y chromosome.
 %
-Conversely in males we expect only homozygous genotype calls on the X chromosome and non-missing genotype calls on the Y chromosome.
+Conversely, in males we expect only homozygous genotype calls on the X chromosome and non-missing genotype calls on the Y chromosome.
 %
-Plotting these data it was evident that some samples had genotype counts not consistent with their reported sex (Fig. \ref{fig:sex}).
+Plotting these data it was evident that some samples had genotype counts not consistent with their reported sex (Fig.~\ref{fig:sex}).
 %
-This included six samples reported as female but with male genotype counts (Fig. \ref{fig:sex} group A) and four samples reported as male but with female genotype counts (Fig. \ref{fig:sex} group B).
+This included six samples reported as female but with male genotype counts (Fig.~\ref{fig:sex} group A) and four samples reported as male but with female genotype counts (Fig.~\ref{fig:sex} group B).
 %
 I excluded these ten samples from further analyses.
 %
-There were also a further six samples with apparently androgenous genotype counts on sex chromosomes.
+There were also a further six samples with apparently androgynous genotype counts on sex chromosomes.
 %
-Cross-checking against the contamination analysis showed these apparently androgenous samples to have predicted contamination $>2\%$, explaining the unusual sex chromosome genotype counts.
+Cross-checking against the contamination analysis showed these apparently androgynous samples to have predicted contamination $>2\%$, explaining the unusual sex chromosome genotype counts.
 %%
 
 
@@ -388,19 +394,19 @@ Six samples are evident as outliers, having elevated genetic distance and appear
 %%
 Mosquitoes in the phase 1 cohort represented 8 countries and two species. 
 %
-In Burkina Faso, both \textit{An. gambiae} and \textit{An. coluzzii} were represented, whereas in all other countries only a single species was represented (either \textit{An. gambiae} or \textit{An. coluzzii}), with the exception of Guinea-Bissau and Kenya where the species status was uncertain (Chapter 4).
+In Burkina Faso, both \agam\ and \acol\ were represented, whereas in all other countries only a single species was represented (either \agam\ or \textit{An. coluzzii}), except for Guinea-Bissau and Kenya where the species status was uncertain (Chapter 4).
 %
-In some countries, specimens had been collected from multiple sites, but in all cases the sites were within a relatively small geographical distance (Fig. \ref{fig:map}).
+In some countries, specimens had been collected from multiple sites, but in all cases the sites were within a relatively small geographical distance (Fig.~\ref{fig:map}).
 %
-Thus in general we would expect to see little or no genetic structure among the specimens of any given species sampled from within a single country.
+Thus, in general we would expect to see little or no genetic structure among the specimens of any given species sampled from within a single country.
 %
-To confirm that the country of origin reported for each specimen in the sample metadata provided by Ag1000G consortium partners was consistent with the patterns of genetic population structure present in the data, I performed an outlier analysis using both pairwise genetic distance and principal components analysis (PCA; \cite{Patterson2006}).
+To confirm that the country of origin reported for each specimen in the sample metadata provided by Ag1000G consortium partners was consistent with the patterns of genetic population structure present in the data, I performed an outlier analysis using both pairwise genetic distance and principal components analysis (PCA)~\parencite{Patterson2006}).
 %
-In this analysis I used SNPs from Chromosome 3, then grouped samples by reported country and species, then performed both a PCA analysis and a pairwise distance analysis on each group in turn (e.g., Fig. \ref{fig:popout}).
+In this analysis I used SNPs from Chromosome 3, then grouped samples by reported country and species, then performed both PCA and pairwise distance analyses on each group in turn (e.g., Fig.~\ref{fig:popout}).
 %
 If any samples were present in a group because of incorrect geographical or species metadata, they would be expected to appear as an outlying group of samples, with elevated genetic distance from other samples, and appearing as outliers in PCA.
 %
-In total I identified and excluded 55 samples as population outliers.
+In total, I identified and excluded 55 samples as population outliers.
 %%
 
 
@@ -428,9 +434,9 @@ In the analysis of sequence data quality described above I excluded samples with
 %
 However, for accurate genotyping calling, particularly of heterozygous genotype calls, it is necessary to have sufficient depth of coverage.
 %
-Previous studies of SNP calling from whole genome sequencing data have found that coverage of $12\times$ is sufficient for calling heterozygous genotypes accurately \citep{Meynert2014}.
+Previous studies of SNP calling from whole genome sequencing data have found that coverage of $12\times$ is sufficient for calling heterozygous genotypes accurately~\parencite{Meynert2014}.
 %
-I examined the total number of heterozygous genotype calls on autosomal chromosomes among the Ag1000G phase 1 samples, plotted against the genome-wide average depth of coverage, for the remaining samples not previously excluded in other sample QC analyses (Fig. \ref{fig:coverage_hetz}).
+I examined the total number of heterozygous genotype calls on autosomal chromosomes among the Ag1000G phase 1 samples, plotted against the genome-wide average depth of coverage, for the remaining samples not previously excluded in other sample QC analyses (Fig.~\ref{fig:coverage_hetz}).
 %
 Although there are clear differences in the degree of heterozygosity in samples from different countries, which likely reflects differences in genetic diversity of the sampled populations, below $14\times$ there is a clear trend towards lower heterozygous genotype calls.
 %
@@ -442,7 +448,7 @@ To mitigate this I excluded samples with coverage $<14\times$ from the final dat
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Variant quality control}
+\subsection{Variant quality control}\label{subsec:variant-quality-control}
 
 
 %%
@@ -451,9 +457,17 @@ Variant calling algorithms such as GATK \textit{UnifiedGenotyper} are typically 
 Errors in variant calling can occur due to a variety of causes:
 \begin{itemize}
 %
-\item \textbf{Sequencing errors.} With high depth of coverage, given the low error rate of Illumina sequencing, it is unlikely that sequencing errors will generate false SNP calls, because sequencing errors are generally random and unlikely to co-occur at the same genomic location in read alignments. However, in some cases sequencing errors can be systematic, such as in the vicinity of mononucleotide repeats.
+\item \textbf{Sequencing errors.} With high depth of coverage, given the low error rate of Illumina sequencing, it is unlikely that sequencing errors will generate false SNP calls, because sequencing errors are generally random and unlikely to co-occur at the same genomic location in read alignments.
 %
-\item \textbf{Alignment errors.} Errors can occur in the alignment process, where reads originating from one genomic location are improperly aligned to a different genomic location. Any differences between the sequences at the two genomic locations then appear as variants in the misaligned reads. Alignment errors are particularly likely to occur in repetitive genome regions, where sequences at different locations are identical or share a high degree of homology. Several different types of repetitive DNA are common throughout eukaryotic genomes:
+However, in some cases sequencing errors can be systematic, such as in the vicinity of mononucleotide repeats.
+%
+\item \textbf{Alignment errors.} Errors can occur in the alignment process, where reads originating from one genomic location are improperly aligned to a different genomic location.
+%
+Any differences between the sequences at the two genomic locations then appear as variants in the misaligned reads.
+%
+Alignment errors are particularly likely to occur in repetitive genome regions, where sequences at different locations are identical or share a high degree of homology.
+%
+Several types of repetitive DNA are common throughout eukaryotic genomes:
 %
 \begin{itemize}
 %
@@ -461,13 +475,19 @@ Errors in variant calling can occur due to a variety of causes:
 %
 \item \textbf{Tandem repeats}, where some short sequence of nucleotides is repeated adjacently many times.
 %
-\item \textbf{Interspersed repeats}, where similar sequences are located at dispersed regions throughout the genome, commonly due to mobile genetic elements such as retrotransposons \citep{Tu2004,FernandezMedina2011}.
+\item \textbf{Interspersed repeats}, where similar sequences are located at dispersed regions throughout the genome, commonly due to mobile genetic elements such as retrotransposons~\parencite{Tu2004,FernandezMedina2011}.
 %
 \end{itemize}
 %
-\item \textbf{Large structural variation.} Large copy number amplifications or deletions can cause errors when attempting to call smaller variants such as SNPs within the same genomic region or in close vicinity. In particular, if a sample has a copy number amplification relative to the reference genome, sequence reads from both copies of the amplified region will be aligned to the same location in the reference genome. If there is any sequence divergence between the different copies of the amplified region, this can appear as heterozygous SNPs within the sample.
+\item \textbf{Large structural variation.} Large copy number amplifications or deletions can cause errors when attempting to call smaller variants such as SNPs within the same genomic region or in close vicinity.
 %
-\item \textbf{Sequence divergence.} If individuals contain sequence within their genomes with a higher degree of divergence from the reference genome, some or all reads may fail to be aligned at all at that location. This results in a failure to observe some alleles, and a bias towards calling true heterozygous genotypes as homozygous, also known as allelic dropout.
+In particular, if a sample has a copy number amplification relative to the reference genome, sequence reads from both copies of the amplified region will be aligned to the same location in the reference genome.
+%
+If there is any sequence divergence between the different copies of the amplified region, this can appear as heterozygous SNPs within the sample.
+%
+\item \textbf{Sequence divergence.} If individuals contain sequence within their genomes with a higher degree of divergence from the reference genome, some or all reads may fail to be aligned at all at that location.
+%
+This results in a failure to observe some alleles, and a bias towards calling true heterozygous genotypes as homozygous, also known as allelic dropout.
 %
 \item \textbf{Reference genome assembly errors.} In any region where the reference genome has been incorrectly assembled, attempting to align sequences reads to that region may lead to spurious variant calls.
 %
@@ -484,7 +504,7 @@ In this subsection I describe analyses performed to reduce the false discovery r
 %%
 As a first step towards designing variant filters, I performed an analysis of genome accessibility, which determines which positions throughout the genome support unambiguous read alignments, and where there is minimal evidence for structural variation between samples. 
 %
-In this analysis I first computed detailed alignment statistics from read pileups for each sample at each position in the reference sequence, including the total depth of coverage, the fraction of reads aligned in a proper pair, the fraction of reads aligned ambiguously (mapping quality zero), and the root mean square mapping quality.
+In this analysis I first computed detailed alignment statistics from read pileups for each sample at each position in the reference sequence, including the total depth of coverage, the fraction of reads aligned in a proper pair, the fraction of reads aligned ambiguously (mapping quality zero), and the root-mean-square mapping quality.
 %
 In order to accelerate this computation I developed the command line software package pysamstats\footnote{\url{https://github.com/alimanfoo/pysamstats}}.
 %
@@ -500,7 +520,7 @@ I then aggregated these data across all samples at each genome position, to obta
 %
 \item \textbf{Ambiguous Alignment.} The percentage of samples in which more than 10\% of aligned reads are aligned with mapping quality zero, indicating they could equally well have been aligned at another genomic location (0-100\%).
 %
-\item \textbf{Low Mapping Quality.} The percentage of samples in which the root mean square mapping quality was less than 30 (0-100\%).
+\item \textbf{Low Mapping Quality.} The percentage of samples in which the root-mean-square mapping quality was less than 30 (0-100\%).
 %  
 \item \textbf{Low Read Pairing.} The percentage of samples in which less than 90\% of reads were flagged as being aligned in a proper pair, meaning that the read and its mate pair were aligned in the correct orientation within a reasonable distance of each other (0-100\%).
 \end{itemize}
@@ -512,11 +532,11 @@ I also obtained repeat annotations for the AgamP3 reference genome for VectorBas
 %
 These comprise annotations from three algorithms: RepeatMasker, Tandem Repeat Finder (TRF) and DUST.
 %
-The DUST algorithm was originally a module within BLAST \citep{Altschul1990} and is designed to mask low complexity sequences only.
+The DUST algorithm was originally a module within BLAST~\parencite{Altschul1990} and is designed to mask low complexity sequences only.
 %
-The RepeatMasker software \citep{Smit2013} is primarily designed for masking interspersed repeats matching a library of known repeat sequences (transposable elements etc.).
+The RepeatMasker software~\parencite{Smit2013} is primarily designed for masking interspersed repeats matching a library of known repeat sequences (transposable elements etc.).
 %
-TRF \citep{Benson1999} specializes in locating tandem repeats.
+TRF~\parencite{Benson1999} specializes in locating tandem repeats.
 %
 These provided three additional genome accessibility metrics:
 %
@@ -550,36 +570,36 @@ Line and right axis show the percentage of variants found with ME for each value
 
 
 %%
-In previous population sequencing projects such \citet{1000G2015} the criteria used to determine which positions of the reference genome are considered accessible have been decided theoretically, without any empirical validation.
+In previous population sequencing projects such \textcite{1000G2015} the criteria used to determine which positions of the reference genome are considered accessible have been decided theoretically, without any empirical validation.
 %
 The availability of colony crosses in the Ag1000G project afforded the opportunity to select and calibrate appropriate genome accessibility criteria using Mendelian error in the crosses as an indicator of poor accessibility.
 %
 The rationale here is that true variants will segregate within a cross according to Mendelian inheritance, whereas as false positive variants due to any of the above mentioned error modes would not in general be expected to segregate according to Mendelian inheritance, and thus be enriched for Mendelian errors.
 %
-While a small number of Mendelian errors are expected due to de novo mutation, the vast majority will be due to spurious variant calling, and hence Mendelian errors are a good indicator of poor quality variant calls \citep{Saunders2007,Laurie2010,Pilipenko2014}.
+A very small number of Mendelian errors are expected due to \textit{de novo} mutation, but the vast majority will be due to spurious variant calling, and hence Mendelian errors are a good indicator of poor quality variant calls~\parencite{Saunders2007,Laurie2010,Pilipenko2014}.
 %
 As a secondary means of empirically investigating genome accessibility, I also studied the ratio of transition to transversion substitutions (Ti/Tv).
 %
-Most organisms have mutation bias leading to an excess of transitions over transversions relative to that which would be expected if substitution mutations occurred randomly \citep{Guo2013}. 
+Most organisms have mutation bias leading to an excess of transitions over transversions relative to that which would be expected if substitution mutations occurred randomly~\parencite{Guo2013}.
 %
 A low Ti/Tv ratio (approaching 0.5 expected if variants were called randomly) is an indicator of poor variant quality.
 %
-For each of the genome accessibility metrics listed above, I divided the range of possible values into bins, and then for each bin computed (1) the rate of Mendelian error as the fraction of variants found in one or more crosses with genotypes not consistent with Mendelian segregation (ME); and (2) the Ti/Tv rate for biallelic SNPs.
+For each of the genome accessibility metrics listed above, I divided the range of possible values into bins, and then for each bin computed (1) the rate of Mendelian error as the fraction of variants in one or more crosses with genotypes not consistent with Mendelian segregation (ME); and (2) the Ti/Tv rate for biallelic SNPs.
 %
-I then plotted these results to identify bins within which ME was elevated and/or Ti/Tv was depressed (e.g., Fig. \ref{fig:me_nodp}).
+I then plotted these results to identify bins within which ME was elevated and/or Ti/Tv was depressed (e.g., Fig.~\ref{fig:me_nodp}).
 %%
 
 
 %%
-All of the genome accessibility metrics displayed some structured association with Mendelian error and Ti/Tv, with higher metric values being associated with higher ME rates and lower Ti/Tv.
+All the genome accessibility metrics displayed some structured association with Mendelian error and Ti/Tv, with higher metric values being associated with higher ME rates and lower Ti/Tv.
 %
 This was strongest for the No Coverage and Ambiguous Alignment metrics.
 %
-E.g., at positions where zero samples had No Coverage, the ME rate was 20\%, whereas at sites where three or more samples had No Coverage, the ME rate was 60\% or greater (Fig. \ref{fig:me_nodp}). 
+E.g., at positions where zero samples had No Coverage, the ME rate was 20\%, whereas at sites where three or more samples had No Coverage, the ME rate was 60\% or greater (Fig.~\ref{fig:me_nodp}).
 %
 Because some of these accessibility metrics would be expected to be correlated with each other to some extent, such as Ambiguous Alignment and Low Mapping Quality, I repeated the above analyses for each accessibility metric, but conditional on thresholds applied to all other metrics, to look for any marginal and thus unique contribution of a single metric.
 %
-In this analysis, all metrics remained informative, with the exception of the Low Read Pairing metric.
+In this analysis, all metrics remained informative, except for the Low Read Pairing metric.
 %
 I then decided the following criteria for genome positions to be classified as accessible:
 %
@@ -603,7 +623,7 @@ Upper plot (blue) shows the percentage of bases classified as accessible.
 %
 Lower plot (green) shows the percentage of bases within gene exons classified as accessible.
 %
-Schematic of chromosomes at the bottom shows predicted chromatin state from \citep{Sharakhova2010}.
+Schematic of chromosomes at the bottom shows predicted chromatin state from~\parencite{Sharakhova2010}.
 %
 }
 %
@@ -612,17 +632,17 @@ Schematic of chromosomes at the bottom shows predicted chromatin state from \cit
 
 
 %%
-After applying these criteria, 141 Mbp (61\% of the reference genome) was classified as accessible, including 91\% (18Mbp) of the exome and 60\% (123Mbp) of non-coding positions (Fig. \ref{fig:accessibility}).
+After applying these criteria, 141 Mbp (61\% of the reference genome) was classified as accessible, including 91\% (18Mbp) of the exome and 60\% (123Mbp) of non-coding positions (Fig.~\ref{fig:accessibility}).
 %
 There were some clear associations between broad-scale patterns of accessibility and major features of genome architecture.
 %
-In particular, the centromeric regions of all three chromosomes, within regions predicted to be in a heterochromatic state \citep{Sharakhova2010}, all displayed substantially lower accessibility.
+In particular, the pericentromeric regions of all three chromosomes, within regions predicted to be heterochromatic~\parencite{Sharakhova2010}, all displayed substantially lower accessibility.
 %
 This is likely due to a higher content of repetitive DNA sequence.
 %
-The region on chromosome arm 2L within the known polymorphic chromosomal inversion 2La \citep{Coluzzi2002}, which spans from 2L:20.5--42.2 Mb, also displayed lower accessibility.
+The region on chromosome arm 2L within the known polymorphic chromosomal inversion 2La~\parencite{Coluzzi2002}, which spans from 2L:20.5--42.2 Mb, also displayed lower accessibility.
 %
-This inversion is known to be segregating in many populations and the inverted karyotype displays higher levels of divergence with respect to the standard karyotype represented in the reference genome sequence, thus this is likely an effect of divergence.
+This inversion is known to be segregating in many populations, and the inverted karyotype displays higher levels of divergence with respect to the standard karyotype represented in the reference genome sequence, thus this is likely an effect of divergence.
 %%
 
 
@@ -643,13 +663,19 @@ I then examined a set of variant metrics produced by \textit{UnifiedGenotyper} f
 %
 \begin{itemize}
 %
-\item \textbf{QD.} "Quality by depth", calculated as the evidence for an alternate allele at the site (QUAL, pred-scaled probability of no variant) divided by the total depth of coverage in samples where the alternate allele was observed. 
+\item \textbf{QD.} "Quality by depth", calculated as the evidence for an alternate allele at the site (QUAL, phred-scaled probability of no variant) divided by the total depth of coverage in samples where the alternate allele was observed.
 %
-\item \textbf{FS.} Fisher's exact test for strand-bias; phred-scaled probability of observing the given numbers of reads aligned to the forward and reverse strand if these were equally likely.
+\item \textbf{FS.} Fisher's exact test for strand-bias.
 %
-\item \textbf{ReadPosRankSum.} Rank sum test for relative positioning of reference and alternate alleles within reads. Some sequencing errors tend to occur towards the ends of reads, and this metric quantifies the extent of any bias in read positioning between reference and alternate alleles.
+Phred-scaled probability of observing the given numbers of reads aligned to the forward and reverse strand if these were equally likely.
 %
-\item \textbf{HRun.} The length of any adjacent homopolymer run. Homopolymer runs are enriched for sequencing errors in Illumina sequencing data. 
+\item \textbf{ReadPosRankSum.} Rank sum test for relative positioning of reference and alternate alleles within reads.
+%
+Some sequencing errors tend to occur towards the ends of reads, and this metric quantifies the extent of any bias in read positioning between reference and alternate alleles.
+%
+\item \textbf{HRun.} The length of any adjacent homopolymer run.
+%
+Homopolymer runs are enriched for sequencing errors in Illumina sequencing data.
 %
 \end{itemize}
 
@@ -673,7 +699,7 @@ I then examined a set of variant metrics produced by \textit{UnifiedGenotyper} f
 
 
 %%
-Taking a similar approach to the genome accessibility analysis, I used Mendelian error in the crosses and Ti/Tv ratios to investigate which variant metrics appeared to be informative with respect to variant calling errors, and where filter thresholds should be set (e.g., Fig. \ref{fig:variant_filters}).
+Taking a similar approach to the genome accessibility analysis, I used Mendelian error in the crosses and Ti/Tv ratios to investigate which variant metrics appeared to be informative with respect to variant calling errors, and where filter thresholds should be set (e.g., Fig.~\ref{fig:variant_filters}).
 %
 Based on these analyses I filtered SNPs that failed any of the following criteria: QD $< 5$; FS $> 60$; ReadPosRankSum $< -8$; HRun $> 4$.
 %
@@ -687,7 +713,7 @@ After filtering, the Mendelian error rate was 0.3-0.9\%.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Production of an analysis-ready genome variation dataset}
+\subsection{Production of an analysis-ready genome variation dataset}\label{subsec:production-of-an-analysis-ready-dataset}
 
 
 %%
@@ -699,7 +725,7 @@ Taking the raw variant calls as input, I first removed all non-SNP variants, the
 %
 I then added INFO annotations with genome accessibility metrics, and added FILTER annotations recording the variant QC decisions, using bcftools \textit{annotate}.
 %
-Finally, I added INFO annotations with information about functional consequences of SNPs using SNPEFF version 4.1b \citep{Cingolani2012}.
+Finally, I added INFO annotations with information about functional consequences of SNPs using SNPEFF version 4.1b~\parencite{Cingolani2012}.
 %
 After building VCF files, I also performed a conversion of these data to the HDF5 format, which is a general-purpose binary file format for scientific data that provides a significantly more performant way to load the variation data for downstream analysis.
 %
@@ -707,20 +733,31 @@ I developed the software package vcfnp\footnote{\url{https://github.com/alimanfo
 %%
 
 
+In order to support a broader range of population genetic analyses, the SNP genotypes in the 765 wild-caught individuals were also phased into haplotypes at the 41,476,870 biallelic sites.
+%
+In order to maximise the quality of the haplotypes, the phasing pipeline made use of both read-backed and statistical phasing methods~\parencite{Delaneau2013}.
+%
+Implementation and validation of the phasing pipeline was performed by Nick Harding from the MalariaGEN Resource Centre team, and is described in more detail in \textcite{Ag1000G2017}.
+%
+I supported this effort by developing an efficient algorithm for phasing the parents of the colony crosses using pedigree information, allowing the parents' haplotypes to be used as a gold standard for quantifying phasing error rates. 
+
+
 %%
-All of the analysis-ready data files were uploaded to the Wellcome Sanger Institute public FTP site and are available at \url{ftp://ngs.sanger.ac.uk/production/ag1000g/phase1/}.
+All the analysis-ready data files were uploaded to the Wellcome Sanger Institute public FTP site and are available at \url{ftp://ngs.sanger.ac.uk/production/ag1000g/phase1/}.
 %
 Sequence read alignments and analysis-ready variant calls were submitted to the European Nucleotide Archive (ENA; \url{http://www.ebi.ac.uk/ena}) under ENA study PRJEB18691.
 %
 I also collaborated with members of the MalariaGEN Web Application development team to design a web application to allow interactive exploration and browsing of these data, available at \url{http://www.malariagen.net/apps/ag1000g}.
 %
-Briefly, this web application provides the following features: queryable tables of variants and samples; interactive plotting of variants and samples; genome browser allowing visual exploration of tracks against their physical position within a chromosome arm, including genome accessibility metrics, variant quality metrics, various population genetic metrics, and visualisation of genotype calls within individual samples.
+Briefly, this web application provides the following features: queryable tables of variants and samples;
+interactive plotting of variants and samples;
+genome browser allowing visual exploration of tracks against their physical position within a chromosome arm, including genome accessibility metrics, variant quality metrics, various population genetic metrics, and visualisation of genotype calls within individual samples.
 %%
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Validation with Sanger sequencing}
+\subsection{Validation with Sanger sequencing}\label{subsec:validation-with-sanger-sequencing}
 
 
 %%
@@ -743,7 +780,7 @@ Loci were sequenced using the following sets of forward and reverse primer pairs
 
 
 %%
-For each primer set, I aligned forward and reverse traces and called SNPs and genotypes using NovoSNP version 3.0.1 \citep{Weckx2005}.
+For each primer set, I aligned forward and reverse traces and called SNPs and genotypes using NovoSNP version 3.0.1~\parencite{Weckx2005}.
 %
 I analysed only individuals which had high quality traces for both forward and reverse reads spanning at least 90\% of the distance between primers.
 %
@@ -776,12 +813,12 @@ I also compared genotype calls, finding that 984/1000 (98.4\%) of heterozygous g
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Results}
+\section{Results}\label{sec:results}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Nucleotide variation}
+\subsection{Nucleotide variation}\label{subsec:nucleotide-variation}
 
 
 \begin{figure}[t!]
@@ -791,7 +828,7 @@ I also compared genotype calls, finding that 984/1000 (98.4\%) of heterozygous g
 %
 Main plot shows the density of variant alleles within the accessible genome, computed in 200 kb moving windows.
 %
-Chromosome schematic below shows chromatin state predictions from \citet{Sharakhova2010}.
+Chromosome schematic below shows chromatin state predictions from \textcite{Sharakhova2010}.
 %
 \textit{Cyp6p3}, \textit{Vgsc}, \textit{Gaba} and \textit{Gste2} are genes known to be involved in insecticide resistance.
 }
@@ -811,11 +848,11 @@ Of these, 41,476,870 (79\%) were biallelic and 11,049,087 (21\%) were multiallel
 
 %%
 On average one variant allele was discovered every 2.2 bases of the accessible genome,
-but variant alleles were not evenly distributed throughout the genome (Fig. \ref{fig:variant_density}).
+but variant alleles were not evenly distributed throughout the genome (Fig.~\ref{fig:variant_density}).
 %
-Variant allele density was lower towards the centromeres on all chromosome arms, and especially low within regions of pericentromeric heterochromatin where recombination is reduced \citep{Pombi2006,Zheng1997}.
+Variant allele density was lower towards the centromeres on all chromosome arms, and especially low within regions of pericentromeric heterochromatin where recombination is reduced~\parencite{Pombi2006,Zheng1997}.
 %
-Diversity is also lower near centromeres in \textit{D. melanogaster} \citep{Langley2012} and correlated with recombination rate across a variety of species due to selection at linked sites \citep{Charlesworth2012a,Elyashiv2016,
+Diversity is also lower near centromeres in \textit{D. melanogaster}~\parencite{Langley2012} and correlated with recombination rate across a variety of species due to selection at linked sites~\parencite{Charlesworth2012a,Elyashiv2016,
 CorbettDetig2015,Burri2015,Chan2012,Spencer2006}.
 %
 Chromatin state was not always associated with lower variant density, however, as the region of intercalary heterochromatin on chromosome arm 3R had noticeably elevated variant density.
@@ -825,11 +862,11 @@ Drops in variant allele density, and particularly the density of singleton allel
 
 
 %%
-Individual samples carried between 1.6 and 2.7 million variant alleles (Fig. \ref{fig:sample_variant_count}).
+Individual samples carried between 1.6 and 2.7 million variant alleles (Fig.~\ref{fig:sample_variant_count}).
 %
-There was no systematic difference between the two species, \textit{An. gambiae} and \textit{An. coluzzii}, in terms of the number of variant alleles discovered in each sample, indicating that the AgamP3 reference genome is not biased towards one species or the other.
+There was no systematic difference between the two species, \agam\ and \textit{An. coluzzii}, in terms of the number of variant alleles discovered in each sample, indicating that the AgamP3 reference genome is not biased towards one species or the other.
 %
-However, there was a clear difference in the level of variation between the two species within the centromeric region of the X chromosome, where \textit{An. gambiae} populations had higher levels of variation than An. coluzzii, and thus the reference genome within that region is more representative of \textit{An. coluzzii} (Fig. \ref{fig:sample_variant_density}).
+However, there was a clear difference in the level of variation between the two species within the centromeric region of the X chromosome, where \agam\ populations had higher levels of variation than An. coluzzii, and thus the reference genome within that region is more representative of \acol\ (Fig.~\ref{fig:sample_variant_density}).
 %
 The 2La inversion also created a notable difference between individuals both within and between populations, consistent with polymorphism and substantial sequence divergence between the two karyotypes.
 %%
@@ -837,21 +874,21 @@ The 2La inversion also created a notable difference between individuals both wit
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Gene architecture and genetic diversity}
+\subsection{Gene architecture and genetic diversity}\label{subsec:gene-architecture-and-genetic-diversity}
 
 
 %
 Gene architecture is expected to exert a strong influence on the genomic landscape of nucleotide variation, because different components of protein-coding sequences are under different types and degrees of selective pressure.
 %
-For example, in general, exons of protein-coding genes will be under purifying selection, because the protein is under some functional constraint \citep{Ohta1996}.
+For example, in general, exons of protein-coding genes will be under purifying selection, because the protein is under some functional constraint~\parencite{Ohta1996}.
 %
-Thus genetic diversity within exons is expected to be lower than within introns or intergenic sequence.
+Thus, genetic diversity within exons is expected to be lower than within introns or intergenic sequence.
 %
 However, the level of constraint will depend on whether nucleotides occur in the first, second or third codon position, because third codon positions have some degeneracy and nucleotide substitutions are less likely to cause an amino acid substitution than at the first or second codon position.
 %
 Although these phenomena are common to all eukaryotic genomes, there will be differences between species due to differences in their biology, genome size, mutation rate, recombination rate and effective population size.
 %
-Thus the Ag1000G data resource provides an opportunity to investigate some of these features of genome biology in the context of a eukaryotic species with large effective population sizes.
+The Ag1000G data resource provides an opportunity to investigate some of these features of genome biology in the context of a eukaryotic species with large effective population sizes.
 
 
 \begin{figure}[t!]
@@ -866,17 +903,17 @@ Thus the Ag1000G data resource provides an opportunity to investigate some of th
 
 
 %
-Of the 52,525,957 SNPs discovered, 4,404,390 (8.4\%) occurred within a gene coding region (Table \ref{table:snpeff}).
+Of the 52,525,957 SNPs discovered, 4,404,390 (8.4\%) occurred within a gene coding region (Table~\ref{table:snpeff}).
 %
 Of the SNPs within gene coding regions, 1,809,532 (41.1\%) were non-synonymous (missense) SNPs that altered the amino acid sequence of the gene, and the remaining 2,594,858 (58.9\%) were synonymous.
 %
-To further investigate the impact of gene architecture on levels of nucleotide variation, I computed nucleotide diversity ($\pi$) in the phase 1 cohort within different types of coding and non-coding sites (Fig. \ref{fig:feature_pi}).
+To further investigate the impact of gene architecture on levels of nucleotide variation, I computed nucleotide diversity ($\pi$) in the phase 1 cohort within different types of coding and non-coding sites (Fig.~\ref{fig:feature_pi}).
 %
 I computed diversity separately within the X chromosome and the autosomal Chromosome 3, because the X chromosome is hemizygous in males and thus has a lower effective population size as well as experiencing less frequent recombination than the autosomes, both of which may affect genetic diversity.
 %
 The lowest diversity was found within intronic splice sites, consistent with a high degree of purifying selection, because any change in gene splicing is likely to have major functional consequences.
 %
-The reduction of diversity at splice sites was strongest within the first 2 bp of the intronic sequence, but also extended up to 9 bp into the intron at the 5' end, although not at the 3' end (Fig. \ref{fig:splicing_pi}). 
+The reduction of diversity at splice sites was strongest within the first 2 bp of the intronic sequence, but also extended up to 9 bp into the intron at the 5' end, although not at the 3' end (Fig.~\ref{fig:splicing_pi}).
 %
 Diversity was also low within exons at non-degenerate first and second codon positions, where any nucleotide substitution will cause an amino acid substitution, also consistent with strong purifying selection.
 %
@@ -895,8 +932,8 @@ This suggests that longer introns are in general subject to greater functional c
 %
 Shorter introns might be too small to contain regulatory sequences, or might be younger and thus have had less time to evolve a regulatory function.
 %
-A similar pattern is seen in other insects and arthropods \citep{Singh2013,Martin2016,Lynch2016}, and is consistent with evidence in
-\textit{Drosophila} that longer non-coding sequences are more likely to contain functional elements \citep{Casillas2007}.
+A similar pattern is seen in other insects and arthropods~\parencite{Singh2013,Martin2016,Lynch2016}, and is consistent with evidence in
+\textit{Drosophila} that longer non-coding sequences are more likely to contain functional elements~\parencite{Casillas2007}.
 %
 Secondly, diversity in intergenic regions $>$10 kb distant from a gene was 1.5\%, similar to that in longer introns, and much lower than short introns or degenerate coding positions.
 %
@@ -909,7 +946,7 @@ There was also notable differences between the autosomal Chromosome 3 and the X 
 %
 Diversity was generally lower on the X chromosome across all site classes, as expected due to the fact that males carry only a single X chromosome and thus the effective population size is lower for the X chromosome than for the autosomes.
 %
-However, the ratio of diversity between sex chromosomes and autosomes (X/A ratio) differed between site classes (Fig. \ref{fig:feature_pi_ratios}).
+However, the ratio of diversity between sex chromosomes and autosomes (X/A ratio) differed between site classes (Fig.~\ref{fig:feature_pi_ratios}).
 %
 The X/A ratio was highest within intergenic regions $>$10 kb from a gene, with values between 0.63-0.76, close to the theoretical expectation of 0.75 due to reduced effective population size.
 %
@@ -919,7 +956,7 @@ This suggests that genetic linkage and purifying selection at linked sites is a 
 %
 This is consistent with the fact that meiotic recombination occurs only in females and is less frequent on the X chromosome than autosomes where recombination occurs in both sexes.
 %
-The X/A ratio can also be influenced by demographic factors, including population size fluctuations and sex biases in reproductive success and migration \citep{CorbettDetig2015,Webster2016,Pool2007,Charlesworth2012b}, and these may also be playing a role, although the X/A ratios were relatively stable across the different species and populations sampled in Ag1000G phase 1.
+The X/A ratio can also be influenced by demographic factors, including population size fluctuations and sex biases in reproductive success and migration~\parencite{CorbettDetig2015,Webster2016,Pool2007,Charlesworth2012b}, and these may also be playing a role, although the X/A ratios were relatively stable across the different species and populations sampled in Ag1000G phase 1.
 %
 
 
@@ -927,16 +964,16 @@ The X/A ratio can also be influenced by demographic factors, including populatio
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Conclusion}
+\section{Conclusions}\label{sec:conclusions}
 
 
-In this chapter I have described the discovery and genotyping of more than 50 million single nucleotide polymorphisms from deep whole genome sequencing of individual mosquitoes from natural populations of \textit{An. gambiae} and \textit{An. coluzzii}.
+In this chapter I have described the discovery and genotyping of more than 50 million single nucleotide polymorphisms from deep whole genome sequencing of individual mosquitoes from natural populations of \agam\ and \textit{An. coluzzii}.
 %
 This is a unique data resource, providing opportunities to study both fundamental genome biology and the evolution and demography of natural malaria vector populations.
 %
 I have shown that this is a highly robust data resource, with low rates of false discovery and highly accurate genotype calls.
 %
-I have also used this resource to show that nucleotide diversity is extremely high within these mosquito species, confirming that they are among the most genetically diverse organisms studied to date \citep{Leffler2012}.
+I have also used this resource to show that nucleotide diversity is extremely high within these mosquito species, confirming that they are among the most genetically diverse organisms studied to date~\parencite{Leffler2012}.
 %
 In the next chapter I will use these data to investigate genetic structure among the populations sampled, and to quantify, characterise and compare genetic diversity within these populations in more detail.
 %%
@@ -945,7 +982,7 @@ In the next chapter I will use these data to investigate genetic structure among
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Acknowledgments}
+\section{Acknowledgments}\label{sec:acknowledgments}
 
 
 I would like to thank the members of the \textit{Anopheles gambiae} 1000 Genomes Consortium, the MalariaGEN Resource Centre, and the staff at the Wellcome Sanger Institute sample logistics, sequencing and informatics facilities, for their contributions towards the production of the Ag1000G phase 1 data resource.
@@ -959,7 +996,7 @@ I would like to thank the members of the \textit{Anopheles gambiae} 1000 Genomes
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Supplemental figures}
+\section{Supplemental figures}\label{sec:supplemental-figures}
 
 
 \begin{figure}[h]
@@ -1023,14 +1060,14 @@ The theoretical expectation for a diploid species with one sex hemizygous for th
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Supplemental tables}
+\section{Supplemental tables}\label{sec:supplemental-tables}
 
 
 \begin{table}[h]
 \begin{center}
 \begin{threeparttable}
 
-\caption{Number of SNPs discovered, grouped by sequence ontology annotation class as determined by SNPEFF \citep{Cingolani2012}.}
+\caption{Number of SNPs discovered, grouped by sequence ontology annotation class as determined by SNPEFF~\parencite{Cingolani2012}.}
 
 \label{table:snpeff}
 
