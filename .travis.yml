@@ -43,6 +43,7 @@ deploy:
     - chapter3.pdf
     - chapter4.pdf
     - chapter5.pdf
+    - chapter6.pdf
   skip_cleanup: true
   on:
     repo: alimanfoo/dphil

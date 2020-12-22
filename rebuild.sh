@@ -38,4 +38,5 @@ else
     rebuild chapter3
     rebuild chapter4
     rebuild chapter5
+    rebuild chapter6
 fi
