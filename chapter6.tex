@@ -118,7 +118,7 @@ Prior to the present study, the molecular basis of pyrethroid target-site resist
 %
 An \texttt{L995F} substitution, initially found in West Africa~\parencite{MartinezTorres1998}, and an \texttt{L995S} substitution, initially found in East Africa~\parencite{Ranson2000a}, have both been shown to confer resistance to pyrethroids and DDT\footnotemark.
 %
-\footnotetext{Codon numbering is given relative to \agam\ transcript \texttt{AGAP004707-RA} in gene annotation set AgamP4.4. A mapping to \textit{D. melanogaster} codon numbers is given in \ref{table:snps}.}
+\footnotetext{Codon numbering is given relative to \agam\ transcript \texttt{AGAP004707-RA} in gene annotation set AgamP4.4. A mapping to \textit{D. melanogaster} codon numbers is given in~\ref{table:snps}.}
 %
 A third substitution, \texttt{N1570Y}, was subsequently found in West and Central Africa, occurring exclusively in combination with \texttt{L995F}~\parencite{Jones2012}.
 %
@@ -184,7 +184,7 @@ Any work carried out jointly is noted in the relevant section.
 \subsection{Non-synonymous SNPs within the \textit{Vgsc} gene}\label{subsec:results-snps}
 
 
-There were 63 non-synonymous SNPs within the \textit{Vgsc} gene that were polymorphic within the Ag1000G phase 1 dataset.
+There were 63 non-synonymous SNPs within the \textit{Vgsc} gene (\texttt{AGAP004707}) that were polymorphic within the Ag1000G phase 1 dataset.
 %
 For these SNPs, I computed the frequency of each non-synonymous variant allele within each of nine populations defined by species and country of origin.
 %
@@ -198,9 +198,6 @@ This resulted in a set of 21 SNPs, including two multiallelic SNPs (Table~\ref{t
 %% Table 1 - Functional SNPs.
 %
 \afterpage{%
-%\clearpage
-% N.B., for some reason using \newgeometry causes page number to get dropped from the subsequent page, so disable for now - not needed if using \footnotesize.
-%\newgeometry{margin=2cm}
 \begin{landscape}
 \thispagestyle{empty}
 \begin{table}[h]
@@ -228,7 +225,7 @@ All variants are at 4\% frequency or above in one or more of the 9 Ag1000G phase
 
     \item[1] Position relative to the AgamP3 reference sequence, chromosome arm 2L.
 
-    \item[2] Codon numbering according to \emph{Anopheles gambiae} transcript AGAP004707-RA in geneset AgamP4.4.
+    \item[2] Codon numbering according to \emph{Anopheles gambiae} transcript AGAP004707-RA in gene annotations AgamP4.4.
 
     \item[3] Codon numbering according to \emph{Musca domestica} EMBL accession X96668.
 
@@ -286,7 +283,7 @@ Among these, the following SNPs are of particular interest, based on observation
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Associations between non-synonymous variants}\label{subsec:results-ld}
+\subsection{Associations between non-synonymous SNPs}\label{subsec:results-ld}
 
 
 In several insect species, two or more non-synonymous variants in the \textit{Vgsc} gene have been observed occurring together on the same haplotype.
@@ -497,7 +494,7 @@ I used the Ag1000G haplotype data to construct decision trees that could classif
 %
 For each of two different tree-construction algorithms, I constructed decisions trees with a limit on the depth of the tree, repeating the process for progressively larger depths.
 %
-I then scored the classification performance of each tree via 10-fold stratified cross-validation.
+I then scored the classification performance of each tree via 5-fold stratified cross-validation.
 %
 These analyses suggested that it should be possible to classify haplotypes with $>95\%$ accuracy using a decision tree with 20 SNPs or less.
 %
@@ -577,11 +574,80 @@ Three additional non-synonymous variants were found in these other transcripts, 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{@@}\label{subsec:methods-@@}
+\subsection{Additional phasing}\label{subsec:methods-phasing}
 
 
-@@
-The haplotype data from Ag1000G only include biallelic SNPs passing all quality filters, and thus did not include N1575Y due to failing genome-wide filters, nor the multiallelic SNPs at positions 2L:2,391,228 and 2L:2,400,071. To incorporate these additional SNPs into the analysis, I phased these SNPs onto the Ag1000G haplotype scaffold.
+The haplotype data from Ag1000G phase 1 only include biallelic SNPs passing all quality filters, and thus did not include \texttt{N1570Y} due to failing genome-wide filters, nor the multiallelic SNPs at positions 2L:2,391,228 and 2L:2,400,071.
+%
+To incorporate these additional SNPs into the analysis, I phased these SNPs onto the Ag1000G haplotype scaffold using MVNcall version 1.0.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Haplotype clustering and gene flow analyses}\label{subsec:methods-hapclust}
+
+
+Haplotypes spanning the \textit{Vgsc} gene (\texttt{AGAP004707}, 2L:2,358,158--2,431,617) were extracted from the genome-wide dataset.
+%
+I computed the Hamming distance between all pairs of haplotypes, then performed hierarchical clustering of haplotypes and visualised the results as a dendrogram.
+%
+These analyses were performed using SciPy version 0.16.1~\parencite{Virtanen2020}.
+%
+To identify haplotype clusters, I cut the dendrogram at a distance of 12 SNPs and studied the largest clusters carrying \texttt{L1014F/S} resistance alleles.
+%
+A non-zero cutting distance allows for a small number of SNP differences within each cluster, which is expected as new mutations begin to occur on haplotypes that are increasing in frequency under positive selection.
+%
+I used the complete linkage clustering method to generate the dendrogram and clusters reported here, but I repeated the analysis using the single and average linkage methods, finding highly concordant results.
+
+
+To investigate whether recombination events within the \textit{Vgsc} gene might have affected the clustering of haplotypes carrying resistance alleles, I performed an additional analysis using data from regions flanking the gene.
+%
+I repeated the clustering analysis separately on non-overlapping windows upstream and downstream of the \textit{Vgsc} gene, using the same window size (1,718 SNPs) as used for the clustering analysis within the gene.
+%
+I then compared the resulting haplotype clusters by computing the set intersection between all pairs of clusters across all pairs of windows.
+%
+If recombination events happened, this would affect the haplotype clustering in some windows but not others, causing some discordance between clustering in adjacent windows.
+%
+In the window immediately upstream of the gene I found clusters with at least 93\% intersection with the clusters identified within the gene, except for clusters S4 and S5 which merged into a single cluster.
+%
+In the window immediately downstream of the gene I found clusters with at least 93\% intersection, again except for S4 and S5 which merged into a single cluster, and except for F1 which split into a major cluster carrying 402/465 (86\%) of the F1 cluster and a minor cluster carrying 60/465 haplotypes.
+%
+The most parsimonious explanation for the S4/S5 clustering together on both flanks of the gene is that these are both derived from the same haplotype, but experienced a gene conversion or sequence of crossover events within the \textit{Vgsc} gene to bring some portion of a different haplotype into the original genetic background.
+%
+The region of differentiation between S4 and S5 is limited to a 13 kb region upstream of codon 995, and these two clusters share haplotype homozygosity spanning codon 995.
+
+
+To confirm evidence of resistance allele gene flow between populations, I performed a between-population analysis of haplotype homozygosity, implemented via a custom Python script.
+%
+Briefly, this analysis extracts haplotypes from each of two populations in moving windows of 2000 SNPs across chromosome arm 2L, and computes the fraction of haplotype pairs that are identical (haplotype homozygosity), considering only pairs with one haplotype from each population.
+%
+A value of 0 indicates no haplotype pairs are identical between populations, and a value of 1 indicates all haplotype pairs are identical between populations.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Positive selection}\label{subsec:methods-selection}
+
+
+Core haplotypes were defined on a 6,078 bp region spanning \textit{Vgsc} codon 995, from chromosome arm 2L position 2,420,443 and ending at position 2,426,521.
+%
+This region was chosen as it was the smallest region sufficient to differentiate between the ten haplotype clusters carrying either of the known resistance alleles L1014F or L1014S.
+%
+Extended haplotype homozygosity (EHH) was computed for all core haplotypes as described in \textcite{Sabeti2002} using scikit-allel version 1.1.9, excluding non-synonymous and singleton SNPs.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Decision tree analyses}\label{subsec:methods-dts}
+
+
+To explore the feasibility of identifying a small subset of SNPs that would be sufficient to identify each of the genetic backgrounds carrying known or putative resistance alleles, I started with an input data set of all SNPs within the \textit{Vgsc} gene or in the flanking regions 20 kbp upstream and downstream of the gene.
+%
+Each of the 1530 haplotypes in the Ag1000G phase 1 cohort was labelled according to which core haplotype it carried, combining all core haplotypes not carrying known or putative resistance alleles together as a single "wild-type" group.
+%
+Decision tree classifiers were then constructed using scikit-learn version 0.19.0 for a range of maximum depths, repeating the tree construction process 10 times for each maximum depth with a different initial random state.
+%
+The classification accuracy of each tree was evaluated using stratified 5-fold cross-validation.
 
 
 \printbibliography
@@ -595,10 +661,6 @@ The haplotype data from Ag1000G only include biallelic SNPs passing all quality 
 \section{Supplemental figures}\label{sec:supplemental-figures}
 
 
-%\afterpage{%
-%\clearpage
-% N.B., for some reason using \newgeometry causes page number to get dropped from the subsequent page, so disable for now - not needed if using \footnotesize.
-%\newgeometry{margin=2cm}
 \clearpage
 \begin{landscape}
 
@@ -611,14 +673,8 @@ The haplotype data from Ag1000G only include biallelic SNPs passing all quality 
 \end{figure}
 
 \end{landscape}
-%\restoregeometry
-%} % end afterpage
 
 
-%\afterpage{%
-%\clearpage
-% N.B., for some reason using \newgeometry causes page number to get dropped from the subsequent page, so disable for now - not needed if using \footnotesize.
-%\newgeometry{margin=2cm}
 \clearpage
 \begin{landscape}
 
@@ -631,8 +687,6 @@ The haplotype data from Ag1000G only include biallelic SNPs passing all quality 
 \end{figure}
 
 \end{landscape}
-%\restoregeometry
-%} % end afterpage
 
 
 \clearpage
