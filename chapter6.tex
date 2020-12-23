@@ -334,7 +334,15 @@ Each of the two \texttt{V402L} alleles was in subordinate association with \text
 \begin{figure}[t!]
 \centering
 \includegraphics[width=0.9\linewidth,center]{artwork/chapter6/ld.png}
-\caption{@@
+\caption{Linkage disequilibrium ($D'$) between non-synonymous variant alleles.
+%
+A value of 1 indicates that two alleles are in perfect linkage, meaning that one of the alleles is only ever found in combination with the other.
+%
+Conversely, a value of −1 indicates that two alleles are never found in combination with each other.
+%
+The bar plot at the top shows the frequency of each allele within the Ag1000G phase 1 cohort.
+%
+See Table~\ref{table:snps} for population allele frequencies.
 }
 \label{fig:ld}
 \end{figure}
@@ -353,7 +361,14 @@ Each of the two \texttt{V402L} alleles was in subordinate association with \text
 \begin{subfigure}[t]{1\textwidth}
 \includegraphics[width=.5\linewidth,center]{artwork/chapter6/pop_legend.png}
 \end{subfigure}
-\caption{@@
+\caption{Clustering of haplotypes within the \textit{Vgsc} gene.
+The upper panel shows a dendrogram obtained by hierarchical clustering of haplotypes from wild-caught individuals.
+%
+The colour bar below shows the population of origin for each haplotype.
+%
+The lower panel shows alleles carried by each haplotype at non-synonymous SNPs (white=reference allele, black=alternate allele, red=previously known resistance allele).
+%
+At the lower margin, F1--F5 label clusters carrying the \texttt{L995F} allele, and S1--S5 label clusters carrying the \texttt{L995S} allele.
 }
 \label{fig:hapclust}
 \end{figure}
@@ -422,7 +437,15 @@ I then computed EHH decay for each core haplotype up to 1 Mb upstream and downst
 \begin{figure}[t!]
 \centering
 \includegraphics[width=1\linewidth,center]{artwork/chapter6/ehh.pdf}
-\caption{@@
+\caption{Evidence for positive selection on haplotypes carrying known or putative resistance alleles.
+%
+Each panel plots the decay of extended haplotype homozygosity (EHH) for a set of core haplotypes centred on \textit{Vgsc} codon 995.
+%
+Core haplotypes F1--F5 carry the \texttt{L995F} allele, S1--S5 carry the \texttt{L995S} allele, L1 carries the \texttt{I1527T} allele, L2 carries the \texttt{M490I} allele.
+%
+Wild-type (wt) haplotypes do not carry known or putative resistance alleles.
+%
+A slower decay of EHH relative to wild-type haplotypes implies positive selection (each panel plots the same collection of wild-type haplotypes).
 }
 \label{fig:ehh}
 \end{figure}
@@ -482,7 +505,19 @@ Technologies such as amplicon sequencing could scale to tens of thousands of mos
 \begin{subfigure}[t]{1\textwidth}
 \includegraphics[width=1\linewidth,center]{artwork/chapter6/tree_cv.png}
 \end{subfigure}
-\caption{@@
+\caption{Ascertainment of informative SNPs for tracking resistance haplotypes.
+%
+\textbf{a}, Each data point represents a single SNP.
+%
+The information gain value for each SNP provides an indication of how informative the SNP is likely to be if used as part of a genetic assay for testing whether a mosquito carries a resistance haplotype, and if so, which haplotype group it belongs to.
+%
+\textbf{b}, Number of SNPs required to accurately predict which group a resistance haplotype belongs to.
+%
+Each data point represents a single decision tree.
+%
+Decision trees were constructed using either the LD3 (left) or CART (right) algorithm for comparison.
+%
+Accuracy was evaluated using 10-fold stratified cross-validation.
 }
 \label{fig:dt}
 \end{figure}
@@ -494,7 +529,7 @@ I used the Ag1000G haplotype data to construct decision trees that could classif
 %
 For each of two different tree-construction algorithms, I constructed decisions trees with a limit on the depth of the tree, repeating the process for progressively larger depths.
 %
-I then scored the classification performance of each tree via 5-fold stratified cross-validation.
+I then scored the classification performance of each tree via 10-fold stratified cross-validation.
 %
 These analyses suggested that it should be possible to classify haplotypes with $>95\%$ accuracy using a decision tree with 20 SNPs or less.
 %
@@ -647,7 +682,7 @@ Each of the 1530 haplotypes in the Ag1000G phase 1 cohort was labelled according
 %
 Decision tree classifiers were then constructed using scikit-learn version 0.19.0 for a range of maximum depths, repeating the tree construction process 10 times for each maximum depth with a different initial random state.
 %
-The classification accuracy of each tree was evaluated using stratified 5-fold cross-validation.
+The classification accuracy of each tree was evaluated using stratified 10-fold cross-validation.
 
 
 \printbibliography
@@ -667,7 +702,13 @@ The classification accuracy of each tree was evaluated using stratified 5-fold c
 \begin{figure}
 \centering
 \includegraphics[width=1.1\linewidth,center]{artwork/chapter6/accessibility.png}
-\caption{@@
+\caption{Accessibility of the \textit{Vgsc} gene.
+%
+Upper plot shows coverage traces for all individuals in the Ag1000G phase 1 cohort, coloured by population, normalised by genome-wide coverage.
+%
+Schematic below shows locations of \textit{Vgsc} gene exons (black) and different classes of repetitive or low complexity sequences.
+%
+Tracks at the bottom show plots of various genome accessibility metrics.
 }
 \label{fig:accessibility}
 \end{figure}
@@ -681,7 +722,7 @@ The classification accuracy of each tree was evaluated using stratified 5-fold c
 \begin{figure}
 \centering
 \includegraphics[width=0.8\linewidth,center]{artwork/chapter6/transcripts.png}
-\caption{@@
+\caption{Alternative transcripts for the \textit{Vgsc} gene, inferred from cDNA sequences reported by \textcite{Davies2007}.
 }
 \label{fig:transcripts}
 \end{figure}
@@ -693,7 +734,13 @@ The classification accuracy of each tree was evaluated using stratified 5-fold c
 \begin{figure}[t!]
 \centering
 \includegraphics[width=1.1\linewidth,center]{artwork/chapter6/xphh.png}
-\caption{@@
+\caption{Chromosome-wide scans for between-population haplotype homozygosity (HH).
+%
+Each track plots the fraction of between-population haplotype pairs that are identical within moving windows of 2,000 SNPs.
+%
+A value of 1 indicates all haplotype pairs are identical.
+%
+A value of 0 indicates no haplotype pairs are identical.
 }
 \label{fig:xphh}
 \end{figure}
@@ -703,7 +750,27 @@ The classification accuracy of each tree was evaluated using stratified 5-fold c
 \begin{figure}[t!]
 \centering
 \includegraphics[width=1.1\linewidth,center]{artwork/chapter6/pspd.pdf}
-\caption{@@
+\caption{Analysis of shared haplotype lengths.
+%
+Each bar shows the distribution of shared haplotype lengths between all pairs of haplotypes with the same core haplotype.
+%
+For each pair of haplotypes, the shared haplotype length was computed as the region extending upstream and downstream from the core locus (\textit{Vgsc} codon 995) over which haplotypes are identical at all non-singleton variants.
+%
+The \textit{Vgsc} gene sits on the border of pericentromeric heterochromatin and euchromatin, and I assumed different recombination rates in upstream and downstream regions.
+%
+The shared haplotype length is expressed in centiMorgans (cM) assuming a constant recombination rate of 2.0 cM/Mb on the downstream (euchromatin) flank and 0.6 cM/Mb on the upstream (heterochromatin) flank.
+%
+Bars show the inter-quartile range, fliers show the $5-95^{th}$ percentiles, horizontal black line shows the median, notch in bar shows the 95\% bootstrap confidence interval for the median.
+%
+Haplotypes F1--5 each carry the \texttt{L995F} resistance allele.
+%
+Haplotypes S1--5 each carry the \texttt{L995S} resistance allele.
+%
+Haplotype L1 carries the \texttt{I1527T} allele.
+%
+Haplotype L2 carries the \texttt{M490I} allele.
+%
+Wild-type (wt) haplotypes do not carry any known or putative resistance alleles.
 }
 \label{fig:pspd}
 \end{figure}
