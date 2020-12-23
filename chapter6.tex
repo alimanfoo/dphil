@@ -325,7 +325,7 @@ Fourteen variant alleles were in subordinate association with \texttt{L995F} ($D
 %
 There were also two triple-mutant combinations, \texttt{L995F+D466H+I1940T} and \texttt{L995F+T791M+A1746S}.
 %
-In stark contrast, there were no non-synonymous variant alleles in any kind of association with \texttt{L995S}.
+In contrast, there were no non-synonymous variant alleles in any kind of association with \texttt{L995S}.
 %
 Thus, substantial molecular evolution appears to be occurring on haplotype backgrounds carrying \texttt{L995F}.
 %
@@ -344,6 +344,20 @@ Each of the two \texttt{V402L} alleles was in subordinate association with \text
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Geographical spread of pyrethroid resistance alleles}\label{subsec:results-spread}
+
+
+\begin{figure}[t!]
+\centering
+\begin{subfigure}[t]{1\textwidth}
+\includegraphics[width=1\linewidth,center]{artwork/chapter6/hapclust.pdf}
+\end{subfigure}
+\begin{subfigure}[t]{1\textwidth}
+\includegraphics[width=.5\linewidth,center]{artwork/chapter6/pop_legend.png}
+\end{subfigure}
+\caption{@@
+}
+\label{fig:hapclust}
+\end{figure}
 
 
 To investigate evidence for geographical spread of pyrethroid resistance alleles, I analysed patterns of genetic similarity between the 1530 haplotypes in the Ag1000G phase 1 dataset.
@@ -367,20 +381,6 @@ I then labelled the five largest clusters containing the \texttt{L995F} allele a
 The clusters F1-F5 together accounted for 96\% of haplotypes carrying the \texttt{L995F} allele, and the clusters S1-S5 together accounted for 99\% of haplotypes carrying the \texttt{L995S} allele.
 
 
-\begin{figure}[t!]
-\centering
-\begin{subfigure}[t]{1\textwidth}
-\includegraphics[width=1\linewidth,center]{artwork/chapter6/hapclust.pdf}
-\end{subfigure}
-\begin{subfigure}[t]{1\textwidth}
-\includegraphics[width=.5\linewidth,center]{artwork/chapter6/pop_legend.png}
-\end{subfigure}
-\caption{@@
-}
-\label{fig:hapclust}
-\end{figure}
-
-
 Five of these haplotype clusters carrying resistance alleles contained haplotypes from different countries and/or species.
 %
 Cluster F1 contained haplotypes from Burkina Faso, Guinea, Cameroon and Angola, and from both \agam\ and \acol.
@@ -400,10 +400,113 @@ Taken together, these results provide strong support for adaptive gene flow of p
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{@@}\label{subsec:results-@@}
+\subsection{Positive selection for pyrethroid resistance alleles}\label{subsec:results-selection}
 
 
-@@TODO
+To investigate evidence for positive selection on non-synonymous alleles, I performed an analysis of extended haplotype homozygosity (EHH)~\parencite{Sabeti2002}.
+%
+Haplotypes under recent positive selection will have increased rapidly in frequency, thus have had less time to be broken down by recombination, and should on average have longer regions of haplotype homozygosity relative to haplotypes carrying wild-type alleles.
+%
+I defined a core region spanning \textit{Vgsc} codon 995, and an additional 6 kb of flanking sequence, which was the minimum required to find core haplotypes corresponding to the haplotype clusters F1-F5 and S1-S5 identified via the clustering analysis described above.
+%
+I found 18 distinct haplotypes within this core region that were at a frequency above 1\% within the cohort.
+%
+These included core haplotypes corresponding to each of the 10 haplotype clusters carrying \texttt{L995F} or \texttt{L995S} alleles, as well as a core haplotype carrying \texttt{I1527T} which I labelled as L1 (due to it carrying the wild-type leucine at codon 995).
+%
+I also found a core haplotype corresponding to a group of haplotypes from Kenya carrying a \texttt{M490I} substitution, which I labelled L2.
+%
+All the other core haplotypes were labelled as wild-type (wt).
+%
+I then computed EHH decay for each core haplotype up to 1 Mb upstream and downstream of the core locus (Fig.~\ref{fig:ehh}).
+
+
+\begin{figure}[t!]
+\centering
+\includegraphics[width=1\linewidth,center]{artwork/chapter6/ehh.pdf}
+\caption{@@
+}
+\label{fig:ehh}
+\end{figure}
+
+
+Haplotypes carrying either \texttt{L995F} or \texttt{L995S} all experienced slower decay of EHH relative to wild-type haplotypes, indicating positive selection for these resistance alleles.
+%
+Previous studies have reported evidence for different rates of EHH decay between \texttt{L995F} and \texttt{L995S} haplotypes, suggesting a difference in the timing and/or strength of selection.
+%
+I found no systematic difference in the extent of haplotype homozygosity when comparing F1-F5 (carrying \texttt{L995F}) against S1-S5 (carrying \texttt{L995S}) (Fig.~\ref{fig:pspd}).
+%
+There were, however, some differences between core haplotypes carrying the same allele.
+%
+For example, haplotypes were significantly longer for S1 (median 1.091 cM, 95\% CI [1.076 - 1.091]) versus other core haplotypes carrying \texttt{L995S} (e.g., S2 median 0.699 cM, 95\% CI [0.696 - 0.705]).
+%
+Longer shared haplotypes indicate a more recent common ancestor, and thus some of these core haplotypes may have experienced more recent and/or more intense selection than others.
+
+
+The L1 haplotypes carrying \texttt{I1527T+V402L} exhibited a slow decay of EHH on the downstream flank of the gene, similar to haplotypes carrying \texttt{L995F} or \texttt{L995S}, indicating that this combination of alleles has experienced positive selection.
+%
+EHH decay on the upstream flank was faster, similar to wild-type haplotypes, but there were two separate SNPs conferring \texttt{V402L} within this group of haplotypes, and a faster EHH decay on this flank is consistent with recombination events bringing \texttt{V402L} alleles from different genetic backgrounds together with a haplotype carrying \texttt{I1527T}.
+%
+The L2 haplotype carrying \texttt{M490I} exhibited EHH decay on both flanks comparable to haplotypes carrying known resistance alleles.
+%
+This could indicate positive selection on the \texttt{M490I} allele, but these haplotypes are derived from a Kenyan mosquito population where there is evidence for a severe recent bottleneck as described in Chapter 4.
+%
+There were not enough wild-type haplotypes from Kenya with which to compare, thus this signal could also be due to the extreme demographic history of this population.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Genetic surveillance of pyrethroid resistance}\label{subsec:results-tracking}
+
+
+Entomological monitoring programmes supporting malaria vector control in Africa often genotype mosquitoes for known resistance alleles in \textit{Vgsc} codon 995, and use those results as an indicator for the presence of pyrethroid resistance, alongside results from resistance bioassays.
+%
+They typically do not, however, sequence the gene or genotype any other polymorphisms within the gene.
+%
+Thus, if there are other polymorphisms within the gene that cause or enhance pyrethroid resistance, these will not be detected.
+%
+Also, if a codon 995 resistance allele is observed, there is no way to know whether the allele is on a genetic background that has also been observed in other mosquito populations, and thus no way to investigate whether resistance alleles are emerging locally or spreading from elsewhere.
+%
+Whole-genome sequencing (WGS) of individual mosquitoes clearly provides data of sufficient resolution to answer these questions, and could be used to provide ongoing resistance surveillance.
+%
+The cost of WGS continues to fall and could feasibly be used for deep genomic surveillance of mosquitoes from a network of sentinel sites across multiple countries.
+%
+However, to achieve higher spatial and temporal coverage of mosquito populations within countries, it would currently be necessary to also develop targeted genetic assays for resistance surveillance.
+%
+Technologies such as amplicon sequencing could scale to tens of thousands of mosquitoes at low cost, and could be implemented in local laboratories.
+
+
+\begin{figure}[t!]
+\centering
+\begin{subfigure}[t]{1\textwidth}
+\includegraphics[width=1\linewidth,center]{artwork/chapter6/info_gain.png}
+\end{subfigure}
+\begin{subfigure}[t]{1\textwidth}
+\includegraphics[width=1\linewidth,center]{artwork/chapter6/tree_cv.png}
+\end{subfigure}
+\caption{@@
+}
+\label{fig:dt}
+\end{figure}
+
+
+To explore the feasibility of designing amplicon sequencing assays for tracking the spread of pyrethroid resistance, I investigated the minimum number of SNPs that would be required to differentiate the different resistance haplotype clusters discovered above.
+%
+I used the Ag1000G haplotype data to construct decision trees that could classify which of the haplotype clusters a given haplotype belongs to (Fig.~\ref{fig:dt}).
+%
+For each of two different tree-construction algorithms, I constructed decisions trees with a limit on the depth of the tree, repeating the process for progressively larger depths.
+%
+I then scored the classification performance of each tree via 10-fold stratified cross-validation.
+%
+These analyses suggested that it should be possible to classify haplotypes with $>95\%$ accuracy using a decision tree with 20 SNPs or less.
+%
+In practice, more SNPs would be needed to provide some redundancy, and also to type non-synonymous polymorphisms in addition to identifying the genetic background.
+%
+However, it is still likely to be well within the number of SNPs that could be assayed in a single amplicon sequencing multiplex.
+%
+Thus, it should be feasible to produce low-cost, high-throughput genetic assays for tracking the spread of pyrethroid resistance.
+%
+If combined with a limited amount of whole-genome sequencing at sentinel sites across a broad geographical range, this could also allow targeted assays to be continuously updated to track newly emerging resistance outbreaks.
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -525,6 +628,15 @@ The haplotype data from Ag1000G only include biallelic SNPs passing all quality 
 \label{fig:xphh}
 \end{figure}
 
+
+\clearpage
+\begin{figure}[t!]
+\centering
+\includegraphics[width=1.1\linewidth,center]{artwork/chapter6/pspd.pdf}
+\caption{@@
+}
+\label{fig:pspd}
+\end{figure}
 
 
 \clearpage
