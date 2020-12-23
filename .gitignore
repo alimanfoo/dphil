@@ -12,6 +12,7 @@
 *.log
 abstract.pdf
 chapter*.pdf
+discussion.pdf
 
 # Emacs
 *~
