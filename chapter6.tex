@@ -293,18 +293,20 @@ In several insect species, two or more non-synonymous variants in the \textit{Vg
 %
 For example, \texttt{N1570Y} is only found in \agam\ in combination with \texttt{L995F}~\parencite{Jones2012}.
 %
-Similarly, in the German cockroach \textit{Blatella germanica}, the combinations \texttt{L1014F+E435K} and \texttt{L1014F+C785R} have both been found~\parencite{Tan2002}.
+Similarly, in the German cockroach \textit{Blatella germanica}, the combinations \texttt{L993F+E434K}, \texttt{L993F+C764R} and \texttt{L993F+E434K+C764R} have been found~\parencite{Tan2002}.
 %
-In the diamond back moth, the alleles \texttt{A1101T+P1879S} are only found in combination~\parencite{Sonoda2010}.
+In the diamond back moth, the alleles \texttt{A1101T+P1879S} are found in combination~\parencite{Sonoda2010}.
 %
 In \textit{Aedes aegypti}, the combination \texttt{V410L+F1534C} has been observed~\parencite{Haddi2017}, as well as each allele separately.
 %
 The occurrence of alleles in combination is interesting because these alleles may act synergistically to enhance a pyrethroid resistance phenotype.
 %
 For example, the \texttt{L995F+N1570Y} combination is approximately ten times more resistant to permethrin than \texttt{L995F} alone~\parencite{Wang2015}.
+%
+Similarly, in the German cockroach, \texttt{L993F+E434K} and \texttt{L993F+C764R} are each approximately 20 times more resistant to deltamethrin than \texttt{L993F} alone~\parencite{Tan2002}, and the triple mutant \texttt{L993F+E434K+C764R} is 100 times more resistant.
 
 
-To investigate associations between non-synonymous variants within the Ag1000G phase 1 dataset, I used the haplotypes to calculate the $D'$ linkage disequilibrium (LD) statistic between all pairs of variant alleles~\parencite{Lewontin1964}.
+To investigate associations between non-synonymous variants within the Ag1000G phase 1 dataset, I calculated the $D'$ linkage disequilibrium (LD) statistic between all pairs of variant alleles~\parencite{Lewontin1964}.
 %
 I then combined these data with allele frequencies, to identify three possible types of association:
 %
@@ -437,7 +439,7 @@ I found no systematic difference in the extent of haplotype homozygosity when co
 %
 There were, however, some differences between core haplotypes carrying the same allele.
 %
-For example, haplotypes were significantly longer for S1 (median 1.091 cM, 95\% CI [1.076 - 1.091]) versus other core haplotypes carrying \texttt{L995S} (e.g., S2 median 0.699 cM, 95\% CI [0.696 - 0.705]).
+For example, haplotypes were significantly longer for S1 (median 1.091 cM, 95\% bootstrap CI [1.076 - 1.091]) versus other core haplotypes carrying \texttt{L995S} (e.g., S2 median 0.699 cM, 95\% bootstrap CI [0.696 - 0.705]).
 %
 Longer shared haplotypes indicate a more recent common ancestor, and thus some of these core haplotypes may have experienced more recent and/or more intense selection than others.
 
@@ -458,13 +460,13 @@ There were not enough wild-type haplotypes from Kenya with which to compare, thu
 \subsection{Genetic surveillance of pyrethroid resistance}\label{subsec:results-tracking}
 
 
-Entomological monitoring programmes supporting malaria vector control in Africa often genotype mosquitoes for known resistance alleles in \textit{Vgsc} codon 995, and use those results as an indicator for the presence of pyrethroid resistance, alongside results from resistance bioassays.
+Entomological monitoring programmes supporting malaria vector control in Africa do in some cases genotype mosquitoes for known resistance alleles in \textit{Vgsc} codon 995, and use those results as an indicator for the presence of pyrethroid resistance, alongside results from resistance bioassays.
 %
 They typically do not, however, sequence the gene or genotype any other polymorphisms within the gene.
 %
 Thus, if there are other polymorphisms within the gene that cause or enhance pyrethroid resistance, these will not be detected.
 %
-Also, if a codon 995 resistance allele is observed, there is no way to know whether the allele is on a genetic background that has also been observed in other mosquito populations, and thus no way to investigate whether resistance alleles are emerging locally or spreading from elsewhere.
+Also, if a codon 995 resistance allele is observed, there is no way to know whether the allele is on a genetic background that has also been observed in other mosquito populations, and thus whether resistance alleles are emerging locally or spreading from elsewhere.
 %
 Whole-genome sequencing (WGS) of individual mosquitoes clearly provides data of sufficient resolution to answer these questions, and could be used to provide ongoing resistance surveillance.
 %
@@ -515,7 +517,21 @@ If combined with a limited amount of whole-genome sequencing at sentinel sites a
 \section{Conclusions}\label{sec:conclusions}
 
 
-@@
+Molecular evolution of pyrethroid target-site resistance is clearly far more complex than previously appreciated.
+%
+Secondary evolution is occurring on haplotypes carrying the primary \texttt{L995F} allele, leading to double and triple mutant haplotypes.
+%
+The phenotype of these combined mutants needs to be urgently characterised, because \textit{Vgsc} combination mutants in other insect species have far higher levels of pyrethroid resistance than single mutants.
+%
+The operational significance of these mutants for malaria vector control also needs to be urgently characterised, to investigate any effect on ITN efficacy.
+%
+Resistance alleles are also clearly spreading between countries, in some cases reaching countries separated by up to 4,000 km.
+%
+This includes alleles spreading between countries on both sides of the equatorial rainforest, and on both sides of the East African Rift, which was surprising given the relatively high levels of genome-wide differentiation between these populations observed in Chapter 4.
+%
+Thus, the \textit{Vgsc} gene reveals how mosquito populations are connected across the continent, and how resistance alleles can spread even where rates of gene flow might otherwise appear low.
+%
+In the next and final chapter I discuss the implications of these and other findings from this thesis for the future of malaria vector control, and review both the opportunities and challenges involved in developing genomic surveillance systems for malaria vectors.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -637,16 +653,6 @@ The haplotype data from Ag1000G only include biallelic SNPs passing all quality 
 }
 \label{fig:pspd}
 \end{figure}
-
-
-\clearpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Supplemental tables}\label{sec:supplemental-tables}
-
-
-@@
 
 
 \end{document}
