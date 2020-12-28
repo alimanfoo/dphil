@@ -49,7 +49,7 @@ However, unlike SARS-CoV-2, we do not have genomic surveillance systems in place
 This means that, as new forms of insecticide resistance emerge and spread within malaria vector populations, we have no means to detect these events, nor to design and coordinate any kind of effective response or mitigation.
 
 
-\section{Next-generation vector control, next-generation surveillance}\label{sec:nextgen}
+\section{Next-generation malaria vector control, next-generation surveillance}\label{sec:nextgen}
 
 
 Sequencing the genomes of \textit{Anopheles} mosquitoes from the field and accurately detecting genetic variation presents a number of challenges.
@@ -73,9 +73,9 @@ The work described in this thesis was carried out in the context of the \textit{
 %
 It comes at a time when malaria vector control undergoing its most significant change in 20 years.
 %
-In an attempt to mitigate the impact of pyrethroid resistance, malaria control programmes have begun using and rotating next-generation indoor residual spraying (IRS) formulations, which use the organophosphate pyrimiphos methyl and the neonicotinoid clothianidin~\parencite{Oxborough2014,Oxborough2019,WHO2019WMR}.
+In an attempt to mitigate the impact of pyrethroid resistance, malaria control programmes have begun using and rotating ``next-generation'' indoor residual spraying (IRS) formulations, which use the organophosphate pyrimiphos methyl and the neonicotinoid clothianidin~\parencite{Oxborough2014,Oxborough2019,WHO2019WMR}.
 %
-Next-generation long-lasting insecticidal bednets (LLINs) incorporating the synergist piperonyl butoxide (PBO) have been shown to be effective, and large scale procurements are planned in multiple countries~\parencite{Protopopoff2018,Staedke2020}.
+``Next-generation'' long-lasting insecticidal bednets (LLINs) incorporating the synergist piperonyl butoxide (PBO) have been shown to be effective, and large scale procurements are planned in multiple countries~\parencite{Protopopoff2018,Staedke2020}.
 %
 Other next-generation LLIN products combining a pyrethroid with a second insecticide are also approved and will surely be deployed at scale~\parencite{Bayili2017,Tiono2018}.
 %
@@ -86,30 +86,40 @@ We know from experiences of the first global malaria eradication campaign of the
 Now, more than ever, we need a next-generation of surveillance systems for malaria vectors, so that we can observe new evolutionary events as they occur, and can change course early, rather than waiting until resistance is entrenched, and the efficacy of these new control tools is irreversibly undermined.
 
 
-\section{A roadmap for implementation of malaria vector genomic surveillance systems}\label{sec:roadmap}
+\section{A roadmap for malaria vector genomic surveillance systems}\label{sec:roadmap}
 
 
 What, then, is the roadmap for translation of genome sequencing technologies into operational malaria vector surveillance systems?
 
 
-\subsection{Expanded reference data resources}
+\subsection{Expanded genome variation data resources}
 
 First and foremost, we need to expand our knowledge of genetic variation within natural populations of all the major malaria vector species in sub-Saharan Africa.
 %
 The first phase of the Ag1000G project sequenced \agam\ and \acol\ mosquitoes from eight countries, but representation of \acol\ was limited to only two countries, and there was no representation of \textit{An. arabiensis}, the third major vector species in the \textit{Anopheles gambiae} complex.
 %
-The second phase of the Ag1000G project is now nearing completion, and has increased sampling to 1,142 mosquitoes from 13 countries, including \acol\ from @@ countries~\parencite{Ag1000G2020}.
+The second phase of the Ag1000G project is now nearing completion, and has increased sampling to 1,142 mosquitoes from 13 countries, including \acol\ from five countries~\parencite{Ag1000G2020}.
 %
-The third phase of the Ag1000G project is in progress, and will shortly release nucleotide variation data for @@N mosquitoes from @@ countries, including \textit{An. arabiensis} from @@ countries.
+The third phase of the Ag1000G project is in progress, and will shortly release nucleotide variation data for 2,784 wild-caught mosquitoes from 18 countries, including \textit{An. arabiensis} from four countries.
 %
 Beyond the \textit{Anopheles gambiae} complex, \textit{An. funestus} is also a major malaria vector in many parts of Africa.
 %
-Several studies have begun surveying natural genetic variation in this species, and have found several novel insecticide resistance adaptations that are increasing in frequency and spreading geographically @@cite.
+Studies have begun surveying natural genetic variation in this species, and have found several novel insecticide resistance adaptations that are increasing in frequency and spreading geographically~\parencite{Weedall2020}.
 %
 A new project has been established within MalariaGEN to survey genetic variation in \textit{An. funestus} and is sequencing mosquitoes from a broad geographical range, expecting to release data in the next year.
 
 
-@@TODO something about new types of variation
+In this thesis I have investigated single nucleotide polymorphisms, but we also need to expand our data resources to include other types of genetic variation.
+%
+In particular, copy number variation (CNV) has long been suspected to play a major role in the evolution of insecticide resistance~\parencite{Devonshire1991,Hemingway1998,Bass2011}.
+%
+In the second phase of the Ag1000G project we have expanded our analysis to include CNVs, finding CNV hotspots at several loci containing genes involved in metabolic resistance to insecticides~\parencite{Lucas2019}.
+%
+Short insertion/deletion (indel) polymorphisms are also likely to be abundant in \textit{Anopheles} genomes and could have important functional consequences~\parencite{Montgomery2013}.
+%
+Indels could also be valuable markers of recent evolutionary and demographic events, given their higher mutation rates~\parencite{Redmond2018}.
+%
+Unfortunately, indels remain difficult to discover and type with accuracy, and further work is needed to improve indel calling and filtering methods for \textit{Anopheles}.
 
 
 \subsection{Contemporary time series}
@@ -117,16 +127,16 @@ A new project has been established within MalariaGEN to survey genetic variation
 
 Second, we need to bring these genomic data resources up to date, by sequencing mosquitoes collected within the last year, and by establishing partnerships in order to regularly collect and sequence mosquitoes from sentinel sites.
 %
-By establishing a time series of genomic data from multiple locations, we would gain the ability to observe significant changes as they occur, and to provide early warning of new evolutionary events of public health relevance.
+By establishing a time series of genomic data from multiple locations, we would gain the ability to observe significant changes as they occur, and to provide early warning of new evolutionary events of public health relevance, such as the emergence of a new form of insecticide resistance.
 %
 We would also be able to learn more about the dynamics of malaria vector populations, including both annual and seasonal fluctuations in population size due to natural environmental factors, as well as the demographic impact of vector control interventions.
 %
-Such data could help us work towards better estimates of contemporary effective population size, and resolve fundamental behavioural questions such as whether some mosquitoes undergo aestivation @@cite, and the extent to which mosquitoes undergo intentional wind-assisted long-distance migration @@cite.
+Such data could help us work towards better estimates of contemporary effective population size~\parencite{Hui2015}, and resolve fundamental behavioural questions such as whether some mosquitoes undergo aestivation~\parencite{Dao2014} or intentional wind-assisted long-distance migration~\parencite{Huestis2019}.
 %
-These questions are not only of academic interest, but are central to the planning of future vector control programmes using gene drives @@cite.
+These questions are not only of academic interest, but are central to the planning of future vector control programmes using gene drives~\parencite{North2019}.
 
 
-\subsection{Optimised protocols for a faster response}
+\subsection{Optimised and standardised protocols for a faster response}
 
 
 Third, we need to substantially reduce the time taken to go from mosquito collection to genomic insights, so that information can be delivered in a timely manner.
@@ -135,13 +145,13 @@ Returning to the COVID-19 analogy, the preliminary report on the B.1.1.7 lineage
 %
 In comparison, if a new form of insecticide resistance was spreading in malaria vector populations, we would not currently be able to match anything like this turnaround time of less than three weeks from samples collection to analysed sequence data.
 %
-There are bottlenecks at all stages of the process, including study approval, sample collection, sample shipping, DNA extraction, library preparation, whole-genome sequencing, variant calling, data curation and analysis.
+There are bottlenecks at all stages of the process, including study approval, sample collection, sample shipping, DNA extraction, library preparation, whole-genome sequencing, variant calling, data curation, and analysis.
 %
-In particular, many aspects of genomic data analysis remain something of an art for non-model species like \textit{Anopheles} mosquitoes that are sexually recombining with large and diverse genomes, requiring specialised training and time to set up and perform correctly.
+In particular, many aspects of population-genomic data analysis remain something of an art for non-model species like \textit{Anopheles} mosquitoes that are sexually recombining with large and diverse genomes, requiring specialised training and time to set up and perform correctly.
 %
-We need to establish standardised analytical protocols and well-engineered supporting software tools for a core suite of genomic surveillance analyses, such as scans for genes under selection, or analyses of insecticide resistance outbreaks.
+We need to establish standardised analytical protocols and well-engineered supporting software tools for a core suite of malaria vector genomic surveillance analyses, such as scans for genes under selection, or analyses of insecticide resistance outbreaks.
 %
-The work I have done to develop robust and performant analytical software packages like scikit-allel for the scientific Python ecosystem is a first step in this direction, but there is much more to do.
+The work I have done to develop robust and performant analytical software packages like scikit-allel\footnote{\url{https://github.com/cggh/scikit-allel}} for the scientific Python ecosystem is a small step in this direction, but there is much more to do.
 
 
 \subsection{Decentralised sequencing and analytical capabilities}
@@ -151,11 +161,23 @@ Fourth, the need for increased geographical and temporal coverage, and for faste
 %
 This need is now widely recognised, and efforts to develop these capabilities have been accelerated by the COVID-19 pandemic, which will hopefully benefit other diseases as well.
 %
-In October 2020, The Africa Centres for Disease Control and Prevention (CDC) received a \$100 million investment for pathogen genomics research and development, through the Africa Pathogen Genomics Iniative (PGI) .
-
-sequencing and analytical capability.
+In October 2020, The Africa Centres for Disease Control and Prevention (CDC) received a \$100 million investment for pathogen genomics research and development, through the Africa Pathogen Genomics Initiative (PGI)~\parencite{Makoni2020}.
 %
-@@TODO
+This initiative will support the development of next-generation sequencing capability in multiple public health laboratories, and will hopefully trigger further investments from both domestic and international funders.
+%
+A key question is whether this initiative will include capacity for malaria vector sequencing.
+%
+A particular challenge for malaria vectors is the size of the genome.
+%
+Whole-genome sequencing (WGS) of malaria vectors has the potential to reveal a wealth of new insights, as demonstrated by this thesis, and could serve as a valuable surveillance tool because genes and variants of public health relevance do not need to be known \textit{a priori}.
+%
+However, performing WGS at high throughput and low cost requires additional up-front investment in infrastructure and personnel, which may be hard to achieve in the near term outside of specialised sequencing centres.
+%
+Targeted sequencing of amplicons in known insecticide resistance genes could offer a viable alternative, which is more amenable to implementation within a decentralised lab network.
+%
+I have shown that tracking of important insecticide resistance variants can be done with a relatively small number of markers, demonstrating the potential value of this approach.
+%
+Some WGS will still be required, however, to discover new genes and variants of concern, and the challenge will be to design, validate and deploy new assays with sufficient speed to track new events.
 
 
 \subsection{Frameworks and systems for data sharing and cooperation}
