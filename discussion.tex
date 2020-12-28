@@ -49,7 +49,7 @@ However, unlike SARS-CoV-2, we do not have genomic surveillance systems in place
 This means that, as new forms of insecticide resistance emerge and spread within malaria vector populations, we have no means to detect these events, nor to design and coordinate any kind of effective response or mitigation.
 
 
-\section{Next-generation malaria vector control, next-generation surveillance}\label{sec:nextgen}
+\section{Next-generation malaria vector control needs next-generation surveillance}\label{sec:nextgen}
 
 
 Sequencing the genomes of \textit{Anopheles} mosquitoes from the field and accurately detecting genetic variation presents a number of challenges.
@@ -90,6 +90,8 @@ Now, more than ever, we need a next-generation of surveillance systems for malar
 
 
 What, then, is the roadmap for translation of genome sequencing technologies into operational malaria vector surveillance systems?
+%
+A comprehensive answer to that question is beyond the scope of this thesis, but I would like to highlight the following necessary elements.
 
 
 \subsection{Expanded genome variation data resources}
@@ -119,7 +121,7 @@ Short insertion/deletion (indel) polymorphisms are also likely to be abundant in
 %
 Indels could also be valuable markers of recent evolutionary and demographic events, given their higher mutation rates~\parencite{Redmond2018}.
 %
-Unfortunately, indels remain difficult to discover and type with accuracy, and further work is needed to improve indel calling and filtering methods for \textit{Anopheles}.
+Unfortunately, indels remain difficult to discover and genotype with accuracy, and further work is needed to improve indel calling and filtering methods for \textit{Anopheles}.
 
 
 \subsection{Contemporary time series}
@@ -131,7 +133,9 @@ By establishing a time series of genomic data from multiple locations, we would 
 %
 We would also be able to learn more about the dynamics of malaria vector populations, including both annual and seasonal fluctuations in population size due to natural environmental factors, as well as the demographic impact of vector control interventions.
 %
-Such data could help us work towards better estimates of contemporary effective population size~\parencite{Hui2015}, and resolve fundamental behavioural questions such as whether some mosquitoes undergo aestivation~\parencite{Dao2014} or intentional wind-assisted long-distance migration~\parencite{Huestis2019}.
+Such data could help us learn more about which vector control interventions are more effective, and work towards better estimates of contemporary effective population size~\parencite{Hui2015}.
+%
+It could also help to resolve fundamental behavioural questions such as whether some mosquitoes undergo aestivation~\parencite{Dao2014} or intentional wind-assisted long-distance migration~\parencite{Huestis2019}.
 %
 These questions are not only of academic interest, but are central to the planning of future vector control programmes using gene drives~\parencite{North2019}.
 
@@ -157,7 +161,7 @@ The work I have done to develop robust and performant analytical software packag
 \subsection{Decentralised sequencing and analytical capacity}
 
 
-Fourth, the need for increased geographical and temporal coverage, and for faster turnaround times from samples to data, means that sequencing and analytical capabilities need to be decentralised and developed within multiple public health laboratories and institutions on the African continent.
+Fourth, the need for increased geographical and temporal coverage, and for faster turnaround times from samples to data, means that sequencing and analytical capabilities need to be decentralised and developed within multiple public health laboratories and institutions, particularly those on the African continent.
 %
 This need is now widely recognised, and efforts to develop these capabilities have been accelerated by the COVID-19 pandemic, which will hopefully benefit other diseases as well.
 %
@@ -205,51 +209,55 @@ Academic research also benefits from open data, but requires attribution and pro
 %
 In emerging situations, the line between surveillance and research can become blurred, and clear policies on data sharing and publication are needed.
 %
-Statements on data sharing in public health emergencies by Wellcome and WHO are positive developments and will hopefully provide a platform to establish data sharing frameworks for malaria vector genomic surveillance~\parencite{WHO2015SDPHE,Dye2016,Wellcome2016,Wellcome2020}.
+Statements on data sharing in public health emergencies by Wellcome and WHO are positive developments and will hopefully provide a platform to establish appropriate data sharing frameworks for malaria vector genomic surveillance~\parencite{WHO2015SDPHE,Dye2016,Wellcome2016,Wellcome2020}.
 
 
 \subsection{Further technology and analytical methods development}
 
 
-A key insight from this thesis and the broader programme of work carried out within the Ag1000G project is that current genome sequencing technology and analytical methods are sufficiently mature to implement genomic surveillance systems for malaria vectors that would provide substantial value to malaria control programmes.
+A key insight from this thesis, and from the broader programme of work carried out by the Ag1000G project, is that current genome sequencing technology and analytical methods are mature and ready for translation into operational genomic surveillance systems for malaria vectors.
 %
-In other words, translation of these technologies into practical systems should not wait for further research and development.
+In other words, implementation of malaria vector genomic surveillance systems should not wait for further research and development.
 %
 Nevertheless, further development of both sequencing technology and analytical methods could enhance the capabilities of genomic surveillance systems in several ways.
 %
 There are many avenues for potential development, but I would like to highlight two areas in particular.
 
 
-Sequencing technology itself is obviously still a rapidly developing field, with long-read sequencing technologies from Pacific Biosciences and Oxford NanoPore reaching maturity and demonstrating the capability to sequence DNA from smaller organisms such as mosquitoes @@cite.
+Sequencing technology itself is still a rapidly developing field, with long-read sequencing technologies from Pacific Biosciences and Oxford NanoPore reaching maturity and demonstrating the capability to sequence DNA from smaller organisms such as mosquitoes~\parencite{Kingan2019,Ghurye2019,Zamyatin2020}.
 %
-There are also long-range phasing technologies, which sequence short reads but use tags to allow reconstruction of haplotypes using reads from same DNA molecule @@cite.
+Although long-read sequencing is currently being applied primarily for the construction of improved reference genomes, as costs fall it will also become applicable to population-scale sequencing and analysis of natural genome variation.
 %
-Benefits of long reads include improved calling of indel and structural variation, which we know is key to insecticide resistance.
+At that point it could become a valuable surveillance tool, because it will allow for much improved discovery and genotyping of structural variation, which we know plays a major role in insecticide resistance~\parencite{Lucas2019}.
 %
-Also improve phasing of variants, which is particularly valuable for surveillance.
+There are also new sequencing technologies based on high-throughput Illumina short read sequencing but using linked-reads to allow reconstruction of long-range haplotypes~\parencite{Mostovoy2016}.
 %
-Haplotypes key to discovering genes under recent selection.
+Accurate haplotypes are beneficial for surveillance because they increase power to perform a variety of demographic and evolutionary inferences, including identifying genes under recent selection, and investigating the origins and spread of insecticide resistance outbreaks.
 %
-Also key to analyse haplotype-sharing at a specific locus, which allows performing phylogeographic analyses to investigate origins and spread of resistance.
+In both cases, they key to making these sequencing technologies accessible for malaria vector surveillance will be to reduce costs sufficiently to allow sequencing of samples at an informative spatial and temporal scale.
 
 
-With improved haplotypes, also need improved methods for analysing IR outbreaks.
+On the analytical side, based on my experience of working on the Ag1000G project, my impression is that the field of population genomics is still young, and there is much room for improvement in the available statistical and machine learning methods for demographic and evolutionary inference.
 %
-Clear from Vgsc analysis that structure is like multiple IR outbreaks.
+In some ways, genomic surveillance of infectious disease pathogens and vectors shares something in common with the field of conservation genetics, because important decisions may be influenced by analyses of genomic data, and therefore inferences must be robust~\parencite{McMahon2014,Supple2018}.
 %
-However, limiting to fixed window has two problems.
+A particular area for development is the analysis of the emergence and spread of new insecticide resistance variants.
 %
-First is that resolution is limited because not much time for mutations to accumulate within short genetic distance.
+Here there are strong parallels with the analysis of outbreaks of an infectious pathogen, and many of the questions we might like to ask are common, such as where and when did the outbreak begin, are there multiple simultaneous outbreaks occurring, where and how are outbreaks spreading between different locations, and are some variants spreading more rapidly than others.
 %
-Therefore hard to make inferences about genealogy among recently related haplotypes.
+In the case of pathogen outbreak investigation, analytical methods based on phylogenetic inference are reasonably well-developed~\parencite{DeMaio2015,Grubaugh2019}.
 %
-Second is that recombination can obviously occur within the window, and this needs to be accounted for.
+Standard phylogenetic methods cannot be applied directly to insecticide resistance outbreaks, however, because \textit{Anopheles} mosquitoes are sexually recombining, and thus there is no single phylogeny for any given pair of haplotypes, rather there is a sequence of phylogenies that varies along the genome.
 %
-Standard methods for inference of phylogenetic trees and phylogeography cannot be applied @@cite beast, basta etc.
+In my analysis of the \textit{Vgsc} gene in Chapter 6, I used relatively simple heuristic methods based on fixed genomic windows to show that there is a clear structuring among the haplotypes carrying pyrethroid resistance alleles, and that resistance is spreading between countries and species.
 %
-New work inferring trees along the genome is promising, @@cite tsinfer, relate.
+Developing these analyses further to answer other questions, such the origins, timing and direction of spread of resistance variants, will require methods that can infer a phylogeny accurately at a specific locus of interest within a recombining genome, such as an insecticide resistance variant.
 %
-Need to build this into coherent statistical framework for IR outbreak analysis, infer time and place of origins and direction of spread.
+Several new methods have recently been developed in this direction~\parencite{Kelleher2019,Speidel2019}.
+%
+In particular, it may be valuable to leverage information about recombination when inferring phylogenies, because recombination events may provide greater resolution to resolve recent genealogical relationships, whereas mutations may take longer to accumulate~\parencite{Albers2020,Mathieson2014}.
+%
+To build a coherent statistical framework for the investigation of insecticide resistance outbreaks, a synthesis is required that brings together inference methods from phylogeography and phylodynamics and applies them to genealogies inferred at a recombining insecticide resistance locus.
 
 
 \section{Bridging the gap from surveillance to impact: external factors}\label{sec:external}
