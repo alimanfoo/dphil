@@ -208,17 +208,48 @@ In emerging situations, the line between surveillance and research can become bl
 Statements on data sharing in public health emergencies by Wellcome and WHO are positive developments and will hopefully provide a platform to establish data sharing frameworks for malaria vector genomic surveillance~\parencite{WHO2015SDPHE,Dye2016,Wellcome2016,Wellcome2020}.
 
 
-\subsection{Further technology and methods development}
+\subsection{Further technology and analytical methods development}
 
 
-Sixth, continue to develop the technology platform through directed research.
+A key insight from this thesis and the broader programme of work carried out within the Ag1000G project is that current genome sequencing technology and analytical methods are sufficiently mature to implement genomic surveillance systems for malaria vectors that would provide substantial value to malaria control programmes.
 %
-Includes improvements in sequencing technology, long reads, reduce cost, increase throughput, etc.
+In other words, translation of these technologies into practical systems should not wait for further research and development.
 %
-Includes methodological improvements for data analysis, e.g., IR outbreaks.
+Nevertheless, further development of both sequencing technology and analytical methods could enhance the capabilities of genomic surveillance systems in several ways.
 %
-Reference genomes @@
-@@TODO
+There are many avenues for potential development, but I would like to highlight two areas in particular.
+
+
+Sequencing technology itself is obviously still a rapidly developing field, with long-read sequencing technologies from Pacific Biosciences and Oxford NanoPore reaching maturity and demonstrating the capability to sequence DNA from smaller organisms such as mosquitoes @@cite.
+%
+There are also long-range phasing technologies, which sequence short reads but use tags to allow reconstruction of haplotypes using reads from same DNA molecule @@cite.
+%
+Benefits of long reads include improved calling of indel and structural variation, which we know is key to insecticide resistance.
+%
+Also improve phasing of variants, which is particularly valuable for surveillance.
+%
+Haplotypes key to discovering genes under recent selection.
+%
+Also key to analyse haplotype-sharing at a specific locus, which allows performing phylogeographic analyses to investigate origins and spread of resistance.
+
+
+With improved haplotypes, also need improved methods for analysing IR outbreaks.
+%
+Clear from Vgsc analysis that structure is like multiple IR outbreaks.
+%
+However, limiting to fixed window has two problems.
+%
+First is that resolution is limited because not much time for mutations to accumulate within short genetic distance.
+%
+Therefore hard to make inferences about genealogy among recently related haplotypes.
+%
+Second is that recombination can obviously occur within the window, and this needs to be accounted for.
+%
+Standard methods for inference of phylogenetic trees and phylogeography cannot be applied @@cite beast, basta etc.
+%
+New work inferring trees along the genome is promising, @@cite tsinfer, relate.
+%
+Need to build this into coherent statistical framework for IR outbreak analysis, infer time and place of origins and direction of spread.
 
 
 \section{Bridging the gap from surveillance to impact: external factors}\label{sec:external}
@@ -245,7 +276,7 @@ Challenging because need to take into account local factors and coordinate inter
 Also need to factor in procurement lead times and need to create stable markets for companies producing IRS and LLIN products.
 
 
-\section{Conclusions}\label{sec:conclusions}
+\section{Concluding remarks}\label{sec:conclusions}
 
 
 These are indeed challenging times, and there are many problems to resolve.
