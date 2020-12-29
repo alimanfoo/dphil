@@ -44,6 +44,7 @@ deploy:
     - chapter4.pdf
     - chapter5.pdf
     - chapter6.pdf
+    - discussion.pdf
   skip_cleanup: true
   on:
     repo: alimanfoo/dphil
