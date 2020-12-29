@@ -25,11 +25,11 @@ Discussion: Towards genomic surveillance systems for malaria vectors
 
 As of Saturday 19 December 2020, the county of Berkshire in which I live has been placed under Tier 4 COVID-19 restrictions, alongside counties across the South and East of England.
 %
-These new restrictions have been imposed in an effort to limit the spread of the newly discovered SARS-CoV-2 lineage B.1.1.7, which carries an unusual number of mutations in the spike protein, and appears to be out-competing other virus strains because of increased transmissability~\parencite{Rambaut2020,Davies2020}.
+These new restrictions have been imposed in an effort to limit the spread of the newly discovered SARS-CoV-2 lineage B.1.1.7, which carries an unusual number of mutations in the spike protein, and appears to be out-competing other virus strains because of increased transmissibility~\parencite{Rambaut2020,Davies2020}.
 %
 International borders have closed, people have been cut off from friends and family days before Christmas, and further restrictions seem inevitable given rising cases and hospital admissions in many areas.
 %
-At the same time, another unusual SARS-CoV-2 lineage 501Y.V2 has been discovered in South Africa, which is phylogenetically unrelated to B.1.1.7 but shares a common N501Y mutation in the receptor binding domain of the spike protein, and also carries an unusually high number of other mutations within the spike protein~\parencite{Tegally2020}.
+At the same time, another unusual SARS-CoV-2 lineage 501Y.V2 has been discovered in South Africa, which is phylogenetically unrelated to B.1.1.7 but shares a common \texttt{N501Y} mutation in the receptor binding domain of the spike protein, and also carries an unusually high number of other mutations within the spike protein~\parencite{Tegally2020}.
 %
 The full implications of these discoveries have yet to unfold, but they have demonstrated beyond question the value of genomic surveillance systems, which were established in the UK and South Africa early in the COVID-19 pandemic~\parencite{COGUK2020a,Msomi2020}.
 %
@@ -260,38 +260,65 @@ In particular, it may be valuable to leverage information about recombination wh
 To build a coherent statistical framework for the investigation of insecticide resistance outbreaks, a synthesis is required that brings together inference methods from phylogeography and phylodynamics and applies them to genealogies inferred at a recombining insecticide resistance locus.
 
 
-\section{Bridging the gap from surveillance to impact: external factors}\label{sec:external}
+\section{Bridging the gap from surveillance to impact}\label{sec:external}
 
 
-Addressing these six points would provide functioning surveillance systems.
+I would like to conclude by briefly discussing the broader context, and the other challenges that will need to be addressed before genomic surveillance systems for malaria vectors could contribute to achieving a real impact on improved public health.
 %
-But is that enough to have an impact on health?
+In the emerging field of genomic surveillance, the term ``actionable information'' is often used to articulate the idea that genomic data should generate insights that policy-makers and public health agencies can act on.
 %
-E.g., genomic surveillance can raise the alarm when a new strain of SARS-CoV-2, but has limited power to determine whether the new strain will cause mortality, e.g., need many other data streams from testing, hospitals, to monitor case numbers.
-And need other studies to determine changes in infectivity or severity of disease.
+However, in general, genomic data will only become actionable when integrated with many other sources of data, via mathematical or computational models that predict the outcome of a given course of action with sufficient accuracy.
 %
-By analogy, malaria vectors new IR, will it impact efficacy of current interventions?
-Could/should interventions be changed?
-Need to fill that gap somehow.
-
-
-Also broader context is limiting, because no coordinated framework for post-market evaluation.
+To restate, making informed decisions requires (1) multiple data streams, and (2) models to make predictions from data.
 %
-I.e., WHO stops at PQ, there is currently no mechanism for comparing products in the field and reaching a locally-informed decision regarding best option.
+
+
+To illustrate this point, consider again the example of the novel SARS-CoV-2 lineage B.1.1.7.
 %
-Challenging because need to take into account local factors and coordinate internationally.
+This lineage was detected via genomic surveillance, which showed that it carried an unusual number of mutations in functionally-relevant genomic locations, and also showed that it appeared to be replacing other lineages, suggesting it carried a selective advantage~\parencite{Rambaut2020}.
 %
-Also need to factor in procurement lead times and need to create stable markets for companies producing IRS and LLIN products.
+However, the genomic data did not tell us why the lineage was expanding, or whether new public health measures would be required.
+%
+Providing answers to these questions requires fitting mathematical transmission models to other data including hospital admissions, hospital and ICU bed occupancy, deaths, PCR prevalence and seroprevalence, in addition to genetic data on strain frequency~\parencite{Davies2020}.
+%
+Deciding an appropriate course of action then requires consideration of many other factors, including logistics, economics, political and social impact, etc.
 
 
-\section{Concluding remarks}\label{sec:conclusions}
+Adapting this example to malaria vectors, consider the scenario where a next-generation PBO LLIN product is deployed at scale in a particular country.
+%
+Now assume that a new genetic variant emerges in a major malaria vector species which restores full pyrethroid resistance by somehow subverting the action of the PBO synergist or utilising a different mechanism of resistance.
+%
+Genomic surveillance would detect this variant, because it would rise rapidly in frequency and begin spreading to multiple locations.
+%
+However, these data would not tell us to what extent the efficacy of the new LLINs was reduced due to the new variant, nor what effect this would have on disease prevalence.
+%
+To do that, genetic data would need to be integrated with data from insecticide resistance bioassays and other entomological variables, in addition to any and all available epidemiological data.
+%
+Even then, no fully developed models exist for predicting efficacy from these data, and some form of experimental trials would be needed to link genotype to phenotype in order to parameterize models.
+%
+Finally, given the long lead times for LLIN procurement, it remains questionable whether sufficient evidence could be generated in time for an effective course correction to be made.
 
 
-These are indeed challenging times, and there are many problems to resolve.
-But combination of next-generation vector control tools, coupled with next-generation surveillance systems, offers a path forwards.
+Consider also a scenario where a country has an IRS programme targeting regions of high transmission, which is rotating annually between three next-generation IRS products.
+%
+The efficacy of IRS rotation relies on the management of resistance allele frequencies, where each insecticide is used for a period of time that allows resistance alleles to the other insecticides to fall but does not allow resistance alleles to the insecticide in use to reach fixation.
+%
+Genomic surveillance could track the frequencies of all known alleles conferring resistance to the insecticides used in the rotation, and provide information regarding whether any alleles have reached fixation.
+%
+Observing fixation of a resistance allele would indicate in theory that a particular insecticide should be removed from the rotation, and might also suggest that the duration of the rotation should be altered.
+%
+However, insecticide resistance in malaria vectors is polygenic, and so observing fixation of one resistance allele might not justify removing an entire product from use if other resistance alleles remain at lower frequencies, and the product remains effective.
+%
+Thus, data on changes in efficacy in response to genetic changes would also be needed to reach an informed decision.
+%
+Determining whether the rotation strategy was well-designed would also require modelling of multiple alleles, which would require estimation of parameters such as selection coefficients.
+%
+Furthermore, financial constraints might limit choices, as too might be the fact that no other suitable products are available to fill a gap in the rotation.
 
 
-As the entomologist Peter Mattingly wrote in 1963, during the first global malaria eradication campaign:
+Improving malaria vector control through improved surveillance is thus a multifaceted challenge, where genome sequencing can play an important role, but where a holistic approach is needed.
+%
+The entomologist Peter Mattingly wrote in 1963, during the first global malaria eradication campaign:
 
 
 %! suppress = LineBreak
@@ -300,7 +327,9 @@ As the entomologist Peter Mattingly wrote in 1963, during the first global malar
 \end{displayquote}
 
 
-Despite the passage of nearly sixty years, these words remain fitting today.
+Despite the passage of nearly sixty years, these words remain relevant today.
+%
+They remind us that the value of new technologies such as genome sequencing resides in their ability to confront us anew with our own ignorance, and to help us learn as we act in this next phase of the journey towards a world without malaria.
 
 
 \printbibliography
