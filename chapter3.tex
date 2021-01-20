@@ -1,7 +1,5 @@
 \begin{refsection}
-\chapter[The Ag1000G phase 1 data resource]{
-The \textit{Anopheles gambiae} 1000 Genomes Project phase 1 nucleotide variation data resource
-}\label{ch:ag1000g-phase1}
+\chapter[The Ag1000G phase 1 data resource]{The \textit{Anopheles gambiae} 1000 Genomes Project phase 1 nucleotide variation data resource}\label{ch:3}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -69,7 +67,7 @@ Numbers of samples are shown after removing samples that failed any of the quali
 Colours in the map denote ecosystem classes, see \textcite{Sayre2013} Fig. 9 for a complete colour legend. 
 %
 This figure was produced in collaboration with Chris Clarkson.}
-\label{fig:map}
+\label{fig:ch3-map}
 \end{figure}
 
 
@@ -81,13 +79,13 @@ A total of 888 mosquito specimens collected from natural populations were includ
 %
 This included mosquitoes representing two major malaria vector species \agam\ and \textit{An. coluzzii}.
 %
-Mosquitoes were sampled from 8 countries in sub-Saharan Africa representing a broad geographical range spanning the continent: Guinea-Bissau, Guinea, Burkina Faso, Cameroon, Gabon, Angola, Uganda and Kenya (Fig.~\ref{fig:map}).
+Mosquitoes were sampled from 8 countries in sub-Saharan Africa representing a broad geographical range spanning the continent: Guinea-Bissau, Guinea, Burkina Faso, Cameroon, Gabon, Angola, Uganda and Kenya (Fig.~\ref{fig:ch3-map}).
 %
 Mosquitoes had been collected prior to the initiation of the Ag1000G Project as part of previous field studies, and were collected at different times, with the earliest collections being in 2000 (Gabon) and the most recent in 2012 (Burkina Faso).
 %
 Because these mosquitoes were collected in the context of different studies, a number of different collection methods were used, including light traps, pyrethrum spray catch and larval collection.
 %
-In addition to the wild-caught specimens, a further 80 mosquitoes were obtained from four colony crosses, each cross comprising two parents and up to 20 progeny, where parents were drawn from established reference colonies (Fig.~\ref{fig:map} inset).
+In addition to the wild-caught specimens, a further 80 mosquitoes were obtained from four colony crosses, each cross comprising two parents and up to 20 progeny, where parents were drawn from established reference colonies (Fig.~\ref{fig:ch3-map} inset).
 %
 The main rationale for including colony crosses was to provide a mechanism for calibrating and measuring the accuracy of variant calling methods, because colony crosses allow for the analysis of genetic inheritance and Mendelian inconsistencies between parents and offspring, which can be a useful proxy of variant calling errors~\parencite{Saunders2007,Laurie2010,Pilipenko2014}.
 %
@@ -229,7 +227,7 @@ Percent genome covered is percent of nucleotides in reference genome with at lea
 Highlighted groups A, B and C indicate different quality issues, described in the text.
 }
 %
-\label{fig:coverage}
+\label{fig:ch3-coverage}
 \end{figure}
 
 
@@ -240,15 +238,15 @@ These statistics included the number of sequence reads, mean coverage, percentag
 %
 I plotted various combinations of these statistics to investigate their distributions and identify outliers.
 %
-A particularly informative plot was to compare the mean coverage with the percentage of genome covered by at least one read (Fig.~\ref{fig:coverage}).
+A particularly informative plot was to compare the mean coverage with the percentage of genome covered by at least one read (Fig.~\ref{fig:ch3-coverage}).
 %
-Most samples obtained greater than 80\% of the genome covered, but a set of 13 samples had both mean coverage below $7\times$ and less than 80\% of the genome covered, indicating insufficient coverage due to low sequencing yield (Fig.~\ref{fig:coverage} group A).
+Most samples obtained greater than 80\% of the genome covered, but a set of 13 samples had both mean coverage below $7\times$ and less than 80\% of the genome covered, indicating insufficient coverage due to low sequencing yield (Fig.~\ref{fig:ch3-coverage} group A).
 %
 There were also four samples with high mean coverage but less than 80\% genome covered.
 %
-Two of these samples had a high rate of duplicate reads, and thus poor genome coverage was likely due to low library complexity (Fig.~\ref{fig:coverage} group B).
+Two of these samples had a high rate of duplicate reads, and thus poor genome coverage was likely due to low library complexity (Fig.~\ref{fig:ch3-coverage} group B).
 %
-The remaining two samples had a higher mismatch rate, thus poor genome coverage was likely due to an unexpected taxon with higher divergence from the reference genome (Fig.~\ref{fig:coverage} group C).
+The remaining two samples had a higher mismatch rate, thus poor genome coverage was likely due to an unexpected taxon with higher divergence from the reference genome (Fig.~\ref{fig:ch3-coverage} group C).
 %
 On the basis of these analyses, the percentage of genome covered appeared to be a useful metric capturing multiple quality issues, and I excluded 17 samples with less than 80\% genome covered.
 %
@@ -272,7 +270,7 @@ Each marker within a plot is a genotype call (blue = homozygous reference; green
 \textbf{b}, Example of sample with predicted contamination $>4\%$.
 }
 %
-\label{fig:contamination}
+\label{fig:ch3-contamination}
 \end{figure}
 
 
@@ -287,11 +285,11 @@ To analyse evidence for cross-contamination in the Ag1000G phase 1 samples, veri
 %
 Because this tool had been developed for and previously only applied in human sequencing studies, I performed additional analyses to confirm that the contamination predictions were reliable in \textit{Anopheles}.
 %
-I generated a set of diagnostic allele balance plots for each of the 888 mosquito samples in phase 1 which plotted data from genotypes across all autosomes, showing the genotype called, and the numbers of reads supporting the reference and alternate alleles (e.g., Fig.~\ref{fig:contamination}).
+I generated a set of diagnostic allele balance plots for each of the 888 mosquito samples in phase 1 which plotted data from genotypes across all autosomes, showing the genotype called, and the numbers of reads supporting the reference and alternate alleles (e.g., Fig.~\ref{fig:ch3-contamination}).
 %
 I then visually inspected these plots and cross-referenced them against the contamination fraction predicted by verifyBamID.
 %
-In uncontaminated samples there was clear separation between the different possible genotype calls (e.g., Fig.~\ref{fig:contamination}a) and cases of contamination were evident as a lack of a clear separation between genotype calls (e.g., Fig.~\ref{fig:contamination}b).
+In uncontaminated samples there was clear separation between the different possible genotype calls (e.g., Fig.~\ref{fig:ch3-contamination}a) and cases of contamination were evident as a lack of a clear separation between genotype calls (e.g., Fig.~\ref{fig:ch3-contamination}b).
 %
 In all cases where verifyBamID predicted contamination $>4\%$ I confirmed a signal of contamination via allele balance plots, and conversely I found no cases of allele balance plots indicating contamination but verifyBamID predicted contamination $<4\%$, providing confidence that verifyBamID predictions were reliable. 
 %
@@ -320,7 +318,7 @@ Groups labelled A and B are described in the text.
 %
 }
 %
-\label{fig:sex}
+\label{fig:ch3-sex}
 \end{figure}
 
 
@@ -337,9 +335,9 @@ Thus, in females we expect to observe heterozygous genotype calls on the X chrom
 %
 Conversely, in males we expect only homozygous genotype calls on the X chromosome and non-missing genotype calls on the Y chromosome.
 %
-Plotting these data it was evident that some samples had genotype counts not consistent with their reported sex (Fig.~\ref{fig:sex}).
+Plotting these data it was evident that some samples had genotype counts not consistent with their reported sex (Fig.~\ref{fig:ch3-sex}).
 %
-This included six samples reported as female but with male genotype counts (Fig.~\ref{fig:sex} group A) and four samples reported as male but with female genotype counts (Fig.~\ref{fig:sex} group B).
+This included six samples reported as female but with male genotype counts (Fig.~\ref{fig:ch3-sex} group A) and four samples reported as male but with female genotype counts (Fig.~\ref{fig:ch3-sex} group B).
 %
 I excluded these ten samples from further analyses.
 %
@@ -366,7 +364,7 @@ Six samples are evident as outliers, having elevated genetic distance and appear
 %
 }
 %
-\label{fig:popout}
+\label{fig:ch3-popout}
 \end{figure}
 
 
@@ -375,13 +373,13 @@ Mosquitoes in the phase 1 cohort represented 8 countries and two species.
 %
 In Burkina Faso, both \agam\ and \acol\ were represented, whereas in all other countries only a single species was represented (either \agam\ or \textit{An. coluzzii}), except for Guinea-Bissau and Kenya where the species status was uncertain (Chapter 4).
 %
-In some countries, specimens had been collected from multiple sites, but in all cases the sites were within a relatively small geographical distance (Fig.~\ref{fig:map}).
+In some countries, specimens had been collected from multiple sites, but in all cases the sites were within a relatively small geographical distance (Fig.~\ref{fig:ch3-map}).
 %
 Thus, in general we would expect to see little or no genetic structure among the specimens of any given species sampled from within a single country.
 %
 To confirm that the country of origin reported for each specimen in the sample metadata provided by Ag1000G consortium partners was consistent with the patterns of genetic population structure present in the data, I performed an outlier analysis using both pairwise genetic distance and principal components analysis (PCA)~\parencite{Patterson2006}).
 %
-In this analysis I used SNPs from Chromosome 3, then grouped samples by reported country and species, then performed both PCA and pairwise distance analyses on each group in turn (e.g., Fig.~\ref{fig:popout}).
+In this analysis I used SNPs from Chromosome 3, then grouped samples by reported country and species, then performed both PCA and pairwise distance analyses on each group in turn (e.g., Fig.~\ref{fig:ch3-popout}).
 %
 If any samples were present in a group because of incorrect geographical or species metadata, they would be expected to appear as an outlying group of samples, with elevated genetic distance from other samples, and appearing as outliers in PCA.
 %
@@ -404,7 +402,7 @@ No. het. genotypes = number of heterozygous genotype calls on autosomal chromoso
 %
 }
 %
-\label{fig:coverage_hetz}
+\label{fig:ch3-coverage_hetz}
 \end{figure}
 
 
@@ -415,7 +413,7 @@ However, for accurate genotyping calling, particularly of heterozygous genotype 
 %
 Previous studies of SNP calling from whole genome sequencing data have found that coverage of $12\times$ is sufficient for calling heterozygous genotypes accurately~\parencite{Meynert2014}.
 %
-I examined the total number of heterozygous genotype calls on autosomal chromosomes among the Ag1000G phase 1 samples, plotted against the genome-wide average depth of coverage, for the remaining samples not previously excluded in other sample QC analyses (Fig.~\ref{fig:coverage_hetz}).
+I examined the total number of heterozygous genotype calls on autosomal chromosomes among the Ag1000G phase 1 samples, plotted against the genome-wide average depth of coverage, for the remaining samples not previously excluded in other sample QC analyses (Fig.~\ref{fig:ch3-coverage_hetz}).
 %
 Although there are clear differences in the degree of heterozygosity in samples from different countries, which likely reflects differences in genetic diversity of the sampled populations, below $14\times$ there is a clear trend towards lower heterozygous genotype calls.
 %
@@ -544,7 +542,7 @@ Line and right axis show the percentage of variants found with ME for each value
 %
 }
 %
-\label{fig:me_nodp}
+\label{fig:ch3-me_nodp}
 \end{figure}
 
 
@@ -565,7 +563,7 @@ A low Ti/Tv ratio (approaching 0.5 expected if variants were called randomly) is
 %
 For each of the genome accessibility metrics listed above, I divided the range of possible values into bins, and then for each bin computed (1) the rate of Mendelian error as the fraction of variants in one or more crosses with genotypes not consistent with Mendelian segregation (ME); and (2) the Ti/Tv rate for biallelic SNPs.
 %
-I then plotted these results to identify bins within which ME was elevated and/or Ti/Tv was depressed (e.g., Fig.~\ref{fig:me_nodp}).
+I then plotted these results to identify bins within which ME was elevated and/or Ti/Tv was depressed (e.g., Fig.~\ref{fig:ch3-me_nodp}).
 %%
 
 
@@ -574,7 +572,7 @@ All the genome accessibility metrics displayed some structured association with 
 %
 This was strongest for the No Coverage and Ambiguous Alignment metrics.
 %
-E.g., at positions where zero samples had No Coverage, the ME rate was 20\%, whereas at sites where three or more samples had No Coverage, the ME rate was 60\% or greater (Fig.~\ref{fig:me_nodp}).
+E.g., at positions where zero samples had No Coverage, the ME rate was 20\%, whereas at sites where three or more samples had No Coverage, the ME rate was 60\% or greater (Fig.~\ref{fig:ch3-me_nodp}).
 %
 Because some of these accessibility metrics would be expected to be correlated with each other to some extent, such as Ambiguous Alignment and Low Mapping Quality, I repeated the above analyses for each accessibility metric, but conditional on thresholds applied to all other metrics, to look for any marginal and thus unique contribution of a single metric.
 %
@@ -606,12 +604,12 @@ Schematic of chromosomes at the bottom shows predicted chromatin state from~\par
 %
 }
 %
-\label{fig:accessibility}
+\label{fig:ch3-accessibility}
 \end{figure}
 
 
 %%
-After applying these criteria, 141 Mbp (61\% of the reference genome) was classified as accessible, including 91\% (18Mbp) of the exome and 60\% (123Mbp) of non-coding positions (Fig.~\ref{fig:accessibility}).
+After applying these criteria, 141 Mbp (61\% of the reference genome) was classified as accessible, including 91\% (18Mbp) of the exome and 60\% (123Mbp) of non-coding positions (Fig.~\ref{fig:ch3-accessibility}).
 %
 There were some clear associations between broad-scale patterns of accessibility and major features of genome architecture.
 %
@@ -673,12 +671,12 @@ Homopolymer runs are enriched for sequencing errors in Illumina sequencing data.
 \textbf{d}, Joint analysis of QD, MQ and Ti/Tv. Colour denotes the Ti/Tv ratio for SNPs within each bin.
 }
 %
-\label{fig:variant_filters}
+\label{fig:ch3-variant_filters}
 \end{figure}
 
 
 %%
-Taking a similar approach to the genome accessibility analysis, I used Mendelian error in the crosses and Ti/Tv ratios to investigate which variant metrics appeared to be informative with respect to variant calling errors, and where filter thresholds should be set (e.g., Fig.~\ref{fig:variant_filters}).
+Taking a similar approach to the genome accessibility analysis, I used Mendelian error in the crosses and Ti/Tv ratios to investigate which variant metrics appeared to be informative with respect to variant calling errors, and where filter thresholds should be set (e.g., Fig.~\ref{fig:ch3-variant_filters}).
 %
 Based on these analyses I filtered SNPs that failed any of the following criteria: QD $< 5$; FS $> 60$; ReadPosRankSum $< -8$; HRun $> 4$.
 %
@@ -810,7 +808,7 @@ Chromosome schematic below shows chromatin state predictions from \textcite{Shar
 \textit{Cyp6p3}, \textit{Vgsc}, \textit{Gaba} and \textit{Gste2} are genes known to be involved in insecticide resistance.
 }
 %
-\label{fig:variant_density}
+\label{fig:ch3-variant_density}
 \end{figure}
 
 
@@ -822,7 +820,7 @@ Of these, 41,476,870 (79\%) were biallelic and 11,049,087 (21\%) were multiallel
 
 
 On average one variant allele was discovered every 2.2 bases of the accessible genome,
-but variant alleles were not evenly distributed throughout the genome (Fig.~\ref{fig:variant_density}).
+but variant alleles were not evenly distributed throughout the genome (Fig.~\ref{fig:ch3-variant_density}).
 %
 Variant allele density was lower towards the centromeres on all chromosome arms, and especially low within regions of pericentromeric heterochromatin where recombination is reduced~\parencite{Pombi2006,Zheng1997}.
 %
@@ -834,11 +832,11 @@ Chromatin state was not always associated with lower variant density, however, a
 Drops in variant allele density, and particularly the density of singleton alleles, were visible at genome regions containing the insecticide resistance genes \textit{Cyp6p3} and \textit{Gste2}, suggesting the presence of selective sweeps in those genome regions, investigated further in Chapter 5.
 
 
-Individual samples carried between 1.6 and 2.7 million variant alleles (Fig.~\ref{fig:sample_variant_count}).
+Individual samples carried between 1.6 and 2.7 million variant alleles (Fig.~\ref{fig:ch3-sample_variant_count}).
 %
 There was no systematic difference between the two species, \agam\ and \textit{An. coluzzii}, in terms of the number of variant alleles discovered in each sample, indicating that the AgamP3 reference genome is not biased towards one species or the other.
 %
-However, there was a clear difference in the level of variation between the two species within the centromeric region of the X chromosome, where \agam\ populations had higher levels of variation than An. coluzzii, and thus the reference genome within that region is more representative of \acol\ (Fig.~\ref{fig:sample_variant_density}).
+However, there was a clear difference in the level of variation between the two species within the centromeric region of the X chromosome, where \agam\ populations had higher levels of variation than An. coluzzii, and thus the reference genome within that region is more representative of \acol\ (Fig.~\ref{fig:ch3-sample_variant_density}).
 %
 The 2La inversion also created a notable difference between individuals both within and between populations, consistent with polymorphism and substantial sequence divergence between the two karyotypes.
 %%
@@ -869,7 +867,7 @@ The Ag1000G data resource provides an opportunity to investigate some of these f
 \caption{Nucleotide diversity ($\pi$) in relation to gene architecture.
 }
 %
-\label{fig:feature_pi}
+\label{fig:ch3-feature_pi}
 \end{figure}
 
 
@@ -879,13 +877,13 @@ Of the 52,525,957 SNPs discovered, 4,404,390 (8.4\%) occurred within a gene codi
 %
 Of the SNPs within gene coding regions, 1,809,532 (41.1\%) were non-synonymous (missense) SNPs that altered the amino acid sequence of the gene, and the remaining 2,594,858 (58.9\%) were synonymous.
 %
-To further investigate the impact of gene architecture on levels of nucleotide variation, I computed nucleotide diversity ($\pi$) in the phase 1 cohort within different types of coding and non-coding sites (Fig.~\ref{fig:feature_pi}).
+To further investigate the impact of gene architecture on levels of nucleotide variation, I computed nucleotide diversity ($\pi$) in the phase 1 cohort within different types of coding and non-coding sites (Fig.~\ref{fig:ch3-feature_pi}).
 %
 I computed diversity separately within the X chromosome and the autosomal Chromosome 3, because the X chromosome is hemizygous in males and thus has a lower effective population size as well as experiencing less frequent recombination than the autosomes, both of which may affect genetic diversity.
 %
 The lowest diversity was found within intronic splice sites, consistent with a high degree of purifying selection, because any change in gene splicing is likely to have major functional consequences.
 %
-The reduction of diversity at splice sites was strongest within the first 2 bp of the intronic sequence, but also extended up to 9 bp into the intron at the 5' end, although not at the 3' end (Fig.~\ref{fig:splicing_pi}).
+The reduction of diversity at splice sites was strongest within the first 2 bp of the intronic sequence, but also extended up to 9 bp into the intron at the 5' end, although not at the 3' end (Fig.~\ref{fig:ch3-splicing_pi}).
 %
 Diversity was also low within exons at non-degenerate first and second codon positions, where any nucleotide substitution will cause an amino acid substitution, also consistent with strong purifying selection.
 %
@@ -918,7 +916,7 @@ There was also notable differences between the autosomal Chromosome 3 and the X 
 %
 Diversity was generally lower on the X chromosome across all site classes, as expected due to the fact that males carry only a single X chromosome and thus the effective population size is lower for the X chromosome than for the autosomes.
 %
-However, the ratio of diversity between sex chromosomes and autosomes (X/A ratio) differed between site classes (Fig.~\ref{fig:feature_pi_ratios}).
+However, the ratio of diversity between sex chromosomes and autosomes (X/A ratio) differed between site classes (Fig.~\ref{fig:ch3-feature_pi_ratios}).
 %
 The X/A ratio was highest within intergenic regions $>$10 kb from a gene, with values between 0.63-0.76, close to the theoretical expectation of 0.75 due to reduced effective population size.
 %
@@ -957,7 +955,7 @@ In the next chapter I will use these data to investigate genetic structure among
 \section{Acknowledgments}\label{sec:ch3-acknowledgments}
 
 
-I would like to thank the members of the \textit{Anopheles gambiae} 1000 Genomes Consortium, the MalariaGEN Resource Centre, and the staff at the Wellcome Sanger Institute sample logistics, sequencing and informatics facilities, for their contributions towards the production of the Ag1000G phase 1 data resource.
+I would like to thank the members of the \textit{Anopheles gambiae} 1000 Genomes Consortium, the MalariaGEN Resource Centre team, and the staff at the Wellcome Sanger Institute sample logistics, sequencing and informatics facilities, for their contributions towards the production of the Ag1000G phase 1 data resource.
 
 
 \clearpage
@@ -977,7 +975,7 @@ Each marker represents an individual sample, coloured by country and species.
 Number of variant alleles is computed over the whole genome.
 }
 %
-\label{fig:sample_variant_count}
+\label{fig:ch3-sample_variant_count}
 \end{figure}
 
 
@@ -992,7 +990,7 @@ Each individual line plots variant allele density (number of variant alleles per
 Individuals are grouped by country and species to facilitate comparison within and between populations.
 }
 %
-\label{fig:sample_variant_density}
+\label{fig:ch3-sample_variant_density}
 \end{figure}
 
 
@@ -1005,7 +1003,7 @@ Individuals are grouped by country and species to facilitate comparison within a
 Plots show diversity averaged across all genes on chromosome arm 3R, error bars show results from bootstrapping over sites.
 }
 %
-\label{fig:splicing_pi}
+\label{fig:ch3-splicing_pi}
 \end{figure}
 
 
@@ -1020,7 +1018,7 @@ Error bars computed by bootstrapping over sites.
 The theoretical expectation for a diploid species with one sex hemizygous for the X chromosome is 0.75 (shown as dashed line) due to differences in effective population sizes.
 }
 %
-\label{fig:feature_pi_ratios}
+\label{fig:ch3-feature_pi_ratios}
 \end{figure}
 
 
