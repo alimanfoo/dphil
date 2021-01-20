@@ -31,13 +31,6 @@ function rebuild {
 if [ -f ${1}.tex ]; then
     rebuild $1
 else
-    rebuild abstract
-    rebuild chapter1
-    rebuild chapter2
+    rebuild thesis
     rebuild chapter2-supplementary
-    rebuild chapter3
-    rebuild chapter4
-    rebuild chapter5
-    rebuild chapter6
-    rebuild discussion
 fi
