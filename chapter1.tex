@@ -1,23 +1,5 @@
-\documentclass[a4paper,11pt,abstracton,hidelinks]{scrartcl}
-\usepackage{dphil}
-% hide section numbers
-\setcounter{secnumdepth}{0}
-\addbibresource{refs.bib}
-
-
-\title{
-Chapter 1. General introduction
-}
-
-
-\author{}
-
-
-\begin{document}
-\renewcommand{\abstractname}{Summary}
-
-
-\maketitle
+\begin{refsection}
+\chapter{General introduction}\label{ch:general-intro}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -39,12 +21,9 @@ This thesis describes work I contributed to phase 1 of the Ag1000G Project.
 \end{abstract}
 
 
-\tableofcontents
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Malaria vector control in sub-Saharan Africa}\label{sec:vector-control}
+\section[Malaria vector control]{Malaria vector control in sub-Saharan Africa}\label{sec:vector-control}
 
 
 %%
@@ -281,7 +260,7 @@ For example, CRISPR/Cas9 gene drives need to target regions of low genetic diver
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Next-generation sequencing as a tool for genomic epidemiology and infectious disease surveillance}\label{sec:NGS}
+\section[Next-generation sequencing]{Next-generation sequencing as a tool for genomic epidemiology and infectious disease surveillance}\label{sec:NGS}
 
 
 %%
@@ -491,8 +470,9 @@ In the final chapter I look forward to future applications of genome sequencing 
 %%
 
 
+\printbibliography[
+heading=subbibintoc,
+title={References}
+]
 
-\printbibliography
-
-
-\end{document}
+\end{refsection}

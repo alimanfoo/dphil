@@ -1,25 +1,7 @@
-\documentclass[a4paper,11pt,abstracton,hidelinks]{scrartcl}
-\usepackage{dphil}
-\usepackage{wasysym}
-\addbibresource{refs.bib}
-% hide section numbers
-\setcounter{secnumdepth}{0}
-
-
-\title{
-Chapter 3. The \textit{Anopheles gambiae} 1000 Genomes Project phase 1 nucleotide variation data resource
-}
-
-
-\author{}
-
-
-\begin{document}
-\renewcommand{\abstractname}{Summary}
-
-
-\maketitle
-
+\begin{refsection}
+\chapter[The Ag1000G phase 1 data resource]{
+The \textit{Anopheles gambiae} 1000 Genomes Project phase 1 nucleotide variation data resource
+}\label{ch:ag1000g-phase1}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -40,13 +22,10 @@ I also report analyses of these data to quantify the levels of nucleotide variat
 \end{abstract}
 
 
-\tableofcontents
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Introduction}\label{sec:introduction}
+\section{Introduction}\label{sec:ch3-introduction}
 
 
 As described in chapter 1, the Ag1000G Project aims to use whole-genome deep Illumina sequencing to explore natural genetic variation among populations of malaria vectors within the \agam\ complex.
@@ -68,7 +47,7 @@ Where work was carried out by or in collaboration with other members of the Ag10
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Methods}\label{sec:methods}
+\section{Methods}\label{sec:ch3-methods}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -776,10 +755,8 @@ Loci were sequenced using the following sets of forward and reverse primer pairs
 \item 2L:46,845,944-46,847,857 \\ GGAGTTTTACGTGGCCGTTA/CTTCAAAGTGCGGATCCATT 
 \item 2R:28,491,415-28,493,141 \\ TTCAAGTAGTTGCCCGCTTT/AATCGAGCTATTGCGGAGAA
 \end{itemize}
-%%
 
 
-%%
 For each primer set, I aligned forward and reverse traces and called SNPs and genotypes using NovoSNP version 3.0.1~\parencite{Weckx2005}.
 %
 I analysed only individuals which had high quality traces for both forward and reverse reads spanning at least 90\% of the distance between primers.
@@ -813,7 +790,7 @@ I also compared genotype calls, finding that 984/1000 (98.4\%) of heterozygous g
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Results}\label{sec:results}
+\section{Results}\label{sec:ch3-results}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -837,16 +814,13 @@ Chromosome schematic below shows chromatin state predictions from \textcite{Shar
 \end{figure}
 
 
-%%
 52,525,957 SNPs were discovered in the Ag1000G phase 1 dataset passing all quality filters.
 %
 Of these, 41,476,870 (79\%) were biallelic and 11,049,087 (21\%) were multiallelic (more than one variant allele), giving a total of 64,481,991 variant alleles.
 %
 21,783,339 variant alleles were singletons (only observed as a heterozygous genotype in a single individual), 31,228,996 were observed only in a single country and species (private to a population), 17,144,828 were found in multiple countries but observed only in \textit{An. gambiae}, 1,252,245 were found in multiple countries but only in \textit{An. coluzzii}, and 14,688,252 were shared between the two species.
-%
 
 
-%%
 On average one variant allele was discovered every 2.2 bases of the accessible genome,
 but variant alleles were not evenly distributed throughout the genome (Fig.~\ref{fig:variant_density}).
 %
@@ -858,10 +832,8 @@ CorbettDetig2015,Burri2015,Chan2012,Spencer2006}.
 Chromatin state was not always associated with lower variant density, however, as the region of intercalary heterochromatin on chromosome arm 3R had noticeably elevated variant density.
 %
 Drops in variant allele density, and particularly the density of singleton alleles, were visible at genome regions containing the insecticide resistance genes \textit{Cyp6p3} and \textit{Gste2}, suggesting the presence of selective sweeps in those genome regions, investigated further in Chapter 5.
-%%
 
 
-%%
 Individual samples carried between 1.6 and 2.7 million variant alleles (Fig.~\ref{fig:sample_variant_count}).
 %
 There was no systematic difference between the two species, \agam\ and \textit{An. coluzzii}, in terms of the number of variant alleles discovered in each sample, indicating that the AgamP3 reference genome is not biased towards one species or the other.
@@ -964,7 +936,7 @@ The X/A ratio can also be influenced by demographic factors, including populatio
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Conclusions}\label{sec:conclusions}
+\section{Conclusions}\label{sec:ch3-conclusions}
 
 
 In this chapter I have described the discovery and genotyping of more than 50 million single nucleotide polymorphisms from deep whole genome sequencing of individual mosquitoes from natural populations of \agam\ and \textit{An. coluzzii}.
@@ -982,21 +954,17 @@ In the next chapter I will use these data to investigate genetic structure among
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Acknowledgments}\label{sec:acknowledgments}
+\section{Acknowledgments}\label{sec:ch3-acknowledgments}
 
 
 I would like to thank the members of the \textit{Anopheles gambiae} 1000 Genomes Consortium, the MalariaGEN Resource Centre, and the staff at the Wellcome Sanger Institute sample logistics, sequencing and informatics facilities, for their contributions towards the production of the Ag1000G phase 1 data resource.
 
 
-\printbibliography
-
-
 \clearpage
-\beginsupplement
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Supplemental figures}\label{sec:supplemental-figures}
+\section{Supplemental figures}\label{sec:ch3-supplemental-figures}
 
 
 \begin{figure}[h]
@@ -1060,7 +1028,7 @@ The theoretical expectation for a diploid species with one sex hemizygous for th
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Supplemental tables}\label{sec:supplemental-tables}
+\section{Supplemental tables}\label{sec:ch3-supplemental-tables}
 
 
 \begin{table}[h]
@@ -1102,5 +1070,10 @@ non\_canonical\_start\_codon & 10 \\
 \end{table}
 
 
+\printbibliography[
+heading=subbibintoc,
+title={References}
+]
 
-\end{document}
+
+\end{refsection}

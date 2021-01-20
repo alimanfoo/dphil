@@ -1,24 +1,6 @@
 %! suppress = FigureNotReferenced
-\documentclass[a4paper,11pt,abstracton,hidelinks]{scrartcl}
-\usepackage{dphil}
-\addbibresource{refs.bib}
-% hide section numbers
-\setcounter{secnumdepth}{0}
-
-
-\title{
-Chapter 2. Historical context: correspondence on the discovery of the \textit{Anopheles gambiae} species complex
-}
-
-
-\author{}
-
-
-\begin{document}
-\renewcommand{\abstractname}{Summary}
-
-
-\maketitle
+\begin{refsection}
+\chapter[Historical context]{Historical context: correspondence on the discovery of the \textit{Anopheles gambiae} species complex}\label{ch:historical-context}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -42,9 +24,6 @@ The full correspondence between Davidson and Paterson is provided as a supplemen
 
 
 \end{abstract}
-
-
-\tableofcontents
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -614,7 +593,10 @@ I am also grateful to Maureen Coetzee for sharing some biographical information 
 %
 
 
-\printbibliography
+\printbibliography[
+heading=subbibintoc,
+title={References}
+]
 
 
-\end{document}
+\end{refsection}

@@ -36,15 +36,8 @@ deploy:
   api_key:
     secure: Jd9kIqzbHUZ9Pdub3QORhJfZvhFfiCL2CZV50bwfkr4CZRiBC7Jiq2kuPPMANxCQpKzfw9cc92NtVP/sd2hTzNA7xVXFnSwOXLhuSszE/ztEivmW/fArDY+JX5m/KuZqtBJBrJpww4jRmPn98oereHvfT2xlVTfL48KbhOc/5a10McZi3Mobbs/VIMG+SQi7XJBLgCcsQYhxG8PNnm4LU3/JUUu/2C7U2xxeOyyfDB0LKZD8HYLoaVjv0oN4MsPtsNAod1sVQaZbrlF1ygtJeCGcE9nCuG2d8Ie6R9ZZTdMtCMfQ+pJlcC8lZEzGsjk/aBHRUEFYy9uCp/voG/QBKqT/H4WTA5iXk3VD+7YE97jq623gCQcHepGlm0/ScigRf/sIwNmqT46Brj5aa5gbcK0S7rFM3PWOvMSA/AmU9uT30LEwyeYavTZsA5njB8dKSzqbsnhkw9Y47Y+Q2ikJoaDWrSPpH0ZCTElI12WLzAiHeaS3bCPykUh6AdXJXeoOlCqEWXnZcpYQ4+bTwAq4bA5/A3BRBZvHrDC7IYfo6aMS1BP0Qo/v9r8RTqBrKKZ4vtEaHsFmNRVEXMSH2pQqnH//xR1VBqMGqCM4gFL31P7A3j8c5OM1px2i2XnFaq55ldc+am5XwzWMeAD1UU7y8B9x9h2gm8giSBWEfLJh2IQ=
   file: 
-    - abstract.pdf
-    - chapter1.pdf
-    - chapter2.pdf
+    - thesis.pdf
     - chapter2-supplementary.pdf
-    - chapter3.pdf
-    - chapter4.pdf
-    - chapter5.pdf
-    - chapter6.pdf
-    - discussion.pdf
   skip_cleanup: true
   on:
     repo: alimanfoo/dphil
