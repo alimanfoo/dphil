@@ -1,26 +1,10 @@
-\documentclass[a4paper,11pt,abstracton,hidelinks]{scrartcl}
-\usepackage{dphil}
-% hide section numbers
-\setcounter{secnumdepth}{0}
-\addbibresource{refs.bib}
-
-
-\title{
+\begin{refsection}
+\chapter[Discussion]{
 Discussion: Towards genomic surveillance systems for malaria vectors
-}
+}\label{ch:discussion}
 
 
-\author{}
-
-
-\begin{document}
-\renewcommand{\abstractname}{Summary}
-
-
-\maketitle
-
-
-\section{Genomic surveillance in the time of a pandemic}\label{sec:pandemic}
+\section{Genomic surveillance in the time of a pandemic}\label{sec:discuss-pandemic}
 
 
 As of Saturday 19 December 2020, the county of Berkshire in which I live has been placed under Tier 4 COVID-19 restrictions, alongside counties across the South and East of England.
@@ -49,7 +33,7 @@ However, unlike SARS-CoV-2, we do not have genomic surveillance systems in place
 This means that, as new forms of insecticide resistance emerge and spread within malaria vector populations, we have no means to detect these events, nor to design and coordinate any kind of effective response or mitigation.
 
 
-\section{Next-generation malaria vector control needs next-generation surveillance}\label{sec:nextgen}
+\section{Next-generation malaria vector control needs next-generation surveillance}\label{sec:discuss-nextgen}
 
 
 Sequencing the genomes of \textit{Anopheles} mosquitoes from the field and accurately detecting genetic variation presents a number of challenges.
@@ -86,7 +70,7 @@ We know from experiences of the first global malaria eradication campaign of the
 Now, more than ever, we need a next-generation of surveillance systems for malaria vectors, so that we can observe new evolutionary events as they occur, and can change course early, rather than waiting until resistance is entrenched, and the efficacy of these new control tools is irreversibly undermined.
 
 
-\section{A roadmap for malaria vector genomic surveillance systems}\label{sec:roadmap}
+\section{A roadmap for malaria vector genomic surveillance systems}\label{sec:discuss-roadmap}
 
 
 What, then, is the roadmap for translation of genome sequencing technologies into operational malaria vector surveillance systems?
@@ -260,7 +244,7 @@ In particular, it may be valuable to leverage information about recombination wh
 To build a coherent statistical framework for the investigation of insecticide resistance outbreaks, a synthesis is required that brings together inference methods from phylogeography and phylodynamics and applies them to genealogies inferred at a recombining insecticide resistance locus.
 
 
-\section{Bridging the gap from surveillance to impact}\label{sec:external}
+\section{Bridging the gap from surveillance to impact}\label{sec:discuss-external}
 
 
 I would like to conclude by briefly discussing the broader context, and the other challenges that will need to be addressed before genomic surveillance systems for malaria vectors could contribute to achieving a real impact on improved public health.
@@ -332,7 +316,10 @@ Despite the passage of nearly sixty years, these words remain relevant today.
 They remind us that the value of new technologies such as genome sequencing resides in their ability to confront us anew with our own ignorance, and to help us learn as we act in this next phase of the journey towards a world without malaria.
 
 
-\printbibliography
+\printbibliography[
+heading=subbibintoc,
+title={References}
+]
 
 
-\end{document}
+\end{refsection}

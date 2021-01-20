@@ -1,23 +1,5 @@
-\documentclass[a4paper,11pt,abstracton,hidelinks]{scrartcl}
-\usepackage{dphil}
-\addbibresource{refs.bib}
-% hide section numbers
-\setcounter{secnumdepth}{0}
-
-
-\title{
-Chapter 5. Recent positive selection for insecticide resistance
-}
-
-
-\author{}
-
-
-\begin{document}
-\renewcommand{\abstractname}{Summary}
-
-
-\maketitle
+\begin{refsection}
+\chapter{Recent positive selection for insecticide resistance}\label{ch:5}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -42,16 +24,10 @@ Finally, I describe a web application that provides a means for exploring these 
 \end{abstract}
 
 
-\tableofcontents
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Introduction}\label{sec:introduction}
-
-
-% @@TODO citations
+\section{Introduction}\label{sec:ch5-introduction}
 
 
 As described in Chapter 1, malaria vector control programmes have massively expanded since the turn of the millennium, with a heavy reliance on insecticide-based interventions~\parencite{Cibulskis2016,Bhatt2015,WHO2019WMR}.
@@ -135,7 +111,7 @@ Here I focus on those analyses that I devised and performed, but include some re
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Results}\label{sec:results}
+\section{Results}\label{sec:ch5-results}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -590,7 +566,7 @@ This in turn argues for a deeper study of this pathway in malaria vectors.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Conclusions}\label{sec:conclusions}
+\section{Conclusions}\label{sec:ch5-conclusions}
 
 
 In this chapter I have explored the genomic landscape of recent selection within the mosquito populations sampled in the first phase of the Ag1000G project.
@@ -609,7 +585,7 @@ The Ag1000G data provide a unique opportunity to fill some of these gaps, genera
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Methods}\label{sec:methods}
+\section{Methods}\label{sec:ch5-methods}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -676,15 +652,11 @@ Sphinx was then used to generate a static HTML site, and this was deployed to Gi
 The dynamic plotting components (interactive genome plots) were implemented using Bokeh version 0.12.13 and exported as JavaScript to be embedded in the HTML.
 
 
-\printbibliography
-
-
 \clearpage
-\beginsupplement
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Supplemental figures}\label{sec:supplemental-figures}
+\section{Supplemental figures}\label{sec:ch5-supplemental-figures}
 
 
 \begin{figure}[h!]
@@ -771,7 +743,7 @@ Each plot compares the confidence interval for the focus of each selection inter
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Supplemental tables}\label{sec:supplemental-tables}
+\section{Supplemental tables}\label{sec:ch5-supplemental-tables}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -814,5 +786,10 @@ Within CI = percentage of signals where the gene was within the estimated focus 
 \end{table}
 
 
+\printbibliography[
+heading=subbibintoc,
+title={References}
+]
 
-\end{document}
+
+\end{refsection}

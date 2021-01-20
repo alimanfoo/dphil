@@ -1,23 +1,5 @@
-\documentclass[a4paper,11pt,abstracton,hidelinks]{scrartcl}
-\usepackage{dphil}
-\addbibresource{refs.bib}
-% hide section numbers
-\setcounter{secnumdepth}{0}
-
-
-\title{
-Chapter 6. The evolution and spread of target-site resistance to pyrethroid insecticides
-}
-
-
-\author{}
-
-
-\begin{document}
-\renewcommand{\abstractname}{Summary}
-
-
-\maketitle
+\begin{refsection}
+\chapter[Target-site resistance to pyrethroids]{The evolution and spread of target-site resistance to pyrethroid insecticides}\label{ch:6}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -44,13 +26,10 @@ These analyses show that the molecular basis of pyrethroid target-site resistanc
 \end{abstract}
 
 
-\tableofcontents
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Introduction}\label{sec:introduction}
+\section{Introduction}\label{sec:ch6-introduction}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -176,7 +155,7 @@ Any work carried out jointly is noted in the relevant section.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Results}\label{sec:results}
+\section{Results}\label{sec:ch6-results}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -546,7 +525,7 @@ If combined with a limited amount of whole-genome sequencing at sentinel sites a
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Conclusions}\label{sec:conclusions}
+\section{Conclusions}\label{sec:ch6-conclusions}
 
 
 Molecular evolution of pyrethroid target-site resistance is clearly far more complex than previously appreciated.
@@ -569,7 +548,7 @@ In the next and final chapter I discuss the implications of these and other find
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Methods}\label{sec:methods}
+\section{Methods}\label{sec:ch6-methods}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -685,15 +664,11 @@ Decision tree classifiers were then constructed using scikit-learn version 0.19.
 The classification accuracy of each tree was evaluated using stratified 10-fold cross-validation.
 
 
-\printbibliography
-
-
 \clearpage
-\beginsupplement
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Supplemental figures}\label{sec:supplemental-figures}
+\section{Supplemental figures}\label{sec:ch6-supplemental-figures}
 
 
 \clearpage
@@ -776,4 +751,10 @@ Wild-type (wt) haplotypes do not carry any known or putative resistance alleles.
 \end{figure}
 
 
-\end{document}
+\printbibliography[
+heading=subbibintoc,
+title={References}
+]
+
+
+\end{refsection}
