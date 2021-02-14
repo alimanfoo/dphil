@@ -160,9 +160,9 @@ Species status is uncertain for samples from Guinea-Bissau and Kenya, see Chapte
 
 
 %%
-SNP discovery and genotyping was formed following best practices defined for the Genome Analysis Toolkit (GATK) version 2~\parencite{McKenna2010,Depristo2011,VanderAuwera2013}.
+SNP discovery and genotyping was performed following best practices defined for the Genome Analysis Toolkit (GATK) version 2~\parencite{McKenna2010,Depristo2011,VanderAuwera2013}.
 %
-Sequence reads from each sample were aligned to the AgamP3 reference genome~\parencite{Holt2002,Sharakhova2007} using BWA version 0.6.2~\parencite{Li2009} using the \textit{aln} and \textit{sampe} commands.
+Sequence reads from each sample were aligned to the AgamP3 reference genome~\parencite{Holt2002,Sharakhova2007} using BWA version 0.6.2~\parencite{Li2009}.
 %
 A BAM file for each individual was constructed by merging alignments from multiple lanes, and duplicate reads were marked using Picard version 1.96.
 %
@@ -483,9 +483,9 @@ As a first step towards designing variant filters, I performed an analysis of ge
 %
 In this analysis I first computed detailed alignment statistics from read pileups for each sample at each position in the reference sequence, including the total depth of coverage, the fraction of reads aligned in a proper pair, the fraction of reads aligned ambiguously (mapping quality zero), and the root-mean-square mapping quality.
 %
-In order to accelerate this computation I developed the command line software package pysamstats\footnote{\url{https://github.com/alimanfoo/pysamstats}}.
+In order to accelerate this computation I developed the software package pysamstats\footnote{\url{https://github.com/alimanfoo/pysamstats}}.
 %
-I then aggregated these data across all samples at each genome position, to obtain the following genome accessibility metrics:
+I then aggregated these data across all samples, to obtain the following genome accessibility metrics at each genome position:
 %
 \begin{itemize}
 %
@@ -547,7 +547,7 @@ Line and right axis show the percentage of variants found with ME for each value
 
 
 %%
-In previous population sequencing projects such \textcite{1000G2015} the criteria used to determine which positions of the reference genome are considered accessible have been decided theoretically, without any empirical validation.
+In previous population sequencing projects such as \textcite{1000G2015} the criteria used to determine which positions of the reference genome are considered accessible were decided theoretically, without any empirical validation.
 %
 The availability of colony crosses in the Ag1000G project afforded the opportunity to select and calibrate appropriate genome accessibility criteria using Mendelian error in the crosses as an indicator of poor accessibility.
 %
@@ -600,7 +600,7 @@ Upper plot (blue) shows the percentage of bases classified as accessible.
 %
 Lower plot (green) shows the percentage of bases within gene exons classified as accessible.
 %
-Schematic of chromosomes at the bottom shows predicted chromatin state from~\parencite{Sharakhova2010}.
+Schematic of chromosomes at the bottom shows predicted chromatin state from~\textcite{Sharakhova2010}.
 %
 }
 %
@@ -640,7 +640,7 @@ I then examined a set of variant metrics produced by \textit{UnifiedGenotyper} f
 %
 \begin{itemize}
 %
-\item \textbf{QD.} "Quality by depth", calculated as the evidence for an alternate allele at the site (QUAL, phred-scaled probability of no variant) divided by the total depth of coverage in samples where the alternate allele was observed.
+\item \textbf{QD.} ``Quality by depth'', calculated as the evidence for an alternate allele at the site (QUAL, phred-scaled probability of no variant) divided by the total depth of coverage in samples where the alternate allele was observed.
 %
 \item \textbf{FS.} Fisher's exact test for strand-bias.
 %
@@ -684,7 +684,7 @@ Of 95,335,499 SNPs reported in the raw callset, 52,525,957 passed all filters.
 %
 Prior to filtering, the rate of Mendelian error in genotype calls expected to be heterozygous (0/1) in the progeny of the crosses (where parental genotypes were 0/0 x 1/1 or vice versa) was between 13.0-21.7\% depending on the cross.
 %
-After filtering, the Mendelian error rate was 0.3-0.9\%.
+After filtering, this error rate was 0.3-0.9\%.
 %%
 
 
@@ -836,7 +836,7 @@ Individual samples carried between 1.6 and 2.7 million variant alleles (Fig.~\re
 %
 There was no systematic difference between the two species, \agam\ and \textit{An. coluzzii}, in terms of the number of variant alleles discovered in each sample, indicating that the AgamP3 reference genome is not biased towards one species or the other.
 %
-However, there was a clear difference in the level of variation between the two species within the centromeric region of the X chromosome, where \agam\ populations had higher levels of variation than An. coluzzii, and thus the reference genome within that region is more representative of \acol\ (Fig.~\ref{fig:ch3-sample_variant_density}).
+However, there was a clear difference in the level of variation between the two species within the centromeric region of the X chromosome, where \agam\ populations had higher levels of variation than \acol, and thus the reference genome within that region is more representative of \acol\ (Fig.~\ref{fig:ch3-sample_variant_density}).
 %
 The 2La inversion also created a notable difference between individuals both within and between populations, consistent with polymorphism and substantial sequence divergence between the two karyotypes.
 %%
@@ -912,7 +912,7 @@ Diversity in intergenic regions was similar regardless of distance to a gene, su
 
 
 %%
-There was also notable differences between the autosomal Chromosome 3 and the X chromosome in these patterns of diversity in relation to gene architecture.
+There were also notable differences between the autosomal Chromosome 3 and the X chromosome in these patterns of diversity in relation to gene architecture.
 %
 Diversity was generally lower on the X chromosome across all site classes, as expected due to the fact that males carry only a single X chromosome and thus the effective population size is lower for the X chromosome than for the autosomes.
 %
