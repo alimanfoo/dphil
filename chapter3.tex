@@ -189,7 +189,7 @@ These issues include:
 %
 \begin{itemize}
 %
-\item \textbf{Low yield.} The number of sequence reads generated for and individual sample is not sufficient to achieve the desired depth of coverage.
+\item \textbf{Low yield.} The number of sequence reads generated for an individual sample is not sufficient to achieve the desired depth of coverage.
 %
 \item \textbf{Low library complexity.} If the input DNA quantity is insufficient, the DNA amplification process can generate sufficient material for sequencing, but there may be significant bias, in the sense that some genome regions are overrepresented and others are underrepresented or not covered at all~\parencite{Head2014}.
 %
@@ -234,7 +234,7 @@ Highlighted groups A, B and C indicate different quality issues, described in th
 %%
 I analysed summary statistics generated from the sequence read alignments to identify samples with sequencing data quality issues such as low yield or low library complexity.
 %
-These statistics included the number of sequence reads, mean coverage, percentage of reads mapped tro the reference genome, percentage of reads marked as duplicates, and percentage of aligned bases mismatching the reference genome.
+These statistics included the number of sequence reads, mean coverage, percentage of reads mapped to the reference genome, percentage of reads marked as duplicates, and percentage of aligned bases mismatching the reference genome.
 %
 I plotted various combinations of these statistics to investigate their distributions and identify outliers.
 %
@@ -801,7 +801,7 @@ I also compared genotype calls, finding that 984/1000 (98.4\%) of heterozygous g
 \includegraphics[width=1.1\textwidth,center]{artwork/chapter3/variant_density.png}
 \caption{Density of variant alleles discovered across the genome.
 %
-Main plot shows the density of variant alleles within the accessible genome, computed in 200 kb moving windows.
+Main plot shows the density of variant alleles per accessible base, computed in 200 kb moving windows.
 %
 Chromosome schematic below shows chromatin state predictions from \textcite{Sharakhova2010}.
 %

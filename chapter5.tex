@@ -1,5 +1,5 @@
 \begin{refsection}
-\chapter{Recent positive selection for insecticide resistance}\label{ch:5}
+\chapter{Recent positive selection}\label{ch:5}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -10,15 +10,15 @@
 
 In this chapter I continue analysing the Ag1000G phase 1 data resource by performing genome-wide scans for signals of recent positive selection.
 %
-The primary purpose of these selection scans is to identify genes under selection for insecticide resistance.
-%
-The evolution of insecticide resistance is a major threat to the control of malaria vectors in sub-Saharan Africa, but we still lack a clear picture of which genes are driving this adaptive response.
-%
 I apply three selection scan methods to each of the mosquito populations in the Ag1000G phase 1 cohort, and develop a systematic approach to identifying and mapping selection signals within these scans.
 %
-I use this approach to build a catalog of 289 putative selection signals, and validate this by analysing signals overlapping genes that have a functionally-validated role in insecticide resistance.
+I use this approach to build a catalog of 289 putative selection signals, including signals at five loci containing genes that have a functionally-validated role in insecticide resistance in \agam\ and/or \acol.
 %
-Finally, I describe a web application that provides a means for exploring these selection signals, and illustrate its use by discovering selection signals at a diacylglycerol kinase gene with a potentially novel role in resistance to organophosphate insecticides.
+I describe a web application that provides a means for exploring these selection signals, and illustrate its use by discovering selection signals at a diacylglycerol kinase gene with a potentially novel role in resistance to organophosphate insecticides.
+%
+Selection for insecticide resistance has clearly been the major driver of recent selection in these species, and the capability for further adaptation remains a significant threat to the control of malaria vectors in sub-Saharan Africa.
+%
+The data and methods described in this chapter provide a means to discover which genes are driving this adaptive response.
 
 
 \end{abstract}
@@ -228,58 +228,58 @@ This in turn can guide the design and calibration of algorithms for discovering 
 \subsection{Selection signal discovery and mapping}\label{subsec:signal-discovery}
 
 
-\begin{figure}[t!]
+\begin{figure}[tp]
     \centering
     \begin{subfigure}[t]{0.32\textwidth}
         \centering
         \caption{}
-        \includegraphics[width=1.1\textwidth,center,trim=0 27 380 0, clip]{artwork/chapter5/peak_fit_h12_cyp6p_ugs.png}
+        \includegraphics[width=1.1\textwidth,center,trim=0 0 380 0, clip]{artwork/chapter5/peak_fit_h12_cyp6p_ugs.png}
     \end{subfigure}
     \hfill
     \begin{subfigure}[t]{0.32\textwidth}
         \centering
         \caption{}
-        \includegraphics[width=1.1\textwidth,center,trim=0 27 380 0, clip]{artwork/chapter5/peak_fit_h12_cyp6p_bfs.png}
+        \includegraphics[width=1.1\textwidth,center,trim=0 0 380 0, clip]{artwork/chapter5/peak_fit_h12_cyp6p_bfs.png}
     \end{subfigure}
     \hfill
     \begin{subfigure}[t]{0.32\textwidth}
         \centering
         \caption{}
-        \includegraphics[width=1.1\textwidth,center,trim=0 27 380 0, clip]{artwork/chapter5/peak_fit_h12_cyp6p_bfm.png}
+        \includegraphics[width=1.1\textwidth,center,trim=0 0 380 0, clip]{artwork/chapter5/peak_fit_h12_cyp6p_bfm.png}
     \end{subfigure}
     \vspace{0cm}
     \begin{subfigure}[t]{0.32\textwidth}
         \centering
         \caption{}
-        \includegraphics[width=1.1\textwidth,center,trim=0 27 380 0, clip]{artwork/chapter5/peak_fit_h12_gste_cms.png}
+        \includegraphics[width=1.1\textwidth,center,trim=0 0 380 0, clip]{artwork/chapter5/peak_fit_h12_gste_cms.png}
     \end{subfigure}
     \hfill
     \begin{subfigure}[t]{0.32\textwidth}
         \centering
         \caption{}
-        \includegraphics[width=1.1\textwidth,center,trim=0 27 380 0, clip]{artwork/chapter5/peak_fit_h12_gste_bfs.png}
+        \includegraphics[width=1.1\textwidth,center,trim=0 0 380 0, clip]{artwork/chapter5/peak_fit_h12_gste_bfs.png}
     \end{subfigure}
     \begin{subfigure}[t]{0.32\textwidth}
         \centering
         \caption{}
-        \includegraphics[width=1.1\textwidth,center,trim=0 27 380 0, clip]{artwork/chapter5/peak_fit_h12_gste_ugs.png}
+        \includegraphics[width=1.1\textwidth,center,trim=0 0 380 0, clip]{artwork/chapter5/peak_fit_h12_gste_ugs.png}
     \end{subfigure}
     \vspace{0cm}
     \begin{subfigure}[t]{0.32\textwidth}
         \centering
         \caption{}
-        \includegraphics[width=1.1\textwidth,center,trim=0 27 380 0, clip]{artwork/chapter5/peak_fit_h12_cyp9k1_bfs.png}
+        \includegraphics[width=1.1\textwidth,center,trim=0 0 380 0, clip]{artwork/chapter5/peak_fit_h12_cyp9k1_bfs.png}
     \end{subfigure}
     \hfill
     \begin{subfigure}[t]{0.32\textwidth}
         \centering
         \caption{}
-        \includegraphics[width=1.1\textwidth,center,trim=0 27 380 0, clip]{artwork/chapter5/peak_fit_h12_cyp9k1_bfm.png}
+        \includegraphics[width=1.1\textwidth,center,trim=0 0 380 0, clip]{artwork/chapter5/peak_fit_h12_cyp9k1_bfm.png}
     \end{subfigure}
     \begin{subfigure}[t]{0.32\textwidth}
         \centering
         \caption{}
-        \includegraphics[width=1.1\textwidth,center,trim=0 27 380 0, clip]{artwork/chapter5/peak_fit_h12_cyp9k1_gns.png}
+        \includegraphics[width=1.1\textwidth,center,trim=0 0 380 0, clip]{artwork/chapter5/peak_fit_h12_cyp9k1_gns.png}
     \end{subfigure}
     \vspace{0cm}
     \begin{subfigure}[t]{0.32\textwidth}
@@ -298,7 +298,7 @@ This in turn can guide the design and calibration of algorithms for discovering 
         \caption{}
         \includegraphics[width=1.1\textwidth,center,trim=0 0 380 0, clip]{artwork/chapter5/peak_fit_h12_vgsc_ugs.png}
     \end{subfigure}
-    \caption{Examples of peak models fitted to H12 selection scans at known insecticide resistance loci using least-squares regression. Dashed lines show model fit, markers show data. \textbf{a}, \textit{Cyp6p}, Uganda \agam. \textbf{b}, \textit{Cyp6p}, Burkina Faso \agam. \textbf{c}, \textit{Cyp6p}, Burkina Faso \acol. \textbf{d}, \textit{Gste}, Cameroon \agam. \textbf{e}, \textit{Gste}, Burkina Faso \agam. \textbf{f}, \textit{Gste}, Uganda \agam. \textbf{g}, \textit{Cyp9k1}, Burkina Faso \agam. \textbf{h}, \textit{Cpy9k1}, Burkina Faso \acol. \textit{i}, \textit{Cyp9k1, Guinea \agam}. \textbf{j}, \textit{Vgsc}, Burkina Faso \acol. \textbf{k}, \textit{Vgsc}, Burkina Faso \agam. \textbf{l}, \textit{Vgsc}, Uganda \agam.}
+    \caption{Examples of peak models fitted to H12 selection scans at known insecticide resistance loci. Dashed lines show model fit, markers show data. \textbf{a}, \textit{Cyp6p}, Uganda \agam. \textbf{b}, \textit{Cyp6p}, Burkina Faso \agam. \textbf{c}, \textit{Cyp6p}, Burkina Faso \acol. \textbf{d}, \textit{Gste}, Cameroon \agam. \textbf{e}, \textit{Gste}, Burkina Faso \agam. \textbf{f}, \textit{Gste}, Uganda \agam. \textbf{g}, \textit{Cyp9k1}, Burkina Faso \agam. \textbf{h}, \textit{Cpy9k1}, Burkina Faso \acol. \textit{i}, \textit{Cyp9k1, Guinea \agam}. \textbf{j}, \textit{Vgsc}, Burkina Faso \acol. \textbf{k}, \textit{Vgsc}, Burkina Faso \agam. \textbf{l}, \textit{Vgsc}, Uganda \agam.}
     \label{fig:peak_fits}
 \end{figure}
 
@@ -519,7 +519,7 @@ In \textit{C. elegans}, the diacylglycerol kinase DGK-1 is involved in regulatin
 %
 This discovery was made by using genetic screens for mutants with resistance to aldicarb, a carbamate insecticide.
 %
-Carbamates bind to acetylcholinesterase and prevent its normal function in recycling acetylcholine, causing a toxic accumulation of acetylcholine at synapses.
+Carbamates bind to acetylcholinesterase and prevent its normal function in inactivating acetylcholine, causing a toxic accumulation of acetylcholine at synapses.
 %
 Mutations in the upstream regulatory pathway that reduce the normal amount of acetylcholine present in synapses can thus alter sensitivity to carbamates.
 %
@@ -634,6 +634,8 @@ For each peak model, $\Delta_i$ was computed as the difference between the peak 
 After the first complete pass through a chromosome, the peak model with the highest $\Delta_i$ was located and called as a selection signal.
 %
 The fitted peak model was then subtracted from the selection scan values, and peak models refitted within the surrounding region, to improve fitting of nearby peaks where flanks overlap.
+%
+Selection scan data were converted to genetic distance prior to signal discovery and mapping, assuming a recombination rate of 0.5 cM/Mb in heterochromatin and 2.0 cM/Mb elsewhere.
 %
 All source code files are available from \url{https://github.com/malariagen/agam-selection-atlas}.
 
