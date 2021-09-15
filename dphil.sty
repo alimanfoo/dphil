@@ -33,7 +33,31 @@
 \usepackage{cleveref}
 \crefformat{footnote}{#2\footnotemark[#1]#3}
 \crefrangelabelformat{footnote}{#3#1#4--#5\footnotemark{#1}{#2}#6}
-\usepackage{grbib}
+
+
+%\usepackage{grbib}
+\usepackage[
+	backend=biber,
+	style=authoryear,
+    date=year,
+	sorting=nyt,
+	sortlocale=auto,
+	maxcitenames=2,
+	maxbibnames=10,
+	uniquelist=false,
+	uniquename=false,
+	maxitems=2,
+	giveninits=true,
+	terseinits=true,
+	dashed=false,
+	doi=true,
+	isbn=false,
+	url=false,
+	natbib
+]{biblatex}
+
+
+
 \usepackage{wasysym}
 \usepackage{microtype}
 
