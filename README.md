@@ -2,9 +2,9 @@
 
 This repository contains the LaTeX source files for Alistair Miles' PhD thesis. 
 
-[The final version of the thesis is available from the Oxford Research Archive](https://ora.ox.ac.uk/objects/uuid:d0fc0f47-e24f-4804-9022-26c4e3cf1428).
+The final version of the thesis is [available from the Oxford Research Archive](https://ora.ox.ac.uk/objects/uuid:d0fc0f47-e24f-4804-9022-26c4e3cf1428).
 
-[Supplementary information containing the correspondence between George Davidson and Hugh Paterson is available here](https://github.com/alimanfoo/dphil/releases/download/v1.0.1/chapter2-supplementary.pdf).
+Supplementary information containing the correspondence between George Davidson and Hugh Paterson cited in Chapter 2 is [available here](https://github.com/alimanfoo/dphil/releases/download/v1.0.1/chapter2-supplementary.pdf).
 
 ## Abstract
 
